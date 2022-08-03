@@ -7,8 +7,8 @@ use PHPUnit\Framework\TestCase;
 
 final class CsvExtractorTest extends TestCase {
 
-    public function testRepresentsValidSessionReportCSVInCode() {
-        $csvPath = "./../fixtures/valid-session-report-oneliner.csv";
+    public function testGetCodeCSVRepr() {
+        $csvPath = "./tests/fixtures/valid-session-report-oneliner.csv";
         $expected = [
             [
                 "First Name" => "Test2 FirstName",
@@ -29,6 +29,39 @@ final class CsvExtractorTest extends TestCase {
             ]
         ];
         $actual = CsvExtractor::getCodeCSVRepr($csvPath);
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testGetBehindStudentsCoordinates() {
+        $csvPath = "./tests/fixtures/valid-session-report.csv";
+        $expected = [
+            [
+                "First Name" => '',
+                "Last Name" => '',
+                "Email" => "test@gmail.com"
+            ],
+            [
+                "First Name" => "Test2 FirstName",
+                "Last Name" => "Test2 LastName",
+                "Email" => "test2@yahoo.fr"
+            ],
+            [
+                "First Name" => "Test5 FirstName",
+                "Last Name" => "Test5 LastName",
+                "Email" => "test5@gmail.com"
+            ],
+            [
+                "First Name" => "Test8 FirstName",
+                "Last Name" => "Test8 LastName",
+                "Email" => "test8@gmail.com"
+            ],
+            [
+                "First Name" => "Test9 FirstName",
+                "Last Name" => "Test9 LastName",
+                "Email" => "test9@gmail.com"
+            ]
+        ];
+        $actual = CsvExtractor::getBehindStudentsCoordinates($csvPath);
         $this->assertEquals($expected, $actual);
     }
 
