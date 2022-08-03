@@ -10,5 +10,5 @@ Automations currently enabled are:
 
 ## Tests
 
-- all tests are run in a pre-commit hook that is copied into the `.git/hooks` folder after you ran a `composer install` to install the dependencies
+- all tests are run in a pre-commit hook that is copied into the `.git/hooks` folder after you ran a `composer install` to install the dependencies, to run this hook, the Docker application stack must be up
 - during development, if you want to run tests; just open a terminal in the PHP container and run `./vendor/bin/phpunit tests`
