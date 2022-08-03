@@ -41,3 +41,5 @@ foreach ($behindStudentsCoordinates as $student) {
     );
     echo PHP_EOL."sent email ".$count." out of ".count($behindStudentsCoordinates);
 }
+
+exit(0);
