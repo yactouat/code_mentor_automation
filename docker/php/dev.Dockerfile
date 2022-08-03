@@ -1,4 +1,8 @@
 FROM php:8.1.8-fpm
+# installing mailer system dependencies
+RUN apt update && apt upgrade -y && apt install -y mailutils msmtp msmtp-mta
+# ! be sure not to push this image to a public registry as it may contain your email password
+COPY ./docker/msmtprc /etc/msmtprc
 # create system user ("udacity_nd_sl" with uid 1000)
 RUN useradd -G www-data,root -u 1000 -d /home/udacity_nd_sl udacity_nd_sl
 RUN mkdir /home/udacity_nd_sl && \
