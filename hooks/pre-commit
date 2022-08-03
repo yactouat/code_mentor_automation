@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+
+echo PHP_EOL."Running PHPUnit tests...".PHP_EOL;
+
+exec('docker exec -t udacity_sd_automation-php-1 bash -c "/udacity_nd_sl/vendor/bin/phpunit /udacity_nd_sl/tests"', $output, $returnCode);
+
+echo PHP_EOL . implode(PHP_EOL, $output) . PHP_EOL;
+
+if ($returnCode !== 0) {
+    echo "Aborting commit.." . PHP_EOL;
+    exit(1);
+}
+
+exit(0);

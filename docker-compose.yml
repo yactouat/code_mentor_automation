@@ -1,0 +1,10 @@
+services:
+
+  php:
+    build:
+      context: .
+      dockerfile: docker/php/dev.Dockerfile
+    working_dir: /udacity_nd_sl
+    volumes:
+      - ./:/udacity_nd_sl
+      - ./vendor:/udacity_nd_sl/vendor/
