@@ -8,7 +8,18 @@ exec('docker exec -t udacity_sd_automation-php-1 bash -c "/udacity_nd_sl/vendor/
 echo PHP_EOL . implode(PHP_EOL, $output) . PHP_EOL;
 
 if ($returnCode !== 0) {
-    echo "Aborting commit..." . PHP_EOL;
+    echo "PHPUnit tests did not pass, aborting commit..." . PHP_EOL;
+    exit(1);
+}
+
+echo PHP_EOL."generating docs...".PHP_EOL;
+
+exec('php phpDocumentor.phar -d ./src -t docs/', $output2, $returnCode2);
+
+echo PHP_EOL . implode(PHP_EOL, $output2) . PHP_EOL;
+
+if ($returnCode2 !== 0) {
+    echo "could not generate phpDocumentor documentation, aborting commit..." . PHP_EOL;
     exit(1);
 }
 

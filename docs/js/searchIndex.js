@@ -1,0 +1,54 @@
+Search.appendIndex(
+    [
+                {
+            "fqsen": "\\App\\CsvExtractor",
+            "name": "CsvExtractor",
+            "summary": "",
+            "url": "classes/App-CsvExtractor.html"
+        },                {
+            "fqsen": "\\App\\CsvExtractor\u003A\u003AgetCodeCSVRepr\u0028\u0029",
+            "name": "getCodeCSVRepr",
+            "summary": "",
+            "url": "classes/App-CsvExtractor.html#method_getCodeCSVRepr"
+        },                {
+            "fqsen": "\\App\\CsvExtractor\u003A\u003AgetBehindStudentsCoordinates\u0028\u0029",
+            "name": "getBehindStudentsCoordinates",
+            "summary": "",
+            "url": "classes/App-CsvExtractor.html#method_getBehindStudentsCoordinates"
+        },                {
+            "fqsen": "\\App\\Emails",
+            "name": "Emails",
+            "summary": "",
+            "url": "classes/App-Emails.html"
+        },                {
+            "fqsen": "\\App\\Emails\u003A\u003AgetBehindStudentEmailTemplate\u0028\u0029",
+            "name": "getBehindStudentEmailTemplate",
+            "summary": "",
+            "url": "classes/App-Emails.html#method_getBehindStudentEmailTemplate"
+        },                {
+            "fqsen": "\\App\\Emails\u003A\u003AgetBehindStudentEmailFormatted\u0028\u0029",
+            "name": "getBehindStudentEmailFormatted",
+            "summary": "",
+            "url": "classes/App-Emails.html#method_getBehindStudentEmailFormatted"
+        },                {
+            "fqsen": "\\App\\Mailer",
+            "name": "Mailer",
+            "summary": "",
+            "url": "classes/App-Mailer.html"
+        },                {
+            "fqsen": "\\App\\Mailer\u003A\u003AsendEmail\u0028\u0029",
+            "name": "sendEmail",
+            "summary": "",
+            "url": "classes/App-Mailer.html#method_sendEmail"
+        },                {
+            "fqsen": "\\",
+            "name": "\\",
+            "summary": "",
+            "url": "namespaces/default.html"
+        },                {
+            "fqsen": "\\App",
+            "name": "App",
+            "summary": "",
+            "url": "namespaces/app.html"
+        }            ]
+);
