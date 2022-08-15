@@ -6,7 +6,7 @@
     - [What is this ?](#what-is-this-)
     - [How to use](#how-to-use)
         - [Prerequisites](#prerequisites)
-        - [sending emails in bulk to students who are behind on their Nanodegree program](#sending-emails-in-bulk-to-students-who-are-behind-on-their-nanodegree-program)
+        - [Sending emails in bulk to students who are behind on their Nanodegree program](#sending-emails-in-bulk-to-students-who-are-behind-on-their-nanodegree-program)
     - [Tests](#tests)
     - [Documentation](#documentation)
         - [PHP code](#php-code)
@@ -38,7 +38,7 @@ The project is starting so it has rough edges, but it's functional !
 
 Specific guidelines by automation are listed below. They assume the application stack is running.
 
-### sending emails in bulk to students who are behind on their Nanodegree program
+### Sending emails in bulk to students who are behind on their Nanodegree program
 
 - copy the contents of the `docker/msmtprc.example` to a `docker/msmtprc` file
 - create an app' password for your Google account, you can find guidelines on how to do so in <https://dev.to/yactouat/send-gmail-emails-from-a-dockerized-php-app-the-easy-and-free-way-4jn7>
@@ -61,4 +61,5 @@ Specific guidelines by automation are listed below. They assume the application 
 
 - we use [phpDocumentor](https://www.phpdoc.org/) and it's [PHAR executable](https://phpdoc.org/phpDocumentor.phar)
 - make sure you have downloaded the PHAR provided in the link above
-- to generate the documentation, just run => `php phpDocumentor.phar -d ./src -t docs/`
+- to generate the documentation, just run => `php phpDocumentor.phar -d "./src","./bin" -t docs/`
+- to get a feel at how to write doc blocks, check out => <https://docs.phpdoc.org/3.0/guide/getting-started/what-is-a-docblock.html>

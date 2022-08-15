@@ -1,5 +1,12 @@
 #!/usr/bin/env php
 <?php
+/**
+ * pre commit hook
+ * 
+ * using a Docker running PHP container, checks if
+ * - PHPUnit tests pass
+ * - generates PHP documentation
+ */
 
 echo PHP_EOL."Running PHPUnit tests...".PHP_EOL;
 
@@ -12,14 +19,14 @@ if ($returnCode !== 0) {
     exit(1);
 }
 
-echo PHP_EOL."generating docs...".PHP_EOL;
+echo PHP_EOL."generating PHP docs...".PHP_EOL;
 
-exec('php phpDocumentor.phar -d ./src -t docs/', $output2, $returnCode2);
+exec('php phpDocumentor.phar -d "./src","./bin" -t docs/', $output2, $returnCode2);
 
 echo PHP_EOL . implode(PHP_EOL, $output2) . PHP_EOL;
 
 if ($returnCode2 !== 0) {
-    echo "could not generate phpDocumentor documentation, aborting commit..." . PHP_EOL;
+    echo "could not generate PHP docs, aborting commit..." . PHP_EOL;
     exit(1);
 }
 

@@ -3,42 +3,42 @@ Search.appendIndex(
                 {
             "fqsen": "\\App\\CsvExtractor",
             "name": "CsvExtractor",
-            "summary": "",
+            "summary": "class\u0020responsible\u0020for\u0020extracting\u0020data\u0020from\u0020session\u0020reports\u0020CSVs",
             "url": "classes/App-CsvExtractor.html"
         },                {
             "fqsen": "\\App\\CsvExtractor\u003A\u003AgetCodeCSVRepr\u0028\u0029",
             "name": "getCodeCSVRepr",
-            "summary": "",
+            "summary": "gets\u0020an\u0020array\u002Dlike\u0020representation\u0020of\u0020a\u0020CSV\u0020file\u0020data",
             "url": "classes/App-CsvExtractor.html#method_getCodeCSVRepr"
         },                {
             "fqsen": "\\App\\CsvExtractor\u003A\u003AgetBehindStudentsCoordinates\u0028\u0029",
             "name": "getBehindStudentsCoordinates",
-            "summary": "",
+            "summary": "extracts\u0020students\u0020coordinates\u0020from\u0020a\u0020Udacity\u0020session\u0020report,\u0020scoped\u0020to\u0020students\u0020that\u0020are\u0020behind\u0020on\u0020their\u0020Nanodegree\u0020track",
             "url": "classes/App-CsvExtractor.html#method_getBehindStudentsCoordinates"
         },                {
             "fqsen": "\\App\\Emails",
             "name": "Emails",
-            "summary": "",
+            "summary": "class\u0020responsible\u0020for\u0020setting\/getting\u0020emails\u0020templates",
             "url": "classes/App-Emails.html"
         },                {
             "fqsen": "\\App\\Emails\u003A\u003AgetBehindStudentEmailTemplate\u0028\u0029",
             "name": "getBehindStudentEmailTemplate",
-            "summary": "",
+            "summary": "gets\u0020the\u0020template\u0020for\u0020students\u0020who\u0020are\u0020behind\u0020on\u0020their\u0020nanodegree\u0020track",
             "url": "classes/App-Emails.html#method_getBehindStudentEmailTemplate"
         },                {
             "fqsen": "\\App\\Emails\u003A\u003AgetBehindStudentEmailFormatted\u0028\u0029",
             "name": "getBehindStudentEmailFormatted",
-            "summary": "",
+            "summary": "gets\u0020the\u0020email\u0020text\u0020for\u0020a\u0020given\u0020student\u0020who\u0020is\u0020behind\u0020hers\/his\u0020nanodegree\u0020track",
             "url": "classes/App-Emails.html#method_getBehindStudentEmailFormatted"
         },                {
             "fqsen": "\\App\\Mailer",
             "name": "Mailer",
-            "summary": "",
+            "summary": "class\u0020responsible\u0020for\u0020sending\u0020emails",
             "url": "classes/App-Mailer.html"
         },                {
             "fqsen": "\\App\\Mailer\u003A\u003AsendEmail\u0028\u0029",
             "name": "sendEmail",
-            "summary": "",
+            "summary": "sends\u0020an\u0020email",
             "url": "classes/App-Mailer.html#method_sendEmail"
         },                {
             "fqsen": "\\",

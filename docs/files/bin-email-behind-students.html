@@ -63,7 +63,7 @@
                 <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="packages/Application.html" class="-active">Application</a>
+    <a href="packages/Application.html" class="">Application</a>
 </h4>
 
                         </section>
@@ -85,27 +85,28 @@
                     <ul class="phpdocumentor-breadcrumbs">
     </ul>
 
-    <article class="phpdocumentor-element -package">
-        <h2 class="phpdocumentor-content__title">Application</h2>
+    <article class="phpdocumentor-element -file">
+        <h2 class="phpdocumentor-content__title">email_behind_students.php</h2>
 
-        
+            <p class="phpdocumentor-summary">automation responsible for sending emails in bulk to students who are behind on their Nanodegree program</p>
 
-<h3 id="interfaces_class_traits">
-    Interfaces, Classes, Traits and Enums
-    <a href="#interfaces_class_traits" class="headerlink"><i class="fas fa-link"></i></a>
-</h3>
+    <section class="phpdocumentor-description"><ul>
+<li>given an existing CSV path of a session report generated from the Udacity session lead dashboard,
+and the session lead has a Gmail account
+and the session lead has created a <code class="prettyprint">docker/msmtprc</code> file and filled it with the relevant values,
+and the dockerized application stack is running,</li>
+<li>when the session lead runs <code class="prettyprint">docker exec -t udacity_sd_automation-php-1 bash -c &quot; php ./bin/email_behind_students.php csv_path en_or_fr&quot;</code>,</li>
+<li>then a templated email reminding the student of his duty to show up at his Connect sessions is sent to him</li>
+</ul>
+</section>
 
-<dl class="phpdocumentor-table-of-contents">
-    
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-CsvExtractor.html"><abbr title="\App\CsvExtractor">CsvExtractor</abbr></a></dt>
-        <dd>class responsible for extracting data from session reports CSVs</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Emails.html"><abbr title="\App\Emails">Emails</abbr></a></dt>
-        <dd>class responsible for setting/getting emails templates</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Mailer.html"><abbr title="\App\Mailer">Mailer</abbr></a></dt>
-        <dd>class responsible for sending emails</dd>
-    
-    
-    </dl>
+
+
+
+
+
+
+
 
 
 
@@ -126,7 +127,7 @@
 </section>
             </div>
         </div>
-        <a href="packages/Application.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="files/bin-email-behind-students.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
