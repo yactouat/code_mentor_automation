@@ -1,7 +1,9 @@
 #!/usr/bin/env php
 <?php
 /**
- * pre commit hook
+ * pre commit hook to copy in the ./git/hooks folder
+ * 
+ * ! don't forget it to make it executable
  * 
  * using a Docker running PHP container, checks if
  * - PHPUnit tests pass
@@ -21,7 +23,7 @@ if ($returnCode !== 0) {
 
 echo PHP_EOL."generating PHP docs...".PHP_EOL;
 
-exec('php phpDocumentor.phar -d "./src","./bin" -t docs/', $output2, $returnCode2);
+exec('php phpDocumentor.phar', $output2, $returnCode2);
 
 echo PHP_EOL . implode(PHP_EOL, $output2) . PHP_EOL;
 
