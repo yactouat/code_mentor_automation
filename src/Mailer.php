@@ -16,9 +16,9 @@ final class Mailer
      * 
      * sent emails are HTML emails
      *
-     * @param  mixed $recipientEmail
-     * @param  mixed $subject
-     * @param  mixed $htmlEmail better rendering if you pass HTML formatted text in there
+     * @param string $recipientEmail
+     * @param string $subject
+     * @param string $htmlEmail better rendering if you pass HTML formatted text in there
      * 
      * @return void actually sends the email
      */

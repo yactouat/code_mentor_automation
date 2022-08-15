@@ -15,7 +15,7 @@ final class CsvExtractor
      *
      * @param string $inputCsvPath must be a path to a valid existing CSV file
      * 
-     * @return array returns an array containing the formatted CSV data as in => 
+     * @return array[] returns an array containing the formatted CSV data as in => 
      *               `[
      *                   [
      *                       "item_1_key" => "item_1_val",
@@ -48,7 +48,7 @@ final class CsvExtractor
      *
      * @param string $inputCsvPath must be a path to a valid existing CSV file
      * 
-     * @return array an array containing the first and last name of the student who is behind on hers/his Nanodegree track
+     * @return array[] an array containing the first and last name of the student who is behind on hers/his Nanodegree track
      */
     public static function getBehindStudentsCoordinates(string $inputCsvPath): array {
         $sessionData = self::getCodeCSVRepr($inputCsvPath);
