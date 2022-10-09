@@ -23,5 +23,7 @@
             "cp -f ./hooks/pre-commit ./.git/hooks/pre-commit && chmod u+x ./.git/hooks/*"
         ]
     },
-    "require": {}
+    "require": {
+        "symfony/console": "^6.1"
+    }
 }

@@ -6,6 +6,7 @@
     - [What is this ?](#what-is-this-)
     - [How to use](#how-to-use)
         - [Prerequisites](#prerequisites)
+        - [Access to all automations](#access-to-all-automations)
         - [Sending emails in bulk to students](#sending-emails-in-bulk-to-students)
             - [who are behind on their Nanodegree program](#who-are-behind-on-their-nanodegree-program)
             - [to cheer them up when their Nanodegree program ending approaches](#to-cheer-them-up-when-their-nanodegree-program-ending-approaches)
@@ -24,7 +25,7 @@
 As a [Udacity Full Stack Nanodegree session lead](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd0044),
 I felt the need to automate a few tasks to gain more efficiency and focus more on the great experience that is teaching and learning with other students !
 
-All automations live in the `bin` directory of the project.
+CLI and all automations live in the `bin` directory of the project.
 
 Automations currently enabled are:
 
@@ -41,9 +42,13 @@ The project is starting so it has rough edges, but it's functional !
 - have a Gmail email address
 - have PHP Composer installed on your machine and registered in your `PATH`
 - before running any feature or test, run a `composer install --ignore-platform-reqs` on your host machine
-- then `docker compose up`
+- ⚠️ then `docker compose up`, otherwise I cant guarantee how the app' will behave
 
 Specific guidelines by automation are listed below. They assume the application stack is running.
+
+### Access to all automations
+
+- `docker exec -it udacity_sl_automation-php-1 bash -c "php ./bin/cli.php"`
 
 ### Sending emails in bulk to students
 
