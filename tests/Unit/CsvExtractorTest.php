@@ -3,7 +3,7 @@
 namespace Tests\Unit;
 
 use App\CsvExtractor;
-use App\StudentModel;
+use App\Models\StudentModel;
 use Exception;
 use PHPUnit\Framework\TestCase;
 
@@ -68,14 +68,14 @@ final class CsvExtractorTest extends TestCase {
     }
 
     public function testGetCsvDataWithInvalidCSVThrowsInvalidInputCSVException() {
-        $inputCsvPath = "./tests/fixtures/invalid.csv";
+        $inputCsvPath = "./tests/fixtures/invalid-session-report.csv";
         $this->expectException(Exception::class);
         $this->expectExceptionMessage("Please provide a valid input CSV");
         $actual = CsvExtractor::getCSVData($inputCsvPath, StudentModel::getFields());
     }
 
     public function testGetCsvDataWithInvalidStudentsDataThrowsInvalidStudentsDataException() {
-        $inputCsvPath = "./tests/fixtures/invalid-data.csv";
+        $inputCsvPath = "./tests/fixtures/invalid-session-report-data.csv";
         $this->expectException(Exception::class);
         $this->expectExceptionMessage("Please provide a valid input CSV");
         $actual = CsvExtractor::getCSVData($inputCsvPath, StudentModel::getFields());

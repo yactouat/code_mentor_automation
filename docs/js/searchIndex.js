@@ -61,15 +61,25 @@ Search.appendIndex(
             "summary": "sends\u0020an\u0020email",
             "url": "classes/App-Mailer.html#method_sendEmail"
         },                {
-            "fqsen": "\\App\\StudentModel",
-            "name": "StudentModel",
+            "fqsen": "\\App\\Models\\OnlineResourceModel",
+            "name": "OnlineResourceModel",
             "summary": "",
-            "url": "classes/App-StudentModel.html"
+            "url": "classes/App-Models-OnlineResourceModel.html"
         },                {
-            "fqsen": "\\App\\StudentModel\u003A\u003AgetFields\u0028\u0029",
+            "fqsen": "\\App\\Models\\OnlineResourceModel\u003A\u003AgetFields\u0028\u0029",
             "name": "getFields",
             "summary": "",
-            "url": "classes/App-StudentModel.html#method_getFields"
+            "url": "classes/App-Models-OnlineResourceModel.html#method_getFields"
+        },                {
+            "fqsen": "\\App\\Models\\StudentModel",
+            "name": "StudentModel",
+            "summary": "",
+            "url": "classes/App-Models-StudentModel.html"
+        },                {
+            "fqsen": "\\App\\Models\\StudentModel\u003A\u003AgetFields\u0028\u0029",
+            "name": "getFields",
+            "summary": "",
+            "url": "classes/App-Models-StudentModel.html#method_getFields"
         },                {
             "fqsen": "\\",
             "name": "\\",
@@ -80,5 +90,10 @@ Search.appendIndex(
             "name": "App",
             "summary": "",
             "url": "namespaces/app.html"
+        },                {
+            "fqsen": "\\App\\Models",
+            "name": "Models",
+            "summary": "",
+            "url": "namespaces/app-models.html"
         }            ]
 );

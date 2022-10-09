@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace App;
 
@@ -68,11 +68,26 @@ final class Emails
      * @param string $language the language to use in the template
      * @param string $firstName the first name of the student to send the email to
      * @param string $lastName the last name of the student to send the email to
+     * @param ?array $onlineResources (optional) a list of online resources to help the student in his learning journey
      * 
      * @return string the personalized cheering up email
      */
-    public static function getTrainingEndingEmailFormatted(string $language, string $firstName, string $lastName): string {
-        return sprintf(self::getTrainingEndingEmailTemplate($language), $firstName, $lastName);
+    public static function getTrainingEndingEmailFormatted(
+        string $language, 
+        string $firstName, 
+        string $lastName,
+        ?array $onlineResources = null
+    ): string {
+        $formatted = sprintf(self::getTrainingEndingEmailTemplate($language), $firstName, $lastName);
+        if (!is_null($onlineResources) && count($onlineResources) > 0) {
+            $formatted .= $language === "fr" ? '<div><h2>PS: Voici quelques ressources pour vous aider dans votre apprentissage:</h2><ul>':
+                '<div><h2>PS: Here are some resources to help you with journey:</h2><ul>';
+            foreach($onlineResources as $onlineResource) {
+                $formatted .= '<li>' . $onlineResource["Name"] .' - ' . $onlineResource["Description"] . ' - ' . $onlineResource["URL"] . '</li>';
+            }
+            $formatted .= '</ul></div>';
+        }
+        return $formatted;
     }
 
 }

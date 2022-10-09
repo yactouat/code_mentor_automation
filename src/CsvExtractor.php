@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Models\StudentModel;
+
 /**
  * class responsible for extracting data from session reports CSVs
  * 

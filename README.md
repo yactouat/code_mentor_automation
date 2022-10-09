@@ -63,6 +63,7 @@ Specific guidelines by automation are listed below. They assume the application 
 #### ...to cheer them up when their Nanodegree program ending approaches
 
 - `docker exec -t udacity_sl_automation-php-1 bash -c "php ./bin/training_ending_email.php csv_path en_or_fr"`
+- with additional online resource => `docker exec -t udacity_sl_automation-php-1 bash -c "php ./bin/training_ending_email.php csv_path en_or_fr resources_csv_path"`
 
 ## Tests and Documentation
 
@@ -77,6 +78,7 @@ Specific guidelines by automation are listed below. They assume the application 
 - it's preferable to have the application stack up and running (`docker compose up`) before running tests (so we are sure that the environment remains the same) => `docker exec -t udacity_sl_automation-php-1 bash -c "/udacity_sl_automation/vendor/bin/phpunit /udacity_sl_automation/tests"`
 - you can also open a terminal in the PHP container and run `./vendor/bin/phpunit tests`
 - moreover there is a `tests/fixtures/integration-test-session-report.csv` file (which contains my email, so feel free to replace that) if you want to be sure the real thing actually works as expected when it comes to sending emails
+- also, you have test online resources located in `tests/fixtures/online-resources.csv`
 
 ### Documentation
 

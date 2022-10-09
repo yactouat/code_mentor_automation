@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 final class StudentModel {
 

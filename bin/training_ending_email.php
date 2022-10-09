@@ -13,6 +13,7 @@
  * - param2 => string $argv[2] the language in which the email is sent, possible values are:
  *                        - `en`
  *                        - `fr`
+ * - param3 => string $argv[3] (optional) the path to a CSV containing online resources containing `Name,Description,URL` fields
  * - this script will send actual emails !
  * 
  */
@@ -25,10 +26,12 @@ require_once $rootDir."/vendor/autoload.php";
 use App\CsvExtractor;
 use App\Emails;
 use App\Mailer;
+use App\Models\OnlineResourceModel;
 
 // parsing command line arguments
 $csv = $argv[1] ?? null;
 $language = $argv[2] ?? null;
+$onlineResources = $argv[3] ?? null;
 
 // validation rounds
 if (is_null($csv) || is_null($language)) {
@@ -38,6 +41,13 @@ if (is_null($csv) || is_null($language)) {
 if (!file_exists($csv) || pathinfo($csv, PATHINFO_EXTENSION) != "csv") {
     echo PHP_EOL."wrong input csv".PHP_EOL;
     exit(1);
+}
+try {
+    if (!is_null($onlineResources)) {
+        $onlineResources = CsvExtractor::getCSVData($onlineResources, OnlineResourceModel::getFields());
+    }
+} catch (\Throwable $th) {
+    $onlineResources = null;
 }
 
 // get all students coordinates (first and last name, email)
@@ -50,7 +60,7 @@ foreach ($studentsCoordinates as $student) {
     Mailer::sendEmail(
         $student["Email"],
         $subject,
-        Emails::getTrainingEndingEmailFormatted($language, $student["First Name"], $student["Last Name"])
+        Emails::getTrainingEndingEmailFormatted($language, $student["First Name"], $student["Last Name"], $onlineResources)
     );
     echo PHP_EOL."sent email ".$count." out of ".count($studentsCoordinates).PHP_EOL;
     $count++;
