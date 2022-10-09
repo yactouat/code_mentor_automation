@@ -18,6 +18,20 @@ use App\Intl;
  */
 final class NonCLIShared {
 
+    /**
+     * runs common validations used in non CLI scripts
+     * 
+     * - are `csv` and `language` parameters provided ?
+     * - does the input CSV exist ?
+     * - is the input language allowed ?
+     *
+     * @param string|null $csv
+     * @param string|null $language
+     * 
+     * @throws Exception if one of the validations fail
+     * 
+     * @return void
+     */
     public static function runCommonValidationRounds(?string $csv = null, ?string $language = null): void {
         if (is_null($csv) || is_null($language)) {
             echo PHP_EOL."this script requires the path to the CSV as the first arg and the language (en or fr) as the second arg".PHP_EOL;

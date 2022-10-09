@@ -118,17 +118,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\NonCLIShared\u003A\u003ArunCommonValidationRounds\u0028\u0029",
             "name": "runCommonValidationRounds",
-            "summary": "",
+            "summary": "runs\u0020common\u0020validations\u0020used\u0020in\u0020non\u0020CLI\u0020scripts",
             "url": "classes/NonCLIShared.html#method_runCommonValidationRounds"
         },                {
             "fqsen": "\\App\\Intl",
             "name": "Intl",
-            "summary": "",
+            "summary": "this\u0020class\u0020is\u0020responsible\u0020for\u0020managing\u0020the\u0020internationalization\u0020of\u0020the\u0020app\u0027",
             "url": "classes/App-Intl.html"
         },                {
             "fqsen": "\\App\\Intl\u003A\u003AlanguageIsAllowed\u0028\u0029",
             "name": "languageIsAllowed",
-            "summary": "",
+            "summary": "checks\u0020if\u0020input\u0020language\u0020is\u0020allowed\u0020in\u0020the\u0020app\u0027",
             "url": "classes/App-Intl.html#method_languageIsAllowed"
         },                {
             "fqsen": "\\",

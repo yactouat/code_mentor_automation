@@ -3,6 +3,7 @@
 namespace App\Commands;
 
 use App\CsvExtractor;
+use App\Intl;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -18,7 +19,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 class SendEmailsToBehindStudentsCommand extends Command
 {
 
-    const CSV_ARG = 'session-report-csv-path';
+    const CSV_ARG = 'csv';
     const LANG_ARG = 'language';
 
     protected static $defaultDescription = 'Sends emails in bulk to students who are behind on their Nanodegree program.';
@@ -31,7 +32,6 @@ class SendEmailsToBehindStudentsCommand extends Command
         }
 
         // TODO ... put here the code to send emails to behind students
-
         // validation rounds
         $csv = $input->getArgument(self::CSV_ARG);
         try {
@@ -46,6 +46,17 @@ class SendEmailsToBehindStudentsCommand extends Command
             return Command::FAILURE;
         }
         $language = $input->getArgument(self::LANG_ARG);
+        try {
+            Intl::languageIsAllowed($language);
+        } catch (\Exception $e) {
+            $output->writeln(
+                self::LANG_ARG
+                .': '.$input->getArgument(self::LANG_ARG)
+                .' - '
+                .$e->getMessage()
+            );
+            return Command::FAILURE;
+        }
 
         // starting to send emails
         $introSection = $output->section();
