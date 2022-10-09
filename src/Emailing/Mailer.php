@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Emailing;
 
 /**
  * class responsible for sending emails

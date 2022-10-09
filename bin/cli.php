@@ -10,10 +10,13 @@ $rootDir = dirname(__DIR__);
 
 // loading deps
 require_once $rootDir."/vendor/autoload.php";
+
+use App\Commands\SendEmailsToBehindStudentsCommand;
 use Symfony\Component\Console\Application;
 
 $application = new Application();
 
-// TODO ... register possible commands using the `add` method
+// ! if commands properties need to be set at Command class level, check out https://symfony.com/doc/current/console.html#configuring-the-command
+$application->add(new SendEmailsToBehindStudentsCommand());
 
 $application->run();

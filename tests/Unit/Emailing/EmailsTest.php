@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit;
+namespace Tests\Unit\Emailing;
 
 use App\CsvExtractor;
-use App\Emails;
+use App\Emailing\Emails;
 use App\Models\OnlineResourceModel;
 use PHPUnit\Framework\TestCase;
 

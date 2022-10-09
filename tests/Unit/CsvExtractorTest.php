@@ -81,11 +81,18 @@ final class CsvExtractorTest extends TestCase {
         $actual = CsvExtractor::getCSVData($inputCsvPath, StudentModel::getFields());
     }
 
-    public function testAllStudentsCoordinates() {
+    public function testGetAllStudentsCoordinates() {
         $inputCsvPath = "./tests/fixtures/valid-session-report.csv";
         $expected = 9;
         $actual = CsvExtractor::getAllStudentsCoordinates($inputCsvPath);
         $this->assertCount($expected, $actual);
+    }
+
+    public function testGetCsvDataWithNonExistingCSVThrowsInvalidInputCSVException() {
+        $inputCsvPath = "./tests/fixtures/non-existing.csv";
+        $this->expectException(Exception::class);
+        $this->expectExceptionMessage("Please provide an existing input CSV");
+        $actual = CsvExtractor::getCSVData($inputCsvPath, StudentModel::getFields());
     }
 
 }

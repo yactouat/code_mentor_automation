@@ -9,6 +9,8 @@
         - [Access to all automations](#access-to-all-automations)
         - [Sending emails in bulk to students](#sending-emails-in-bulk-to-students)
             - [who are behind on their Nanodegree program](#who-are-behind-on-their-nanodegree-program)
+                - [using the CLI](#using-the-cli)
+                - [using a PHP script](#using-a-php-script)
             - [to cheer them up when their Nanodegree program ending approaches](#to-cheer-them-up-when-their-nanodegree-program-ending-approaches)
     - [Tests and Documentation](#tests-and-documentation)
         - [pre commit hook](#pre-commit-hook)
@@ -48,7 +50,7 @@ Specific guidelines by automation are listed below. They assume the application 
 
 ### Access to all automations
 
-- `docker exec -it udacity_sl_automation-php-1 bash -c "php ./bin/cli.php"`
+- list all automations => `docker exec -it udacity_sl_automation-php-1 bash -c "php ./bin/cli.php list --short"`
 
 ### Sending emails in bulk to students
 
@@ -62,6 +64,12 @@ Specific guidelines by automation are listed below. They assume the application 
 - you can then tweak the email templates to your liking furthermore
 
 #### ...who are behind on their Nanodegree program
+
+##### using the CLI
+
+- `docker exec -it udacity_sl_automation-php-1 bash -c "php ./bin/cli.php emails:behind-students"`
+
+##### using the dedicated PHP script
 
 - `docker exec -t udacity_sl_automation-php-1 bash -c "php ./bin/behind_students_email.php csv_path en_or_fr"`
 
