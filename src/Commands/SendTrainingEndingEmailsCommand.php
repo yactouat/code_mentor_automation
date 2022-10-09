@@ -6,25 +6,28 @@ use App\CsvExtractor;
 use App\Emailing\Mailer;
 use App\Intl;
 use App\Processes\BehindStudentsEmailProcess;
+use App\Processes\TrainingEndingEmailProcess;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Exception\InvalidArgumentException;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\ConsoleOutputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * this class is responsible for handling CLI input of sending emails to behind students
+ * this class is responsible for handling CLI input of sending all students a cheering up email before the end of the training
  * 
  */
-#[AsCommand(name: 'emails:behind-students')]
-class SendEmailsToBehindStudentsCommand extends Command
+#[AsCommand(name: 'emails:training-ending')]
+class SendTrainingEndingEmailsCommand extends Command
 {
 
     const CSV_ARG = 'csv';
     const LANG_ARG = 'language';
+    const ONLINE_RESOURCES = 'online-resources';
 
-    protected static $defaultDescription = 'Sends emails in bulk to students who are behind on their Nanodegree program.';
+    protected static $defaultDescription = 'Sends cheering up emails in bulk to all before the end of the Udacity training.';
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
@@ -36,6 +39,7 @@ class SendEmailsToBehindStudentsCommand extends Command
         // retrieving the input
         $csv = $input->getArgument(self::CSV_ARG);
         $language = $input->getArgument(self::LANG_ARG);
+        $onlineResources = null;
 
         // validation rounds
         $output->writeln('');
@@ -84,22 +88,32 @@ class SendEmailsToBehindStudentsCommand extends Command
             $output->writeln('');
             return Command::FAILURE;
         }
+        try {
+            $onlineResources = $input->getArgument(self::ONLINE_RESOURCES);
+        } catch (InvalidArgumentException $iae) {
+            $output->writeln([
+                '',
+                'skipping online resources content...',
+                '=============================================',
+                ''
+            ]);
+        }
         // EO validation rounds
 
         // starting to send emails
         $output->writeln([
             '',
-            'sending emails to behind students...',
-            '====================================',
+            'sending cheering up emails to all students...',
+            '=============================================',
             ''
         ]);
-        BehindStudentsEmailProcess::run($csv, $language);
+        TrainingEndingEmailProcess::run($csv, $language, $onlineResources);
 
         // feedback to user
         $output->writeln([
             '',
-            '==========================================',
-            'behind students emails successfully sent !',
+            '=============================================',
+            'cheering up emails emails successfully sent !',
             ''
         ]);
 
@@ -113,6 +127,7 @@ class SendEmailsToBehindStudentsCommand extends Command
             ->setHelp('This command allows you to send emails in bulk to students that are behind in their Nanodegree program using a Udacity session report CSV file.')
             ->addArgument(self::CSV_ARG, InputArgument::REQUIRED, 'Path to a valid session report existing CSV file.')
             ->addArgument(self::LANG_ARG, InputArgument::REQUIRED, 'fr OR en')
+            ->addArgument(self::ONLINE_RESOURCES, InputArgument::OPTIONAL, 'Path to a CSV containing online resources containing `Name,Description,URL` fields.')
         ;
     }
 

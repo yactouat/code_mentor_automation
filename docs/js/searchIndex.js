@@ -146,6 +146,51 @@ Search.appendIndex(
             "summary": "implements\u0020\u0060BehindStudentsEmailProcess\u0060\u0020business\u0020logic",
             "url": "classes/App-Processes-BehindStudentsEmailProcess.html#method_run"
         },                {
+            "fqsen": "\\App\\Commands\\SendTrainingEndingEmailsCommand",
+            "name": "SendTrainingEndingEmailsCommand",
+            "summary": "this\u0020class\u0020is\u0020responsible\u0020for\u0020handling\u0020CLI\u0020input\u0020of\u0020sending\u0020all\u0020students\u0020a\u0020cheering\u0020up\u0020email\u0020before\u0020the\u0020end\u0020of\u0020the\u0020training",
+            "url": "classes/App-Commands-SendTrainingEndingEmailsCommand.html"
+        },                {
+            "fqsen": "\\App\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003Aexecute\u0028\u0029",
+            "name": "execute",
+            "summary": "",
+            "url": "classes/App-Commands-SendTrainingEndingEmailsCommand.html#method_execute"
+        },                {
+            "fqsen": "\\App\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003Aconfigure\u0028\u0029",
+            "name": "configure",
+            "summary": "",
+            "url": "classes/App-Commands-SendTrainingEndingEmailsCommand.html#method_configure"
+        },                {
+            "fqsen": "\\App\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003ACSV_ARG",
+            "name": "CSV_ARG",
+            "summary": "",
+            "url": "classes/App-Commands-SendTrainingEndingEmailsCommand.html#constant_CSV_ARG"
+        },                {
+            "fqsen": "\\App\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003ALANG_ARG",
+            "name": "LANG_ARG",
+            "summary": "",
+            "url": "classes/App-Commands-SendTrainingEndingEmailsCommand.html#constant_LANG_ARG"
+        },                {
+            "fqsen": "\\App\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003AONLINE_RESOURCES",
+            "name": "ONLINE_RESOURCES",
+            "summary": "",
+            "url": "classes/App-Commands-SendTrainingEndingEmailsCommand.html#constant_ONLINE_RESOURCES"
+        },                {
+            "fqsen": "\\App\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003A\u0024defaultDescription",
+            "name": "defaultDescription",
+            "summary": "",
+            "url": "classes/App-Commands-SendTrainingEndingEmailsCommand.html#property_defaultDescription"
+        },                {
+            "fqsen": "\\App\\Processes\\TrainingEndingEmailProcess",
+            "name": "TrainingEndingEmailProcess",
+            "summary": "this\u0020class\u0020represents\u0020the\u0020business\u0020logic\u0020behind\u0020sending\u0020all\u0020students\u0020a\u0020cheering\u0020up\u0020email\u0020before\u0020the\u0020end\u0020of\u0020the\u0020training",
+            "url": "classes/App-Processes-TrainingEndingEmailProcess.html"
+        },                {
+            "fqsen": "\\App\\Processes\\TrainingEndingEmailProcess\u003A\u003Arun\u0028\u0029",
+            "name": "run",
+            "summary": "implements\u0020\u0060TrainingEndingEmailProcess\u0060\u0020business\u0020logic",
+            "url": "classes/App-Processes-TrainingEndingEmailProcess.html#method_run"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",

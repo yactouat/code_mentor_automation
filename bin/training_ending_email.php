@@ -19,10 +19,7 @@
  */
 
 require_once "./bin/NonCLIShared.php";
-use App\CsvExtractor;
-use App\Emailing\Emails;
-use App\Emailing\Mailer;
-use App\Models\OnlineResourceModel;
+use App\Processes\TrainingEndingEmailProcess;
 
 // parsing command line arguments
 $csv = $argv[1] ?? null;
@@ -31,28 +28,6 @@ $onlineResources = $argv[3] ?? null;
 
 // validation rounds
 NonCLIShared::runCommonValidationRounds($csv, $language);
-try {
-    if (!is_null($onlineResources)) {
-        $onlineResources = CsvExtractor::getCSVData($onlineResources, OnlineResourceModel::getFields());
-    }
-} catch (\Throwable $th) {
-    $onlineResources = null;
-}
-
-// get all students coordinates (first and last name, email)
-$studentsCoordinates = CsvExtractor::getAllStudentsCoordinates($csv);
-$subject = $language == "fr" ? "La fin de notre formation Udacity approche !": "The end of our Udacity training session is near !";
-
-// sending emails loop
-$count = 1;
-foreach ($studentsCoordinates as $student) {
-    Mailer::sendEmail(
-        $student["Email"],
-        $subject,
-        Emails::getTrainingEndingEmailFormatted($language, $student["First Name"], $student["Last Name"], $onlineResources)
-    );
-    echo PHP_EOL."sent email ".$count." out of ".count($studentsCoordinates).PHP_EOL;
-    $count++;
-}
+TrainingEndingEmailProcess::run($csv, $language, $onlineResources);
 
 exit(0);

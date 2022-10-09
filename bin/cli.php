@@ -12,6 +12,7 @@ $rootDir = dirname(__DIR__);
 require_once $rootDir."/vendor/autoload.php";
 
 use App\Commands\SendEmailsToBehindStudentsCommand;
+use App\Commands\SendTrainingEndingEmailsCommand;
 use Symfony\Component\Console\Application;
 
 $application = new Application();
@@ -20,6 +21,6 @@ $application = new Application();
 // ! if options are in order, check out https://symfony.com/doc/current/console/input.html#using-command-options
 // ! to ask questions to the user, check out https://symfony.com/doc/current/components/console/helpers/questionhelper.html 
 $application->add(new SendEmailsToBehindStudentsCommand());
-// TODO use this for online resources in training ending command => ->addArgument('last_name', InputArgument::OPTIONAL, 'Your last name?')
+$application->add(new SendTrainingEndingEmailsCommand());
 
 $application->run();

@@ -10,8 +10,10 @@
         - [Sending emails in bulk to students](#sending-emails-in-bulk-to-students)
             - [who are behind on their Nanodegree program](#who-are-behind-on-their-nanodegree-program)
                 - [using the CLI](#using-the-cli)
-                - [using a PHP script](#using-a-php-script)
+                - [using the dedicated PHP script](#using-the-dedicated-php-script)
             - [to cheer them up when their Nanodegree program ending approaches](#to-cheer-them-up-when-their-nanodegree-program-ending-approaches)
+                - [using the CLI](#using-the-cli)
+                - [using the dedicated PHP script](#using-the-dedicated-php-script)
     - [Tests and Documentation](#tests-and-documentation)
         - [pre commit hook](#pre-commit-hook)
         - [Tests](#tests)
@@ -67,7 +69,7 @@ Specific guidelines by automation are listed below. They assume the application 
 
 ##### using the CLI
 
-- `docker exec -it udacity_sl_automation-php-1 bash -c "php ./bin/cli.php emails:behind-students"`
+- `docker exec -it udacity_sl_automation-php-1 bash -c "php ./bin/cli.php emails:behind-students csv_path en_or_fr"`
 
 ##### using the dedicated PHP script
 
@@ -75,8 +77,14 @@ Specific guidelines by automation are listed below. They assume the application 
 
 #### ...to cheer them up when their Nanodegree program ending approaches
 
+##### using the CLI
+
+- `docker exec -it udacity_sl_automation-php-1 bash -c "php ./bin/cli.php emails:training-ending csv_path en_or_fr"`
+
+##### using the dedicated PHP script
+
 - `docker exec -t udacity_sl_automation-php-1 bash -c "php ./bin/training_ending_email.php csv_path en_or_fr"`
-- with additional online resource => `docker exec -t udacity_sl_automation-php-1 bash -c "php ./bin/training_ending_email.php csv_path en_or_fr resources_csv_path"`
+- with additional online resources => `docker exec -t udacity_sl_automation-php-1 bash -c "php ./bin/training_ending_email.php csv_path en_or_fr resources_csv_path"`
 
 ## Tests and Documentation
 
