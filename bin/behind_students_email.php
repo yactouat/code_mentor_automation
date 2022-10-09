@@ -18,9 +18,7 @@
  */
 
 require_once "./bin/NonCLIShared.php";
-use App\CsvExtractor;
-use App\Emailing\Emails;
-use App\Emailing\Mailer;
+use App\Processes\BehindStudentsEmailProcess;
 
 // parsing command line arguments
 $csv = $argv[1] ?? null;
@@ -28,20 +26,6 @@ $language = $argv[2] ?? null;
 
 NonCLIShared::runCommonValidationRounds($csv, $language);
 
-// get students who are behind coordinates (first and last name, email)
-$behindStudentsCoordinates = CsvExtractor::getBehindStudentsCoordinates($csv);
-$subject = $language == "fr" ? "Session Connect Udacity": "Udacity Connect session";
-
-// sending emails loop
-$count = 1;
-foreach ($behindStudentsCoordinates as $student) {
-    Mailer::sendEmail(
-        $student["Email"],
-        $subject,
-        Emails::getBehindStudentEmailFormatted($language, $student["First Name"], $student["Last Name"])
-    );
-    echo PHP_EOL."sent email ".$count." out of ".count($behindStudentsCoordinates).PHP_EOL;
-    $count++;
-}
+BehindStudentsEmailProcess::run($csv, $language);
 
 exit(0);

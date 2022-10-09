@@ -136,6 +136,16 @@ Search.appendIndex(
             "summary": "checks\u0020if\u0020input\u0020language\u0020is\u0020allowed\u0020in\u0020the\u0020app\u0027",
             "url": "classes/App-Intl.html#method_languageIsAllowed"
         },                {
+            "fqsen": "\\App\\Processes\\BehindStudentsEmailProcess",
+            "name": "BehindStudentsEmailProcess",
+            "summary": "this\u0020class\u0020represents\u0020the\u0020business\u0020logic\u0020behind\u0020sending\u0020students\u0020behind\u0020emails",
+            "url": "classes/App-Processes-BehindStudentsEmailProcess.html"
+        },                {
+            "fqsen": "\\App\\Processes\\BehindStudentsEmailProcess\u003A\u003Arun\u0028\u0029",
+            "name": "run",
+            "summary": "implements\u0020\u0060BehindStudentsEmailProcess\u0060\u0020business\u0020logic",
+            "url": "classes/App-Processes-BehindStudentsEmailProcess.html#method_run"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -160,5 +170,10 @@ Search.appendIndex(
             "name": "Models",
             "summary": "",
             "url": "namespaces/app-models.html"
+        },                {
+            "fqsen": "\\App\\Processes",
+            "name": "Processes",
+            "summary": "",
+            "url": "namespaces/app-processes.html"
         }            ]
 );

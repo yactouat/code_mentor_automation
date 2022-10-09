@@ -5,6 +5,7 @@ namespace App\Commands;
 use App\CsvExtractor;
 use App\Emailing\Mailer;
 use App\Intl;
+use App\Processes\BehindStudentsEmailProcess;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -15,7 +16,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * this class is responsible for handling CLI input of sending emails to behind students
  * 
- * TODO
  */
 #[AsCommand(name: 'emails:behind-students')]
 class SendEmailsToBehindStudentsCommand extends Command
@@ -40,7 +40,7 @@ class SendEmailsToBehindStudentsCommand extends Command
         // validation rounds
         $output->writeln('');
         try {
-            Mailer::checkMsmtprc("/test");
+            Mailer::checkMsmtprc();
         } catch (\Exception $e) {
             $output->writeln(
                 '<error>emailing conf: '
@@ -87,17 +87,23 @@ class SendEmailsToBehindStudentsCommand extends Command
         // EO validation rounds
 
         // starting to send emails
-        $introSection = $output->section();
-        $introSection->writeln([
+        $output->writeln([
             '',
             'sending emails to behind students...',
             '====================================',
             ''
         ]);
+        BehindStudentsEmailProcess::run($csv, $language);
 
-        // TODO `$introSection->clear()` when all emails are sent
+        // feedback to user
+        $output->writeln([
+            '',
+            '====================================',
+            'behind students emails successfully sent !',
+            ''
+        ]);
+
         return Command::SUCCESS;
-
     }
 
     protected function configure(): void
