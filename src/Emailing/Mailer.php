@@ -5,7 +5,7 @@ namespace App\Emailing;
 /**
  * class responsible for sending emails
  * 
- * the environment must be set so that emails can be actually sent (for instance with the `mailutils msmtp msmtp-mta` packages)
+ * the environment must be set so that emails can be actually sent with the `mailutils msmtp msmtp-mta` packages
  * 
  */
 final class Mailer
@@ -19,10 +19,19 @@ final class Mailer
      * @param string $recipientEmail
      * @param string $subject
      * @param string $htmlEmail better rendering if you pass HTML formatted text in there
+     * @param string $msmtprcPath the path to your `msmtp`config
      * 
      * @return void actually sends the email
      */
-    public static function sendEmail(string $recipientEmail, string $subject, string $htmlEmail): void {
+    public static function sendEmail(
+        string $recipientEmail, 
+        string $subject, 
+        string $htmlEmail,
+        string $msmtprcPath = '/etc/msmtprc'
+    ): void {
+        if (!file_exists($msmtprcPath)) {
+            throw new \Exception("You have not set `msmtp` correctly", 1);
+        }
         $delivered = mail(
             $recipientEmail,
             $subject,

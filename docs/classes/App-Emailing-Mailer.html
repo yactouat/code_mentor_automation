@@ -129,7 +129,7 @@
 
             <p class="phpdocumentor-summary">class responsible for sending emails</p>
 
-    <section class="phpdocumentor-description"><p>the environment must be set so that emails can be actually sent (for instance with the <code class="prettyprint">mailutils msmtp msmtp-mta</code> packages)</p>
+    <section class="phpdocumentor-description"><p>the environment must be set so that emails can be actually sent with the <code class="prettyprint">mailutils msmtp msmtp-mta</code> packages</p>
 </section>
 
 
@@ -178,7 +178,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Emailing/Mailer.php"><a href="files/src-emailing-mailer.html"><abbr title="src/Emailing/Mailer.php">Mailer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 
     </aside>
 
@@ -186,7 +186,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">sendEmail</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$recipientEmail</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$subject</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$htmlEmail</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">sendEmail</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$recipientEmail</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$subject</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$htmlEmail</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$msmtprcPath</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;/etc/msmtprc&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
         <section class="phpdocumentor-description"><p>sent emails are HTML emails</p>
 </section>
@@ -213,6 +213,15 @@
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>better rendering if you pass HTML formatted text in there</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$msmtprcPath</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;/etc/msmtprc&#039;</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>the path to your <code class="prettyprint">msmtp</code>config</p>
 </section>
 
             </dd>
