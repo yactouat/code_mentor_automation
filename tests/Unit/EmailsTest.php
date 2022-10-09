@@ -34,25 +34,25 @@ final class EmailsTest extends TestCase
 
     public function testTrainingEndingEmailTemplateInEnglish() {
         $expected = "Hey %s %s 👋 !<br>How are you ? I'm writing you this email as our Udacity training session will end soon,<br>I want to remind you that the Udacity team is behind you in your efforts and that your learning is also a collective one ! We're here to help 😉<br>So please keep asking questions to the session leads and to your peers on Slack !<br>There is still time to learn tons of stuff while you're enrolled in this training, so please enjoy it and, even better, you can still finish it 🚀<br>I hope to see you at our next session and I wish you all the best 😉<br>Kind Regards,<br>Yacine";
-        $actual = Emails::getTrainingEndingTemplate();
+        $actual = Emails::getTrainingEndingEmailTemplate();
         $this->assertEquals($expected, $actual);
     }
 
     public function testTrainingEndingEmailTemplateInFrench() {
         $expected = "Bonjour %s %s 👋 !<br>Comment allez-vous ? Je vous écris cet email à l'occasion de la fin prochaine de notre session de formation,<br>Je veux vous rappeler que l'équipe de Udacity est derrière vous et vous soutient dans vos efforts et que votre apprentissage est aussi un apprentissage collectif !<br>Continuez à poser des questions aux session leads et à vos pairs sur Slack !<br>Il vous reste encore du temps pour apprendre énormément de choses tant que vous êtes inscrit dans cette formation et, encore mieux, vous pouvez encore terminer le parcours 🚀<br>J'espère vous voir à notre prochaine session et je vous souhaite le meilleur 😉<br>Bien Cordialement,<br>Yacine";
-        $actual = Emails::getTrainingEndingTemplate("fr");
+        $actual = Emails::getTrainingEndingEmailTemplate("fr");
         $this->assertEquals($expected, $actual);
     }
 
     public function testTrainingEndingEmailFromattedInEnglish() {
         $expected = "Hey Test2 FirstName Test2 LastName 👋 !<br>How are you ? I'm writing you this email as our Udacity training session will end soon,<br>I want to remind you that the Udacity team is behind you in your efforts and that your learning is also a collective one ! We're here to help 😉<br>So please keep asking questions to the session leads and to your peers on Slack !<br>There is still time to learn tons of stuff while you're enrolled in this training, so please enjoy it and, even better, you can still finish it 🚀<br>I hope to see you at our next session and I wish you all the best 😉<br>Kind Regards,<br>Yacine";
-        $actual = Emails::getTrainingEndingFormatted("en", "Test2 FirstName", "Test2 LastName");
+        $actual = Emails::getTrainingEndingEmailFormatted("en", "Test2 FirstName", "Test2 LastName");
         $this->assertEquals($expected, $actual);
     }
 
     public function testTrainingEndingEmailFromattedInFrench() {
         $expected = "Bonjour Test2 FirstName Test2 LastName 👋 !<br>Comment allez-vous ? Je vous écris cet email à l'occasion de la fin prochaine de notre session de formation,<br>Je veux vous rappeler que l'équipe de Udacity est derrière vous et vous soutient dans vos efforts et que votre apprentissage est aussi un apprentissage collectif !<br>Continuez à poser des questions aux session leads et à vos pairs sur Slack !<br>Il vous reste encore du temps pour apprendre énormément de choses tant que vous êtes inscrit dans cette formation et, encore mieux, vous pouvez encore terminer le parcours 🚀<br>J'espère vous voir à notre prochaine session et je vous souhaite le meilleur 😉<br>Bien Cordialement,<br>Yacine";
-        $actual = Emails::getTrainingEndingFormatted("fr", "Test2 FirstName", "Test2 LastName");
+        $actual = Emails::getTrainingEndingEmailFormatted("fr", "Test2 FirstName", "Test2 LastName");
         $this->assertEquals($expected, $actual);
     }    
 

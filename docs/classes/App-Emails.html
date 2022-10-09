@@ -149,14 +149,14 @@
 <dd>gets the template for students who are behind on their nanodegree track</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Emails.html#method_getTrainingEndingFormatted">getTrainingEndingFormatted()</a>
+    <a href="classes/App-Emails.html#method_getTrainingEndingEmailFormatted">getTrainingEndingEmailFormatted()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
 <dd>gets the email text for a given student to send when the end of the training is near</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Emails.html#method_getTrainingEndingTemplate">getTrainingEndingTemplate()</a>
+    <a href="classes/App-Emails.html#method_getTrainingEndingEmailTemplate">getTrainingEndingEmailTemplate()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
@@ -297,9 +297,9 @@
             -public
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getTrainingEndingFormatted">
-        getTrainingEndingFormatted()
-        <a href="classes/App-Emails.html#method_getTrainingEndingFormatted" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getTrainingEndingEmailFormatted">
+        getTrainingEndingEmailFormatted()
+        <a href="classes/App-Emails.html#method_getTrainingEndingEmailFormatted" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Emails.php"><a href="files/src-emails.html"><abbr title="src/Emails.php">Emails.php</abbr></a></abbr>
@@ -312,7 +312,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">getTrainingEndingFormatted</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$language</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$firstName</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$lastName</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">getTrainingEndingEmailFormatted</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$language</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$firstName</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$lastName</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
         <section class="phpdocumentor-description"><p>using a the students behind template email, replaces the placeholder values of the template and gets you the text of the actual email</p>
 </section>
@@ -364,9 +364,9 @@
             -public
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getTrainingEndingTemplate">
-        getTrainingEndingTemplate()
-        <a href="classes/App-Emails.html#method_getTrainingEndingTemplate" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getTrainingEndingEmailTemplate">
+        getTrainingEndingEmailTemplate()
+        <a href="classes/App-Emails.html#method_getTrainingEndingEmailTemplate" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Emails.php"><a href="files/src-emails.html"><abbr title="src/Emails.php">Emails.php</abbr></a></abbr>
@@ -379,7 +379,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">getTrainingEndingTemplate</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$language</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&quot;en&quot;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">getTrainingEndingEmailTemplate</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$language</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&quot;en&quot;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
         <section class="phpdocumentor-description"><p>this template contains placeholder values to fill on sending an actual personalized email</p>
 </section>

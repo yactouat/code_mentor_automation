@@ -6,7 +6,9 @@
     - [What is this ?](#what-is-this-)
     - [How to use](#how-to-use)
         - [Prerequisites](#prerequisites)
-        - [Sending emails in bulk to students who are behind on their Nanodegree program](#sending-emails-in-bulk-to-students-who-are-behind-on-their-nanodegree-program)
+        - [Sending emails in bulk to students](#sending-emails-in-bulk-to-students)
+            - [who are behind on their Nanodegree program](#who-are-behind-on-their-nanodegree-program)
+            - [to cheer them up when their Nanodegree program ending approaches](#to-cheer-them-up-when-their-nanodegree-program-ending-approaches)
     - [Tests and Documentation](#tests-and-documentation)
         - [pre commit hook](#pre-commit-hook)
         - [Tests](#tests)
@@ -43,7 +45,7 @@ The project is starting so it has rough edges, but it's functional !
 
 Specific guidelines by automation are listed below. They assume the application stack is running.
 
-### Sending emails in bulk to students who are behind on their Nanodegree program
+### Sending emails in bulk to students
 
 - copy the contents of the `docker/msmtprc.example` to a `docker/msmtprc` file, **HEADS UP** if you copy it somewhere else don't forget to gitignore it as you dont want anybody on the Internet to send emails on your behalf ;)
 - create an app' password for your Google account, you can find guidelines on how to do so in <https://dev.to/yactouat/send-gmail-emails-from-a-dockerized-php-app-the-easy-and-free-way-4jn7>
@@ -53,7 +55,14 @@ Specific guidelines by automation are listed below. They assume the application 
 - put this report wherever you like (for instance in the `data` folder, that already has its content git ignored)
 - ⚠️ IMPORTANT: you need to change the templates in Emails.php to replace all `Yacine` values by your first name in `src/Emails.php`
 - you can then tweak the email templates to your liking furthermore
-- `docker exec -t udacity_sd_automation-php-1 bash -c "php ./bin/behind_students_email.php csv_path en_or_fr"`
+
+#### ...who are behind on their Nanodegree program
+
+- `docker exec -t udacity_sl_automation-php-1 bash -c "php ./bin/behind_students_email.php csv_path en_or_fr"`
+
+#### ...to cheer them up when their Nanodegree program ending approaches
+
+- `docker exec -t udacity_sl_automation-php-1 bash -c "php ./bin/training_ending_email.php csv_path en_or_fr"`
 
 ## Tests and Documentation
 
@@ -67,6 +76,7 @@ Specific guidelines by automation are listed below. They assume the application 
 
 - it's preferable to have the application stack up and running (`docker compose up`) before running tests (so we are sure that the environment remains the same) => `docker exec -t udacity_sl_automation-php-1 bash -c "/udacity_sl_automation/vendor/bin/phpunit /udacity_sl_automation/tests"`
 - you can also open a terminal in the PHP container and run `./vendor/bin/phpunit tests`
+- moreover there is a `tests/fixtures/integration-test-session-report.csv` file (which contains my email, so feel free to replace that) if you want to be sure the real thing actually works as expected when it comes to sending emails
 
 ### Documentation
 

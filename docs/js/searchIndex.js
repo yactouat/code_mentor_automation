@@ -41,15 +41,15 @@ Search.appendIndex(
             "summary": "gets\u0020the\u0020email\u0020text\u0020for\u0020a\u0020given\u0020student\u0020who\u0020is\u0020behind\u0020hers\/his\u0020nanodegree\u0020track",
             "url": "classes/App-Emails.html#method_getBehindStudentEmailFormatted"
         },                {
-            "fqsen": "\\App\\Emails\u003A\u003AgetTrainingEndingTemplate\u0028\u0029",
-            "name": "getTrainingEndingTemplate",
+            "fqsen": "\\App\\Emails\u003A\u003AgetTrainingEndingEmailTemplate\u0028\u0029",
+            "name": "getTrainingEndingEmailTemplate",
             "summary": "gets\u0020the\u0020template\u0020for\u0020the\u0020email\u0020to\u0020send\u0020to\u0020students\u0020when\u0020the\u0020end\u0020of\u0020the\u0020training\u0020is\u0020near",
-            "url": "classes/App-Emails.html#method_getTrainingEndingTemplate"
+            "url": "classes/App-Emails.html#method_getTrainingEndingEmailTemplate"
         },                {
-            "fqsen": "\\App\\Emails\u003A\u003AgetTrainingEndingFormatted\u0028\u0029",
-            "name": "getTrainingEndingFormatted",
+            "fqsen": "\\App\\Emails\u003A\u003AgetTrainingEndingEmailFormatted\u0028\u0029",
+            "name": "getTrainingEndingEmailFormatted",
             "summary": "gets\u0020the\u0020email\u0020text\u0020for\u0020a\u0020given\u0020student\u0020to\u0020send\u0020when\u0020the\u0020end\u0020of\u0020the\u0020training\u0020is\u0020near",
-            "url": "classes/App-Emails.html#method_getTrainingEndingFormatted"
+            "url": "classes/App-Emails.html#method_getTrainingEndingEmailFormatted"
         },                {
             "fqsen": "\\App\\Mailer",
             "name": "Mailer",
