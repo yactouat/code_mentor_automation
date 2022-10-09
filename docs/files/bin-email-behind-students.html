@@ -90,7 +90,7 @@
     </ul>
 
     <article class="phpdocumentor-element -file">
-        <h2 class="phpdocumentor-content__title">email_behind_students.php</h2>
+        <h2 class="phpdocumentor-content__title">behind_students_email.php</h2>
 
             <p class="phpdocumentor-summary">automation responsible for sending emails in bulk to students who are behind on their Nanodegree program</p>
 
@@ -99,7 +99,7 @@
 and the session lead has a Gmail account
 and the session lead has created a <code class="prettyprint">docker/msmtprc</code> file and filled it with the relevant values,
 and the dockerized application stack is running,</li>
-<li>when the session lead runs <code class="prettyprint">docker exec -t udacity_sd_automation-php-1 bash -c &quot; php ./bin/email_behind_students.php csv_path en_or_fr&quot;</code>,</li>
+<li>when the session lead runs <code class="prettyprint">docker exec -t udacity_sd_automation-php-1 bash -c &quot; php ./bin/behind_students_email.php csv_path en_or_fr&quot;</code>,</li>
 <li>then a templated email reminding the student of his duty to show up at his Connect sessions is sent to him
 ! if you tweak this script, make sure that the students emails never leak for privacy reasons</li>
 <li>param1 =&gt; string $argv[1] first param' passed to the CLI script, must be a path to a valid session report existing CSV file</li>

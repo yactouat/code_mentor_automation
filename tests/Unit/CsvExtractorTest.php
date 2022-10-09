@@ -3,11 +3,12 @@
 namespace Tests\Unit;
 
 use App\CsvExtractor;
+use Exception;
 use PHPUnit\Framework\TestCase;
 
 final class CsvExtractorTest extends TestCase {
 
-    public function testGetCodeCSVRepr() {
+    public function testgetCSVData() {
         $inputCsvPath = "./tests/fixtures/valid-session-report-oneliner.csv";
         $expected = [
             [
@@ -28,7 +29,7 @@ final class CsvExtractorTest extends TestCase {
                 "Notes" =>  '[]'
             ]
         ];
-        $actual = CsvExtractor::getCodeCSVRepr($inputCsvPath);
+        $actual = CsvExtractor::getCSVData($inputCsvPath);
         $this->assertEquals($expected, $actual);
     }
 
@@ -63,6 +64,13 @@ final class CsvExtractorTest extends TestCase {
         ];
         $actual = CsvExtractor::getBehindStudentsCoordinates($inputCsvPath);
         $this->assertEquals($expected, $actual);
+    }
+
+    public function testGetCsvDataWithInvalidCSVThrows() {
+        $inputCsvPath = "./tests/fixtures/invalid.csv";
+        $this->expectException(Exception::class);
+        $this->expectExceptionMessage("Please provide a valid input CSV");
+        $actual = CsvExtractor::getCSVData($inputCsvPath);
     }
 
 }

@@ -51,7 +51,7 @@ Specific guidelines by automation are listed below. They assume the application 
 - generate the CSV report on the same dashboard
 - put this report wherever you like (for instance in the `data` folder, that already has its content git ignored)
 - tweak the email templates to your liking in `src/Emails.php`
-- `docker exec -t udacity_sd_automation-php-1 bash -c "php ./bin/email_behind_students.php csv_path en_or_fr"`
+- `docker exec -t udacity_sd_automation-php-1 bash -c "php ./bin/behind_students_email.php csv_path en_or_fr"`
 
 ## Tests and Documentation
 

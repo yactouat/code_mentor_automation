@@ -11,10 +11,10 @@ Search.appendIndex(
             "summary": "class\u0020responsible\u0020for\u0020extracting\u0020data\u0020from\u0020session\u0020reports\u0020CSVs",
             "url": "classes/App-CsvExtractor.html"
         },                {
-            "fqsen": "\\App\\CsvExtractor\u003A\u003AgetCodeCSVRepr\u0028\u0029",
-            "name": "getCodeCSVRepr",
+            "fqsen": "\\App\\CsvExtractor\u003A\u003AgetCSVData\u0028\u0029",
+            "name": "getCSVData",
             "summary": "gets\u0020an\u0020array\u002Dlike\u0020representation\u0020of\u0020a\u0020CSV\u0020file\u0020data",
-            "url": "classes/App-CsvExtractor.html#method_getCodeCSVRepr"
+            "url": "classes/App-CsvExtractor.html#method_getCSVData"
         },                {
             "fqsen": "\\App\\CsvExtractor\u003A\u003AgetBehindStudentsCoordinates\u0028\u0029",
             "name": "getBehindStudentsCoordinates",
