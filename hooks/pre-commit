@@ -12,24 +12,38 @@
 
 echo PHP_EOL."Running PHPUnit tests...".PHP_EOL;
 
-exec('docker exec -t udacity_sl_automation-php-1 bash -c "/udacity_sl_automation/vendor/bin/phpunit /udacity_sl_automation/tests"', $output, $returnCode);
+exec(
+    'docker exec -t udacity_sl_automation-php-1 bash -c "/udacity_sl_automation/vendor/bin/phpunit /udacity_sl_automation/tests"', 
+    $phpUnitOutput, 
+    $phpUnitReturnCode
+);
 
-echo PHP_EOL . implode(PHP_EOL, $output) . PHP_EOL;
+echo PHP_EOL . implode(PHP_EOL, $phpUnitOutput) . PHP_EOL;
 
-if ($returnCode !== 0) {
+if ($phpUnitReturnCode !== 0) {
     echo "PHPUnit tests did not pass, aborting commit..." . PHP_EOL;
     exit(1);
 }
 
 echo PHP_EOL."generating PHP docs...".PHP_EOL;
 
-exec('php phpDocumentor.phar', $output2, $returnCode2);
+if (!file_exists('phpDocumentor.phar')) {
+    exec('wget https://phpdoc.org/phpDocumentor.phar', $wgetPhpDocumentorOutput, $wgetPhpDocumentorReturnCode);
+    if ($wgetPhpDocumentorReturnCode !== 0) {
+        echo "could not obtain PHPDocumentor, aborting commit..." . PHP_EOL;
+        exit(1);
+    }
+}
+exec('php phpDocumentor.phar', $genPhpDocsOutput, $genPhpDocsReturnCode);
 
-echo PHP_EOL . implode(PHP_EOL, $output2) . PHP_EOL;
+echo PHP_EOL . implode(PHP_EOL, $genPhpDocsOutput) . PHP_EOL;
 
-if ($returnCode2 !== 0) {
+if ($genPhpDocsReturnCode !== 0) {
     echo "could not generate PHP docs, aborting commit..." . PHP_EOL;
     exit(1);
 }
+
+// adding generated docs in current commit
+exec('git add .');
 
 exit(0);

@@ -95,34 +95,25 @@
                     <ul class="phpdocumentor-breadcrumbs">
     </ul>
 
-    <article class="phpdocumentor-element -class">
-        <h2 class="phpdocumentor-content__title">
-    BinExecutablesList
+    <article class="phpdocumentor-element -file">
+        <h2 class="phpdocumentor-content__title">behind_students_email.php</h2>
 
-    
-            <div class="phpdocumentor-element__package">
-            in package
-            <ul class="phpdocumentor-breadcrumbs">
-                                    <li class="phpdocumentor-breadcrumb"><a href="packages/bin.html">bin</a></li>
-                            </ul>
-        </div>
-    
-    
-    </h2>
-
-        <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="bin/BinExecutablesList.php"><a href="files/bin-binexecutableslist.html"><abbr title="bin/BinExecutablesList.php">BinExecutablesList.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">11</span>
-
-    </aside>
-
-            <p class="phpdocumentor-summary">List of all executable automations present in the `./bin` folder</p>
+            <p class="phpdocumentor-summary">automation responsible for sending emails in bulk to students who are behind on their Nanodegree program</p>
 
     <section class="phpdocumentor-description"><ul>
-<li>
-<a href="files/bin-email-behind-students.html"><code class="prettyprint">./bin/behind_students_email.php</code></a>
+<li>given an existing CSV path of a session report generated from the Udacity session lead dashboard,
+and the session lead has a Gmail account
+and the session lead has created a <code class="prettyprint">docker/msmtprc</code> file and filled it with the relevant values,
+and the dockerized application stack is running,</li>
+<li>when the session lead runs <code class="prettyprint">docker exec -t udacity_sl_automation-php-1 bash -c &quot; php ./bin/behind_students_email.php csv_path en_or_fr&quot;</code>,</li>
+<li>then a templated email reminding the student of his duty to show up at his Connect sessions is sent to him/her
+! if you tweak this script, make sure that the students emails never leak for privacy reasons</li>
+<li>param1 =&gt; string $argv[1] first param' passed to the CLI script, must be a path to a valid session report existing CSV file</li>
+<li>param2 =&gt; string $argv[2] the language in which the email is sent, possible values are:
+- <code class="prettyprint">en</code>
+- <code class="prettyprint">fr</code>
 </li>
+<li>this script will send actual emails !</li>
 </ul>
 </section>
 
@@ -139,70 +130,6 @@
         
 
         
-
-        
-        
-    <script type="text/javascript">
-        function loadExternalCodeSnippets(line) {
-            Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach((pre) => {
-                var src = pre.getAttribute('data-src').replace( /\\/g, '/');
-                var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
-                var language = 'php';
-
-                var code = document.createElement('code');
-                code.className = 'language-' + language;
-
-                pre.textContent = '';
-
-                pre.setAttribute('data-line', line)
-                code.textContent = 'Loading…';
-
-                pre.appendChild(code);
-
-                var xhr = new XMLHttpRequest();
-
-                xhr.open('GET', src, true);
-
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState == 4) {
-
-                        if (xhr.status < 400 && xhr.responseText) {
-                            code.textContent = xhr.responseText;
-
-                            Prism.highlightElement(code);
-                        }
-                        else if (xhr.status >= 400) {
-                            code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
-                        }
-                        else {
-                            code.textContent = '✖ Error: File does not exist, is empty or trying to view from localhost';
-                        }
-                    }
-                };
-
-                xhr.send(null);
-            });
-        }
-
-        var modals = document.querySelectorAll("[data-modal]");
-
-        modals.forEach(function (trigger) {
-            trigger.addEventListener("click", function (event) {
-                //event.preventDefault();
-                const modal = document.getElementById(trigger.dataset.modal);
-                modal.classList.add("phpdocumentor-modal__open");
-                loadExternalCodeSnippets(trigger.dataset.line)
-                const exits = modal.querySelectorAll("[data-exit-button]");
-                exits.forEach(function (exit) {
-                    exit.addEventListener("click", function (event) {
-                        event.preventDefault();
-                        modal.classList.remove("phpdocumentor-modal__open");
-                    });
-                });
-            });
-        });
-    </script>
-
     </article>
                 <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
@@ -217,7 +144,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/BinExecutablesList.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="files/bin-behind-students-email.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

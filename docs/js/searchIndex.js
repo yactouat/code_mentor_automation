@@ -11,15 +11,20 @@ Search.appendIndex(
             "summary": "class\u0020responsible\u0020for\u0020extracting\u0020data\u0020from\u0020session\u0020reports\u0020CSVs",
             "url": "classes/App-CsvExtractor.html"
         },                {
-            "fqsen": "\\App\\CsvExtractor\u003A\u003AgetCodeCSVRepr\u0028\u0029",
-            "name": "getCodeCSVRepr",
+            "fqsen": "\\App\\CsvExtractor\u003A\u003AgetCSVData\u0028\u0029",
+            "name": "getCSVData",
             "summary": "gets\u0020an\u0020array\u002Dlike\u0020representation\u0020of\u0020a\u0020CSV\u0020file\u0020data",
-            "url": "classes/App-CsvExtractor.html#method_getCodeCSVRepr"
+            "url": "classes/App-CsvExtractor.html#method_getCSVData"
         },                {
             "fqsen": "\\App\\CsvExtractor\u003A\u003AgetBehindStudentsCoordinates\u0028\u0029",
             "name": "getBehindStudentsCoordinates",
             "summary": "extracts\u0020students\u0020coordinates\u0020from\u0020a\u0020Udacity\u0020session\u0020report,\u0020scoped\u0020to\u0020students\u0020that\u0020are\u0020behind\u0020on\u0020their\u0020Nanodegree\u0020track",
             "url": "classes/App-CsvExtractor.html#method_getBehindStudentsCoordinates"
+        },                {
+            "fqsen": "\\App\\CsvExtractor\u003A\u003AgetAllStudentsCoordinates\u0028\u0029",
+            "name": "getAllStudentsCoordinates",
+            "summary": "extracts\u0020all\u0020students\u0020coordinates\u0020from\u0020a\u0020Udacity\u0020session\u0020report",
+            "url": "classes/App-CsvExtractor.html#method_getAllStudentsCoordinates"
         },                {
             "fqsen": "\\App\\Emails",
             "name": "Emails",
@@ -36,6 +41,16 @@ Search.appendIndex(
             "summary": "gets\u0020the\u0020email\u0020text\u0020for\u0020a\u0020given\u0020student\u0020who\u0020is\u0020behind\u0020hers\/his\u0020nanodegree\u0020track",
             "url": "classes/App-Emails.html#method_getBehindStudentEmailFormatted"
         },                {
+            "fqsen": "\\App\\Emails\u003A\u003AgetTrainingEndingEmailTemplate\u0028\u0029",
+            "name": "getTrainingEndingEmailTemplate",
+            "summary": "gets\u0020the\u0020template\u0020for\u0020the\u0020email\u0020to\u0020send\u0020to\u0020students\u0020when\u0020the\u0020end\u0020of\u0020the\u0020training\u0020is\u0020near",
+            "url": "classes/App-Emails.html#method_getTrainingEndingEmailTemplate"
+        },                {
+            "fqsen": "\\App\\Emails\u003A\u003AgetTrainingEndingEmailFormatted\u0028\u0029",
+            "name": "getTrainingEndingEmailFormatted",
+            "summary": "gets\u0020the\u0020email\u0020text\u0020for\u0020a\u0020given\u0020student\u0020to\u0020send\u0020when\u0020the\u0020end\u0020of\u0020the\u0020training\u0020is\u0020near",
+            "url": "classes/App-Emails.html#method_getTrainingEndingEmailFormatted"
+        },                {
             "fqsen": "\\App\\Mailer",
             "name": "Mailer",
             "summary": "class\u0020responsible\u0020for\u0020sending\u0020emails",
@@ -46,6 +61,26 @@ Search.appendIndex(
             "summary": "sends\u0020an\u0020email",
             "url": "classes/App-Mailer.html#method_sendEmail"
         },                {
+            "fqsen": "\\App\\Models\\OnlineResourceModel",
+            "name": "OnlineResourceModel",
+            "summary": "",
+            "url": "classes/App-Models-OnlineResourceModel.html"
+        },                {
+            "fqsen": "\\App\\Models\\OnlineResourceModel\u003A\u003AgetFields\u0028\u0029",
+            "name": "getFields",
+            "summary": "",
+            "url": "classes/App-Models-OnlineResourceModel.html#method_getFields"
+        },                {
+            "fqsen": "\\App\\Models\\StudentModel",
+            "name": "StudentModel",
+            "summary": "",
+            "url": "classes/App-Models-StudentModel.html"
+        },                {
+            "fqsen": "\\App\\Models\\StudentModel\u003A\u003AgetFields\u0028\u0029",
+            "name": "getFields",
+            "summary": "",
+            "url": "classes/App-Models-StudentModel.html#method_getFields"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -55,5 +90,10 @@ Search.appendIndex(
             "name": "App",
             "summary": "",
             "url": "namespaces/app.html"
+        },                {
+            "fqsen": "\\App\\Models",
+            "name": "Models",
+            "summary": "",
+            "url": "namespaces/app-models.html"
         }            ]
 );
