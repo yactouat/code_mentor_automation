@@ -2,6 +2,7 @@
 
 namespace App\Commands;
 
+use App\CsvExtractor;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -12,7 +13,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * this class is responsible for handling CLI input of sending emails to behind students
  * 
- * TODO test
  */
 #[AsCommand(name: 'emails:behind-students')]
 class SendEmailsToBehindStudentsCommand extends Command
@@ -31,6 +31,23 @@ class SendEmailsToBehindStudentsCommand extends Command
         }
 
         // TODO ... put here the code to send emails to behind students
+
+        // validation rounds
+        $csv = $input->getArgument(self::CSV_ARG);
+        try {
+            CsvExtractor::checkFileExistence($csv);
+        } catch (\Exception $e) {
+            $output->writeln(
+                self::CSV_ARG
+                .': '.$input->getArgument(self::CSV_ARG)
+                .' - '
+                .$e->getMessage()
+            );
+            return Command::FAILURE;
+        }
+        $language = $input->getArgument(self::LANG_ARG);
+
+        // starting to send emails
         $introSection = $output->section();
         $introSection->writeln([
             "sending emails to behind students...",
@@ -38,18 +55,11 @@ class SendEmailsToBehindStudentsCommand extends Command
             ''
         ]);
 
-        $csv = $input->getArgument(self::CSV_ARG);
-        // TODO check if input CSV exists in dedicated method
-        $language = $input->getArgument(self::LANG_ARG);
-
         // TODO `$introSection->clear()` when all emails are sent
         return Command::SUCCESS;
 
         // TODO return this to indicate incorrect command usage; e.g. invalid options or missing arguments (it's equivalent to returning int(2))
         // return Command::INVALID
-
-        // TODO return this if some error happened during the execution
-        // return Command::FAILURE;
 
     }
 

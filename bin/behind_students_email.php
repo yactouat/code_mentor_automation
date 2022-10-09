@@ -17,11 +17,7 @@
  * 
  */
 
-// setting root dir
-$rootDir = dirname(__DIR__);
-
-// loading deps
-require_once $rootDir."/vendor/autoload.php";
+require_once "./bin/NonCLIShared.php";
 use App\CsvExtractor;
 use App\Emailing\Emails;
 use App\Emailing\Mailer;
@@ -30,21 +26,7 @@ use App\Emailing\Mailer;
 $csv = $argv[1] ?? null;
 $language = $argv[2] ?? null;
 
-// validation rounds
-if (is_null($csv) || is_null($language)) {
-    echo PHP_EOL."this script requires the path to the CSV as the first arg and the language (en or fr) as the second arg".PHP_EOL;
-    exit(1);
-}
-try {
-    CsvExtractor::checkFileExistence($csv);
-} catch (\Exception $e) {
-    echo PHP_EOL.$e->getMessage().PHP_EOL;
-    exit(1);
-}
-if (!in_array($language, ["en", "fr"])) {
-    echo PHP_EOL."allowed languages are en or fr".PHP_EOL;
-    exit(1);
-}
+NonCLIShared::runCommonValidationRounds($csv, $language);
 
 // get students who are behind coordinates (first and last name, email)
 $behindStudentsCoordinates = CsvExtractor::getBehindStudentsCoordinates($csv);

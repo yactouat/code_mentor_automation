@@ -18,11 +18,7 @@
  * 
  */
 
-// setting root dir
-$rootDir = dirname(__DIR__);
-
-// loading deps
-require_once $rootDir."/vendor/autoload.php";
+require_once "./bin/NonCLIShared.php";
 use App\CsvExtractor;
 use App\Emailing\Emails;
 use App\Emailing\Mailer;
@@ -34,16 +30,7 @@ $language = $argv[2] ?? null;
 $onlineResources = $argv[3] ?? null;
 
 // validation rounds
-if (is_null($csv) || is_null($language)) {
-    echo PHP_EOL."this script requires the path to the CSV as the first arg and the language (en or fr) as the second arg".PHP_EOL;
-    exit(1);
-}
-try {
-    CsvExtractor::checkFileExistence($csv);
-} catch (\Exception $e) {
-    echo PHP_EOL.$e->getMessage().PHP_EOL;
-    exit(1);
-}
+NonCLIShared::runCommonValidationRounds($csv, $language);
 try {
     if (!is_null($onlineResources)) {
         $onlineResources = CsvExtractor::getCSVData($onlineResources, OnlineResourceModel::getFields());

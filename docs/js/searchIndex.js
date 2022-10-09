@@ -1,11 +1,6 @@
 Search.appendIndex(
     [
                 {
-            "fqsen": "\\BinExecutablesList",
-            "name": "BinExecutablesList",
-            "summary": "List\u0020of\u0020all\u0020executable\u0020automations\u0020present\u0020in\u0020the\u0020\u0060.\/bin\u0060\u0020folder",
-            "url": "classes/BinExecutablesList.html"
-        },                {
             "fqsen": "\\App\\CsvExtractor",
             "name": "CsvExtractor",
             "summary": "class\u0020responsible\u0020for\u0020extracting\u0020data\u0020from\u0020session\u0020reports\u0020CSVs",
@@ -115,6 +110,26 @@ Search.appendIndex(
             "name": "sendEmail",
             "summary": "sends\u0020an\u0020email",
             "url": "classes/App-Emailing-Mailer.html#method_sendEmail"
+        },                {
+            "fqsen": "\\NonCLIShared",
+            "name": "NonCLIShared",
+            "summary": "shared\u0020code\u0020for\u0020non\u002DCLI\u0020executable\u0020automations\u0020present\u0020in\u0020the\u0020\u0060.\/bin\u0060\u0020folder",
+            "url": "classes/NonCLIShared.html"
+        },                {
+            "fqsen": "\\NonCLIShared\u003A\u003ArunCommonValidationRounds\u0028\u0029",
+            "name": "runCommonValidationRounds",
+            "summary": "",
+            "url": "classes/NonCLIShared.html#method_runCommonValidationRounds"
+        },                {
+            "fqsen": "\\App\\Intl",
+            "name": "Intl",
+            "summary": "",
+            "url": "classes/App-Intl.html"
+        },                {
+            "fqsen": "\\App\\Intl\u003A\u003AlanguageIsAllowed\u0028\u0029",
+            "name": "languageIsAllowed",
+            "summary": "",
+            "url": "classes/App-Intl.html#method_languageIsAllowed"
         },                {
             "fqsen": "\\",
             "name": "\\",
