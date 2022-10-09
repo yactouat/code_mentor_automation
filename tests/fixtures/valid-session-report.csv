@@ -1,0 +1,10 @@
+First Name,Last Name,Email,Student ID,Session ID,Nanodegree Key,On-Track Status,Completed Projects,Total Projects,# Present,# Absent,# Excused,% Attendance,Last Session Attended,Notes
+,,test@gmail.com,00ad3234-b23d-58eb-b08c-db8e7ac28f8b,4981,nd0044-alg-t2-en,Behind,0,0,0,0,0,0,,[]
+Test2 FirstName,Test2 LastName,test2@yahoo.fr,9c9f10ca-e668-11ec-a0dc-cf8fb8494ea5,4981,nd0044-alg-t2-en,Behind,0,0,0,0,0,0,,[]
+Test3 FirstName,Test3 LastName,test3@uit.ac.ma,1511f24c-dd07-11ec-9ddf-0f7ddb41f9e3,4981,nd0044-alg-t2-en,On Track,0,0,2,0,0,100,2022-07-31T13:00:00Z,[]
+Test4 FirstName,Test4 LastName,test4@gmail.com,1dceef15-e5cc-11ec-af46-13c7cb0a8d6e,4981,nd0044-alg-t2-en,On Track,0,0,2,0,0,100,2022-07-31T13:00:00Z,[]
+Test5 FirstName,Test5 LastName,test5@gmail.com,252f3b7e-e649-11ec-9b32-4fa8602a4580,4981,nd0044-alg-t2-en,Behind,0,0,0,0,0,0,,[]
+Test6 FirstName,Test6 LastName,test6@gmail.com,25844f6c-e5e1-11ec-9869-d35bd82d41f7,4981,nd0044-alg-t2-en,On Track,0,0,1,0,0,100,2022-07-31T13:00:00Z,[]
+Test7 FirstName,Test7 LastName,test7@gmail.com,2za66e98-c285-11ec-bd22-e7494016f9fb,4981,nd0044-alg-t2-en,On Track,0,0,1,0,0,100,2022-07-31T13:00:00Z,[]
+Test8 FirstName,Test8 LastName,test8@gmail.com,3375798580,4981,nd0044-alg-t2-en,Behind,0,0,0,0,0,0,,[]
+Test9 FirstName,Test9 LastName,test9@gmail.com,3cdf7bb4-ec6b-11ec-ab93-2f6dc7f57c8e,4981,nd0044-alg-t2-en,Behind,0,0,0,0,0,0,,[]

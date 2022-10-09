@@ -1,0 +1,35 @@
+#!/usr/bin/env php
+<?php
+/**
+ * pre commit hook to copy in the ./git/hooks folder
+ * 
+ * ! don't forget it to make it executable
+ * 
+ * using a Docker running PHP container, checks if
+ * - PHPUnit tests pass
+ * - generates PHP documentation
+ */
+
+echo PHP_EOL."Running PHPUnit tests...".PHP_EOL;
+
+exec('docker exec -t udacity_sl_automation-php-1 bash -c "/udacity_sl_automation/vendor/bin/phpunit /udacity_sl_automation/tests"', $output, $returnCode);
+
+echo PHP_EOL . implode(PHP_EOL, $output) . PHP_EOL;
+
+if ($returnCode !== 0) {
+    echo "PHPUnit tests did not pass, aborting commit..." . PHP_EOL;
+    exit(1);
+}
+
+echo PHP_EOL."generating PHP docs...".PHP_EOL;
+
+exec('php phpDocumentor.phar', $output2, $returnCode2);
+
+echo PHP_EOL . implode(PHP_EOL, $output2) . PHP_EOL;
+
+if ($returnCode2 !== 0) {
+    echo "could not generate PHP docs, aborting commit..." . PHP_EOL;
+    exit(1);
+}
+
+exit(0);
