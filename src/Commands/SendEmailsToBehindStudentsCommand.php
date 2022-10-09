@@ -38,10 +38,12 @@ class SendEmailsToBehindStudentsCommand extends Command
             CsvExtractor::checkFileExistence($csv);
         } catch (\Exception $e) {
             $output->writeln(
-                self::CSV_ARG
+                '<error>'
+                .self::CSV_ARG
                 .': '.$input->getArgument(self::CSV_ARG)
                 .' - '
                 .$e->getMessage()
+                .'</error>'
             );
             return Command::FAILURE;
         }
@@ -50,10 +52,12 @@ class SendEmailsToBehindStudentsCommand extends Command
             Intl::languageIsAllowed($language);
         } catch (\Exception $e) {
             $output->writeln(
-                self::LANG_ARG
+                '<error>'
+                .self::LANG_ARG
                 .': '.$input->getArgument(self::LANG_ARG)
                 .' - '
                 .$e->getMessage()
+                .'</error>'
             );
             return Command::FAILURE;
         }
@@ -65,6 +69,9 @@ class SendEmailsToBehindStudentsCommand extends Command
             "====================================",
             ''
         ]);
+
+        // TODO link to docs related to msmtp if validation fails
+        // ... as in $output->writeln('<href=https://symfony.com>Symfony Homepage</>');
 
         // TODO `$introSection->clear()` when all emails are sent
         return Command::SUCCESS;
