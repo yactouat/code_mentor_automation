@@ -86,30 +86,42 @@
 </aside>
 
             <div class="phpdocumentor-column -eight phpdocumentor-content">
-                    
-    <h2 class="phpdocumentor-content__title">Files</h2>
-                                                <h3>B</h3>
-        <ul class="phpdocumentor-list">
-                    <li><a href="files/bin-binexecutableslist.html"><abbr title="bin/BinExecutablesList.php">BinExecutablesList.php</abbr></a></li>
-                    <li><a href="files/bin-behind-students-email.html"><abbr title="bin/behind_students_email.php">behind_students_email.php</abbr></a></li>
-                </ul>
-                                    <h3>C</h3>
-        <ul class="phpdocumentor-list">
-                    <li><a href="files/src-csvextractor.html"><abbr title="src/CsvExtractor.php">CsvExtractor.php</abbr></a></li>
-                </ul>
-                                                        <h3>E</h3>
-        <ul class="phpdocumentor-list">
-                    <li><a href="files/src-emails.html"><abbr title="src/Emails.php">Emails.php</abbr></a></li>
-                </ul>
-                                                                                                                                                                                <h3>M</h3>
-        <ul class="phpdocumentor-list">
-                    <li><a href="files/src-mailer.html"><abbr title="src/Mailer.php">Mailer.php</abbr></a></li>
-                </ul>
-                                                                                                                                                            <h3>T</h3>
-        <ul class="phpdocumentor-list">
-                    <li><a href="files/bin-training-ending-email.html"><abbr title="bin/training_ending_email.php">training_ending_email.php</abbr></a></li>
-                </ul>
-                                                                                                                                                    <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+                    <ul class="phpdocumentor-breadcrumbs">
+    </ul>
+
+    <article class="phpdocumentor-element -file">
+        <h2 class="phpdocumentor-content__title">training_ending_email.php</h2>
+
+            <p class="phpdocumentor-summary">automation responsible for sending emails to cheer students to continue at their upcoming training ending</p>
+
+    <section class="phpdocumentor-description"><ul>
+<li>given an existing CSV path of a session report generated from the Udacity session lead dashboard,
+and the session lead has a Gmail account
+and the session lead has created a <code class="prettyprint">docker/msmtprc</code> file and filled it with the relevant values,
+and the dockerized application stack is running,</li>
+<li>when the session lead runs <code class="prettyprint">docker exec -t udacity_sd_automation-php-1 bash -c &quot; php ./bin/behind_students_email.php csv_path en_or_fr&quot;</code>,</li>
+<li>then a templated email cheering up each student to continue his/hers efforts is sent to him/her
+! if you tweak this script, make sure that the students emails never leak for privacy reasons</li>
+<li>param1 =&gt; string $argv[1] first param' passed to the CLI script, must be a path to a valid session report existing CSV file</li>
+<li>this script will send actual emails !</li>
+</ul>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        
+    </article>
+                <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
         <header class="phpdocumentor-search-results__header">
             <h2 class="phpdocumentor-search-results__title">Search results</h2>
@@ -122,7 +134,7 @@
 </section>
             </div>
         </div>
-        <a href="indices/files.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="files/bin-training-ending-email.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
