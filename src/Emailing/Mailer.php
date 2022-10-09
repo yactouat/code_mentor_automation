@@ -12,6 +12,21 @@ final class Mailer
 {
 
     /**
+     * checks is msmtp config is set
+     * 
+     * @param string $msmtprcPath
+     * 
+     * @throws Exception if `msmtprc` is not set
+     *
+     * @return void
+     */
+    public static function checkMsmtprc(string $msmtprcPath = '/etc/msmtprc'): void {
+        if (!file_exists($msmtprcPath)) {
+            throw new \Exception("You have not set `msmtp` correctly", 1);
+        }
+    }
+
+    /**
      * sends an email
      * 
      * sent emails are HTML emails
@@ -21,6 +36,8 @@ final class Mailer
      * @param string $htmlEmail better rendering if you pass HTML formatted text in there
      * @param string $msmtprcPath the path to your `msmtp`config
      * 
+     * @throws Exception if `msmtprc` is not set
+     * 
      * @return void actually sends the email
      */
     public static function sendEmail(
@@ -29,9 +46,7 @@ final class Mailer
         string $htmlEmail,
         string $msmtprcPath = '/etc/msmtprc'
     ): void {
-        if (!file_exists($msmtprcPath)) {
-            throw new \Exception("You have not set `msmtp` correctly", 1);
-        }
+        self::checkMsmtprc($msmtprcPath);
         $delivered = mail(
             $recipientEmail,
             $subject,

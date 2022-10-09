@@ -106,6 +106,11 @@ Search.appendIndex(
             "summary": "class\u0020responsible\u0020for\u0020sending\u0020emails",
             "url": "classes/App-Emailing-Mailer.html"
         },                {
+            "fqsen": "\\App\\Emailing\\Mailer\u003A\u003AcheckMsmtprc\u0028\u0029",
+            "name": "checkMsmtprc",
+            "summary": "checks\u0020is\u0020msmtp\u0020config\u0020is\u0020set",
+            "url": "classes/App-Emailing-Mailer.html#method_checkMsmtprc"
+        },                {
             "fqsen": "\\App\\Emailing\\Mailer\u003A\u003AsendEmail\u0028\u0029",
             "name": "sendEmail",
             "summary": "sends\u0020an\u0020email",

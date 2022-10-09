@@ -3,6 +3,7 @@
 namespace App\Commands;
 
 use App\CsvExtractor;
+use App\Emailing\Mailer;
 use App\Intl;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
@@ -14,6 +15,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * this class is responsible for handling CLI input of sending emails to behind students
  * 
+ * TODO
  */
 #[AsCommand(name: 'emails:behind-students')]
 class SendEmailsToBehindStudentsCommand extends Command
@@ -31,9 +33,29 @@ class SendEmailsToBehindStudentsCommand extends Command
             throw new \LogicException('This command accepts only an instance of "ConsoleOutputInterface".');
         }
 
-        // TODO ... put here the code to send emails to behind students
-        // validation rounds
+        // retrieving the input
         $csv = $input->getArgument(self::CSV_ARG);
+        $language = $input->getArgument(self::LANG_ARG);
+
+        // validation rounds
+        $output->writeln('');
+        try {
+            Mailer::checkMsmtprc("/test");
+        } catch (\Exception $e) {
+            $output->writeln(
+                '<error>emailing conf: '
+                .$e->getMessage()
+                .'</error>'
+            );
+            $output->writeln([
+                '',
+                '====================================',
+                ''
+            ]);
+            $output->writeln('<href=https://github.com/yactouat/udacity_sl_automation#sending-emails-in-bulk-to-students>learn how to configure emailing here</>');
+            $output->writeln('');
+            return Command::FAILURE;
+        }
         try {
             CsvExtractor::checkFileExistence($csv);
         } catch (\Exception $e) {
@@ -45,9 +67,9 @@ class SendEmailsToBehindStudentsCommand extends Command
                 .$e->getMessage()
                 .'</error>'
             );
+            $output->writeln('');
             return Command::FAILURE;
         }
-        $language = $input->getArgument(self::LANG_ARG);
         try {
             Intl::languageIsAllowed($language);
         } catch (\Exception $e) {
@@ -59,25 +81,22 @@ class SendEmailsToBehindStudentsCommand extends Command
                 .$e->getMessage()
                 .'</error>'
             );
+            $output->writeln('');
             return Command::FAILURE;
         }
+        // EO validation rounds
 
         // starting to send emails
         $introSection = $output->section();
         $introSection->writeln([
-            "sending emails to behind students...",
-            "====================================",
+            '',
+            'sending emails to behind students...',
+            '====================================',
             ''
         ]);
 
-        // TODO link to docs related to msmtp if validation fails
-        // ... as in $output->writeln('<href=https://symfony.com>Symfony Homepage</>');
-
         // TODO `$introSection->clear()` when all emails are sent
         return Command::SUCCESS;
-
-        // TODO return this to indicate incorrect command usage; e.g. invalid options or missing arguments (it's equivalent to returning int(2))
-        // return Command::INVALID
 
     }
 
