@@ -129,6 +129,13 @@
 
 <dl class="phpdocumentor-table-of-contents">
                         <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-CsvExtractor.html#method_getAllStudentsCoordinates">getAllStudentsCoordinates()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, array&lt;string|int, mixed&gt;&gt;    </span>
+</dt>
+<dd>extracts all students coordinates from a Udacity session report</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-CsvExtractor.html#method_getBehindStudentsCoordinates">getBehindStudentsCoordinates()</a>
     <span>
                                 &nbsp;: array&lt;string|int, array&lt;string|int, mixed&gt;&gt;    </span>
@@ -155,6 +162,57 @@
             Methods
             <a href="classes/App-CsvExtractor.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getAllStudentsCoordinates">
+        getAllStudentsCoordinates()
+        <a href="classes/App-CsvExtractor.html#method_getAllStudentsCoordinates" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CsvExtractor.php"><a href="files/src-csvextractor.html"><abbr title="src/CsvExtractor.php">CsvExtractor.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">82</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">extracts all students coordinates from a Udacity session report</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">getAllStudentsCoordinates</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$inputCsvPath</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;</span></code>
+
+        <section class="phpdocumentor-description"><p>! students coordinates must be kept isolated and secret at all times, this means =&gt;
+! - no versioning
+! - no email address appearing on an email that is not intended to the given student</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$inputCsvPath</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>must be a path to a valid existing CSV file</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>an array containing the first and last name of the Udacity student</p>
+</section>
+
+    
+</article>
                     <article
         class="phpdocumentor-element
             -method

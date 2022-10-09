@@ -21,6 +21,11 @@ Search.appendIndex(
             "summary": "extracts\u0020students\u0020coordinates\u0020from\u0020a\u0020Udacity\u0020session\u0020report,\u0020scoped\u0020to\u0020students\u0020that\u0020are\u0020behind\u0020on\u0020their\u0020Nanodegree\u0020track",
             "url": "classes/App-CsvExtractor.html#method_getBehindStudentsCoordinates"
         },                {
+            "fqsen": "\\App\\CsvExtractor\u003A\u003AgetAllStudentsCoordinates\u0028\u0029",
+            "name": "getAllStudentsCoordinates",
+            "summary": "extracts\u0020all\u0020students\u0020coordinates\u0020from\u0020a\u0020Udacity\u0020session\u0020report",
+            "url": "classes/App-CsvExtractor.html#method_getAllStudentsCoordinates"
+        },                {
             "fqsen": "\\App\\Emails",
             "name": "Emails",
             "summary": "class\u0020responsible\u0020for\u0020setting\/getting\u0020emails\u0020templates",

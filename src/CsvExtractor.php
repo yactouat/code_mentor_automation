@@ -68,4 +68,28 @@ final class CsvExtractor
         return $formatted;
     }
 
+    /**
+     * extracts all students coordinates from a Udacity session report
+     * 
+     * ! students coordinates must be kept isolated and secret at all times, this means =>
+     * ! - no versioning
+     * ! - no email address appearing on an email that is not intended to the given student
+     *
+     * @param string $inputCsvPath must be a path to a valid existing CSV file
+     * 
+     * @return array[] an array containing the first and last name of the Udacity student
+     */
+    public static function getAllStudentsCoordinates(string $inputCsvPath): array {
+        $sessionData = self::getCSVData($inputCsvPath, StudentModel::getFields());
+        $formatted = [];
+        foreach ($sessionData as $student) {
+            $formatted[] = [
+                "First Name" => $student["First Name"],
+                "Last Name" => $student["Last Name"],
+                "Email" => $student["Email"]
+            ];
+        }
+        return $formatted;
+    }
+
 }

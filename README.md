@@ -3,17 +3,17 @@
 <!-- TOC -->
 
 - [Udacity session lead automation](#udacity-session-lead-automation)
-  - [What is this ?](#what-is-this-)
-  - [How to use](#how-to-use)
-    - [Prerequisites](#prerequisites)
-    - [Sending emails in bulk to students who are behind on their Nanodegree program](#sending-emails-in-bulk-to-students-who-are-behind-on-their-nanodegree-program)
-  - [Tests and Documentation](#tests-and-documentation)
-    - [pre commit hook](#pre-commit-hook)
-    - [Tests](#tests)
-    - [Documentation](#documentation)
-      - [PHP code](#php-code)
-        - [consult the docs](#consult-the-docs)
-        - [generate the docs](#generate-the-docs)
+    - [What is this ?](#what-is-this-)
+    - [How to use](#how-to-use)
+        - [Prerequisites](#prerequisites)
+        - [Sending emails in bulk to students who are behind on their Nanodegree program](#sending-emails-in-bulk-to-students-who-are-behind-on-their-nanodegree-program)
+    - [Tests and Documentation](#tests-and-documentation)
+        - [pre commit hook](#pre-commit-hook)
+        - [Tests](#tests)
+        - [Documentation](#documentation)
+            - [PHP code](#php-code)
+                - [consult the docs](#consult-the-docs)
+                - [generate the docs](#generate-the-docs)
 
 <!-- /TOC -->
 
@@ -27,6 +27,7 @@ All automations live in the `bin` directory of the project.
 Automations currently enabled are:
 
 - sending emails in bulk to students who are behind on their Nanodegree program
+- sending emails in bulk to all students to cheer them up when the end of a training session is near
 
 The project is starting so it has rough edges, but it's functional !
 
@@ -50,7 +51,8 @@ Specific guidelines by automation are listed below. They assume the application 
 - fill the attendance on your latest session on your Udacity mentor dashboard
 - generate the CSV report on the same dashboard
 - put this report wherever you like (for instance in the `data` folder, that already has its content git ignored)
-- tweak the email templates to your liking in `src/Emails.php`
+- ⚠️ IMPORTANT: you need to change the templates in Emails.php to replace all `Yacine` values by your first name in `src/Emails.php`
+- you can then tweak the email templates to your liking furthermore
 - `docker exec -t udacity_sd_automation-php-1 bash -c "php ./bin/behind_students_email.php csv_path en_or_fr"`
 
 ## Tests and Documentation

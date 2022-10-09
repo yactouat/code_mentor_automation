@@ -36,7 +36,7 @@ if (!file_exists($csv) || pathinfo($csv, PATHINFO_EXTENSION) != "csv") {
     exit(1);
 }
 
-// get students who are behind coordinates (first and last name, email)
+// TODO get all students coordinates (first and last name, email)
 $behindStudentsCoordinates = CsvExtractor::getBehindStudentsCoordinates($csv);
 $subject = $language == "fr" ? "Session Connect Udacity": "Udacity Connect session";
 

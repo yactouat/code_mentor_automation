@@ -81,5 +81,12 @@ final class CsvExtractorTest extends TestCase {
         $actual = CsvExtractor::getCSVData($inputCsvPath, StudentModel::getFields());
     }
 
+    public function testAllStudentsCoordinates() {
+        $inputCsvPath = "./tests/fixtures/valid-session-report.csv";
+        $expected = 9;
+        $actual = CsvExtractor::getAllStudentsCoordinates($inputCsvPath);
+        $this->assertCount($expected, $actual);
+    }
+
 }
 
