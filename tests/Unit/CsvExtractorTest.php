@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 
 use App\CsvExtractor;
+use App\StudentModel;
 use Exception;
 use PHPUnit\Framework\TestCase;
 
@@ -29,7 +30,7 @@ final class CsvExtractorTest extends TestCase {
                 "Notes" =>  '[]'
             ]
         ];
-        $actual = CsvExtractor::getCSVData($inputCsvPath);
+        $actual = CsvExtractor::getCSVData($inputCsvPath, StudentModel::getFields());
         $this->assertEquals($expected, $actual);
     }
 
@@ -66,11 +67,18 @@ final class CsvExtractorTest extends TestCase {
         $this->assertEquals($expected, $actual);
     }
 
-    public function testGetCsvDataWithInvalidCSVThrows() {
+    public function testGetCsvDataWithInvalidCSVThrowsInvalidInputCSVException() {
         $inputCsvPath = "./tests/fixtures/invalid.csv";
         $this->expectException(Exception::class);
         $this->expectExceptionMessage("Please provide a valid input CSV");
-        $actual = CsvExtractor::getCSVData($inputCsvPath);
+        $actual = CsvExtractor::getCSVData($inputCsvPath, StudentModel::getFields());
+    }
+
+    public function testGetCsvDataWithInvalidStudentsDataThrowsInvalidStudentsDataException() {
+        $inputCsvPath = "./tests/fixtures/invalid-data.csv";
+        $this->expectException(Exception::class);
+        $this->expectExceptionMessage("Please provide a valid input CSV");
+        $actual = CsvExtractor::getCSVData($inputCsvPath, StudentModel::getFields());
     }
 
 }

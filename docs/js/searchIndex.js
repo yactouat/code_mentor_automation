@@ -46,6 +46,16 @@ Search.appendIndex(
             "summary": "sends\u0020an\u0020email",
             "url": "classes/App-Mailer.html#method_sendEmail"
         },                {
+            "fqsen": "\\App\\StudentModel",
+            "name": "StudentModel",
+            "summary": "",
+            "url": "classes/App-StudentModel.html"
+        },                {
+            "fqsen": "\\App\\StudentModel\u003A\u003AgetFields\u0028\u0029",
+            "name": "getFields",
+            "summary": "",
+            "url": "classes/App-StudentModel.html#method_getFields"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
