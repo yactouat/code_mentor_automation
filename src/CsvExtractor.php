@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace App;
 
@@ -10,6 +10,21 @@ use App\Models\StudentModel;
  */
 final class CsvExtractor
 {
+
+    /**
+     * checks if an input CSV exists, throws Exception if not
+     *
+     * @param string $inputCsvPath
+     *
+     * @throws Exception with message 'Please provide an existing input CSV'
+     * 
+     * @return void
+     */
+    public static function checkFileExistence(string $inputCsvPath): void {
+        if (!file_exists($inputCsvPath) || pathinfo($inputCsvPath, PATHINFO_EXTENSION) != "csv") {
+            throw new \Exception('Please provide an existing input CSV', 1);
+        }
+    }
 
     /**
      * gets an array-like representation of a CSV file data
@@ -28,6 +43,7 @@ final class CsvExtractor
      *                ]`
      */
     public static function getCSVData(string $inputCsvPath, array $expectedFields): array {
+        self::checkFileExistence($inputCsvPath);
         // `str_getcsv` parses CSV string into an array => // `str_getcsv` parses a string into an array =>
         // `file` returns an array containing one entry per line in the file
         $csv = array_map('str_getcsv', file($inputCsvPath));

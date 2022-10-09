@@ -6,9 +6,14 @@
     - [What is this ?](#what-is-this-)
     - [How to use](#how-to-use)
         - [Prerequisites](#prerequisites)
+        - [Access to all automations](#access-to-all-automations)
         - [Sending emails in bulk to students](#sending-emails-in-bulk-to-students)
             - [who are behind on their Nanodegree program](#who-are-behind-on-their-nanodegree-program)
+                - [using the CLI](#using-the-cli)
+                - [using the dedicated PHP script](#using-the-dedicated-php-script)
             - [to cheer them up when their Nanodegree program ending approaches](#to-cheer-them-up-when-their-nanodegree-program-ending-approaches)
+                - [using the CLI](#using-the-cli)
+                - [using the dedicated PHP script](#using-the-dedicated-php-script)
     - [Tests and Documentation](#tests-and-documentation)
         - [pre commit hook](#pre-commit-hook)
         - [Tests](#tests)
@@ -24,7 +29,7 @@
 As a [Udacity Full Stack Nanodegree session lead](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd0044),
 I felt the need to automate a few tasks to gain more efficiency and focus more on the great experience that is teaching and learning with other students !
 
-All automations live in the `bin` directory of the project.
+CLI and all automations live in the `bin` directory of the project.
 
 Automations currently enabled are:
 
@@ -41,9 +46,13 @@ The project is starting so it has rough edges, but it's functional !
 - have a Gmail email address
 - have PHP Composer installed on your machine and registered in your `PATH`
 - before running any feature or test, run a `composer install --ignore-platform-reqs` on your host machine
-- then `docker compose up`
+- ⚠️ then `docker compose up`, otherwise I cant guarantee how the app' will behave
 
 Specific guidelines by automation are listed below. They assume the application stack is running.
+
+### Access to all automations
+
+- list all automations => `docker exec -it udacity_sl_automation-php-1 bash -c "php ./bin/cli.php list --short"`
 
 ### Sending emails in bulk to students
 
@@ -58,12 +67,24 @@ Specific guidelines by automation are listed below. They assume the application 
 
 #### ...who are behind on their Nanodegree program
 
+##### using the CLI
+
+- `docker exec -it udacity_sl_automation-php-1 bash -c "php ./bin/cli.php emails:behind-students csv_path en_or_fr"`
+
+##### using the dedicated PHP script
+
 - `docker exec -t udacity_sl_automation-php-1 bash -c "php ./bin/behind_students_email.php csv_path en_or_fr"`
 
 #### ...to cheer them up when their Nanodegree program ending approaches
 
+##### using the CLI
+
+- `docker exec -it udacity_sl_automation-php-1 bash -c "php ./bin/cli.php emails:training-ending csv_path en_or_fr"`
+
+##### using the dedicated PHP script
+
 - `docker exec -t udacity_sl_automation-php-1 bash -c "php ./bin/training_ending_email.php csv_path en_or_fr"`
-- with additional online resource => `docker exec -t udacity_sl_automation-php-1 bash -c "php ./bin/training_ending_email.php csv_path en_or_fr resources_csv_path"`
+- with additional online resources => `docker exec -t udacity_sl_automation-php-1 bash -c "php ./bin/training_ending_email.php csv_path en_or_fr resources_csv_path"`
 
 ## Tests and Documentation
 
