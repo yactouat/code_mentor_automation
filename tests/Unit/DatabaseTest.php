@@ -30,6 +30,7 @@ final class DatabaseTest extends TestCase {
         // tear down
         unlink($nonExistingDb);
     }
-
+    
+    // TODO test that every model has its SQLite table, including session leads, on non existing db init
 
 }
