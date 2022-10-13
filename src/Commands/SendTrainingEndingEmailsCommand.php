@@ -5,7 +5,6 @@ namespace App\Commands;
 use App\CsvExtractor;
 use App\Emailing\Mailer;
 use App\Intl;
-use App\Processes\BehindStudentsEmailProcess;
 use App\Processes\TrainingEndingEmailProcess;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;

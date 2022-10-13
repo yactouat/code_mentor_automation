@@ -191,6 +191,31 @@ Search.appendIndex(
             "summary": "implements\u0020\u0060TrainingEndingEmailProcess\u0060\u0020business\u0020logic",
             "url": "classes/App-Processes-TrainingEndingEmailProcess.html#method_run"
         },                {
+            "fqsen": "\\App\\Database",
+            "name": "Database",
+            "summary": "",
+            "url": "classes/App-Database.html"
+        },                {
+            "fqsen": "\\App\\Database\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Database.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Database\u003A\u003AgetDatabaseConn\u0028\u0029",
+            "name": "getDatabaseConn",
+            "summary": "",
+            "url": "classes/App-Database.html#method_getDatabaseConn"
+        },                {
+            "fqsen": "\\App\\Database\u003A\u003A\u0024databaseConn",
+            "name": "databaseConn",
+            "summary": "",
+            "url": "classes/App-Database.html#property_databaseConn"
+        },                {
+            "fqsen": "\\App\\Database\u003A\u003A\u0024sqliteDBPath",
+            "name": "sqliteDBPath",
+            "summary": "",
+            "url": "classes/App-Database.html#property_sqliteDBPath"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",

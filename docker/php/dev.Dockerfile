@@ -1,6 +1,8 @@
 FROM php:8.1.8-fpm
 # installing mailer system dependencies
 RUN apt update && apt upgrade -y && apt install -y mailutils msmtp msmtp-mta
+# installing PDO
+RUN docker-php-ext-install pdo
 # ! be sure not to push this image to a public registry as it may contain your email password
 COPY ./docker/msmtprc /etc/msmtprc
 # create system user ("udacity_sl_automation" with uid 1000)

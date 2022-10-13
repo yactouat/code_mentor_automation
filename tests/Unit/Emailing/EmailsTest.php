@@ -66,7 +66,7 @@ final class EmailsTest extends TestCase
             "Test2 FirstName", 
             "Test2 LastName",
             CsvExtractor::getCSVData(
-                './tests/fixtures/online-resources.csv',
+                './tests/fixtures/csv/online-resources.csv',
                 OnlineResourceModel::getFields()
             )
         );
@@ -81,7 +81,7 @@ final class EmailsTest extends TestCase
             "Test2 FirstName", 
             "Test2 LastName",
             CsvExtractor::getCSVData(
-                './tests/fixtures/online-resources.csv',
+                './tests/fixtures/csv/online-resources.csv',
                 OnlineResourceModel::getFields()
             )
         );

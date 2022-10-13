@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 final class CsvExtractorTest extends TestCase {
 
     public function testgetCSVData() {
-        $inputCsvPath = "./tests/fixtures/valid-session-report-oneliner.csv";
+        $inputCsvPath = "./tests/fixtures/csv/valid-session-report-oneliner.csv";
         $expected = [
             [
                 "First Name" => "Test2 FirstName",
@@ -35,7 +35,7 @@ final class CsvExtractorTest extends TestCase {
     }
 
     public function testGetBehindStudentsCoordinates() {
-        $inputCsvPath = "./tests/fixtures/valid-session-report.csv";
+        $inputCsvPath = "./tests/fixtures/csv/valid-session-report.csv";
         $expected = [
             [
                 "First Name" => '',
@@ -68,28 +68,28 @@ final class CsvExtractorTest extends TestCase {
     }
 
     public function testGetCsvDataWithInvalidCSVThrowsInvalidInputCSVException() {
-        $inputCsvPath = "./tests/fixtures/invalid-session-report.csv";
+        $inputCsvPath = "./tests/fixtures/csv/invalid-session-report.csv";
         $this->expectException(Exception::class);
         $this->expectExceptionMessage("Please provide a valid input CSV");
         $actual = CsvExtractor::getCSVData($inputCsvPath, StudentModel::getFields());
     }
 
     public function testGetCsvDataWithInvalidStudentsDataThrowsInvalidStudentsDataException() {
-        $inputCsvPath = "./tests/fixtures/invalid-session-report-data.csv";
+        $inputCsvPath = "./tests/fixtures/csv/invalid-session-report-data.csv";
         $this->expectException(Exception::class);
         $this->expectExceptionMessage("Please provide a valid input CSV");
         $actual = CsvExtractor::getCSVData($inputCsvPath, StudentModel::getFields());
     }
 
     public function testGetAllStudentsCoordinates() {
-        $inputCsvPath = "./tests/fixtures/valid-session-report.csv";
+        $inputCsvPath = "./tests/fixtures/csv/valid-session-report.csv";
         $expected = 9;
         $actual = CsvExtractor::getAllStudentsCoordinates($inputCsvPath);
         $this->assertCount($expected, $actual);
     }
 
     public function testGetCsvDataWithNonExistingCSVThrowsInvalidInputCSVException() {
-        $inputCsvPath = "./tests/fixtures/non-existing.csv";
+        $inputCsvPath = "./tests/fixtures/csv/non-existing.csv";
         $this->expectException(Exception::class);
         $this->expectExceptionMessage("Please provide an existing input CSV");
         $actual = CsvExtractor::getCSVData($inputCsvPath, StudentModel::getFields());

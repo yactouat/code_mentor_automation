@@ -48,6 +48,8 @@ The project is starting so it has rough edges, but it's functional !
 - before running any feature or test, run a `composer install --ignore-platform-reqs` on your host machine
 - ⚠️ then `docker compose up`, otherwise I cant guarantee how the app' will behave
 
+<!-- TODO guidelines related to SQLite3 -->
+
 Specific guidelines by automation are listed below. They assume the application stack is running.
 
 ### Access to all automations
@@ -80,6 +82,7 @@ Specific guidelines by automation are listed below. They assume the application 
 ##### using the CLI
 
 - `docker exec -it udacity_sl_automation-php-1 bash -c "php ./bin/cli.php emails:training-ending csv_path en_or_fr"`
+- with additional online resources => `docker exec -it udacity_sl_automation-php-1 bash -c "php ./bin/cli.php emails:training-ending csv_path en_or_fr resources_csv_path"`
 
 ##### using the dedicated PHP script
 
