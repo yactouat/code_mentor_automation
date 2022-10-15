@@ -10,27 +10,42 @@ final class DatabaseTest extends TestCase {
 
     public function testConstructWithExistingDatabaseSetsDatabaseConn() {
         // arrange
+        $existingDb = '/udacity_sl_automation/tests/fixtures/sql/database.db';
+        fopen($existingDb, "w");
         $expected = PDO::class;
-        $database = new Database("./tests/fixtures/sql/database.db");
+        $database = new Database($existingDb);
         // act
-        $actual = $database->getDatabaseConn();
+        $actual = $database->getConn();
+        // tear down
+        unlink($existingDb);
         // assert
         $this->assertInstanceOf($expected, $actual);
     }
 
     public function testConstructWithNonExistingDatabaseSetsDatabaseConn() {
         // arrange
-        $nonExistingDb = './tests/fixtures/sql/non_existing_database.db';
+        $nonExistingDb = '/udacity_sl_automation/tests/fixtures/sql/non_existing_database.db';
         $expected = PDO::class;
         $database = new Database($nonExistingDb);
         // act
-        $actual = $database->getDatabaseConn();
-        // assert
-        $this->assertInstanceOf($expected, $actual);
+        $actual = $database->getConn();
         // tear down
         unlink($nonExistingDb);
+        // assert
+        $this->assertInstanceOf($expected, $actual);
     }
     
-    // TODO test that every model has its SQLite table, including session leads, on non existing db init
+    public function testConstructCreatesDatabase() {
+        $dbPath = '/udacity_sl_automation/tests/fixtures/sql/database.db';
+        $database = new Database($dbPath);
+        $expected = 'udacity_sl_automation';
+        $query = $database->getConn()->query('PRAGMA database_list');
+        $filtered = array_filter($query->fetchAll(), function($db) use($expected) {
+            return $db["name"] === $expected;
+        });
+        $actual = array_pop($filtered);
+        unlink($dbPath);
+        $this->assertSame($expected, $actual["name"]);
+    }
 
 }

@@ -6,21 +6,55 @@ use PDO;
 
 final class Database {
 
-    private PDO $databaseConn;
-    private static $sqliteDBPath = '/udacity_sl_automation/data/sql/database.db';
+    private bool $isTesting;
 
-    public function __construct(?string $sqliteDBPath = null)
+    private PDO $databaseConn;
+
+    /**
+     * name of the database
+     * 
+     * is public because used in other namespaces (mainly abstract `Model` class)
+     *
+     * @var string
+     */
+    public static $dbName = "udacity_sl_automation";
+
+    private static $sqliteDBPath = '/udacity_sl_automation/data/sql/database.db';
+    private static $sqliteTestDBPath = '/udacity_sl_automation/tests/fixtures/sql/database.db';
+
+    public function __construct(?string $sqliteDBPath = null, bool $isTesting = false)
     {
+        $this->isTesting = $isTesting;
+        $this->_setDbFilePath($sqliteDBPath);
+        $this->_initConn();
+        $this->_setDatabase();
+    }
+
+    private function _initConn(): void {
+        $this->databaseConn = new PDO(
+            dsn: 'sqlite:'.self::$sqliteDBPath, 
+            options: [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]
+        );
+    }
+
+    private function _setDatabase(): void {
+        $dbPath = self::$sqliteDBPath;
+        $dbName = self::$dbName;
+        $this->databaseConn->query("ATTACH DATABASE '$dbPath' AS $dbName");
+    }
+
+    private function _setDbFilePath(?string $sqliteDBPath = null) : void {
         if(is_null($sqliteDBPath)) {
-            $sqliteDBPath = self::$sqliteDBPath;
+            $sqliteDBPath = !$this->isTesting ? self::$sqliteDBPath : self::$sqliteTestDBPath;
+        } else {
+            self::$sqliteDBPath = $sqliteDBPath;
         }
         if (!file_exists($sqliteDBPath)) {
             fopen($sqliteDBPath, "w");
         }
-        $this->databaseConn = new PDO('sqlite:'.$sqliteDBPath);
     }
 
-    public function getDatabaseConn(): PDO {
+    public function getConn(): PDO {
         return $this->databaseConn;
     }
 

@@ -31,20 +31,40 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Models-OnlineResourceModel.html"
         },                {
+            "fqsen": "\\App\\Models\\OnlineResourceModel\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Models-OnlineResourceModel.html#method___construct"
+        },                {
             "fqsen": "\\App\\Models\\OnlineResourceModel\u003A\u003AgetFields\u0028\u0029",
             "name": "getFields",
             "summary": "",
             "url": "classes/App-Models-OnlineResourceModel.html#method_getFields"
+        },                {
+            "fqsen": "\\App\\Models\\OnlineResourceModel\u003A\u003A\u0024tableName",
+            "name": "tableName",
+            "summary": "",
+            "url": "classes/App-Models-OnlineResourceModel.html#property_tableName"
         },                {
             "fqsen": "\\App\\Models\\StudentModel",
             "name": "StudentModel",
             "summary": "",
             "url": "classes/App-Models-StudentModel.html"
         },                {
+            "fqsen": "\\App\\Models\\StudentModel\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Models-StudentModel.html#method___construct"
+        },                {
             "fqsen": "\\App\\Models\\StudentModel\u003A\u003AgetFields\u0028\u0029",
             "name": "getFields",
             "summary": "",
             "url": "classes/App-Models-StudentModel.html#method_getFields"
+        },                {
+            "fqsen": "\\App\\Models\\StudentModel\u003A\u003A\u0024tableName",
+            "name": "tableName",
+            "summary": "",
+            "url": "classes/App-Models-StudentModel.html#property_tableName"
         },                {
             "fqsen": "\\App\\Commands\\SendEmailsToBehindStudentsCommand",
             "name": "SendEmailsToBehindStudentsCommand",
@@ -201,20 +221,100 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Database.html#method___construct"
         },                {
-            "fqsen": "\\App\\Database\u003A\u003AgetDatabaseConn\u0028\u0029",
-            "name": "getDatabaseConn",
+            "fqsen": "\\App\\Database\u003A\u003A_initConn\u0028\u0029",
+            "name": "_initConn",
             "summary": "",
-            "url": "classes/App-Database.html#method_getDatabaseConn"
+            "url": "classes/App-Database.html#method__initConn"
+        },                {
+            "fqsen": "\\App\\Database\u003A\u003A_setDatabase\u0028\u0029",
+            "name": "_setDatabase",
+            "summary": "",
+            "url": "classes/App-Database.html#method__setDatabase"
+        },                {
+            "fqsen": "\\App\\Database\u003A\u003A_setDbFilePath\u0028\u0029",
+            "name": "_setDbFilePath",
+            "summary": "",
+            "url": "classes/App-Database.html#method__setDbFilePath"
+        },                {
+            "fqsen": "\\App\\Database\u003A\u003AgetConn\u0028\u0029",
+            "name": "getConn",
+            "summary": "",
+            "url": "classes/App-Database.html#method_getConn"
+        },                {
+            "fqsen": "\\App\\Database\u003A\u003A\u0024isTesting",
+            "name": "isTesting",
+            "summary": "",
+            "url": "classes/App-Database.html#property_isTesting"
         },                {
             "fqsen": "\\App\\Database\u003A\u003A\u0024databaseConn",
             "name": "databaseConn",
             "summary": "",
             "url": "classes/App-Database.html#property_databaseConn"
         },                {
+            "fqsen": "\\App\\Database\u003A\u003A\u0024dbName",
+            "name": "dbName",
+            "summary": "name\u0020of\u0020the\u0020database",
+            "url": "classes/App-Database.html#property_dbName"
+        },                {
             "fqsen": "\\App\\Database\u003A\u003A\u0024sqliteDBPath",
             "name": "sqliteDBPath",
             "summary": "",
             "url": "classes/App-Database.html#property_sqliteDBPath"
+        },                {
+            "fqsen": "\\App\\Database\u003A\u003A\u0024sqliteTestDBPath",
+            "name": "sqliteTestDBPath",
+            "summary": "",
+            "url": "classes/App-Database.html#property_sqliteTestDBPath"
+        },                {
+            "fqsen": "\\App\\Models\\Model",
+            "name": "Model",
+            "summary": "",
+            "url": "classes/App-Models-Model.html"
+        },                {
+            "fqsen": "\\App\\Models\\Model\u003A\u003AgetFields\u0028\u0029",
+            "name": "getFields",
+            "summary": "",
+            "url": "classes/App-Models-Model.html#method_getFields"
+        },                {
+            "fqsen": "\\App\\Models\\Model\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Models-Model.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Models\\Model\u003A\u003AgetTableName\u0028\u0029",
+            "name": "getTableName",
+            "summary": "",
+            "url": "classes/App-Models-Model.html#method_getTableName"
+        },                {
+            "fqsen": "\\App\\Models\\Model\u003A\u003A\u0024database",
+            "name": "database",
+            "summary": "",
+            "url": "classes/App-Models-Model.html#property_database"
+        },                {
+            "fqsen": "\\App\\Models\\Model\u003A\u003A\u0024tableName",
+            "name": "tableName",
+            "summary": "",
+            "url": "classes/App-Models-Model.html#property_tableName"
+        },                {
+            "fqsen": "\\App\\Models\\SessionLeadModel",
+            "name": "SessionLeadModel",
+            "summary": "",
+            "url": "classes/App-Models-SessionLeadModel.html"
+        },                {
+            "fqsen": "\\App\\Models\\SessionLeadModel\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Models-SessionLeadModel.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Models\\SessionLeadModel\u003A\u003AgetFields\u0028\u0029",
+            "name": "getFields",
+            "summary": "",
+            "url": "classes/App-Models-SessionLeadModel.html#method_getFields"
+        },                {
+            "fqsen": "\\App\\Models\\SessionLeadModel\u003A\u003A\u0024tableName",
+            "name": "tableName",
+            "summary": "",
+            "url": "classes/App-Models-SessionLeadModel.html#property_tableName"
         },                {
             "fqsen": "\\",
             "name": "\\",
