@@ -526,6 +526,21 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Controllers-Controller.html"
         },                {
+            "fqsen": "\\Udacity\\Controllers\\Controller\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Udacity-Controllers-Controller.html#method___construct"
+        },                {
+            "fqsen": "\\Udacity\\Controllers\\Controller\u003A\u003AgetRenderer\u0028\u0029",
+            "name": "getRenderer",
+            "summary": "",
+            "url": "classes/Udacity-Controllers-Controller.html#method_getRenderer"
+        },                {
+            "fqsen": "\\Udacity\\Controllers\\Controller\u003A\u003A\u0024renderer",
+            "name": "renderer",
+            "summary": "",
+            "url": "classes/Udacity-Controllers-Controller.html#property_renderer"
+        },                {
             "fqsen": "\\Udacity\\Controllers\\ControllerInterface",
             "name": "ControllerInterface",
             "summary": "",

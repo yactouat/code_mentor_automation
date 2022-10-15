@@ -2,14 +2,13 @@
 
 namespace Tests\Integration\Models;
 
+require_once "/var/www/tests/fixtures/classes/ModelWithNoTable.php";
+require_once "/var/www/tests/fixtures/classes/DummyModel.php";
+
 use Udacity\Database;
-use Udacity\Models\Model;
 use DummyModel;
 use ModelWithNoTable;
 use PHPUnit\Framework\TestCase;
-
-require_once "/var/www/tests/fixtures/classes/ModelWithNoTable.php";
-require_once "/var/www/tests/fixtures/classes/DummyModel.php";
 
 final class ModelTest extends TestCase {
 

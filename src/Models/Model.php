@@ -12,7 +12,7 @@ abstract class Model {
     public abstract function create(): void;
     public abstract static function getFields(): array;
 
-    public function __construct(?Database $database = null)
+    protected function __construct(?Database $database = null)
     {
         if (!isset($this->tableName)) {
             throw new \Exception("No table name set for this model", 1);
