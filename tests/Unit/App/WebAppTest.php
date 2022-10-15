@@ -79,6 +79,14 @@ final class WebAppTest extends TestCase {
         $this->assertEquals($expected, $actual);
     }
 
+    public function testHandleRequestWithHomeRouteSets200StatusCode() {
+        $expected = 200;
+        $app = new WebApp();
+        $app->handleRequest("/");
+        $actual = $app->getStatusCode();
+        $this->assertEquals($expected, $actual);
+    }
+
     public function testGetControllerWithHomeRouteGetsHomeController() {
         $expected = HomeController::class;
         $app = new WebApp();

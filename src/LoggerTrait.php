@@ -12,9 +12,13 @@ trait LoggerTrait {
     protected float $endTime;
     protected float $startTime;
 
-    public function endTimer() {
-        $this->endTime = microtime(true);
-        $this->logger->info("it took " . (round($this->endTime - $this->startTime, 2)) . "seconds");
+    public function endTimer(?string $logText = null) {
+        if (isset($this->logger)) {
+            $this->endTime = microtime(true);
+            $this->logger->info(
+                (is_null($logText) ? "it took " : $logText) . (round($this->endTime - $this->startTime, 2)) . "seconds"
+            );
+        }
     }
 
     public function setLogger(Logger $logger) {
@@ -30,7 +34,9 @@ trait LoggerTrait {
     }
 
     public function startTimer() {
-        $this->startTime = microtime(true);
+        if (isset($this->logger)) {
+            $this->startTime = microtime(true);
+        }
     }
 
 }

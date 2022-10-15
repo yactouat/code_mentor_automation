@@ -38,9 +38,4 @@ RUN mv /var/www/docker/php/dev.ini /usr/local/etc/php/conf.d/dev.ini
 # copy existing application directory permissions
 COPY --chown=udacity_sl_automation:udacity_sl_automation ./ /var/www
 
-# ! in case I need to handle uploads
-# RUN adduser nginx www-data \
-#     && chgrp -R www-data /var/www/public/uploads/ \
-    # && chmod -R 775 /var/www/public/uploads/
-
-ENTRYPOINT ["sh", "-c", "php-fpm -D && nginx -g 'daemon off;'"]
+ENTRYPOINT ["sh", "-c", "php-fpm -D && mkdir -p /var/www/data/logs/php && chgrp -R www-data /var/www/data/logs/php && nginx -g 'daemon off;'"]

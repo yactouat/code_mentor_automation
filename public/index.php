@@ -8,7 +8,7 @@ require_once $rootDir."/vendor/autoload.php";
 use Udacity\App\WebApp;
 
 // initializing the app'
-$app = new WebApp();
+$app = (new WebApp())->setNewLogger($rootDir.'/data/logs/php/web_app.log');
 
 // processing the input request
 $app->handleRequest($_SERVER["REQUEST_URI"]);

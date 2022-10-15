@@ -4,8 +4,11 @@ namespace Udacity\App;
 
 use Udacity\Controllers\ControllerInterface;
 use Udacity\Controllers\NotFoundController;
+use Udacity\LoggerTrait;
 
 final class WebApp {
+
+    use LoggerTrait;
 
     private ControllerInterface $controller;
     private int $statusCode;
@@ -31,10 +34,10 @@ final class WebApp {
     }
 
     private function _setStatusCode(): void {
-        if (self::getRegisteredRoutes()[$this->inputRoute] ?? false === false) {
+        if (!isset(self::getRegisteredRoutes()[$this->inputRoute])) {
             $this->statusCode = 404;
         } else {
-            $this->statusCode = 0;
+            $this->statusCode = 200;
         }
     }
 
@@ -51,9 +54,11 @@ final class WebApp {
     }
 
     public function handleRequest(string $inputRoute): void {
+        $this->startTimer();
         $this->inputRoute = self::parseRequestRoute($inputRoute);
         $this->_setStatusCode();
         $this->_setResponseOutput();
+        $this->endTimer("web request processing took : ");
     }
 
     public static function parseRequestRoute(string $inputRoute): string {
