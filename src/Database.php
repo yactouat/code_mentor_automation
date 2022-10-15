@@ -63,16 +63,18 @@ final class Database {
     }
 
     public function readQuery(string $query): array {
-        if (!$this->isTesting) {
-            $this->logger->info("running READ query : ".$query);
-        }
+        $this->logger->info("running READ query : ".$query);
+        $this->startTimer();
         $result = $this->databaseConn->query($query);
+        $this->endTimer();
         return $result->fetchAll();
     }
 
     public function writeQuery(string $query): array {
         $this->logger->notice("running WRITE query : ".$query);
+        $this->startTimer();
         $result = $this->databaseConn->query($query);
+        $this->endTimer();
         return $result->fetchAll();
     }
 

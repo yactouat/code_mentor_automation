@@ -9,6 +9,14 @@ trait LoggerTrait {
 
     protected Logger $logger;
 
+    protected float $endTime;
+    protected float $startTime;
+
+    public function endTimer() {
+        $this->endTime = microtime(true);
+        $this->logger->info("it took " . (round($this->endTime - $this->startTime, 2)) . "seconds");
+    }
+
     public function setLogger(Logger $logger) {
         $this->logger = $logger;
         return $this;
@@ -19,6 +27,10 @@ trait LoggerTrait {
         $logger->pushHandler(new StreamHandler($logsPath));
         $this->logger = $logger;
         return $this;
+    }
+
+    public function startTimer() {
+        $this->startTime = microtime(true);
     }
 
 }

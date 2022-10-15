@@ -27,6 +27,7 @@ final class BehindStudentsEmailProcess {
         $subject = $language == "fr" ? "Session Connect Udacity": "Udacity Connect session";
         // sending emails loop
         $count = 1;
+        $this->startTimer();
         foreach ($behindStudentsCoordinates as $student) {
             Mailer::sendEmail(
                 $student["Email"],
@@ -36,6 +37,7 @@ final class BehindStudentsEmailProcess {
             $this->logger->info("sent behind student email ".$count." out of ".count($behindStudentsCoordinates));
             $count++;
         }
+        $this->endTimer();
     }
 
 }

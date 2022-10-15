@@ -44,6 +44,7 @@ final class TrainingEndingEmailProcess {
             : "The end of our Udacity training session is near !";
         // sending emails loop
         $count = 1;
+        $this->startTimer();
         foreach ($studentsCoordinates as $student) {
             Mailer::sendEmail(
                 $student["Email"],
@@ -53,6 +54,7 @@ final class TrainingEndingEmailProcess {
             $this->logger->info("sent training ending email ".$count." out of ".count($studentsCoordinates));
             $count++;
         }
+        $this->endTimer();
     }
 
 }

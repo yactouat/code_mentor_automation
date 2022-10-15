@@ -411,6 +411,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-LoggerTrait.html"
         },                {
+            "fqsen": "\\App\\LoggerTrait\u003A\u003AendTimer\u0028\u0029",
+            "name": "endTimer",
+            "summary": "",
+            "url": "classes/App-LoggerTrait.html#method_endTimer"
+        },                {
             "fqsen": "\\App\\LoggerTrait\u003A\u003AsetLogger\u0028\u0029",
             "name": "setLogger",
             "summary": "",
@@ -421,10 +426,25 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-LoggerTrait.html#method_setNewLogger"
         },                {
+            "fqsen": "\\App\\LoggerTrait\u003A\u003AstartTimer\u0028\u0029",
+            "name": "startTimer",
+            "summary": "",
+            "url": "classes/App-LoggerTrait.html#method_startTimer"
+        },                {
             "fqsen": "\\App\\LoggerTrait\u003A\u003A\u0024logger",
             "name": "logger",
             "summary": "",
             "url": "classes/App-LoggerTrait.html#property_logger"
+        },                {
+            "fqsen": "\\App\\LoggerTrait\u003A\u003A\u0024endTime",
+            "name": "endTime",
+            "summary": "",
+            "url": "classes/App-LoggerTrait.html#property_endTime"
+        },                {
+            "fqsen": "\\App\\LoggerTrait\u003A\u003A\u0024startTime",
+            "name": "startTime",
+            "summary": "",
+            "url": "classes/App-LoggerTrait.html#property_startTime"
         },                {
             "fqsen": "\\",
             "name": "\\",
