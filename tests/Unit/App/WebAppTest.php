@@ -25,6 +25,12 @@ final class WebAppTest extends TestCase {
         $this->assertEquals($expected, $actual);
     }
 
+    public function testGetRequestRouteWithGivenRouteWithIdentifierGetsCorrectRoute() {
+        $expected = 'test/1';
+        $actual = WebApp::parseRequestRoute('/test/1');
+        $this->assertEquals($expected, $actual);
+    }
+
     public function testGetRequestRouteWithTrailingSlashRouteRemovesTrailingSlash() {
         $expected = 'test';
         $actual = WebApp::parseRequestRoute('/test/');
@@ -52,6 +58,22 @@ final class WebAppTest extends TestCase {
     public function testGetRequestRouteWithSlashAndMultipleQueryStringsRemovesAllQueryStringsAndSlash() {
         $expected = 'test';
         $actual = WebApp::parseRequestRoute('/test/?q=v&q2=v2');
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testGetRegisteredRoutesReturnsExpectedRoutes() {
+        $expected = [
+            '/' => ['HomeController', 'index']
+        ];
+        $actual = WebApp::getRegisteredRoutes();
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testHandleRequestWithUnkownRouteSets404StatusCode() {
+        $expected = 404;
+        $app = new WebApp();
+        $app->handleRequest("/unknown");
+        $actual = $app->getStatusCode();
         $this->assertEquals($expected, $actual);
     }
 
