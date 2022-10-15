@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Model;
+use Udacity\Models\Model;
 
 final class ModelWithNoTable extends Model {
 

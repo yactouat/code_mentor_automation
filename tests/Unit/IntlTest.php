@@ -2,7 +2,7 @@
 
 namespace Tests\Unit;
 
-use App\Intl;
+use Udacity\Intl;
 use PHPUnit\Framework\TestCase;
 
 final class IntlTest extends TestCase {

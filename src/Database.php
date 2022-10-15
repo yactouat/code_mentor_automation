@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Udacity;
 
 use PDO;
 
@@ -21,8 +21,8 @@ final class Database {
      */
     public static $dbName = "udacity_sl_automation";
 
-    private static $sqliteDBPath = '/udacity_sl_automation/data/sql/database.db';
-    private static $sqliteTestDBPath = '/udacity_sl_automation/tests/fixtures/sql/database.db';
+    private static $sqliteDBPath = '/var/www/data/sql/database.db';
+    private static $sqliteTestDBPath = '/var/www/tests/fixtures/sql/database.db';
 
     public function __construct(?string $sqliteDBPath = null, bool $isTesting = false)
     {
@@ -30,8 +30,8 @@ final class Database {
         $this->_setDbFilePath($sqliteDBPath);
         $this->_initConn();
         $this->_setDatabase();
-        $this->setNewLogger(!$this->isTesting ? '/udacity_sl_automation/data/logs/php/db.log' : 
-            '/udacity_sl_automation/tests/fixtures/logs/php/db.log');
+        $this->setNewLogger(!$this->isTesting ? '/var/www/data/logs/php/db.log' : 
+            '/var/www/tests/fixtures/logs/php/db.log');
     }
 
     private function _getConn(): PDO {

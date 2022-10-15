@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Commands;
+namespace Udacity\Commands;
 
-use App\Csv\CsvExtractor;
-use App\Emailing\Mailer;
-use App\Intl;
-use App\LoggerTrait;
-use App\Processes\BehindStudentsEmailProcess;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\ConsoleOutputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Udacity\Csv\CsvExtractor;
+use Udacity\Emailing\Mailer;
+use Udacity\Intl;
+use Udacity\LoggerTrait;
+use Udacity\Processes\BehindStudentsEmailProcess;
 
 /**
  * this class is responsible for handling CLI input of sending emails to behind students

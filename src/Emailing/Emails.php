@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Emailing;
+namespace Udacity\Emailing;
 
 /**
  * class responsible for setting/getting emails templates

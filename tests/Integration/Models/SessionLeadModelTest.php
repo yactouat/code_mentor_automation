@@ -2,8 +2,8 @@
 
 namespace Tests\Integration\Models;
 
-use App\Database;
-use App\Models\SessionLeadModel;
+use Udacity\Database;
+use Udacity\Models\SessionLeadModel;
 use PHPUnit\Framework\TestCase;
 
 final class SessionLeadModelTest extends TestCase {
@@ -14,7 +14,7 @@ final class SessionLeadModelTest extends TestCase {
     {
 
         $_ENV["isTesting"] = true;
-        $this->dbPath = '/udacity_sl_automation/tests/fixtures/sql/database.db';
+        $this->dbPath = '/var/www/tests/fixtures/sql/database.db';
     }
 
     protected function tearDown(): void

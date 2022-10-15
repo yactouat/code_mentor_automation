@@ -1,7 +1,7 @@
 <?php
 
-use App\Database;
-use App\Models\Model;
+use Udacity\Database;
+use Udacity\Models\Model;
 
 final class DummyModel extends Model {
 

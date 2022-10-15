@@ -2,7 +2,7 @@
 
 namespace Tests\Integration;
 
-use App\Database;
+use Udacity\Database;
 use PDO;
 use PHPUnit\Framework\TestCase;
 
@@ -14,7 +14,7 @@ final class DatabaseTest extends TestCase {
     }
 
     public function testConstructCreatesDatabase() {
-        $dbPath = '/udacity_sl_automation/tests/fixtures/sql/database.db';
+        $dbPath = '/var/www/tests/fixtures/sql/database.db';
         $database = new Database($dbPath);
         $expected = 'udacity_sl_automation';
         $result = $database->readQuery('PRAGMA database_list');

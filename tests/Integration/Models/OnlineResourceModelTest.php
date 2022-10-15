@@ -2,8 +2,8 @@
 
 namespace Tests\Integration\Models;
 
-use App\Database;
-use App\Models\OnlineResourceModel;
+use Udacity\Database;
+use Udacity\Models\OnlineResourceModel;
 use PHPUnit\Framework\TestCase;
 
 final class OnlineResourceModelTest extends TestCase {
@@ -14,7 +14,7 @@ final class OnlineResourceModelTest extends TestCase {
     {
 
         $_ENV["isTesting"] = true;
-        $this->dbPath = '/udacity_sl_automation/tests/fixtures/sql/database.db';
+        $this->dbPath = '/var/www/tests/fixtures/sql/database.db';
     }
 
     protected function tearDown(): void

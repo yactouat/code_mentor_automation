@@ -2,14 +2,14 @@
 
 namespace Tests\Integration\Models;
 
-use App\Database;
-use App\Models\Model;
+use Udacity\Database;
+use Udacity\Models\Model;
 use DummyModel;
 use ModelWithNoTable;
 use PHPUnit\Framework\TestCase;
 
-require_once "/udacity_sl_automation/tests/fixtures/classes/ModelWithNoTable.php";
-require_once "/udacity_sl_automation/tests/fixtures/classes/DummyModel.php";
+require_once "/var/www/tests/fixtures/classes/ModelWithNoTable.php";
+require_once "/var/www/tests/fixtures/classes/DummyModel.php";
 
 final class ModelTest extends TestCase {
 
@@ -18,7 +18,7 @@ final class ModelTest extends TestCase {
     protected function setUp(): void
     {
         $_ENV["isTesting"] = true;
-        $this->dbPath = '/udacity_sl_automation/tests/fixtures/sql/database.db';
+        $this->dbPath = '/var/www/tests/fixtures/sql/database.db';
     }
 
     protected function tearDown(): void

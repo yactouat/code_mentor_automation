@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Udacity;
 
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;

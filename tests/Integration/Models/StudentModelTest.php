@@ -2,8 +2,8 @@
 
 namespace Tests\Integration\Models;
 
-use App\Database;
-use App\Models\StudentModel;
+use Udacity\Database;
+use Udacity\Models\StudentModel;
 use PHPUnit\Framework\TestCase;
 
 final class StudentModelTest extends TestCase {
@@ -14,7 +14,7 @@ final class StudentModelTest extends TestCase {
     {
 
         $_ENV["isTesting"] = true;
-        $this->dbPath = '/udacity_sl_automation/tests/fixtures/sql/database.db';
+        $this->dbPath = '/var/www/tests/fixtures/sql/database.db';
     }
 
     protected function tearDown(): void

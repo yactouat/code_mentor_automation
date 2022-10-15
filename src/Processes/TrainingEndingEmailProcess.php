@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace App\Processes;
+namespace Udacity\Processes;
 
-use App\Csv\StudentsCsvExtractor as CsvExtractor;
-use App\Emailing\Emails;
-use App\Emailing\Mailer;
-use App\LoggerTrait;
-use App\Models\OnlineResourceModel;
+use Udacity\Csv\StudentsCsvExtractor as CsvExtractor;
+use Udacity\Emailing\Emails;
+use Udacity\Emailing\Mailer;
+use Udacity\LoggerTrait;
+use Udacity\Models\OnlineResourceModel;
 
 /**
  * this class represents the business logic behind sending all students a cheering up email before the end of the training

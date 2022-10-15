@@ -6,7 +6,7 @@ services:
       dockerfile: docker/php/dev.Dockerfile
     working_dir: /udacity_sl_automation
     volumes:
-      - ./:/udacity_sl_automation/
+      - ./:/var/www
       - ./vendor:/udacity_sl_automation/vendor/
       - ./data/logs/nginx:/var/log/nginx/
     ports:

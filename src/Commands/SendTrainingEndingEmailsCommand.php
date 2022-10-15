@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Commands;
+namespace Udacity\Commands;
 
-use App\Csv\CsvExtractor;
-use App\Emailing\Mailer;
-use App\Intl;
-use App\LoggerTrait;
-use App\Processes\TrainingEndingEmailProcess;
+use Udacity\Csv\CsvExtractor;
+use Udacity\Emailing\Mailer;
+use Udacity\Intl;
+use Udacity\LoggerTrait;
+use Udacity\Processes\TrainingEndingEmailProcess;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Exception\InvalidArgumentException;

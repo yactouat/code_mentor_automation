@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace App\Csv;
+namespace Udacity\Csv;
 
-use App\Models\StudentModel;
+use Udacity\Models\StudentModel;
 
 /**
  * class responsible for extracting data from session reports CSVs

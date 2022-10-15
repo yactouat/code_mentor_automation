@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App;
+namespace Udacity;
 
 /**
  * this class is responsible for managing the internationalization of the app'

@@ -2,9 +2,9 @@
 
 namespace Tests\Unit\Emailing;
 
-use App\Csv\CsvExtractor;
-use App\Emailing\Emails;
-use App\Models\OnlineResourceModel;
+use Udacity\Csv\CsvExtractor;
+use Udacity\Emailing\Emails;
+use Udacity\Models\OnlineResourceModel;
 use PHPUnit\Framework\TestCase;
 
 final class EmailsTest extends TestCase
@@ -66,7 +66,7 @@ final class EmailsTest extends TestCase
             "Test2 FirstName", 
             "Test2 LastName",
             CsvExtractor::getCSVData(
-                './tests/fixtures/csv/online-resources.csv',
+                '/var/www/tests/fixtures/csv/online-resources.csv',
                 OnlineResourceModel::getFields()
             )
         );
@@ -81,7 +81,7 @@ final class EmailsTest extends TestCase
             "Test2 FirstName", 
             "Test2 LastName",
             CsvExtractor::getCSVData(
-                './tests/fixtures/csv/online-resources.csv',
+                '/var/www/tests/fixtures/csv/online-resources.csv',
                 OnlineResourceModel::getFields()
             )
         );

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Models;
+namespace Udacity\Models;
 
-use App\Database;
+use Udacity\Database;
 
 final class OnlineResourceModel extends Model {
 
