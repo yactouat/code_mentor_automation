@@ -2,7 +2,7 @@
 
 namespace App\Processes;
 
-use App\CsvExtractor;
+use App\Csv\CsvExtractor;
 use App\Emailing\Emails;
 use App\Emailing\Mailer;
 use App\Models\OnlineResourceModel;

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Models;
+namespace Tests\Integration\Models;
 
 use App\Database;
 use App\Models\SessionLeadModel;
@@ -24,7 +24,7 @@ final class SessionLeadModelTest extends TestCase {
         }
     }
 
-    public function testConstructCreatesSessionLeadsTableInDB() {
+    public function testConstructCreatesSessionLeadsTableInDb() {
         // arrange
         $database = new Database();
         $expected = 'sessionlead';
@@ -42,13 +42,30 @@ final class SessionLeadModelTest extends TestCase {
         $this->assertSame($expected, $actual["name"]);
     }
 
-    public function testConstructSetsCorrectTableName() {
+    public function testConstructSetsCorrectDbTableName() {
         $expected = "sessionlead";
         $sessionLead = new SessionLeadModel();
         $actual = $sessionLead->getTableName();
         $this->assertSame($expected, $actual);
     }
 
-}
+    public function testConstructSetsCorrectDbFields() {
+        // arrange
+        $database = new Database();
+        $expected = [
+            "id",
+            "email",
+            "email_password",
+            "first_name"
+        ];
+        $sessionLead = new SessionLeadModel($database);
+        // act
+        $query = $database->getConn()->query(
+            "pragma table_info('sessionlead')"
+        );
+        $actual = array_map(fn($col) => $col["name"], $query->fetchAll());
+        // assert
+        $this->assertSame($expected, $actual);
+    }
 
-// TODO test models tables fields
+}

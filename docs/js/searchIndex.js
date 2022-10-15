@@ -1,31 +1,6 @@
 Search.appendIndex(
     [
                 {
-            "fqsen": "\\App\\CsvExtractor",
-            "name": "CsvExtractor",
-            "summary": "class\u0020responsible\u0020for\u0020extracting\u0020data\u0020from\u0020session\u0020reports\u0020CSVs",
-            "url": "classes/App-CsvExtractor.html"
-        },                {
-            "fqsen": "\\App\\CsvExtractor\u003A\u003AcheckFileExistence\u0028\u0029",
-            "name": "checkFileExistence",
-            "summary": "checks\u0020if\u0020an\u0020input\u0020CSV\u0020exists,\u0020throws\u0020Exception\u0020if\u0020not",
-            "url": "classes/App-CsvExtractor.html#method_checkFileExistence"
-        },                {
-            "fqsen": "\\App\\CsvExtractor\u003A\u003AgetCSVData\u0028\u0029",
-            "name": "getCSVData",
-            "summary": "gets\u0020an\u0020array\u002Dlike\u0020representation\u0020of\u0020a\u0020CSV\u0020file\u0020data",
-            "url": "classes/App-CsvExtractor.html#method_getCSVData"
-        },                {
-            "fqsen": "\\App\\CsvExtractor\u003A\u003AgetBehindStudentsCoordinates\u0028\u0029",
-            "name": "getBehindStudentsCoordinates",
-            "summary": "extracts\u0020students\u0020coordinates\u0020from\u0020a\u0020Udacity\u0020session\u0020report,\u0020scoped\u0020to\u0020students\u0020that\u0020are\u0020behind\u0020on\u0020their\u0020Nanodegree\u0020track",
-            "url": "classes/App-CsvExtractor.html#method_getBehindStudentsCoordinates"
-        },                {
-            "fqsen": "\\App\\CsvExtractor\u003A\u003AgetAllStudentsCoordinates\u0028\u0029",
-            "name": "getAllStudentsCoordinates",
-            "summary": "extracts\u0020all\u0020students\u0020coordinates\u0020from\u0020a\u0020Udacity\u0020session\u0020report",
-            "url": "classes/App-CsvExtractor.html#method_getAllStudentsCoordinates"
-        },                {
             "fqsen": "\\App\\Models\\OnlineResourceModel",
             "name": "OnlineResourceModel",
             "summary": "",
@@ -316,6 +291,36 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Models-SessionLeadModel.html#property_tableName"
         },                {
+            "fqsen": "\\App\\Csv\\CsvExtractor",
+            "name": "CsvExtractor",
+            "summary": "class\u0020responsible\u0020for\u0020extracting\u0020data\u0020from\u0020CSVs",
+            "url": "classes/App-Csv-CsvExtractor.html"
+        },                {
+            "fqsen": "\\App\\Csv\\CsvExtractor\u003A\u003AcheckFileExistence\u0028\u0029",
+            "name": "checkFileExistence",
+            "summary": "checks\u0020if\u0020an\u0020input\u0020CSV\u0020exists,\u0020throws\u0020Exception\u0020if\u0020not",
+            "url": "classes/App-Csv-CsvExtractor.html#method_checkFileExistence"
+        },                {
+            "fqsen": "\\App\\Csv\\CsvExtractor\u003A\u003AgetCSVData\u0028\u0029",
+            "name": "getCSVData",
+            "summary": "gets\u0020an\u0020array\u002Dlike\u0020representation\u0020of\u0020a\u0020CSV\u0020file\u0020data",
+            "url": "classes/App-Csv-CsvExtractor.html#method_getCSVData"
+        },                {
+            "fqsen": "\\App\\Csv\\StudentsCsvExtractor",
+            "name": "StudentsCsvExtractor",
+            "summary": "class\u0020responsible\u0020for\u0020extracting\u0020data\u0020from\u0020session\u0020reports\u0020CSVs",
+            "url": "classes/App-Csv-StudentsCsvExtractor.html"
+        },                {
+            "fqsen": "\\App\\Csv\\StudentsCsvExtractor\u003A\u003AgetBehindStudentsCoordinates\u0028\u0029",
+            "name": "getBehindStudentsCoordinates",
+            "summary": "extracts\u0020students\u0020coordinates\u0020from\u0020a\u0020Udacity\u0020session\u0020report,\u0020scoped\u0020to\u0020students\u0020that\u0020are\u0020behind\u0020on\u0020their\u0020Nanodegree\u0020track",
+            "url": "classes/App-Csv-StudentsCsvExtractor.html#method_getBehindStudentsCoordinates"
+        },                {
+            "fqsen": "\\App\\Csv\\StudentsCsvExtractor\u003A\u003AgetAllStudentsCoordinates\u0028\u0029",
+            "name": "getAllStudentsCoordinates",
+            "summary": "extracts\u0020all\u0020students\u0020coordinates\u0020from\u0020a\u0020Udacity\u0020session\u0020report",
+            "url": "classes/App-Csv-StudentsCsvExtractor.html#method_getAllStudentsCoordinates"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -325,6 +330,11 @@ Search.appendIndex(
             "name": "Commands",
             "summary": "",
             "url": "namespaces/app-commands.html"
+        },                {
+            "fqsen": "\\App\\Csv",
+            "name": "Csv",
+            "summary": "",
+            "url": "namespaces/app-csv.html"
         },                {
             "fqsen": "\\App",
             "name": "App",

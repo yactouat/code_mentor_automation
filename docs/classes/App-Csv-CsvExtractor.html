@@ -110,12 +110,12 @@
             <div class="phpdocumentor-column -eight phpdocumentor-content">
                     <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/app.html">App</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-emailing.html">Emailing</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-csv.html">Csv</a></li>
     </ul>
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    Mailer
+    CsvExtractor
 
     
             <div class="phpdocumentor-element__package">
@@ -129,16 +129,14 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Emailing/Mailer.php"><a href="files/src-emailing-mailer.html"><abbr title="src/Emailing/Mailer.php">Mailer.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Csv/CsvExtractor.php"><a href="files/src-csv-csvextractor.html"><abbr title="src/Csv/CsvExtractor.php">CsvExtractor.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">9</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">class responsible for sending emails</p>
+            <p class="phpdocumentor-summary">class responsible for extracting data from CSVs</p>
 
-    <section class="phpdocumentor-description"><p>the environment must be set so that emails can be actually sent with the <code class="prettyprint">mailutils msmtp msmtp-mta</code> packages</p>
-</section>
 
 
 
@@ -154,18 +152,18 @@
 
 <dl class="phpdocumentor-table-of-contents">
                         <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Emailing-Mailer.html#method_checkMsmtprc">checkMsmtprc()</a>
+    <a href="classes/App-Csv-CsvExtractor.html#method_checkFileExistence">checkFileExistence()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd>checks is msmtp config is set</dd>
+<dd>checks if an input CSV exists, throws Exception if not</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Emailing-Mailer.html#method_sendEmail">sendEmail()</a>
+    <a href="classes/App-Csv-CsvExtractor.html#method_getCSVData">getCSVData()</a>
     <span>
-                                &nbsp;: void    </span>
+                                &nbsp;: array&lt;string|int, array&lt;string|int, mixed&gt;&gt;    </span>
 </dt>
-<dd>sends an email</dd>
+<dd>gets an array-like representation of a CSV file data</dd>
 
         </dl>
 
@@ -178,7 +176,7 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/App-Emailing-Mailer.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/App-Csv-CsvExtractor.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -186,30 +184,30 @@
             -public
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_checkMsmtprc">
-        checkMsmtprc()
-        <a href="classes/App-Emailing-Mailer.html#method_checkMsmtprc" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_checkFileExistence">
+        checkFileExistence()
+        <a href="classes/App-Csv-CsvExtractor.html#method_checkFileExistence" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Emailing/Mailer.php"><a href="files/src-emailing-mailer.html"><abbr title="src/Emailing/Mailer.php">Mailer.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Csv/CsvExtractor.php"><a href="files/src-csv-csvextractor.html"><abbr title="src/Csv/CsvExtractor.php">CsvExtractor.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">checks is msmtp config is set</p>
+        <p class="phpdocumentor-summary">checks if an input CSV exists, throws Exception if not</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">checkMsmtprc</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$msmtprcPath</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;/etc/msmtprc&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">checkFileExistence</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$inputCsvPath</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$msmtprcPath</span>
+                <span class="phpdocumentor-signature__argument__name">$inputCsvPath</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">&#039;/etc/msmtprc&#039;</span>            </dt>
+                            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
@@ -225,9 +223,9 @@
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><abbr title="\App\Emailing\Exception">Exception</abbr></span>
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\App\Csv\Exception">Exception</abbr></span>
                                                             
-                                                 <section class="phpdocumentor-description"><p>if <code class="prettyprint">msmtprc</code> is not set</p>
+                                                 <section class="phpdocumentor-description"><p>with message 'Please provide an existing input CSV'</p>
 </section>
 
                                     </dd>
@@ -245,84 +243,53 @@
             -public
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_sendEmail">
-        sendEmail()
-        <a href="classes/App-Emailing-Mailer.html#method_sendEmail" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getCSVData">
+        getCSVData()
+        <a href="classes/App-Csv-CsvExtractor.html#method_getCSVData" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Emailing/Mailer.php"><a href="files/src-emailing-mailer.html"><abbr title="src/Emailing/Mailer.php">Mailer.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Csv/CsvExtractor.php"><a href="files/src-csv-csvextractor.html"><abbr title="src/Csv/CsvExtractor.php">CsvExtractor.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">43</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">sends an email</p>
+        <p class="phpdocumentor-summary">gets an array-like representation of a CSV file data</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">sendEmail</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$recipientEmail</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$subject</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$htmlEmail</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$msmtprcPath</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;/etc/msmtprc&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">getCSVData</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$inputCsvPath</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$expectedFields</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;</span></code>
 
-        <section class="phpdocumentor-description"><p>sent emails are HTML emails</p>
-</section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$recipientEmail</span>
+                <span class="phpdocumentor-signature__argument__name">$inputCsvPath</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$subject</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$htmlEmail</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>better rendering if you pass HTML formatted text in there</p>
+                    <section class="phpdocumentor-description"><p>must be a path to a valid existing CSV file</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$msmtprcPath</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">&#039;/etc/msmtprc&#039;</span>            </dt>
+                <span class="phpdocumentor-signature__argument__name">$expectedFields</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>the path to your <code class="prettyprint">msmtp</code>config</p>
+                    <section class="phpdocumentor-description"><p>list array describing the expected fields in the input CSV</p>
 </section>
 
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><abbr title="\App\Emailing\Exception">Exception</abbr></span>
-                                                            
-                                                 <section class="phpdocumentor-description"><p>if <code class="prettyprint">msmtprc</code> is not set</p>
-</section>
-
-                                    </dd>
-                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>actually sends the email</p>
+            <section class="phpdocumentor-description"><p>returns an array containing the formatted CSV data as in =&gt;
+<code class="prettyprint">[ [ &quot;item_1_key&quot; =&gt; &quot;item_1_val&quot;, ] [ &quot;item_2_key&quot; =&gt; &quot;item_2_val&quot;, ] ]</code></p>
 </section>
 
     
@@ -405,7 +372,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/App-Emailing-Mailer.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/App-Csv-CsvExtractor.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

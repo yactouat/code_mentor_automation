@@ -1,13 +1,13 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit;
+namespace Tests\Unit\Csv;
 
-use App\CsvExtractor;
+use App\Csv\StudentsCsvExtractor as CsvExtractor;
 use App\Models\StudentModel;
 use Exception;
 use PHPUnit\Framework\TestCase;
 
-final class CsvExtractorTest extends TestCase {
+final class StudentsCsvExtractorTest extends TestCase {
 
     public function testgetCSVData() {
         $inputCsvPath = "./tests/fixtures/csv/valid-session-report-oneliner.csv";

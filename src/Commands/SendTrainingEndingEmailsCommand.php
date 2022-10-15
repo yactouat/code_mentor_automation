@@ -2,7 +2,7 @@
 
 namespace App\Commands;
 
-use App\CsvExtractor;
+use App\Csv\CsvExtractor;
 use App\Emailing\Mailer;
 use App\Intl;
 use App\Processes\TrainingEndingEmailProcess;

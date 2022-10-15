@@ -5,7 +5,7 @@ $rootDir = dirname(__DIR__);
 
 // loading deps
 require_once $rootDir."/vendor/autoload.php";
-use App\CsvExtractor;
+use App\Csv\CsvExtractor;
 use App\Emailing\Mailer;
 use App\Intl;
 
