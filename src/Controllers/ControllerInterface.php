@@ -2,4 +2,8 @@
 
 namespace Udacity\Controllers;
 
-interface ControllerInterface {}
+interface ControllerInterface {
+
+    public function index(): string;
+
+}

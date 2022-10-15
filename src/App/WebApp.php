@@ -10,6 +10,7 @@ final class WebApp {
     private ControllerInterface $controller;
     private int $statusCode;
     private string $inputRoute;
+    private string $responseOutput;
 
     public static function getRegisteredRoutes(): array {
         return [
@@ -17,16 +18,17 @@ final class WebApp {
         ];
     }
 
-    private function _setController(): void {
+    private function _setResponseOutput(): void {
         $parsedRoute = self::getRegisteredRoutes()[$this->inputRoute] ?? false;
         if (!$parsedRoute) {
             $this->controller = new NotFoundController();
+            $this->responseOutput = $this->controller->index();
         } else {
             $controllerClass = "Udacity\Controllers\\" . $parsedRoute[0];
             $this->controller = new $controllerClass();
+            $this->responseOutput = $this->controller->{$parsedRoute[1]}();
         }
     }
-
 
     private function _setStatusCode(): void {
         if (self::getRegisteredRoutes()[$this->inputRoute] ?? false === false) {
@@ -40,6 +42,10 @@ final class WebApp {
         return $this->controller;
     }
 
+    public function getResponseOutput(): string {
+        return $this->responseOutput;
+    }
+
     public function getStatusCode(): int {
         return $this->statusCode;
     }
@@ -47,7 +53,7 @@ final class WebApp {
     public function handleRequest(string $inputRoute): void {
         $this->inputRoute = self::parseRequestRoute($inputRoute);
         $this->_setStatusCode();
-        $this->_setController();
+        $this->_setResponseOutput();
     }
 
     public static function parseRequestRoute(string $inputRoute): string {

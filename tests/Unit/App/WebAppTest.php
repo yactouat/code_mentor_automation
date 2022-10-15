@@ -95,5 +95,13 @@ final class WebAppTest extends TestCase {
         $this->assertInstanceOf($expected, $actual);
     }
 
+    public function testGetResponseOutputWithUnkownRouteGets404Page() {
+        $expected = file_get_contents('/var/www/tests/fixtures/views/not-found.html');
+        $app = new WebApp();
+        $app->handleRequest("/unknown");
+        $actual = $app->getResponseOutput();
+        $this->assertEquals($expected, $actual);
+    }
+
 }
 

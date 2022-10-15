@@ -476,10 +476,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-App-WebApp.html#method_getRegisteredRoutes"
         },                {
-            "fqsen": "\\Udacity\\App\\WebApp\u003A\u003A_setController\u0028\u0029",
-            "name": "_setController",
+            "fqsen": "\\Udacity\\App\\WebApp\u003A\u003A_setResponseOutput\u0028\u0029",
+            "name": "_setResponseOutput",
             "summary": "",
-            "url": "classes/Udacity-App-WebApp.html#method__setController"
+            "url": "classes/Udacity-App-WebApp.html#method__setResponseOutput"
         },                {
             "fqsen": "\\Udacity\\App\\WebApp\u003A\u003A_setStatusCode\u0028\u0029",
             "name": "_setStatusCode",
@@ -490,6 +490,11 @@ Search.appendIndex(
             "name": "getController",
             "summary": "",
             "url": "classes/Udacity-App-WebApp.html#method_getController"
+        },                {
+            "fqsen": "\\Udacity\\App\\WebApp\u003A\u003AgetResponseOutput\u0028\u0029",
+            "name": "getResponseOutput",
+            "summary": "",
+            "url": "classes/Udacity-App-WebApp.html#method_getResponseOutput"
         },                {
             "fqsen": "\\Udacity\\App\\WebApp\u003A\u003AgetStatusCode\u0028\u0029",
             "name": "getStatusCode",
@@ -521,6 +526,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-App-WebApp.html#property_inputRoute"
         },                {
+            "fqsen": "\\Udacity\\App\\WebApp\u003A\u003A\u0024responseOutput",
+            "name": "responseOutput",
+            "summary": "",
+            "url": "classes/Udacity-App-WebApp.html#property_responseOutput"
+        },                {
             "fqsen": "\\Udacity\\Controllers\\Controller",
             "name": "Controller",
             "summary": "",
@@ -546,15 +556,40 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Controllers-ControllerInterface.html"
         },                {
+            "fqsen": "\\Udacity\\Controllers\\ControllerInterface\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "",
+            "url": "classes/Udacity-Controllers-ControllerInterface.html#method_index"
+        },                {
             "fqsen": "\\Udacity\\Controllers\\HomeController",
             "name": "HomeController",
             "summary": "",
             "url": "classes/Udacity-Controllers-HomeController.html"
         },                {
+            "fqsen": "\\Udacity\\Controllers\\HomeController\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Udacity-Controllers-HomeController.html#method___construct"
+        },                {
+            "fqsen": "\\Udacity\\Controllers\\HomeController\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "",
+            "url": "classes/Udacity-Controllers-HomeController.html#method_index"
+        },                {
             "fqsen": "\\Udacity\\Controllers\\NotFoundController",
             "name": "NotFoundController",
             "summary": "",
             "url": "classes/Udacity-Controllers-NotFoundController.html"
+        },                {
+            "fqsen": "\\Udacity\\Controllers\\NotFoundController\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Udacity-Controllers-NotFoundController.html#method___construct"
+        },                {
+            "fqsen": "\\Udacity\\Controllers\\NotFoundController\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "",
+            "url": "classes/Udacity-Controllers-NotFoundController.html#method_index"
         },                {
             "fqsen": "\\",
             "name": "\\",
