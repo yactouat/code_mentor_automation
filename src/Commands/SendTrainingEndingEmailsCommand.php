@@ -5,6 +5,7 @@ namespace App\Commands;
 use App\Csv\CsvExtractor;
 use App\Emailing\Mailer;
 use App\Intl;
+use App\LoggerTrait;
 use App\Processes\TrainingEndingEmailProcess;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
@@ -21,6 +22,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 #[AsCommand(name: 'emails:training-ending')]
 class SendTrainingEndingEmailsCommand extends Command
 {
+
+    use LoggerTrait;
 
     const CSV_ARG = 'csv';
     const LANG_ARG = 'language';
@@ -106,7 +109,7 @@ class SendTrainingEndingEmailsCommand extends Command
             '=============================================',
             ''
         ]);
-        TrainingEndingEmailProcess::run($csv, $language, $onlineResources);
+        ((new TrainingEndingEmailProcess())->setLogger($this->logger))->run($csv, $language, $onlineResources);
 
         // feedback to user
         $output->writeln([

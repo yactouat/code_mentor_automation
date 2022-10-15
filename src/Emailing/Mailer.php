@@ -2,6 +2,8 @@
 
 namespace App\Emailing;
 
+use Monolog\Logger;
+
 /**
  * class responsible for sending emails
  * 
@@ -44,7 +46,8 @@ final class Mailer
         string $recipientEmail, 
         string $subject, 
         string $htmlEmail,
-        string $msmtprcPath = '/etc/msmtprc'
+        string $msmtprcPath = '/etc/msmtprc',
+        ?Logger $logger = null
     ): void {
         self::checkMsmtprc($msmtprcPath);
         $delivered = mail(
@@ -54,6 +57,9 @@ final class Mailer
             "MIME-Version: 1.0" . "\r\n". "Content-type: text/html; charset=utf8" . "\r\n"
         );
         if (!$delivered) {
+            if (!is_null($logger)) {
+                $logger->alert("email not sent to $recipientEmail");
+            }
             echo PHP_EOL."email not sent to $recipientEmail".PHP_EOL;
         }
     }

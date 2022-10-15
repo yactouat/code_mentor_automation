@@ -336,6 +336,26 @@ Search.appendIndex(
             "summary": "extracts\u0020all\u0020students\u0020coordinates\u0020from\u0020a\u0020Udacity\u0020session\u0020report",
             "url": "classes/App-Csv-StudentsCsvExtractor.html#method_getAllStudentsCoordinates"
         },                {
+            "fqsen": "\\App\\LoggerTrait",
+            "name": "LoggerTrait",
+            "summary": "",
+            "url": "classes/App-LoggerTrait.html"
+        },                {
+            "fqsen": "\\App\\LoggerTrait\u003A\u003AsetLogger\u0028\u0029",
+            "name": "setLogger",
+            "summary": "",
+            "url": "classes/App-LoggerTrait.html#method_setLogger"
+        },                {
+            "fqsen": "\\App\\LoggerTrait\u003A\u003AsetNewLogger\u0028\u0029",
+            "name": "setNewLogger",
+            "summary": "",
+            "url": "classes/App-LoggerTrait.html#method_setNewLogger"
+        },                {
+            "fqsen": "\\App\\LoggerTrait\u003A\u003A\u0024logger",
+            "name": "logger",
+            "summary": "",
+            "url": "classes/App-LoggerTrait.html#property_logger"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",

@@ -24,7 +24,7 @@ final class Database {
 
     public function __construct(?string $sqliteDBPath = null, bool $isTesting = false)
     {
-        $this->isTesting = $isTesting;
+        $this->isTesting = !$isTesting ? ($_ENV["isTesting"] ?? false) : $isTesting;
         $this->_setDbFilePath($sqliteDBPath);
         $this->_initConn();
         $this->_setDatabase();

@@ -8,6 +8,7 @@ require_once $rootDir."/vendor/autoload.php";
 use App\Csv\CsvExtractor;
 use App\Emailing\Mailer;
 use App\Intl;
+use App\LoggerTrait;
 
 /**
  * shared code for non-CLI executable automations present in the `./bin` folder
@@ -18,6 +19,8 @@ use App\Intl;
  * @package bin
  */
 final class NonCLIShared {
+
+    use LoggerTrait;
 
     /**
      * runs common validations used in non CLI scripts
@@ -34,11 +37,11 @@ final class NonCLIShared {
      * 
      * @return void
      */
-    public static function runCommonValidationRounds(?string $csv = null, ?string $language = null): void {
+    public function runCommonValidationRounds(?string $csv = null, ?string $language = null): void {
         try {
             Mailer::checkMsmtprc();
         } catch (\Exception $e) {
-            echo PHP_EOL.$e->getMessage().PHP_EOL;
+            $this->logger->error($e->getMessage());
             echo PHP_EOL."check out how to configure emailing @ https://github.com/yactouat/udacity_sl_automation#sending-emails-in-bulk-to-students".PHP_EOL;
             exit(1);
         }
@@ -50,6 +53,7 @@ final class NonCLIShared {
             CsvExtractor::checkFileExistence($csv);
             Intl::languageIsAllowed($language);
         } catch (\Exception $e) {
+            $this->logger->error($e->getMessage());
             echo PHP_EOL.$e->getMessage().PHP_EOL;
             exit(1);
         }        

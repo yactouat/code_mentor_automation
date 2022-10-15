@@ -5,6 +5,7 @@ namespace App\Commands;
 use App\Csv\CsvExtractor;
 use App\Emailing\Mailer;
 use App\Intl;
+use App\LoggerTrait;
 use App\Processes\BehindStudentsEmailProcess;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
@@ -20,6 +21,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 #[AsCommand(name: 'emails:behind-students')]
 class SendEmailsToBehindStudentsCommand extends Command
 {
+
+    use LoggerTrait;
 
     const CSV_ARG = 'csv';
     const LANG_ARG = 'language';
@@ -93,7 +96,7 @@ class SendEmailsToBehindStudentsCommand extends Command
             '====================================',
             ''
         ]);
-        BehindStudentsEmailProcess::run($csv, $language);
+        ((new BehindStudentsEmailProcess())->setLogger($this->logger))->run($csv, $language);
 
         // feedback to user
         $output->writeln([

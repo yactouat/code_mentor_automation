@@ -2,15 +2,18 @@
 
 namespace App\Processes;
 
-use App\Csv\CsvExtractor;
+use App\Csv\StudentsCsvExtractor as CsvExtractor;
 use App\Emailing\Emails;
 use App\Emailing\Mailer;
+use App\LoggerTrait;
 use App\Models\OnlineResourceModel;
 
 /**
  * this class represents the business logic behind sending all students a cheering up email before the end of the training
  */
 final class TrainingEndingEmailProcess {
+
+    use LoggerTrait;
 
     /**
      * implements `TrainingEndingEmailProcess` business logic
@@ -19,7 +22,7 @@ final class TrainingEndingEmailProcess {
      * @param string $language
      * @return void
      */
-    public static function run(
+    public function run(
         string $csv, 
         string $language, 
         ?string $onlineResources = null
@@ -47,7 +50,7 @@ final class TrainingEndingEmailProcess {
                 $subject,
                 Emails::getTrainingEndingEmailFormatted($language, $student["First Name"], $student["Last Name"], $onlineResources)
             );
-            echo PHP_EOL."sent email ".$count." out of ".count($studentsCoordinates).PHP_EOL;
+            $this->logger->info("sent training ending email ".$count." out of ".count($studentsCoordinates));
             $count++;
         }
     }

@@ -2,14 +2,17 @@
 
 namespace App\Processes;
 
-use App\Csv\CsvExtractor;
+use App\Csv\StudentsCsvExtractor as CsvExtractor;
 use App\Emailing\Emails;
 use App\Emailing\Mailer;
+use App\LoggerTrait;
 
 /**
  * this class represents the business logic behind sending students behind emails
  */
 final class BehindStudentsEmailProcess {
+
+    use LoggerTrait;
 
     /**
      * implements `BehindStudentsEmailProcess` business logic
@@ -18,7 +21,7 @@ final class BehindStudentsEmailProcess {
      * @param string $language
      * @return void
      */
-    public static function run(string $csv, string $language): void {
+    public function run(string $csv, string $language): void {
         // get students who are behind coordinates (first and last name, email)
         $behindStudentsCoordinates = CsvExtractor::getBehindStudentsCoordinates($csv);
         $subject = $language == "fr" ? "Session Connect Udacity": "Udacity Connect session";
@@ -30,7 +33,7 @@ final class BehindStudentsEmailProcess {
                 $subject,
                 Emails::getBehindStudentEmailFormatted($language, $student["First Name"], $student["Last Name"])
             );
-            echo PHP_EOL."sent email ".$count." out of ".count($behindStudentsCoordinates).PHP_EOL;
+            $this->logger->info("sent behind student email ".$count." out of ".count($behindStudentsCoordinates));
             $count++;
         }
     }
