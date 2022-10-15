@@ -28,7 +28,7 @@ final class SessionLeadModelTest extends TestCase {
         // arrange
         $database = new Database();
         $expected = 'sessionlead';
-        $sessionLead = new SessionLeadModel($database);
+        $sessionLead = new SessionLeadModel("test email", "test password", "test first name");
         // act
         $res = $database->readQuery(
             "SELECT name FROM sqlite_schema WHERE type='table' ORDER BY name"
@@ -43,7 +43,7 @@ final class SessionLeadModelTest extends TestCase {
 
     public function testConstructSetsCorrectDbTableName() {
         $expected = "sessionlead";
-        $sessionLead = new SessionLeadModel();
+        $sessionLead = new SessionLeadModel("test email", "test password", "test first name");
         $actual = $sessionLead->getTableName();
         $this->assertSame($expected, $actual);
     }
@@ -57,7 +57,7 @@ final class SessionLeadModelTest extends TestCase {
             "email_password",
             "first_name"
         ];
-        $sessionLead = new SessionLeadModel($database);
+        $sessionLead = new SessionLeadModel("test email", "test password", "test first name");
         // act
         $res = $database->readQuery(
             "pragma table_info('sessionlead')"
@@ -65,6 +65,24 @@ final class SessionLeadModelTest extends TestCase {
         $actual = array_map(fn($col) => $col["name"], $res);
         // assert
         $this->assertSame($expected, $actual);
+    }
+
+    public function testCreatePersistsInstanceInDb() {
+        // arrange
+        $expected = [
+            [
+                "id" => 1,
+                "email" => "test email",
+                "email_password" => "test password",
+                "first_name" => "test first name"
+            ]
+        ];   
+        $sessionLead = new SessionLeadModel("test email", "test password", "test first name");
+        $sessionLead->create();
+        // act
+        $actual = $sessionLead->selectAll();
+        // assert
+        $this->assertEquals($expected, $actual);     
     }
 
 }

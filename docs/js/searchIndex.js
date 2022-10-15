@@ -341,6 +341,21 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Models-SessionLeadModel.html#property_tableName"
         },                {
+            "fqsen": "\\App\\Models\\SessionLeadModel\u003A\u003A\u0024email",
+            "name": "email",
+            "summary": "",
+            "url": "classes/App-Models-SessionLeadModel.html#property_email"
+        },                {
+            "fqsen": "\\App\\Models\\SessionLeadModel\u003A\u003A\u0024email_password",
+            "name": "email_password",
+            "summary": "",
+            "url": "classes/App-Models-SessionLeadModel.html#property_email_password"
+        },                {
+            "fqsen": "\\App\\Models\\SessionLeadModel\u003A\u003A\u0024first_name",
+            "name": "first_name",
+            "summary": "",
+            "url": "classes/App-Models-SessionLeadModel.html#property_first_name"
+        },                {
             "fqsen": "\\App\\Csv\\CsvExtractor",
             "name": "CsvExtractor",
             "summary": "class\u0020responsible\u0020for\u0020extracting\u0020data\u0020from\u0020CSVs",
