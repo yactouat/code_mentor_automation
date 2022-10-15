@@ -28,7 +28,7 @@ final class StudentModelTest extends TestCase {
         // arrange
         $database = new Database();
         $expected = 'student';
-        $student = new StudentModel($database);
+        $student = new StudentModel('test email', 'test first name', 'test last name', 'Behind');
         // act
         $res = $database->readQuery(
             "SELECT name FROM sqlite_schema WHERE type='table' ORDER BY name"
@@ -43,7 +43,7 @@ final class StudentModelTest extends TestCase {
 
     public function testConstructSetsCorrectDbTableName() {
         $expected = "student";
-        $student = new StudentModel();
+        $student = new StudentModel('test email', 'test first name', 'test last name', 'Behind');
         $actual = $student->getTableName();
         $this->assertSame($expected, $actual);
     }
@@ -58,7 +58,7 @@ final class StudentModelTest extends TestCase {
             "last_name",
             "on_track_status"
         ];
-        $sessionLead = new StudentModel($database);
+        $sessionLead = new StudentModel('test email', 'test first name', 'test last name', 'Behind');
         // act
         $res = $database->readQuery(
             "pragma table_info('student')"
@@ -66,6 +66,25 @@ final class StudentModelTest extends TestCase {
         $actual = array_map(fn($col) => $col["name"], $res);
         // assert
         $this->assertSame($expected, $actual);
+    }
+
+    public function testCreatePersistsInstanceInDb() {
+        // arrange
+        $expected = [
+            [
+                'id' => 1,
+                'email' => 'test email',
+                'first_name' => 'test first name',
+                'last_name' => 'test last name',
+                'on_track_status' => 'Behind'
+            ]
+        ];   
+        $sessionLead = new StudentModel('test email', 'test first name', 'test last name', 'Behind');
+        $sessionLead->create();
+        // act
+        $actual = $sessionLead->selectAll();
+        // assert
+        $this->assertEquals($expected, $actual);     
     }
 
 }

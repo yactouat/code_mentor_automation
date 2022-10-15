@@ -66,6 +66,26 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Models-StudentModel.html#property_tableName"
         },                {
+            "fqsen": "\\App\\Models\\StudentModel\u003A\u003A\u0024email",
+            "name": "email",
+            "summary": "",
+            "url": "classes/App-Models-StudentModel.html#property_email"
+        },                {
+            "fqsen": "\\App\\Models\\StudentModel\u003A\u003A\u0024first_name",
+            "name": "first_name",
+            "summary": "",
+            "url": "classes/App-Models-StudentModel.html#property_first_name"
+        },                {
+            "fqsen": "\\App\\Models\\StudentModel\u003A\u003A\u0024last_name",
+            "name": "last_name",
+            "summary": "",
+            "url": "classes/App-Models-StudentModel.html#property_last_name"
+        },                {
+            "fqsen": "\\App\\Models\\StudentModel\u003A\u003A\u0024on_track_status",
+            "name": "on_track_status",
+            "summary": "",
+            "url": "classes/App-Models-StudentModel.html#property_on_track_status"
+        },                {
             "fqsen": "\\App\\Commands\\SendEmailsToBehindStudentsCommand",
             "name": "SendEmailsToBehindStudentsCommand",
             "summary": "this\u0020class\u0020is\u0020responsible\u0020for\u0020handling\u0020CLI\u0020input\u0020of\u0020sending\u0020emails\u0020to\u0020behind\u0020students",
