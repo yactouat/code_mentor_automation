@@ -58,7 +58,7 @@ final class ModelTest extends TestCase {
         $database = new Database();
         $dummy = new DummyModel();
         $dbName = Database::$dbName;
-        $database->getConn()->query("INSERT INTO $dbName.dummy (some_field) VALUES 
+        $database->writeQuery("INSERT INTO $dbName.dummy (some_field) VALUES 
             ('test'),
             ('test2'),
             ('test3'),

@@ -12,7 +12,7 @@ final class DummyModel extends Model {
         parent::__construct();
         $dbName = Database::$dbName;
         $tableName = $this->tableName;
-        $this->database->getConn()->query("CREATE TABLE IF NOT EXISTS $dbName.$tableName(
+        $this->database->writeQuery("CREATE TABLE IF NOT EXISTS $dbName.$tableName(
             id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
             some_field TEXT NOT NULL
         )");

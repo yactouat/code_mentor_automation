@@ -30,6 +30,10 @@ final class Database {
         $this->_setDatabase();
     }
 
+    private function _getConn(): PDO {
+        return $this->databaseConn;
+    }
+
     private function _initConn(): void {
         $this->databaseConn = new PDO(
             dsn: 'sqlite:'.self::$sqliteDBPath, 
@@ -54,8 +58,14 @@ final class Database {
         }
     }
 
-    public function getConn(): PDO {
-        return $this->databaseConn;
+    public function readQuery(string $query, $logger = null): array {
+        $result = $this->databaseConn->query($query);
+        return $result->fetchAll();
+    }
+
+    public function writeQuery(string $query, $logger = null): array {
+        $result = $this->databaseConn->query($query);
+        return $result->fetchAll();
     }
 
 }

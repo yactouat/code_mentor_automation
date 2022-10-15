@@ -30,10 +30,9 @@ final class SessionLeadModelTest extends TestCase {
         $expected = 'sessionlead';
         $sessionLead = new SessionLeadModel($database);
         // act
-        $query = $database->getConn()->query(
+        $res = $database->readQuery(
             "SELECT name FROM sqlite_schema WHERE type='table' ORDER BY name"
         );
-        $res = $query->fetchAll();
         $filtered = array_filter($res, function($table) use($expected) {
             return $table["name"] === $expected;
         });
@@ -60,10 +59,10 @@ final class SessionLeadModelTest extends TestCase {
         ];
         $sessionLead = new SessionLeadModel($database);
         // act
-        $query = $database->getConn()->query(
+        $res = $database->readQuery(
             "pragma table_info('sessionlead')"
         );
-        $actual = array_map(fn($col) => $col["name"], $query->fetchAll());
+        $actual = array_map(fn($col) => $col["name"], $res);
         // assert
         $this->assertSame($expected, $actual);
     }

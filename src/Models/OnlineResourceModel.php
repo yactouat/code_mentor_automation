@@ -13,7 +13,7 @@ final class OnlineResourceModel extends Model {
         parent::__construct();
         $dbName = Database::$dbName;
         $tableName = $this->tableName;
-        $this->database->getConn()->query("CREATE TABLE IF NOT EXISTS $dbName.$tableName(
+        $this->database->writeQuery("CREATE TABLE IF NOT EXISTS $dbName.$tableName(
             id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
             description TEXT NOT NULL,
             name TEXT NOT NULL,

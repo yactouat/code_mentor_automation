@@ -196,6 +196,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Database.html#method___construct"
         },                {
+            "fqsen": "\\App\\Database\u003A\u003A_getConn\u0028\u0029",
+            "name": "_getConn",
+            "summary": "",
+            "url": "classes/App-Database.html#method__getConn"
+        },                {
             "fqsen": "\\App\\Database\u003A\u003A_initConn\u0028\u0029",
             "name": "_initConn",
             "summary": "",
@@ -211,10 +216,15 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Database.html#method__setDbFilePath"
         },                {
-            "fqsen": "\\App\\Database\u003A\u003AgetConn\u0028\u0029",
-            "name": "getConn",
+            "fqsen": "\\App\\Database\u003A\u003AreadQuery\u0028\u0029",
+            "name": "readQuery",
             "summary": "",
-            "url": "classes/App-Database.html#method_getConn"
+            "url": "classes/App-Database.html#method_readQuery"
+        },                {
+            "fqsen": "\\App\\Database\u003A\u003AwriteQuery\u0028\u0029",
+            "name": "writeQuery",
+            "summary": "",
+            "url": "classes/App-Database.html#method_writeQuery"
         },                {
             "fqsen": "\\App\\Database\u003A\u003A\u0024isTesting",
             "name": "isTesting",
