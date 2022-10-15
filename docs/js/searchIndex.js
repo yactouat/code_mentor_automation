@@ -261,6 +261,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Models-Model.html#method_getTableName"
         },                {
+            "fqsen": "\\App\\Models\\Model\u003A\u003AselectAll\u0028\u0029",
+            "name": "selectAll",
+            "summary": "",
+            "url": "classes/App-Models-Model.html#method_selectAll"
+        },                {
             "fqsen": "\\App\\Models\\Model\u003A\u003A\u0024database",
             "name": "database",
             "summary": "",

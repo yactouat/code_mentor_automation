@@ -23,4 +23,9 @@ abstract class Model {
         return $this->tableName;
     }
 
+    public function selectAll(): array {
+        $query = $this->database->getConn()->query("SELECT * FROM ".$this->tableName);
+        return $query->fetchAll();
+    }
+
 }
