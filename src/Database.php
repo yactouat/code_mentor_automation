@@ -30,9 +30,8 @@ final class Database {
         $this->_setDbFilePath($sqliteDBPath);
         $this->_initConn();
         $this->_setDatabase();
-        if (!$this->isTesting) {
-            $this->setNewLogger('/udacity_sl_automation/data/logs/db.log');
-        }
+        $this->setNewLogger(!$this->isTesting ? '/udacity_sl_automation/data/logs/db.log' : 
+            '/udacity_sl_automation/tests/fixtures/logs/db.log');
     }
 
     private function _getConn(): PDO {
@@ -63,18 +62,16 @@ final class Database {
         }
     }
 
-    public function readQuery(string $query, $logger = null): array {
+    public function readQuery(string $query): array {
         if (!$this->isTesting) {
-            $this->logger->info("running query : ".$query);
+            $this->logger->info("running READ query : ".$query);
         }
         $result = $this->databaseConn->query($query);
         return $result->fetchAll();
     }
 
-    public function writeQuery(string $query, $logger = null): array {
-        if (!$this->isTesting) {
-            $this->logger->notice("running query : ".$query);
-        }
+    public function writeQuery(string $query): array {
+        $this->logger->notice("running WRITE query : ".$query);
         $result = $this->databaseConn->query($query);
         return $result->fetchAll();
     }

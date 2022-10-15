@@ -17,7 +17,6 @@ final class ModelTest extends TestCase {
 
     protected function setUp(): void
     {
-
         $_ENV["isTesting"] = true;
         $this->dbPath = '/udacity_sl_automation/tests/fixtures/sql/database.db';
     }

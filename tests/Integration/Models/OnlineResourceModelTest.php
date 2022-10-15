@@ -28,7 +28,7 @@ final class OnlineResourceModelTest extends TestCase {
         // arrange
         $database = new Database();
         $expected = 'onlineresource';
-        $onlineResource = new OnlineResourceModel($database);
+        $onlineResource = new OnlineResourceModel("test name", "test description", "test url");
         // act
         $res = $database->readQuery(
             "SELECT name FROM sqlite_schema WHERE type='table' ORDER BY name"
@@ -43,7 +43,7 @@ final class OnlineResourceModelTest extends TestCase {
 
     public function testConstructSetsCorrectDbTableName() {
         $expected = "onlineresource";
-        $onlineResource = new OnlineResourceModel();
+        $onlineResource = new OnlineResourceModel("test name", "test description", "test url");
         $actual = $onlineResource->getTableName();
         $this->assertSame($expected, $actual);
     }
@@ -57,7 +57,7 @@ final class OnlineResourceModelTest extends TestCase {
             "name",
             "url"
         ];
-        $sessionLead = new OnlineResourceModel($database);
+        $sessionLead = new OnlineResourceModel("test name", "test description", "test url");
         // act
         $res = $database->readQuery(
             "pragma table_info('onlineresource')"
@@ -65,6 +65,24 @@ final class OnlineResourceModelTest extends TestCase {
         $actual = array_map(fn($col) => $col["name"], $res);
         // assert
         $this->assertSame($expected, $actual);
+    }
+
+    public function testCreatePersistsInstanceInDb() {
+        // arrange
+        $expected = [
+            [
+                "id" => 1,
+                "description" => "test description",
+                "name" => "test name",
+                "url" => "test URL"
+            ]
+        ];   
+        $onlineResource = new OnlineResourceModel("test description", "test name", "test URL");
+        $onlineResource->create();
+        // act
+        $actual = $onlineResource->selectAll();
+        // assert
+        $this->assertEquals($expected, $actual);     
     }
 
 }

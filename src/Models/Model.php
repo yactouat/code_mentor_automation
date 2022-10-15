@@ -9,6 +9,7 @@ abstract class Model {
     protected Database $database;
     protected string $tableName;
 
+    public abstract function create(): void;
     public abstract static function getFields(): array;
 
     public function __construct(?Database $database = null)

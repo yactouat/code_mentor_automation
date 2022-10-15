@@ -8,6 +8,11 @@ use PHPUnit\Framework\TestCase;
 
 final class DatabaseTest extends TestCase {
 
+    protected function setUp(): void
+    {
+        $_ENV["isTesting"] = true;
+    }
+
     public function testConstructCreatesDatabase() {
         $dbPath = '/udacity_sl_automation/tests/fixtures/sql/database.db';
         $database = new Database($dbPath);

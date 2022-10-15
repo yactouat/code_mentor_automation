@@ -9,6 +9,8 @@ final class ModelWithNoTable extends Model {
         parent::__construct();
     }
 
+    public function create(): void {}
+
     public static function getFields(): array
     {
         return [];

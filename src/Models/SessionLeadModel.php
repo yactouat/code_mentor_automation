@@ -14,12 +14,14 @@ final class SessionLeadModel extends Model {
         $dbName = Database::$dbName;
         $tableName = $this->tableName;
         $this->database->writeQuery("CREATE TABLE IF NOT EXISTS $dbName.$tableName(
-            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-            email TEXT NOT NULL,
+            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
+            email TEXT NOT NULL UNIQUE,
             email_password TEXT NOT NULL,
             first_name TEXT NOT NULL
         )");
     }
+
+    public function create(): void {}
 
     public static function getFields(): array
     {

@@ -11,6 +11,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Models-OnlineResourceModel.html#method___construct"
         },                {
+            "fqsen": "\\App\\Models\\OnlineResourceModel\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "",
+            "url": "classes/App-Models-OnlineResourceModel.html#method_create"
+        },                {
             "fqsen": "\\App\\Models\\OnlineResourceModel\u003A\u003AgetFields\u0028\u0029",
             "name": "getFields",
             "summary": "",
@@ -21,6 +26,21 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Models-OnlineResourceModel.html#property_tableName"
         },                {
+            "fqsen": "\\App\\Models\\OnlineResourceModel\u003A\u003A\u0024description",
+            "name": "description",
+            "summary": "",
+            "url": "classes/App-Models-OnlineResourceModel.html#property_description"
+        },                {
+            "fqsen": "\\App\\Models\\OnlineResourceModel\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "",
+            "url": "classes/App-Models-OnlineResourceModel.html#property_name"
+        },                {
+            "fqsen": "\\App\\Models\\OnlineResourceModel\u003A\u003A\u0024url",
+            "name": "url",
+            "summary": "",
+            "url": "classes/App-Models-OnlineResourceModel.html#property_url"
+        },                {
             "fqsen": "\\App\\Models\\StudentModel",
             "name": "StudentModel",
             "summary": "",
@@ -30,6 +50,11 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "",
             "url": "classes/App-Models-StudentModel.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Models\\StudentModel\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "",
+            "url": "classes/App-Models-StudentModel.html#method_create"
         },                {
             "fqsen": "\\App\\Models\\StudentModel\u003A\u003AgetFields\u0028\u0029",
             "name": "getFields",
@@ -256,6 +281,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Models-Model.html"
         },                {
+            "fqsen": "\\App\\Models\\Model\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "",
+            "url": "classes/App-Models-Model.html#method_create"
+        },                {
             "fqsen": "\\App\\Models\\Model\u003A\u003AgetFields\u0028\u0029",
             "name": "getFields",
             "summary": "",
@@ -295,6 +325,11 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "",
             "url": "classes/App-Models-SessionLeadModel.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Models\\SessionLeadModel\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "",
+            "url": "classes/App-Models-SessionLeadModel.html#method_create"
         },                {
             "fqsen": "\\App\\Models\\SessionLeadModel\u003A\u003AgetFields\u0028\u0029",
             "name": "getFields",
