@@ -6,6 +6,8 @@ use PDO;
 
 final class Database {
 
+    use LoggerTrait;
+
     private bool $isTesting;
 
     private PDO $databaseConn;
@@ -28,6 +30,9 @@ final class Database {
         $this->_setDbFilePath($sqliteDBPath);
         $this->_initConn();
         $this->_setDatabase();
+        if (!$this->isTesting) {
+            $this->setNewLogger('/udacity_sl_automation/data/logs/db.log');
+        }
     }
 
     private function _getConn(): PDO {
@@ -59,11 +64,17 @@ final class Database {
     }
 
     public function readQuery(string $query, $logger = null): array {
+        if (!$this->isTesting) {
+            $this->logger->info("running query : ".$query);
+        }
         $result = $this->databaseConn->query($query);
         return $result->fetchAll();
     }
 
     public function writeQuery(string $query, $logger = null): array {
+        if (!$this->isTesting) {
+            $this->logger->info("running query : ".$query);
+        }
         $result = $this->databaseConn->query($query);
         return $result->fetchAll();
     }
