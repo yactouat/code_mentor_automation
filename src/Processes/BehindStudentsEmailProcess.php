@@ -37,7 +37,7 @@ final class BehindStudentsEmailProcess {
             $this->logger->info("sent behind student email ".$count." out of ".count($behindStudentsCoordinates));
             $count++;
         }
-        $this->endTimer();
+        $this->endTimer("sending emails took : ");
     }
 
 }

@@ -54,7 +54,7 @@ final class TrainingEndingEmailProcess {
             $this->logger->info("sent training ending email ".$count." out of ".count($studentsCoordinates));
             $count++;
         }
-        $this->endTimer();
+        $this->endTimer("sending emails took : ");
     }
 
 }
