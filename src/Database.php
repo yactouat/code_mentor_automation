@@ -73,7 +73,7 @@ final class Database {
 
     public function writeQuery(string $query, $logger = null): array {
         if (!$this->isTesting) {
-            $this->logger->info("running query : ".$query);
+            $this->logger->notice("running query : ".$query);
         }
         $result = $this->databaseConn->query($query);
         return $result->fetchAll();
