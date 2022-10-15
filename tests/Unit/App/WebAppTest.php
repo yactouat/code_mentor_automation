@@ -4,6 +4,8 @@ namespace Tests\Unit\App;
 
 use PHPUnit\Framework\TestCase;
 use Udacity\App\WebApp;
+use Udacity\Controllers\HomeController;
+use Udacity\Controllers\NotFoundController;
 
 final class WebAppTest extends TestCase {
 
@@ -69,12 +71,28 @@ final class WebAppTest extends TestCase {
         $this->assertEquals($expected, $actual);
     }
 
-    public function testHandleRequestWithUnkownRouteSets404StatusCode() {
+    public function testHandleRequestWithUnknownRouteSets404StatusCode() {
         $expected = 404;
         $app = new WebApp();
         $app->handleRequest("/unknown");
         $actual = $app->getStatusCode();
         $this->assertEquals($expected, $actual);
+    }
+
+    public function testGetControllerWithHomeRouteGetsHomeController() {
+        $expected = HomeController::class;
+        $app = new WebApp();
+        $app->handleRequest("/");
+        $actual = $app->getController();
+        $this->assertInstanceOf($expected, $actual);
+    }
+
+    public function testGetControllerWithUnknownRouteGetsNotFoundController() {
+        $expected = NotFoundController::class;
+        $app = new WebApp();
+        $app->handleRequest("/unknown");
+        $actual = $app->getController();
+        $this->assertInstanceOf($expected, $actual);
     }
 
 }

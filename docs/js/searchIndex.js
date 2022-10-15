@@ -476,10 +476,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-App-WebApp.html#method_getRegisteredRoutes"
         },                {
+            "fqsen": "\\Udacity\\App\\WebApp\u003A\u003A_setController\u0028\u0029",
+            "name": "_setController",
+            "summary": "",
+            "url": "classes/Udacity-App-WebApp.html#method__setController"
+        },                {
             "fqsen": "\\Udacity\\App\\WebApp\u003A\u003A_setStatusCode\u0028\u0029",
             "name": "_setStatusCode",
             "summary": "",
             "url": "classes/Udacity-App-WebApp.html#method__setStatusCode"
+        },                {
+            "fqsen": "\\Udacity\\App\\WebApp\u003A\u003AgetController\u0028\u0029",
+            "name": "getController",
+            "summary": "",
+            "url": "classes/Udacity-App-WebApp.html#method_getController"
         },                {
             "fqsen": "\\Udacity\\App\\WebApp\u003A\u003AgetStatusCode\u0028\u0029",
             "name": "getStatusCode",
@@ -496,15 +506,40 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-App-WebApp.html#method_parseRequestRoute"
         },                {
-            "fqsen": "\\Udacity\\App\\WebApp\u003A\u003A\u0024inputRoute",
-            "name": "inputRoute",
+            "fqsen": "\\Udacity\\App\\WebApp\u003A\u003A\u0024controller",
+            "name": "controller",
             "summary": "",
-            "url": "classes/Udacity-App-WebApp.html#property_inputRoute"
+            "url": "classes/Udacity-App-WebApp.html#property_controller"
         },                {
             "fqsen": "\\Udacity\\App\\WebApp\u003A\u003A\u0024statusCode",
             "name": "statusCode",
             "summary": "",
             "url": "classes/Udacity-App-WebApp.html#property_statusCode"
+        },                {
+            "fqsen": "\\Udacity\\App\\WebApp\u003A\u003A\u0024inputRoute",
+            "name": "inputRoute",
+            "summary": "",
+            "url": "classes/Udacity-App-WebApp.html#property_inputRoute"
+        },                {
+            "fqsen": "\\Udacity\\Controllers\\Controller",
+            "name": "Controller",
+            "summary": "",
+            "url": "classes/Udacity-Controllers-Controller.html"
+        },                {
+            "fqsen": "\\Udacity\\Controllers\\ControllerInterface",
+            "name": "ControllerInterface",
+            "summary": "",
+            "url": "classes/Udacity-Controllers-ControllerInterface.html"
+        },                {
+            "fqsen": "\\Udacity\\Controllers\\HomeController",
+            "name": "HomeController",
+            "summary": "",
+            "url": "classes/Udacity-Controllers-HomeController.html"
+        },                {
+            "fqsen": "\\Udacity\\Controllers\\NotFoundController",
+            "name": "NotFoundController",
+            "summary": "",
+            "url": "classes/Udacity-Controllers-NotFoundController.html"
         },                {
             "fqsen": "\\",
             "name": "\\",
@@ -520,6 +555,11 @@ Search.appendIndex(
             "name": "Commands",
             "summary": "",
             "url": "namespaces/udacity-commands.html"
+        },                {
+            "fqsen": "\\Udacity\\Controllers",
+            "name": "Controllers",
+            "summary": "",
+            "url": "namespaces/udacity-controllers.html"
         },                {
             "fqsen": "\\Udacity\\Csv",
             "name": "Csv",

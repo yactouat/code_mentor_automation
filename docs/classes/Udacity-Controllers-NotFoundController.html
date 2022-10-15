@@ -76,7 +76,7 @@
                 
             </li>
                     <li>
-                <a href="namespaces/udacity-emailing.html" class="-active">Emailing</a>
+                <a href="namespaces/udacity-emailing.html" class="">Emailing</a>
                 
             </li>
                     <li>
@@ -114,12 +114,41 @@
             <div class="phpdocumentor-column -eight phpdocumentor-content">
                     <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/udacity.html">Udacity</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/udacity-controllers.html">Controllers</a></li>
     </ul>
 
-    <article class="phpdocumentor-element -namespace">
-        <h2 class="phpdocumentor-content__title">Emailing</h2>
+    <article class="phpdocumentor-element -class">
+        <h2 class="phpdocumentor-content__title">
+    NotFoundController
+
+    
+            <div class="phpdocumentor-element__package">
+            in package
+            <ul class="phpdocumentor-breadcrumbs">
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/src.html">src</a></li>
+                            </ul>
+        </div>
+    
+            <span class="phpdocumentor-element__implements">
+            implements
+                            <a href="classes/Udacity-Controllers-ControllerInterface.html"><abbr title="\Udacity\Controllers\ControllerInterface">ControllerInterface</abbr></a>                    </span>
+    
+    </h2>
+
+        <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Controllers/NotFoundController.php"><a href="files/src-controllers-notfoundcontroller.html"><abbr title="src/Controllers/NotFoundController.php">NotFoundController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">5</span>
+
+    </aside>
 
         
+    <section class="phpdocumentor-description"></section>
+
+
+
+
+
 
 <h3 id="interfaces_class_traits">
     Interfaces, Classes, Traits and Enums
@@ -127,20 +156,84 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/Udacity-Controllers-ControllerInterface.html"><abbr title="\Udacity\Controllers\ControllerInterface">ControllerInterface</abbr></a></dt>
+        <dd></dd>
     
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Emailing-Emails.html"><abbr title="\Udacity\Emailing\Emails">Emails</abbr></a></dt>
-        <dd>class responsible for setting/getting emails templates</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Emailing-Mailer.html"><abbr title="\Udacity\Emailing\Mailer">Mailer</abbr></a></dt>
-        <dd>class responsible for sending emails</dd>
     
     
     </dl>
 
 
 
+
+
         
 
         
+
+        
+        
+    <script type="text/javascript">
+        function loadExternalCodeSnippets(line) {
+            Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach((pre) => {
+                var src = pre.getAttribute('data-src').replace( /\\/g, '/');
+                var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+                var language = 'php';
+
+                var code = document.createElement('code');
+                code.className = 'language-' + language;
+
+                pre.textContent = '';
+
+                pre.setAttribute('data-line', line)
+                code.textContent = 'Loading…';
+
+                pre.appendChild(code);
+
+                var xhr = new XMLHttpRequest();
+
+                xhr.open('GET', src, true);
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4) {
+
+                        if (xhr.status < 400 && xhr.responseText) {
+                            code.textContent = xhr.responseText;
+
+                            Prism.highlightElement(code);
+                        }
+                        else if (xhr.status >= 400) {
+                            code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                        }
+                        else {
+                            code.textContent = '✖ Error: File does not exist, is empty or trying to view from localhost';
+                        }
+                    }
+                };
+
+                xhr.send(null);
+            });
+        }
+
+        var modals = document.querySelectorAll("[data-modal]");
+
+        modals.forEach(function (trigger) {
+            trigger.addEventListener("click", function (event) {
+                //event.preventDefault();
+                const modal = document.getElementById(trigger.dataset.modal);
+                modal.classList.add("phpdocumentor-modal__open");
+                loadExternalCodeSnippets(trigger.dataset.line)
+                const exits = modal.querySelectorAll("[data-exit-button]");
+                exits.forEach(function (exit) {
+                    exit.addEventListener("click", function (event) {
+                        event.preventDefault();
+                        modal.classList.remove("phpdocumentor-modal__open");
+                    });
+                });
+            });
+        });
+    </script>
+
     </article>
                 <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
@@ -155,7 +248,7 @@
 </section>
             </div>
         </div>
-        <a href="namespaces/udacity-emailing.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/Udacity-Controllers-NotFoundController.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
