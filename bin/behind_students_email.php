@@ -24,8 +24,8 @@ use App\Processes\BehindStudentsEmailProcess;
 $csv = $argv[1] ?? null;
 $language = $argv[2] ?? null;
 
-((new NonCLIShared())->setNewLogger($rootDir . "/data/logs/bin_non_cli.log"))->runCommonValidationRounds($csv, $language);
+((new NonCLIShared())->setNewLogger($rootDir . "/data/logs/php/bin_non_cli.log"))->runCommonValidationRounds($csv, $language);
 
-((new BehindStudentsEmailProcess())->setNewLogger($rootDir . "/data/logs/process.log"))->run($csv, $language);
+((new BehindStudentsEmailProcess())->setNewLogger($rootDir . "/data/logs/php/process.log"))->run($csv, $language);
 
 exit(0);

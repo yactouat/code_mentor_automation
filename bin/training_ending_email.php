@@ -27,7 +27,11 @@ $language = $argv[2] ?? null;
 $onlineResources = $argv[3] ?? null;
 
 // validation rounds
-((new NonCLIShared())->setNewLogger($rootDir . "/data/logs/bin_non_cli.log"))->runCommonValidationRounds($csv, $language);
-((new TrainingEndingEmailProcess())->setNewLogger($rootDir . "/data/logs/process.log"))->run($csv, $language, $onlineResources);
+((new NonCLIShared())->setNewLogger($rootDir . "/data/logs/php/bin_non_cli.log"))->runCommonValidationRounds($csv, $language);
+
+// run the process
+((new TrainingEndingEmailProcess())
+    ->setNewLogger($rootDir . "/data/logs/php/process.log")
+)->run($csv, $language, $onlineResources);
 
 exit(0);

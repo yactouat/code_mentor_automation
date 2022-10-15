@@ -30,8 +30,8 @@ final class Database {
         $this->_setDbFilePath($sqliteDBPath);
         $this->_initConn();
         $this->_setDatabase();
-        $this->setNewLogger(!$this->isTesting ? '/udacity_sl_automation/data/logs/db.log' : 
-            '/udacity_sl_automation/tests/fixtures/logs/db.log');
+        $this->setNewLogger(!$this->isTesting ? '/udacity_sl_automation/data/logs/php/db.log' : 
+            '/udacity_sl_automation/tests/fixtures/logs/php/db.log');
     }
 
     private function _getConn(): PDO {
