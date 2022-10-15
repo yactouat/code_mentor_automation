@@ -103,5 +103,13 @@ final class WebAppTest extends TestCase {
         $this->assertEquals($expected, $actual);
     }
 
+    public function testGetResponseOutputWithHomeRouteGetsHomePage() {
+        $expected = file_get_contents('/var/www/tests/fixtures/views/home.html');
+        $app = new WebApp();
+        $app->handleRequest("/");
+        $actual = $app->getResponseOutput();
+        $this->assertEquals($expected, $actual);
+    }
+
 }
 

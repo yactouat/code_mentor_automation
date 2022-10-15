@@ -11,7 +11,7 @@ final class HomeController extends Controller implements ControllerInterface {
     
     public function index(): string
     {
-        return '';
+        return $this->getRenderer()->render("home.html.twig");
     }
 
 }
