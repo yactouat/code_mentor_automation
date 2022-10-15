@@ -7,7 +7,7 @@ $rootDir = dirname(__DIR__);
 require_once $rootDir."/vendor/autoload.php";
 use Udacity\App\WebApp;
 
-// TODO CLI application class
 $app = new WebApp();
 
-echo "it works";
+// TODO get request route
+var_dump($_SERVER['REQUEST_URI']);

@@ -471,6 +471,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-App-WebApp.html"
         },                {
+            "fqsen": "\\Udacity\\App\\WebApp\u003A\u003AparseRequestRoute\u0028\u0029",
+            "name": "parseRequestRoute",
+            "summary": "",
+            "url": "classes/Udacity-App-WebApp.html#method_parseRequestRoute"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
