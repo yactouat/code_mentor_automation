@@ -1,8 +1,10 @@
 <?php
 
-namespace Udacity\Controllers;
+namespace Udacity\Controllers\Resource;
 
-final class UsersController extends Controller implements ResourceControllerInterface {
+use Udacity\Controllers\Controller;
+
+final class SessionLeadsController extends Controller implements ResourceControllerInterface {
 
     public function __construct()
     {
@@ -18,6 +20,11 @@ final class UsersController extends Controller implements ResourceControllerInte
     public function index(): string
     {
         return $this->getRenderer()->render("home.html.twig");
+    }
+
+    public function persist(): void
+    {
+        
     }
 
 }

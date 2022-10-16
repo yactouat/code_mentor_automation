@@ -4,8 +4,8 @@ namespace Tests\Unit\App;
 
 use PHPUnit\Framework\TestCase;
 use Udacity\App\WebApp;
-use Udacity\Controllers\HomeController;
 use Udacity\Controllers\NotFoundController;
+use Udacity\Controllers\Resource\SessionLeadsController;
 
 final class WebAppTest extends TestCase {
 
@@ -65,8 +65,9 @@ final class WebAppTest extends TestCase {
 
     public function testGetRegisteredRoutesReturnsExpectedRoutes() {
         $expected = [
-            '/' => ['HomeController', 'index'],
-            'session-leads/create' => ['UsersController', 'create']
+            '/' => ['Resource\SessionLeadsController', 'index'],
+            'session-leads/create' => ['Resource\SessionLeadsController', 'create'],
+            'session-leads' => ['Resource\SessionLeadsController', 'persist']
         ];
         $actual = WebApp::getRegisteredRoutes();
         $this->assertEquals($expected, $actual);
@@ -83,15 +84,15 @@ final class WebAppTest extends TestCase {
     public function testHandleRequestWithHomeRouteSets200StatusCode() {
         $expected = 200;
         $app = new WebApp();
-        $app->handleRequest("/");
+        $app->handleRequest('/');
         $actual = $app->getStatusCode();
         $this->assertEquals($expected, $actual);
     }
 
-    public function testGetControllerWithHomeRouteGetsHomeController() {
-        $expected = HomeController::class;
+    public function testGetControllerWithHomeRouteGetsSessionLeadsController() {
+        $expected = SessionLeadsController::class;
         $app = new WebApp();
-        $app->handleRequest("/");
+        $app->handleRequest('/');
         $actual = $app->getController();
         $this->assertInstanceOf($expected, $actual);
     }

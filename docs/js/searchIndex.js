@@ -591,35 +591,45 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Controllers-NotFoundController.html#method_index"
         },                {
-            "fqsen": "\\Udacity\\Controllers\\UsersController",
-            "name": "UsersController",
-            "summary": "",
-            "url": "classes/Udacity-Controllers-UsersController.html"
-        },                {
-            "fqsen": "\\Udacity\\Controllers\\UsersController\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/Udacity-Controllers-UsersController.html#method___construct"
-        },                {
-            "fqsen": "\\Udacity\\Controllers\\UsersController\u003A\u003Acreate\u0028\u0029",
-            "name": "create",
-            "summary": "",
-            "url": "classes/Udacity-Controllers-UsersController.html#method_create"
-        },                {
-            "fqsen": "\\Udacity\\Controllers\\UsersController\u003A\u003Aindex\u0028\u0029",
-            "name": "index",
-            "summary": "",
-            "url": "classes/Udacity-Controllers-UsersController.html#method_index"
-        },                {
-            "fqsen": "\\Udacity\\Controllers\\ResourceControllerInterface",
+            "fqsen": "\\Udacity\\Controllers\\Resource\\ResourceControllerInterface",
             "name": "ResourceControllerInterface",
             "summary": "",
-            "url": "classes/Udacity-Controllers-ResourceControllerInterface.html"
+            "url": "classes/Udacity-Controllers-Resource-ResourceControllerInterface.html"
         },                {
-            "fqsen": "\\Udacity\\Controllers\\ResourceControllerInterface\u003A\u003Acreate\u0028\u0029",
+            "fqsen": "\\Udacity\\Controllers\\Resource\\ResourceControllerInterface\u003A\u003Acreate\u0028\u0029",
             "name": "create",
             "summary": "",
-            "url": "classes/Udacity-Controllers-ResourceControllerInterface.html#method_create"
+            "url": "classes/Udacity-Controllers-Resource-ResourceControllerInterface.html#method_create"
+        },                {
+            "fqsen": "\\Udacity\\Controllers\\Resource\\ResourceControllerInterface\u003A\u003Apersist\u0028\u0029",
+            "name": "persist",
+            "summary": "",
+            "url": "classes/Udacity-Controllers-Resource-ResourceControllerInterface.html#method_persist"
+        },                {
+            "fqsen": "\\Udacity\\Controllers\\Resource\\SessionLeadsController",
+            "name": "SessionLeadsController",
+            "summary": "",
+            "url": "classes/Udacity-Controllers-Resource-SessionLeadsController.html"
+        },                {
+            "fqsen": "\\Udacity\\Controllers\\Resource\\SessionLeadsController\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Udacity-Controllers-Resource-SessionLeadsController.html#method___construct"
+        },                {
+            "fqsen": "\\Udacity\\Controllers\\Resource\\SessionLeadsController\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "",
+            "url": "classes/Udacity-Controllers-Resource-SessionLeadsController.html#method_create"
+        },                {
+            "fqsen": "\\Udacity\\Controllers\\Resource\\SessionLeadsController\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "",
+            "url": "classes/Udacity-Controllers-Resource-SessionLeadsController.html#method_index"
+        },                {
+            "fqsen": "\\Udacity\\Controllers\\Resource\\SessionLeadsController\u003A\u003Apersist\u0028\u0029",
+            "name": "persist",
+            "summary": "",
+            "url": "classes/Udacity-Controllers-Resource-SessionLeadsController.html#method_persist"
         },                {
             "fqsen": "\\",
             "name": "\\",
@@ -640,6 +650,11 @@ Search.appendIndex(
             "name": "Controllers",
             "summary": "",
             "url": "namespaces/udacity-controllers.html"
+        },                {
+            "fqsen": "\\Udacity\\Controllers\\Resource",
+            "name": "Resource",
+            "summary": "",
+            "url": "namespaces/udacity-controllers-resource.html"
         },                {
             "fqsen": "\\Udacity\\Csv",
             "name": "Csv",

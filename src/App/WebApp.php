@@ -17,8 +17,9 @@ final class WebApp {
 
     public static function getRegisteredRoutes(): array {
         return [
-            '/' => ['HomeController', 'index'],
-            'session-leads/create' => ['UsersController', 'create']
+            '/' => ['Resource\SessionLeadsController', 'index'],
+            'session-leads/create' => ['Resource\SessionLeadsController', 'create'],
+            'session-leads' => ['Resource\SessionLeadsController', 'persist']
         ];
     }
 
@@ -28,7 +29,7 @@ final class WebApp {
             $this->controller = new NotFoundController();
             $this->responseOutput = $this->controller->index();
         } else {
-            $controllerClass = "Udacity\Controllers\\" . $parsedRoute[0];
+            $controllerClass = 'Udacity\Controllers\\' . $parsedRoute[0];
             $this->controller = new $controllerClass();
             $this->responseOutput = $this->controller->{$parsedRoute[1]}();
         }
