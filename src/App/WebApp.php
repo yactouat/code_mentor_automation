@@ -17,14 +17,18 @@ final class WebApp {
 
     public static function getRegisteredRoutes(): array {
         return [
-            '/' => ['Resource\SessionLeadsController', 'index'],
-            'session-leads/create' => ['Resource\SessionLeadsController', 'create'],
-            'session-leads' => ['Resource\SessionLeadsController', 'persist']
+            "GET" => [
+                '/' => ['Resource\SessionLeadsController', 'index'],
+                'session-leads/create' => ['Resource\SessionLeadsController', 'create']
+            ],
+            "POST" => [
+                'session-leads' => ['Resource\SessionLeadsController', 'persist']
+            ]
         ];
     }
 
     private function _setResponseOutput(): void {
-        $parsedRoute = self::getRegisteredRoutes()[$this->inputRoute] ?? false;
+        $parsedRoute = self::getRegisteredRoutes()[$_SERVER['REQUEST_METHOD']][$this->inputRoute] ?? false;
         if (!$parsedRoute) {
             $this->controller = new NotFoundController();
             $this->responseOutput = $this->controller->index();
@@ -36,7 +40,7 @@ final class WebApp {
     }
 
     private function _setStatusCode(): void {
-        if (!isset(self::getRegisteredRoutes()[$this->inputRoute])) {
+        if (!isset(self::getRegisteredRoutes()[$_SERVER['REQUEST_METHOD']][$this->inputRoute])) {
             $this->statusCode = 404;
         } else {
             $this->statusCode = 200;

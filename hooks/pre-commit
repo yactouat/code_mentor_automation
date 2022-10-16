@@ -46,4 +46,7 @@ if ($genPhpDocsReturnCode !== 0) {
 // adding generated docs in current commit
 exec('git add .');
 
+// cleaning the logs after work done on this commit
+exec('sh clean-logs.sh');
+
 exit(0);

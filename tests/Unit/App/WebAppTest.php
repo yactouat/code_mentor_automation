@@ -9,6 +9,11 @@ use Udacity\Controllers\Resource\SessionLeadsController;
 
 final class WebAppTest extends TestCase {
 
+    protected function setUp(): void
+    {
+        $_SERVER['REQUEST_METHOD'] = "GET";
+    }
+
     public function testGetRequestRouteWithHomeRouteGetsCorrectRoute() {
         $expected = '/';
         $actual = WebApp::parseRequestRoute('/');
@@ -65,9 +70,14 @@ final class WebAppTest extends TestCase {
 
     public function testGetRegisteredRoutesReturnsExpectedRoutes() {
         $expected = [
-            '/' => ['Resource\SessionLeadsController', 'index'],
-            'session-leads/create' => ['Resource\SessionLeadsController', 'create'],
-            'session-leads' => ['Resource\SessionLeadsController', 'persist']
+            "GET" => [
+                '/' => ['Resource\SessionLeadsController', 'index'],
+                'session-leads/create' => ['Resource\SessionLeadsController', 'create']
+            ],
+            "POST" => [
+                'session-leads' => 
+                ['Resource\SessionLeadsController', 'persist']
+            ]
         ];
         $actual = WebApp::getRegisteredRoutes();
         $this->assertEquals($expected, $actual);
