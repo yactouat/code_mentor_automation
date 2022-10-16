@@ -2,7 +2,7 @@
 
 namespace Udacity\Controllers;
 
-final class HomeController extends Controller implements ControllerInterface {
+final class UsersController extends Controller implements ControllerInterface {
 
     public function __construct()
     {
@@ -11,9 +11,10 @@ final class HomeController extends Controller implements ControllerInterface {
 
     public function create(): string
     {
-        return '';
+        return $this->getRenderer()->render("users.create.html.twig");
     }
     
+    // TODO redirect to /sessions/create if not connected
     public function index(): string
     {
         return $this->getRenderer()->render("home.html.twig");

@@ -17,7 +17,8 @@ final class WebApp {
 
     public static function getRegisteredRoutes(): array {
         return [
-            '/' => ['HomeController', 'index']
+            '/' => ['HomeController', 'index'],
+            'users/create' => ['UsersController', 'create']
         ];
     }
 

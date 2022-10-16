@@ -1,0 +1,21 @@
+{% extends "layout.login-signup.html.twig" %}
+
+{% block description %}Sign up to do your Udacity session lead job with ease.{% endblock %}
+
+{% block title %}Sign up{% endblock %}
+
+{% block content %}
+<form>
+    <h1 class="h3 mb-3 fw-normal">Signup to Udacity SL Automation</h1>
+    <div class="form-floating">
+        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+        <label for="email">Email address</label>
+    </div>
+    <div class="form-floating">
+        <input type="password" class="form-control" id="password" placeholder="Password">
+        <label for="password">Password</label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <p class="mt-5 mb-3 text-muted">&copy; yactouat 2022</p>
+</form>
+{% endblock %}

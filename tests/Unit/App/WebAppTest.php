@@ -65,7 +65,8 @@ final class WebAppTest extends TestCase {
 
     public function testGetRegisteredRoutesReturnsExpectedRoutes() {
         $expected = [
-            '/' => ['HomeController', 'index']
+            '/' => ['HomeController', 'index'],
+            'users/create' => ['UsersController', 'create']
         ];
         $actual = WebApp::getRegisteredRoutes();
         $this->assertEquals($expected, $actual);
@@ -117,6 +118,14 @@ final class WebAppTest extends TestCase {
         $app->handleRequest("/");
         $actual = $app->getResponseOutput();
         $this->assertEquals($expected, $actual);
+    }
+
+    public function testGetResponseOutputWithUsersCreateRouteGetsSignupPage() {
+        $expected = str_replace(' ', '', file_get_contents('/var/www/tests/fixtures/views/users.create.html'));
+        $app = new WebApp();
+        $app->handleRequest("/users/create");
+        $actual = $app->getResponseOutput();
+        $this->assertEquals($expected, str_replace(' ', '', $actual));
     }
 
 }

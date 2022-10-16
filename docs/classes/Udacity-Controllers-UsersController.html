@@ -117,19 +117,29 @@
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/udacity-controllers.html">Controllers</a></li>
     </ul>
 
-    <article class="phpdocumentor-element -interface">
+    <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    ControllerInterface
-                <div class="phpdocumentor-element__package">
-            in
+    UsersController
+
+        <span class="phpdocumentor-element__extends">
+        extends <a href="classes/Udacity-Controllers-Controller.html"><abbr title="\Udacity\Controllers\Controller">Controller</abbr></a>
+    </span>
+    
+            <div class="phpdocumentor-element__package">
+            in package
             <ul class="phpdocumentor-breadcrumbs">
-                                    <li><a href="packages/src.html">src</a></li>
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/src.html">src</a></li>
                             </ul>
         </div>
+    
+            <span class="phpdocumentor-element__implements">
+            implements
+                            <a href="classes/Udacity-Controllers-ControllerInterface.html"><abbr title="\Udacity\Controllers\ControllerInterface">ControllerInterface</abbr></a>                    </span>
+    
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Controllers/ControllerInterface.php"><a href="files/src-controllers-controllerinterface.html"><abbr title="src/Controllers/ControllerInterface.php">ControllerInterface.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Controllers/UsersController.php"><a href="files/src-controllers-userscontroller.html"><abbr title="src/Controllers/UsersController.php">UsersController.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">5</span>
 
@@ -143,6 +153,18 @@
 
 
 
+<h3 id="interfaces_class_traits">
+    Interfaces, Classes, Traits and Enums
+    <a href="#interfaces_class_traits" class="headerlink"><i class="fas fa-link"></i></a>
+</h3>
+
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/Udacity-Controllers-ControllerInterface.html"><abbr title="\Udacity\Controllers\ControllerInterface">ControllerInterface</abbr></a></dt>
+        <dd></dd>
+    
+    
+    
+    </dl>
 
 
 <h3 id="toc">
@@ -151,15 +173,36 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-                        <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Udacity-Controllers-ControllerInterface.html#method_create">create()</a>
+                    <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/Udacity-Controllers-Controller.html#property_renderer">$renderer</a>
+    <span>
+                        &nbsp;: <abbr title="\Twig\Environment">Environment</abbr>            </span>
+</dt>
+<dd></dd>
+
+                <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Udacity-Controllers-UsersController.html#method___construct">__construct()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Udacity-Controllers-UsersController.html#method_create">create()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Udacity-Controllers-ControllerInterface.html#method_index">index()</a>
+    <a href="classes/Udacity-Controllers-Controller.html#method_getRenderer">getRenderer()</a>
+    <span>
+                                &nbsp;: <abbr title="\Twig\Environment">Environment</abbr>    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Udacity-Controllers-UsersController.html#method_index">index()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
@@ -171,11 +214,86 @@
 
         
 
+        
+    <section class="phpdocumentor-properties">
+        <h3 class="phpdocumentor-elements__header" id="properties">
+            Properties
+            <a href="classes/Udacity-Controllers-UsersController.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_renderer">
+        $renderer
+        <a href="classes/Udacity-Controllers-Controller.html#property_renderer" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Controllers/Controller.php"><a href="files/src-controllers-controller.html"><abbr title="src/Controllers/Controller.php">Controller.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">11</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type"><abbr title="\Twig\Environment">Environment</abbr></span>
+    <span class="phpdocumentor-signature__name">$renderer</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+            </section>
+
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/Udacity-Controllers-ControllerInterface.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/Udacity-Controllers-UsersController.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method___construct">
+        __construct()
+        <a href="classes/Udacity-Controllers-UsersController.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Controllers/UsersController.php"><a href="files/src-controllers-userscontroller.html"><abbr title="src/Controllers/UsersController.php">UsersController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">7</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
                     <article
         class="phpdocumentor-element
             -method
@@ -184,12 +302,12 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_create">
         create()
-        <a href="classes/Udacity-Controllers-ControllerInterface.html#method_create" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Udacity-Controllers-UsersController.html#method_create" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Controllers/ControllerInterface.php"><a href="files/src-controllers-controllerinterface.html"><abbr title="src/Controllers/ControllerInterface.php">ControllerInterface.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Controllers/UsersController.php"><a href="files/src-controllers-userscontroller.html"><abbr title="src/Controllers/UsersController.php">UsersController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">7</span>
+    <span class="phpdocumentor-element-found-in__line">12</span>
 
     </aside>
 
@@ -215,14 +333,47 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_index">
-        index()
-        <a href="classes/Udacity-Controllers-ControllerInterface.html#method_index" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getRenderer">
+        getRenderer()
+        <a href="classes/Udacity-Controllers-Controller.html#method_getRenderer" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Controllers/ControllerInterface.php"><a href="files/src-controllers-controllerinterface.html"><abbr title="src/Controllers/ControllerInterface.php">ControllerInterface.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Controllers/Controller.php"><a href="files/src-controllers-controller.html"><abbr title="src/Controllers/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">9</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getRenderer</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Twig\Environment">Environment</abbr></span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><abbr title="\Twig\Environment">Environment</abbr></span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_index">
+        index()
+        <a href="classes/Udacity-Controllers-UsersController.html#method_index" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Controllers/UsersController.php"><a href="files/src-controllers-userscontroller.html"><abbr title="src/Controllers/UsersController.php">UsersController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">18</span>
 
     </aside>
 
@@ -320,7 +471,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/Udacity-Controllers-ControllerInterface.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/Udacity-Controllers-UsersController.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
