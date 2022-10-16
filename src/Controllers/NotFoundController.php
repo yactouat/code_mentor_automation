@@ -9,11 +9,6 @@ final class NotFoundController extends Controller implements ControllerInterface
         parent::__construct();
     }
 
-    public function create(): string
-    {
-        return '';
-    }
-
     public function index(): string
     {
         return $this->getRenderer()->render("not-found.html.twig");

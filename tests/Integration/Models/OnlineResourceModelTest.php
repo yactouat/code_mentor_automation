@@ -78,7 +78,7 @@ final class OnlineResourceModelTest extends TestCase {
             ]
         ];   
         $onlineResource = new OnlineResourceModel("test description", "test name", "test URL");
-        $onlineResource->create();
+        $onlineResource->persist();
         // act
         $actual = $onlineResource->selectAll();
         // assert

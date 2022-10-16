@@ -11,10 +11,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Models-OnlineResourceModel.html#method___construct"
         },                {
-            "fqsen": "\\Udacity\\Models\\OnlineResourceModel\u003A\u003Acreate\u0028\u0029",
-            "name": "create",
+            "fqsen": "\\Udacity\\Models\\OnlineResourceModel\u003A\u003Apersist\u0028\u0029",
+            "name": "persist",
             "summary": "",
-            "url": "classes/Udacity-Models-OnlineResourceModel.html#method_create"
+            "url": "classes/Udacity-Models-OnlineResourceModel.html#method_persist"
         },                {
             "fqsen": "\\Udacity\\Models\\OnlineResourceModel\u003A\u003AgetFields\u0028\u0029",
             "name": "getFields",
@@ -51,10 +51,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Models-StudentModel.html#method___construct"
         },                {
-            "fqsen": "\\Udacity\\Models\\StudentModel\u003A\u003Acreate\u0028\u0029",
-            "name": "create",
+            "fqsen": "\\Udacity\\Models\\StudentModel\u003A\u003Apersist\u0028\u0029",
+            "name": "persist",
             "summary": "",
-            "url": "classes/Udacity-Models-StudentModel.html#method_create"
+            "url": "classes/Udacity-Models-StudentModel.html#method_persist"
         },                {
             "fqsen": "\\Udacity\\Models\\StudentModel\u003A\u003AgetFields\u0028\u0029",
             "name": "getFields",
@@ -291,10 +291,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Models-Model.html"
         },                {
-            "fqsen": "\\Udacity\\Models\\Model\u003A\u003Acreate\u0028\u0029",
-            "name": "create",
+            "fqsen": "\\Udacity\\Models\\Model\u003A\u003Apersist\u0028\u0029",
+            "name": "persist",
             "summary": "",
-            "url": "classes/Udacity-Models-Model.html#method_create"
+            "url": "classes/Udacity-Models-Model.html#method_persist"
         },                {
             "fqsen": "\\Udacity\\Models\\Model\u003A\u003AgetFields\u0028\u0029",
             "name": "getFields",
@@ -336,10 +336,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Models-SessionLeadModel.html#method___construct"
         },                {
-            "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003Acreate\u0028\u0029",
-            "name": "create",
+            "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003Apersist\u0028\u0029",
+            "name": "persist",
             "summary": "",
-            "url": "classes/Udacity-Models-SessionLeadModel.html#method_create"
+            "url": "classes/Udacity-Models-SessionLeadModel.html#method_persist"
         },                {
             "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003AgetFields\u0028\u0029",
             "name": "getFields",
@@ -556,11 +556,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Controllers-ControllerInterface.html"
         },                {
-            "fqsen": "\\Udacity\\Controllers\\ControllerInterface\u003A\u003Acreate\u0028\u0029",
-            "name": "create",
-            "summary": "",
-            "url": "classes/Udacity-Controllers-ControllerInterface.html#method_create"
-        },                {
             "fqsen": "\\Udacity\\Controllers\\ControllerInterface\u003A\u003Aindex\u0028\u0029",
             "name": "index",
             "summary": "",
@@ -576,11 +571,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Controllers-HomeController.html#method___construct"
         },                {
-            "fqsen": "\\Udacity\\Controllers\\HomeController\u003A\u003Acreate\u0028\u0029",
-            "name": "create",
-            "summary": "",
-            "url": "classes/Udacity-Controllers-HomeController.html#method_create"
-        },                {
             "fqsen": "\\Udacity\\Controllers\\HomeController\u003A\u003Aindex\u0028\u0029",
             "name": "index",
             "summary": "",
@@ -595,11 +585,6 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "",
             "url": "classes/Udacity-Controllers-NotFoundController.html#method___construct"
-        },                {
-            "fqsen": "\\Udacity\\Controllers\\NotFoundController\u003A\u003Acreate\u0028\u0029",
-            "name": "create",
-            "summary": "",
-            "url": "classes/Udacity-Controllers-NotFoundController.html#method_create"
         },                {
             "fqsen": "\\Udacity\\Controllers\\NotFoundController\u003A\u003Aindex\u0028\u0029",
             "name": "index",
@@ -625,6 +610,16 @@ Search.appendIndex(
             "name": "index",
             "summary": "",
             "url": "classes/Udacity-Controllers-UsersController.html#method_index"
+        },                {
+            "fqsen": "\\Udacity\\Controllers\\ResourceControllerInterface",
+            "name": "ResourceControllerInterface",
+            "summary": "",
+            "url": "classes/Udacity-Controllers-ResourceControllerInterface.html"
+        },                {
+            "fqsen": "\\Udacity\\Controllers\\ResourceControllerInterface\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "",
+            "url": "classes/Udacity-Controllers-ResourceControllerInterface.html#method_create"
         },                {
             "fqsen": "\\",
             "name": "\\",

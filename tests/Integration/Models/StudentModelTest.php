@@ -80,7 +80,7 @@ final class StudentModelTest extends TestCase {
             ]
         ];   
         $sessionLead = new StudentModel('test email', 'test first name', 'test last name', 'Behind');
-        $sessionLead->create();
+        $sessionLead->persist();
         // act
         $actual = $sessionLead->selectAll();
         // assert

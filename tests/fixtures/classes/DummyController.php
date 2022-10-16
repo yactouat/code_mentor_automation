@@ -10,11 +10,6 @@ final class DummyController extends Controller implements ControllerInterface {
         parent::__construct();
     }
 
-    public function create(): string
-    {
-        return '';
-    }
-
     public function index(): string
     {
         return '';

@@ -27,7 +27,7 @@ final class StudentModel extends Model {
         )");
     }
 
-    public function create(): void {
+    public function persist(): void {
         $email = $this->email;
         $first_name = $this->first_name;
         $last_name = $this->last_name;

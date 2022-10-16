@@ -78,7 +78,7 @@ final class SessionLeadModelTest extends TestCase {
             ]
         ];   
         $sessionLead = new SessionLeadModel("test email", "test password", "test first name");
-        $sessionLead->create();
+        $sessionLead->persist();
         // act
         $actual = $sessionLead->selectAll();
         // assert

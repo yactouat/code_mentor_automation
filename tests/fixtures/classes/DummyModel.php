@@ -18,7 +18,7 @@ final class DummyModel extends Model {
         )");
     }
 
-    public function create(): void {}
+    public function persist(): void {}
 
     public static function getFields(): array
     {

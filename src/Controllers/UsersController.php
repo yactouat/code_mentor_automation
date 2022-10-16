@@ -2,7 +2,7 @@
 
 namespace Udacity\Controllers;
 
-final class UsersController extends Controller implements ControllerInterface {
+final class UsersController extends Controller implements ResourceControllerInterface {
 
     public function __construct()
     {

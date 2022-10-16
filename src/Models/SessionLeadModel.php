@@ -21,7 +21,7 @@ final class SessionLeadModel extends Model {
         )");
     }
 
-    public function create(): void {
+    public function persist(): void {
         $email = $this->email;
         $email_password = $this->email_password;
         $first_name = $this->first_name;

@@ -21,7 +21,7 @@ final class OnlineResourceModel extends Model {
         )");
     }
 
-    public function create(): void {
+    public function persist(): void {
         $description = $this->description;
         $name = $this->name;
         $url = $this->url;
