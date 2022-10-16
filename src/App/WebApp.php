@@ -18,7 +18,7 @@ final class WebApp {
     public static function getRegisteredRoutes(): array {
         return [
             '/' => ['HomeController', 'index'],
-            'users/create' => ['UsersController', 'create']
+            'session-leads/create' => ['UsersController', 'create']
         ];
     }
 

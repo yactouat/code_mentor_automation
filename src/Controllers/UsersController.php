@@ -11,7 +11,7 @@ final class UsersController extends Controller implements ControllerInterface {
 
     public function create(): string
     {
-        return $this->getRenderer()->render("users.create.html.twig");
+        return $this->getRenderer()->render("session-leads.create.html.twig");
     }
     
     // TODO redirect to /sessions/create if not connected
