@@ -3,6 +3,7 @@
 namespace Udacity\Controllers\Resource;
 
 use Udacity\Controllers\Controller;
+use Udacity\Models\SessionLeadModel;
 
 final class SessionLeadsController extends Controller implements ResourceControllerInterface {
 
@@ -24,19 +25,7 @@ final class SessionLeadsController extends Controller implements ResourceControl
 
     public function persist(): string
     {
-        $errors = [];
-        if (!isset($_POST["submit"])) {
-            $errors[] = "⚠️ Please send a valid form using the `submit` button";
-        }
-        if (empty($_POST["email"])) {
-            $errors[] = "📧 Your email address is missing";
-        }
-        if (empty($_POST["first_name"])) {
-            $errors[] = "❌ Your first name is missing";
-        }
-        if (empty($_POST["google_app_password"])) {
-            $errors[] = "🔑 Your GMail application password is missing";
-        }
+        $errors = SessionLeadModel::validateInputFields($_POST);
         if (count($errors) > 0) {
             $this->setStatusCode(400);
             return $this->getRenderer()->render("session-leads.create.html.twig", [

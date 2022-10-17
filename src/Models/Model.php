@@ -11,6 +11,7 @@ abstract class Model {
 
     public abstract function persist(): void;
     public abstract static function getFields(): array;
+    public abstract static function validateInputFields(array $fields): array;
 
     protected function __construct(?Database $database = null)
     {

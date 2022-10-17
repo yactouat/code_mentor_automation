@@ -18,12 +18,17 @@ final class DummyModel extends Model {
         )");
     }
 
-    public function persist(): void {}
-
     public static function getFields(): array
     {
         return [
             "Some Field"
         ];
+    }
+
+    public function persist(): void {}
+
+    public static function validateInputFields(array $fields): array
+    {
+        return [];
     }
 }

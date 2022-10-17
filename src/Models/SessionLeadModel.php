@@ -21,6 +21,15 @@ final class SessionLeadModel extends Model {
         )");
     }
 
+    public static function getFields(): array
+    {
+        return [
+            "Email",
+            "Email Password",
+            "First Name"
+        ];        
+    }
+
     public function persist(): void {
         $email = $this->email;
         $google_app_password = $this->google_app_password;
@@ -31,13 +40,21 @@ final class SessionLeadModel extends Model {
         $this->database->writeQuery($query);
     }
 
-    public static function getFields(): array
-    {
-        return [
-            "Email",
-            "Email Password",
-            "First Name"
-        ];        
+    public static function validateInputFields(array $fields): array {
+        $errors = [];
+        if (!isset($_POST["submit"])) {
+            $errors[] = "⚠️ Please send a valid form using the `submit` button";
+        }
+        if (empty($_POST["email"])) {
+            $errors[] = "📧 Your email address is missing";
+        }
+        if (empty($_POST["first_name"])) {
+            $errors[] = "❌ Your first name is missing";
+        }
+        if (empty($_POST["google_app_password"])) {
+            $errors[] = "🔑 Your GMail application password is missing";
+        }
+        return $errors;
     }
 
 }

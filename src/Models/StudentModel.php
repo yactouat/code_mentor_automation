@@ -27,6 +27,15 @@ final class StudentModel extends Model {
         )");
     }
 
+    public static function getFields(): array {
+        return [
+            "On-Track Status",
+            "First Name",
+            "Last Name",
+            "Email"
+        ];
+    }
+
     public function persist(): void {
         $email = $this->email;
         $first_name = $this->first_name;
@@ -39,13 +48,9 @@ final class StudentModel extends Model {
         $this->database->writeQuery($query);
     }
 
-    public static function getFields(): array {
-        return [
-            "On-Track Status",
-            "First Name",
-            "Last Name",
-            "Email"
-        ];
+    public static function validateInputFields(array $fields): array
+    {
+        return [];
     }
 
 }

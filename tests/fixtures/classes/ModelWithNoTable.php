@@ -15,4 +15,9 @@ final class ModelWithNoTable extends Model {
     {
         return [];
     }
+
+    public static function validateInputFields(array $fields): array
+    {
+        return [];
+    }
 }

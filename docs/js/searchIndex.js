@@ -11,15 +11,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Models-OnlineResourceModel.html#method___construct"
         },                {
+            "fqsen": "\\Udacity\\Models\\OnlineResourceModel\u003A\u003AgetFields\u0028\u0029",
+            "name": "getFields",
+            "summary": "",
+            "url": "classes/Udacity-Models-OnlineResourceModel.html#method_getFields"
+        },                {
             "fqsen": "\\Udacity\\Models\\OnlineResourceModel\u003A\u003Apersist\u0028\u0029",
             "name": "persist",
             "summary": "",
             "url": "classes/Udacity-Models-OnlineResourceModel.html#method_persist"
         },                {
-            "fqsen": "\\Udacity\\Models\\OnlineResourceModel\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
+            "fqsen": "\\Udacity\\Models\\OnlineResourceModel\u003A\u003AvalidateInputFields\u0028\u0029",
+            "name": "validateInputFields",
             "summary": "",
-            "url": "classes/Udacity-Models-OnlineResourceModel.html#method_getFields"
+            "url": "classes/Udacity-Models-OnlineResourceModel.html#method_validateInputFields"
         },                {
             "fqsen": "\\Udacity\\Models\\OnlineResourceModel\u003A\u003A\u0024tableName",
             "name": "tableName",
@@ -51,15 +56,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Models-StudentModel.html#method___construct"
         },                {
+            "fqsen": "\\Udacity\\Models\\StudentModel\u003A\u003AgetFields\u0028\u0029",
+            "name": "getFields",
+            "summary": "",
+            "url": "classes/Udacity-Models-StudentModel.html#method_getFields"
+        },                {
             "fqsen": "\\Udacity\\Models\\StudentModel\u003A\u003Apersist\u0028\u0029",
             "name": "persist",
             "summary": "",
             "url": "classes/Udacity-Models-StudentModel.html#method_persist"
         },                {
-            "fqsen": "\\Udacity\\Models\\StudentModel\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
+            "fqsen": "\\Udacity\\Models\\StudentModel\u003A\u003AvalidateInputFields\u0028\u0029",
+            "name": "validateInputFields",
             "summary": "",
-            "url": "classes/Udacity-Models-StudentModel.html#method_getFields"
+            "url": "classes/Udacity-Models-StudentModel.html#method_validateInputFields"
         },                {
             "fqsen": "\\Udacity\\Models\\StudentModel\u003A\u003A\u0024tableName",
             "name": "tableName",
@@ -301,6 +311,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Models-Model.html#method_getFields"
         },                {
+            "fqsen": "\\Udacity\\Models\\Model\u003A\u003AvalidateInputFields\u0028\u0029",
+            "name": "validateInputFields",
+            "summary": "",
+            "url": "classes/Udacity-Models-Model.html#method_validateInputFields"
+        },                {
             "fqsen": "\\Udacity\\Models\\Model\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
@@ -336,15 +351,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Models-SessionLeadModel.html#method___construct"
         },                {
+            "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003AgetFields\u0028\u0029",
+            "name": "getFields",
+            "summary": "",
+            "url": "classes/Udacity-Models-SessionLeadModel.html#method_getFields"
+        },                {
             "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003Apersist\u0028\u0029",
             "name": "persist",
             "summary": "",
             "url": "classes/Udacity-Models-SessionLeadModel.html#method_persist"
         },                {
-            "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
+            "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003AvalidateInputFields\u0028\u0029",
+            "name": "validateInputFields",
             "summary": "",
-            "url": "classes/Udacity-Models-SessionLeadModel.html#method_getFields"
+            "url": "classes/Udacity-Models-SessionLeadModel.html#method_validateInputFields"
         },                {
             "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003A\u0024tableName",
             "name": "tableName",

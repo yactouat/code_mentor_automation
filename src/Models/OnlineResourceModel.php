@@ -21,6 +21,14 @@ final class OnlineResourceModel extends Model {
         )");
     }
 
+    public static function getFields(): array {
+        return [
+            "Name",
+            "Description",
+            "URL"
+        ];
+    }
+
     public function persist(): void {
         $description = $this->description;
         $name = $this->name;
@@ -31,12 +39,9 @@ final class OnlineResourceModel extends Model {
         $this->database->writeQuery($query);
     }
 
-    public static function getFields(): array {
-        return [
-            "Name",
-            "Description",
-            "URL"
-        ];
+    public static function validateInputFields(array $fields): array
+    {
+        return [];
     }
 
 }
