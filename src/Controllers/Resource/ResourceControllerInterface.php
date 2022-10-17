@@ -8,6 +8,8 @@ interface ResourceControllerInterface extends ControllerInterface {
 
     public function create(): string;
 
+    public function index(): string;
+
     public function persist(): string;
 
 }

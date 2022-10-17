@@ -25,7 +25,6 @@ final class SessionLeadsController extends Controller implements ResourceControl
     public function persist(): string
     {
         $errors = [];
-        // TODO test that no `submit` field in $_POST array returns to the form with an alert
         if (!isset($_POST["submit"])) {
             $errors[] = "⚠️ Please send a valid form using the `submit` button";
         }

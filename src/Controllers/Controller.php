@@ -9,6 +9,7 @@ use Twig\Loader\FilesystemLoader;
 abstract class Controller {
 
     private Environment $renderer;
+    private int $statusCode = 200;
     
     protected function __construct()
     {
@@ -26,5 +27,14 @@ abstract class Controller {
     public function getRenderer(): Environment {
         return $this->renderer;
     }
+
+    public function getStatusCode(): int {
+        return $this->statusCode;
+    }
+
+    protected function setStatusCode(int $statusCode) {
+        $this->statusCode = $statusCode;
+    }
+
 
 }

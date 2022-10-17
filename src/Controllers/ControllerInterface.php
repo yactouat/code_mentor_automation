@@ -4,6 +4,5 @@ namespace Udacity\Controllers;
 
 interface ControllerInterface {
 
-    public function index(): string;
-
+    public function getStatusCode(): int;
 }

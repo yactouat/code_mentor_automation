@@ -11,6 +11,7 @@ final class NotFoundController extends Controller implements ControllerInterface
 
     public function index(): string
     {
+        $this->setStatusCode(404);
         return $this->getRenderer()->render("not-found.html.twig");
     }
     

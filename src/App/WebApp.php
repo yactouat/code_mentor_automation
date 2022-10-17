@@ -37,14 +37,7 @@ final class WebApp {
             $this->controller = new $controllerClass();
             $this->responseOutput = $this->controller->{$parsedRoute[1]}();
         }
-    }
-
-    private function _setStatusCode(): void {
-        if (!isset(self::getRegisteredRoutes()[$_SERVER['REQUEST_METHOD']][$this->inputRoute])) {
-            $this->statusCode = 404;
-        } else {
-            $this->statusCode = 200;
-        }
+        $this->statusCode = $this->controller->getStatusCode();
     }
 
     public function getController(): ControllerInterface {
@@ -54,7 +47,7 @@ final class WebApp {
     public function getResponseOutput(): string {
         return $this->responseOutput;
     }
-
+    
     public function getStatusCode(): int {
         return $this->statusCode;
     }
@@ -62,7 +55,6 @@ final class WebApp {
     public function handleRequest(string $inputRoute): void {
         $this->startTimer();
         $this->inputRoute = self::parseRequestRoute($inputRoute);
-        $this->_setStatusCode();
         $this->_setResponseOutput();
         $this->endTimer("web request processing took : ");
     }
