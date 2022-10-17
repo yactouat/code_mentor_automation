@@ -22,9 +22,21 @@ final class SessionLeadsController extends Controller implements ResourceControl
         return $this->getRenderer()->render("home.html.twig");
     }
 
-    public function persist(): void
+    public function persist(): string
     {
+        $errors = [];
         // TODO test that no `submit` field in $_POST array returns to the form with an alert
+        if (!isset($_POST["submit"])) {
+            $errors[] = "⚠️ Please send a valid form using the `submit` button";
+        }
+        if (count($errors) > 0) {
+            return $this->getRenderer()->render("session-leads.create.html.twig", [
+                "errors" => $errors
+            ]);
+        }
+        // TODO test that no `submit` field in $_POST array returns a 400 status code
+        // TODO test that user input is kept on error
+        return '';
     }
 
 }
