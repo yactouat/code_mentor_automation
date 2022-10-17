@@ -8,7 +8,7 @@ final class SessionLeadModel extends Model {
 
     protected string $tableName = "sessionlead";
 
-    public function __construct(private string $email, private string $email_password, private string $first_name)
+    public function __construct(private string $email, private string $google_app_password, private string $first_name)
     {
         parent::__construct();
         $dbName = Database::$dbName;
@@ -16,18 +16,18 @@ final class SessionLeadModel extends Model {
         $this->database->writeQuery("CREATE TABLE IF NOT EXISTS $dbName.$tableName(
             id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
             email TEXT NOT NULL UNIQUE,
-            email_password TEXT NOT NULL,
+            google_app_password TEXT NOT NULL,
             first_name TEXT NOT NULL
         )");
     }
 
     public function persist(): void {
         $email = $this->email;
-        $email_password = $this->email_password;
+        $google_app_password = $this->google_app_password;
         $first_name = $this->first_name;
         $dbName = Database::$dbName;
         $tableName = $this->tableName;
-        $query = "INSERT INTO $dbName.$tableName (email, email_password, first_name) VALUES ('$email', '$email_password', '$first_name')";
+        $query = "INSERT INTO $dbName.$tableName (email, google_app_password, first_name) VALUES ('$email', '$google_app_password', '$first_name')";
         $this->database->writeQuery($query);
     }
 

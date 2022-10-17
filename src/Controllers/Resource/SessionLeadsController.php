@@ -28,12 +28,28 @@ final class SessionLeadsController extends Controller implements ResourceControl
         if (!isset($_POST["submit"])) {
             $errors[] = "⚠️ Please send a valid form using the `submit` button";
         }
+        if (empty($_POST["email"])) {
+            $errors[] = "📧 Your email address is missing";
+        }
+        if (empty($_POST["first_name"])) {
+            $errors[] = "❌ Your first name is missing";
+        }
+        if (empty($_POST["google_app_password"])) {
+            $errors[] = "🔑 Your GMail application password is missing";
+        }
         if (count($errors) > 0) {
             $this->setStatusCode(400);
             return $this->getRenderer()->render("session-leads.create.html.twig", [
                 "errors" => $errors,
                 "userInput" => $_POST
             ]);
+        } else {
+            $data = [
+                "email" => $_POST["email"],
+                "first_name" => $_POST["first_name"],
+                "google_app_password" => $_POST["google_app_password"]
+            ];
+            // TODO actually persist the data
         }
         return '';
     }

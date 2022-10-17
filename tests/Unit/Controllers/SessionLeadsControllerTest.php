@@ -12,7 +12,7 @@ final class SessionLeadsControllerTest extends TestCase {
         $_POST = [];
     }
 
-    public function testPersistWithNoSubmitFieldReturnsSignUpFormWithAnAlert() {
+    public function testPersistWithNoSubmitFieldReturnsSignUpFormWithRelevantAlert() {
         $ctlr = new SessionLeadsController();
         $expected = str_replace(' ', '', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
             <div>⚠️ Please send a valid form using the `submit` button</div>
@@ -42,6 +42,36 @@ final class SessionLeadsControllerTest extends TestCase {
         >');
         $actual = str_replace([' ', "\n"], ['', ''], $ctlr->persist());
         // $this->assertEquals($expected, $actual);
+        $this->assertTrue(str_contains($actual, $expected));
+    }
+
+    public function testPersistWithNoEmailFieldReturnsSignUpFormWithRelevantAlert() {
+        $ctlr = new SessionLeadsController();
+        $expected = str_replace(' ', '', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <div>📧 Your email address is missing</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>');
+        $actual = str_replace(' ', '', $ctlr->persist());
+        $this->assertTrue(str_contains($actual, $expected));
+    }
+
+    public function testPersistWithNoGoogleAppPasswordFieldReturnsSignUpFormWithRelevantAlert() {
+        $ctlr = new SessionLeadsController();
+        $expected = str_replace(' ', '', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <div>🔑 Your GMail application password is missing</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>');
+        $actual = str_replace(' ', '', $ctlr->persist());
+        $this->assertTrue(str_contains($actual, $expected));
+    }
+
+    public function testPersistWithNoFirstNameFieldReturnsSignUpFormWithRelevantAlert() {
+        $ctlr = new SessionLeadsController();
+        $expected = str_replace(' ', '', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <div>❌ Your first name is missing</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>');
+        $actual = str_replace(' ', '', $ctlr->persist());
         $this->assertTrue(str_contains($actual, $expected));
     }
 

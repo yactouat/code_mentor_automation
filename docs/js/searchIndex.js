@@ -356,10 +356,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Models-SessionLeadModel.html#property_email"
         },                {
-            "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003A\u0024email_password",
-            "name": "email_password",
+            "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003A\u0024google_app_password",
+            "name": "google_app_password",
             "summary": "",
-            "url": "classes/Udacity-Models-SessionLeadModel.html#property_email_password"
+            "url": "classes/Udacity-Models-SessionLeadModel.html#property_google_app_password"
         },                {
             "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003A\u0024first_name",
             "name": "first_name",

@@ -54,7 +54,7 @@ final class SessionLeadModelTest extends TestCase {
         $expected = [
             "id",
             "email",
-            "email_password",
+            "google_app_password",
             "first_name"
         ];
         $sessionLead = new SessionLeadModel("test email", "test password", "test first name");
@@ -73,7 +73,7 @@ final class SessionLeadModelTest extends TestCase {
             [
                 "id" => 1,
                 "email" => "test email",
-                "email_password" => "test password",
+                "google_app_password" => "test password",
                 "first_name" => "test first name"
             ]
         ];   
