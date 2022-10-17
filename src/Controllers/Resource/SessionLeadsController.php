@@ -31,11 +31,10 @@ final class SessionLeadsController extends Controller implements ResourceControl
         if (count($errors) > 0) {
             $this->setStatusCode(400);
             return $this->getRenderer()->render("session-leads.create.html.twig", [
-                "errors" => $errors
+                "errors" => $errors,
+                "userInput" => $_POST
             ]);
         }
-        // TODO test that no `submit` field in $_POST array returns a 400 status code
-        // TODO test that user input is kept on error
         return '';
     }
 
