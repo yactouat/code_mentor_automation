@@ -22,4 +22,11 @@ final class SessionLeadsControllerTest extends TestCase {
         $this->assertTrue(str_contains($actual, $expected));
     }
 
+    public function testPersistWithNoSubmitFieldSets400StatusCode() {
+        $ctlr = new SessionLeadsController();
+        $expected = 400;
+        $ctlr->persist();
+        $this->assertEquals($expected, $ctlr->getStatusCode());
+    }
+
 }
