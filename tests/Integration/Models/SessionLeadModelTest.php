@@ -28,7 +28,12 @@ final class SessionLeadModelTest extends TestCase {
         // arrange
         $database = new Database();
         $expected = 'sessionlead';
-        $sessionLead = new SessionLeadModel("test email", "test password", "test first name");
+        new SessionLeadModel(
+            email: "test email", 
+            first_name: "test first name", 
+            google_app_password: "test google app password",
+            user_password: "test user password"
+        );
         // act
         $res = $database->readQuery(
             "SELECT name FROM sqlite_schema WHERE type='table' ORDER BY name"
@@ -43,7 +48,12 @@ final class SessionLeadModelTest extends TestCase {
 
     public function testConstructSetsCorrectDbTableName() {
         $expected = "sessionlead";
-        $sessionLead = new SessionLeadModel("test email", "test password", "test first name");
+        $sessionLead = new SessionLeadModel(
+            email: "test email", 
+            first_name: "test first name", 
+            google_app_password: "test google app password",
+            user_password: "test user password"
+        );
         $actual = $sessionLead->getTableName();
         $this->assertSame($expected, $actual);
     }
@@ -54,10 +64,16 @@ final class SessionLeadModelTest extends TestCase {
         $expected = [
             "id",
             "email",
+            "first_name",
             "google_app_password",
-            "first_name"
+            "user_password"
         ];
-        $sessionLead = new SessionLeadModel("test email", "test password", "test first name");
+        new SessionLeadModel(
+            email: "test email", 
+            first_name: "test first name", 
+            google_app_password: "test google app password",
+            user_password: "test user password"
+        );
         // act
         $res = $database->readQuery(
             "pragma table_info('sessionlead')"
@@ -73,11 +89,17 @@ final class SessionLeadModelTest extends TestCase {
             [
                 "id" => 1,
                 "email" => "test email",
-                "google_app_password" => "test password",
-                "first_name" => "test first name"
+                "first_name" => "test first name",
+                "google_app_password" => "test google app password",
+                "user_password" => "test user password",
             ]
         ];   
-        $sessionLead = new SessionLeadModel("test email", "test password", "test first name");
+        $sessionLead = new SessionLeadModel(
+            email: "test email", 
+            first_name: "test first name", 
+            google_app_password: "test google app password",
+            user_password: "test user password"
+        );
         $sessionLead->persist();
         // act
         $actual = $sessionLead->selectAll();
@@ -85,10 +107,66 @@ final class SessionLeadModelTest extends TestCase {
         $this->assertEquals($expected, $actual);     
     }
 
-    public function testValidateInputFieldsWithMalformedEmailPushesCorrectErrorsInErrorsArrray() {
+    public function testValidateInputFieldsWithMalformedEmailPushesCorrectErrorInErrorsArrray() {
         $expected = '📧 Malformed email address';
         $actual = SessionLeadModel::validateInputFields(['email' => 'yactouat@.com']);
         $this->assertTrue(in_array($expected, $actual));
     }
 
+    public function testValidateInputFieldsWithValidEmailPushesNoRelatedErrorInErrorsArrray() {
+        $expected = '📧 Malformed email address';
+        $actual = SessionLeadModel::validateInputFields(['email' => 'yactouat@gmail.com']);
+        $this->assertTrue(!in_array($expected, $actual));
+    }
+
+    public function testPersistWithGoogleAppPasswordContainingCodePersistsSanitizedStringInDb() {
+        // arrange
+        $expected = htmlspecialchars('<script>alert("I am a bad script")</script>');
+        $sessionLead = new SessionLeadModel(
+            email: 'test email', 
+            first_name: 'test first name', 
+            google_app_password: '<script>alert("I am a bad script")</script>',
+            user_password: 'test user password'
+        );
+        $sessionLead->persist();
+        // act
+        $actual = $sessionLead->selectAll();
+        // assert
+        $this->assertEquals($expected, $actual[0]['google_app_password']);     
+    }
+
+    public function testPersistWithFirstNameContainingCodePersistsSanitizedStringInDb() {
+        // arrange
+        $expected = htmlspecialchars('<script>alert("I am a bad script")</script>');
+        $sessionLead = new SessionLeadModel(
+            email: 'test email', 
+            first_name: '<script>alert("I am a bad script")</script>', 
+            google_app_password: 'some password',
+            user_password: 'test user password'
+        );
+        $sessionLead->persist();
+        // act
+        $actual = $sessionLead->selectAll();
+        // assert
+        $this->assertEquals($expected, $actual[0]['first_name']);     
+    }
+
+    public function testPersistWithUserPasswordContainingCodePersistsSanitizedStringInDb() {
+        // arrange
+        $expected = htmlspecialchars('<script>alert("I am a bad script")</script>');
+        $sessionLead = new SessionLeadModel(
+            email: 'test email', 
+            first_name: 'some first name', 
+            google_app_password: 'some password',
+            user_password: '<script>alert("I am a bad script")</script>'
+        );
+        $sessionLead->persist();
+        // act
+        $actual = $sessionLead->selectAll();
+        // assert
+        $this->assertEquals($expected, $actual[0]['user_password']);     
+    }
+
+    // TODO test user password presence
+    // TODO test user password strength
 }

@@ -67,7 +67,7 @@ final class EmailsTest extends TestCase
             "Test2 LastName",
             CsvExtractor::getCSVData(
                 '/var/www/tests/fixtures/csv/online-resources.csv',
-                OnlineResourceModel::getFields()
+                OnlineResourceModel::getCsvFields()
             )
         );
         $this->assertEquals($expected, $actual);
@@ -82,7 +82,7 @@ final class EmailsTest extends TestCase
             "Test2 LastName",
             CsvExtractor::getCSVData(
                 '/var/www/tests/fixtures/csv/online-resources.csv',
-                OnlineResourceModel::getFields()
+                OnlineResourceModel::getCsvFields()
             )
         );
         $this->assertEquals($expected, $actual);

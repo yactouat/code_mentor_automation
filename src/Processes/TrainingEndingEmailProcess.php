@@ -32,7 +32,7 @@ final class TrainingEndingEmailProcess {
             if (!is_null($onlineResources)) {
                 $onlineResources = CsvExtractor::getCSVData(
                     $onlineResources, 
-                    OnlineResourceModel::getFields()
+                    OnlineResourceModel::getCsvFields()
                 );
             }
         } catch (\Throwable $th) {

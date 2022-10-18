@@ -70,12 +70,20 @@ final class Database {
         return $result->fetchAll();
     }
 
-    public function writeQuery(string $query): array {
-        $this->logger->notice("running WRITE query : ".$query);
+    public function writeQuery(string $sql, ?array $values = null): array {
+        $this->logger->notice("running WRITE query : ".$sql);
         $this->startTimer();
-        $result = $this->databaseConn->query($query);
+        $result = [];
+        if (is_null($values)) {
+            $executed = $this->databaseConn->query($sql);
+            $result = $executed->fetchAll();
+        } else {
+            $statement = $this->databaseConn->prepare($sql);
+            $statement->execute(array_map(fn($val) => htmlspecialchars($val), $values));
+            $result = $statement->fetchAll();
+        }
         $this->endTimer();
-        return $result->fetchAll();
+        return $result;
     }
 
 }

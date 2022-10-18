@@ -11,10 +11,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Models-OnlineResourceModel.html#method___construct"
         },                {
-            "fqsen": "\\Udacity\\Models\\OnlineResourceModel\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
-            "summary": "",
-            "url": "classes/Udacity-Models-OnlineResourceModel.html#method_getFields"
+            "fqsen": "\\Udacity\\Models\\OnlineResourceModel\u003A\u003AgetCsvFields\u0028\u0029",
+            "name": "getCsvFields",
+            "summary": "getting\u0020Udacity\u0020CSV\u0020fields\u0020for\u0020the\u0020given\u0020model",
+            "url": "classes/Udacity-Models-OnlineResourceModel.html#method_getCsvFields"
         },                {
             "fqsen": "\\Udacity\\Models\\OnlineResourceModel\u003A\u003Apersist\u0028\u0029",
             "name": "persist",
@@ -56,10 +56,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Models-StudentModel.html#method___construct"
         },                {
-            "fqsen": "\\Udacity\\Models\\StudentModel\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
-            "summary": "",
-            "url": "classes/Udacity-Models-StudentModel.html#method_getFields"
+            "fqsen": "\\Udacity\\Models\\StudentModel\u003A\u003AgetCsvFields\u0028\u0029",
+            "name": "getCsvFields",
+            "summary": "getting\u0020Udacity\u0020CSV\u0020fields\u0020for\u0020the\u0020given\u0020model",
+            "url": "classes/Udacity-Models-StudentModel.html#method_getCsvFields"
         },                {
             "fqsen": "\\Udacity\\Models\\StudentModel\u003A\u003Apersist\u0028\u0029",
             "name": "persist",
@@ -306,10 +306,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Models-Model.html#method_persist"
         },                {
-            "fqsen": "\\Udacity\\Models\\Model\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
-            "summary": "",
-            "url": "classes/Udacity-Models-Model.html#method_getFields"
+            "fqsen": "\\Udacity\\Models\\Model\u003A\u003AgetCsvFields\u0028\u0029",
+            "name": "getCsvFields",
+            "summary": "getting\u0020Udacity\u0020CSV\u0020fields\u0020for\u0020the\u0020given\u0020model",
+            "url": "classes/Udacity-Models-Model.html#method_getCsvFields"
         },                {
             "fqsen": "\\Udacity\\Models\\Model\u003A\u003AvalidateInputFields\u0028\u0029",
             "name": "validateInputFields",
@@ -348,13 +348,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "creates\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020session\u0020lead\u0020and\u0020creates\u0020related\u0020SQL\u0020table\u0020if\u0020not\u0020exists",
             "url": "classes/Udacity-Models-SessionLeadModel.html#method___construct"
         },                {
-            "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
-            "summary": "",
-            "url": "classes/Udacity-Models-SessionLeadModel.html#method_getFields"
+            "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003AgetCsvFields\u0028\u0029",
+            "name": "getCsvFields",
+            "summary": "getting\u0020Udacity\u0020CSV\u0020fields\u0020for\u0020the\u0020given\u0020model",
+            "url": "classes/Udacity-Models-SessionLeadModel.html#method_getCsvFields"
         },                {
             "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003Apersist\u0028\u0029",
             "name": "persist",
@@ -376,15 +376,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Models-SessionLeadModel.html#property_email"
         },                {
+            "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003A\u0024first_name",
+            "name": "first_name",
+            "summary": "",
+            "url": "classes/Udacity-Models-SessionLeadModel.html#property_first_name"
+        },                {
             "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003A\u0024google_app_password",
             "name": "google_app_password",
             "summary": "",
             "url": "classes/Udacity-Models-SessionLeadModel.html#property_google_app_password"
         },                {
-            "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003A\u0024first_name",
-            "name": "first_name",
+            "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003A\u0024user_password",
+            "name": "user_password",
             "summary": "",
-            "url": "classes/Udacity-Models-SessionLeadModel.html#property_first_name"
+            "url": "classes/Udacity-Models-SessionLeadModel.html#property_user_password"
         },                {
             "fqsen": "\\Udacity\\Csv\\CsvExtractor",
             "name": "CsvExtractor",

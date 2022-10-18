@@ -23,7 +23,7 @@ final class StudentsCsvExtractor extends CsvExtractor
      * @return array[] an array containing the first and last name of the student who is behind on hers/his Nanodegree track
      */
     public static function getBehindStudentsCoordinates(string $inputCsvPath): array {
-        $sessionData = self::getCSVData($inputCsvPath, StudentModel::getFields());
+        $sessionData = self::getCSVData($inputCsvPath, StudentModel::getCsvFields());
         $formatted = [];
         foreach ($sessionData as $student) {
             if ($student["On-Track Status"] == "Behind") {
@@ -49,7 +49,7 @@ final class StudentsCsvExtractor extends CsvExtractor
      * @return array[] an array containing the first and last name of the Udacity student
      */
     public static function getAllStudentsCoordinates(string $inputCsvPath): array {
-        $sessionData = self::getCSVData($inputCsvPath, StudentModel::getFields());
+        $sessionData = self::getCSVData($inputCsvPath, StudentModel::getCsvFields());
         $formatted = [];
         foreach ($sessionData as $student) {
             $formatted[] = [

@@ -10,7 +10,14 @@ abstract class Model {
     protected string $tableName;
 
     public abstract function persist(): void;
-    public abstract static function getFields(): array;
+    
+    /**
+     * getting Udacity CSV fields for the given model
+     *
+     * @return array
+     */
+    public abstract static function getCsvFields(): array;
+
     public abstract static function validateInputFields(array $fields): array;
 
     protected function __construct(?Database $database = null)

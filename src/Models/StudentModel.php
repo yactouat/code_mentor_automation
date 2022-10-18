@@ -27,7 +27,7 @@ final class StudentModel extends Model {
         )");
     }
 
-    public static function getFields(): array {
+    public static function getCsvFields(): array {
         return [
             "On-Track Status",
             "First Name",

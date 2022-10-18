@@ -21,7 +21,7 @@ final class OnlineResourceModel extends Model {
         )");
     }
 
-    public static function getFields(): array {
+    public static function getCsvFields(): array {
         return [
             "Name",
             "Description",

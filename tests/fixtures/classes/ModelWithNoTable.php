@@ -11,7 +11,7 @@ final class ModelWithNoTable extends Model {
 
     public function persist(): void {}
 
-    public static function getFields(): array
+    public static function getCsvFields(): array
     {
         return [];
     }

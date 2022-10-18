@@ -30,7 +30,7 @@ final class StudentsCsvExtractorTest extends TestCase {
                 "Notes" =>  '[]'
             ]
         ];
-        $actual = CsvExtractor::getCSVData($inputCsvPath, StudentModel::getFields());
+        $actual = CsvExtractor::getCSVData($inputCsvPath, StudentModel::getCsvFields());
         $this->assertEquals($expected, $actual);
     }
 
@@ -71,14 +71,14 @@ final class StudentsCsvExtractorTest extends TestCase {
         $inputCsvPath = "/var/www/tests/fixtures/csv/invalid-session-report.csv";
         $this->expectException(Exception::class);
         $this->expectExceptionMessage("Please provide a valid input CSV");
-        $actual = CsvExtractor::getCSVData($inputCsvPath, StudentModel::getFields());
+        $actual = CsvExtractor::getCSVData($inputCsvPath, StudentModel::getCsvFields());
     }
 
     public function testGetCsvDataWithInvalidStudentsDataThrowsInvalidStudentsDataException() {
         $inputCsvPath = "/var/www/tests/fixtures/csv/invalid-session-report-data.csv";
         $this->expectException(Exception::class);
         $this->expectExceptionMessage("Please provide a valid input CSV");
-        $actual = CsvExtractor::getCSVData($inputCsvPath, StudentModel::getFields());
+        $actual = CsvExtractor::getCSVData($inputCsvPath, StudentModel::getCsvFields());
     }
 
     public function testGetAllStudentsCoordinates() {
@@ -92,7 +92,7 @@ final class StudentsCsvExtractorTest extends TestCase {
         $inputCsvPath = "/var/www/tests/fixtures/csv/non-existing.csv";
         $this->expectException(Exception::class);
         $this->expectExceptionMessage("Please provide an existing input CSV");
-        $actual = CsvExtractor::getCSVData($inputCsvPath, StudentModel::getFields());
+        $actual = CsvExtractor::getCSVData($inputCsvPath, StudentModel::getCsvFields());
     }
 
 }
