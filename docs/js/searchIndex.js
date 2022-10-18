@@ -386,10 +386,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Models-SessionLeadModel.html#property_google_app_password"
         },                {
-            "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003A\u0024user_password",
-            "name": "user_password",
+            "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003A\u0024user_passphrase",
+            "name": "user_passphrase",
             "summary": "",
-            "url": "classes/Udacity-Models-SessionLeadModel.html#property_user_password"
+            "url": "classes/Udacity-Models-SessionLeadModel.html#property_user_passphrase"
         },                {
             "fqsen": "\\Udacity\\Csv\\CsvExtractor",
             "name": "CsvExtractor",

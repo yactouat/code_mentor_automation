@@ -14,13 +14,13 @@ final class SessionLeadModel extends Model {
      * @param string $email
      * @param string $first_name
      * @param string $google_app_password
-     * @param string $user_password
+     * @param string $user_passphrase
      */
     public function __construct(
         private string $email, 
         private string $first_name,
         private string $google_app_password, 
-        private string $user_password
+        private string $user_passphrase
     )
     {
         parent::__construct();
@@ -28,10 +28,10 @@ final class SessionLeadModel extends Model {
         $tableName = $this->tableName;
         $this->database->writeQuery("CREATE TABLE IF NOT EXISTS $dbName.$tableName(
             id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
-            email TEXT NOT NULL UNIQUE,
+            email VARCHAR(320) NOT NULL UNIQUE,
             first_name TEXT NOT NULL,
             google_app_password TEXT NOT NULL,
-            user_password VARCHAR(255) NOT NULL
+            user_passphrase TEXT NOT NULL
         )");
     }
 
@@ -53,11 +53,11 @@ final class SessionLeadModel extends Model {
     public function persist(): void {
         $dbName = Database::$dbName;
         $tableName = $this->tableName;
-        $sql = "INSERT INTO $dbName.$tableName (email, first_name, google_app_password, user_password) 
+        $sql = "INSERT INTO $dbName.$tableName (email, first_name, google_app_password, user_passphrase) 
             VALUES(?,?,?,?)";
         $this->database->writeQuery(
             $sql, 
-            [$this->email, $this->first_name, $this->google_app_password, $this->user_password]
+            [$this->email, $this->first_name, $this->google_app_password, $this->user_passphrase]
         );
     }
 
@@ -75,8 +75,8 @@ final class SessionLeadModel extends Model {
         if (empty($fields['google_app_password'])) {
             $errors[] = '🔑 Your Google application password is missing';
         }
-        if (empty($fields['user_password'])) {
-            $errors[] = '🔑 Your user password is missing';
+        if (empty($fields['user_passphrase'])) {
+            $errors[] = '🔑 Your user passphrase is missing';
         }
         if(!filter_var($fields['email'] ?? '', FILTER_VALIDATE_EMAIL)) {
             $errors[] = '📧 Malformed email address';

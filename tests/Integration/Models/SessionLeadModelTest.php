@@ -32,7 +32,7 @@ final class SessionLeadModelTest extends TestCase {
             email: "test email", 
             first_name: "test first name", 
             google_app_password: "test google app password",
-            user_password: "test user password"
+            user_passphrase: "test user password"
         );
         // act
         $res = $database->readQuery(
@@ -52,7 +52,7 @@ final class SessionLeadModelTest extends TestCase {
             email: "test email", 
             first_name: "test first name", 
             google_app_password: "test google app password",
-            user_password: "test user password"
+            user_passphrase: "test user password"
         );
         $actual = $sessionLead->getTableName();
         $this->assertSame($expected, $actual);
@@ -66,13 +66,13 @@ final class SessionLeadModelTest extends TestCase {
             "email",
             "first_name",
             "google_app_password",
-            "user_password"
+            "user_passphrase"
         ];
         new SessionLeadModel(
             email: "test email", 
             first_name: "test first name", 
             google_app_password: "test google app password",
-            user_password: "test user password"
+            user_passphrase: "test user password"
         );
         // act
         $res = $database->readQuery(
@@ -91,14 +91,14 @@ final class SessionLeadModelTest extends TestCase {
                 "email" => "test email",
                 "first_name" => "test first name",
                 "google_app_password" => "test google app password",
-                "user_password" => "test user password",
+                "user_passphrase" => "test user password",
             ]
         ];   
         $sessionLead = new SessionLeadModel(
             email: "test email", 
             first_name: "test first name", 
             google_app_password: "test google app password",
-            user_password: "test user password"
+            user_passphrase: "test user password"
         );
         $sessionLead->persist();
         // act
@@ -126,7 +126,7 @@ final class SessionLeadModelTest extends TestCase {
             email: 'test email', 
             first_name: 'test first name', 
             google_app_password: '<script>alert("I am a bad script")</script>',
-            user_password: 'test user password'
+            user_passphrase: 'test user password'
         );
         $sessionLead->persist();
         // act
@@ -142,7 +142,7 @@ final class SessionLeadModelTest extends TestCase {
             email: 'test email', 
             first_name: '<script>alert("I am a bad script")</script>', 
             google_app_password: 'some password',
-            user_password: 'test user password'
+            user_passphrase: 'test user password'
         );
         $sessionLead->persist();
         // act
@@ -158,19 +158,26 @@ final class SessionLeadModelTest extends TestCase {
             email: 'test email', 
             first_name: 'some first name', 
             google_app_password: 'some password',
-            user_password: '<script>alert("I am a bad script")</script>'
+            user_passphrase: '<script>alert("I am a bad script")</script>'
         );
         $sessionLead->persist();
         // act
         $actual = $sessionLead->selectAll();
         // assert
-        $this->assertEquals($expected, $actual[0]['user_password']);     
+        $this->assertEquals($expected, $actual[0]['user_passphrase']);     
     }
 
     public function testValidateInputFieldsWithNoPasswordPushesCorrectErrorInErrorsArrray() {
-        $expected = '🔑 Your user password is missing';
+        $expected = '🔑 Your user passphrase is missing';
         $actual = SessionLeadModel::validateInputFields([]);
         $this->assertTrue(in_array($expected, $actual));
     }
-    // TODO test user password strength
+
+    public function testValidateInputFieldsWithAnEmailThatTooLongPushesCorrectErrorInErrorsArrray() {
+        $expected = '📧 Malformed email address';
+        $actual = SessionLeadModel::validateInputFields([
+            "email" => "testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest@gmail.com"
+        ]);
+        $this->assertTrue(in_array($expected, $actual));
+    }
 }

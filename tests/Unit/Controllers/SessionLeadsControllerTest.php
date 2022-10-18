@@ -29,14 +29,14 @@ final class SessionLeadsControllerTest extends TestCase {
         $this->assertEquals($expected, $ctlr->getStatusCode());
     }
 
-    public function testPersistWithNoErrorsKeepsOldUserInput() {
+    public function testPersistWithErrorsKeepsOldUserInput() {
         $_POST["email"] = "john@doe.com";
         $ctlr = new SessionLeadsController();
         $expected = str_replace([' ', "\n"], ['', ''], '<input 
             type="email" 
             class="form-control" 
             id="email" 
-            placeholder="Email address"
+            placeholder="Your Email Address"
             value="john@doe.com"
             name="email"
         >');
