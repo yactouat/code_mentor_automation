@@ -79,7 +79,10 @@ final class Database {
             $result = $executed->fetchAll();
         } else {
             $statement = $this->databaseConn->prepare($sql);
-            $statement->execute(array_map(fn($val) => htmlspecialchars($val), $values));
+            $statement->execute(array_map(
+                fn($val) => htmlspecialchars($val, ENT_QUOTES), 
+                $values)
+            );
             $result = $statement->fetchAll();
         }
         $this->endTimer();

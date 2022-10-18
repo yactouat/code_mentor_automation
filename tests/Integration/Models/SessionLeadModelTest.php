@@ -121,7 +121,7 @@ final class SessionLeadModelTest extends TestCase {
 
     public function testPersistWithGoogleAppPasswordContainingCodePersistsSanitizedStringInDb() {
         // arrange
-        $expected = htmlspecialchars('<script>alert("I am a bad script")</script>');
+        $expected = htmlspecialchars('<script>alert("I am a bad script")</script>', ENT_QUOTES);
         $sessionLead = new SessionLeadModel(
             email: 'test email', 
             first_name: 'test first name', 
@@ -137,7 +137,7 @@ final class SessionLeadModelTest extends TestCase {
 
     public function testPersistWithFirstNameContainingCodePersistsSanitizedStringInDb() {
         // arrange
-        $expected = htmlspecialchars('<script>alert("I am a bad script")</script>');
+        $expected = htmlspecialchars('<script>alert("I am a bad script")</script>', ENT_QUOTES);
         $sessionLead = new SessionLeadModel(
             email: 'test email', 
             first_name: '<script>alert("I am a bad script")</script>', 
@@ -153,7 +153,7 @@ final class SessionLeadModelTest extends TestCase {
 
     public function testPersistWithUserPasswordContainingCodePersistsSanitizedStringInDb() {
         // arrange
-        $expected = htmlspecialchars('<script>alert("I am a bad script")</script>');
+        $expected = htmlspecialchars('<script>alert("I am a bad script")</script>', ENT_QUOTES);
         $sessionLead = new SessionLeadModel(
             email: 'test email', 
             first_name: 'some first name', 
