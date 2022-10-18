@@ -75,7 +75,7 @@ final class WebAppTest extends TestCase {
                 'session-leads/create' => ['Resource\SessionLeadsController', 'create']
             ],
             "POST" => [
-                'session-leads' => 
+                'session-leads/create' => 
                 ['Resource\SessionLeadsController', 'persist']
             ]
         ];

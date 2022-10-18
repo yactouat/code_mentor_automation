@@ -22,7 +22,7 @@ final class WebApp {
                 'session-leads/create' => ['Resource\SessionLeadsController', 'create']
             ],
             "POST" => [
-                'session-leads' => ['Resource\SessionLeadsController', 'persist']
+                'session-leads/create' => ['Resource\SessionLeadsController', 'persist']
             ]
         ];
     }
