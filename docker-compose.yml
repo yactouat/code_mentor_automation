@@ -1,4 +1,19 @@
+volumes:
+  mariadb-vol:
+
 services:
+
+  mariadb:
+      image: 'mariadb:10.9.3'
+      volumes:
+          - mariadb-vol:/var/lib/mysql
+      environment:
+          MYSQL_ROOT_PASSWORD: mariadb
+          MYSQL_DATABASE:  mariadb
+      ports:
+          - 3306:3306
+      expose:
+          - 3306
 
   php:
     build:
@@ -11,3 +26,17 @@ services:
       - ./data/logs/nginx:/var/log/nginx/
     ports:
       - 80:80
+    depends_on:
+      - mariadb
+
+  phpmyadmin:
+      image: phpmyadmin:5.2.0
+      restart: unless-stopped
+      ports:
+          - 8080:80
+      environment:
+          # we specify that we connect to an arbitrary server with the flag below
+          # "arbitrary" means you're able to specify which database server to use on login page of phpmyadmin      
+          - PMA_ARBITRARY=1
+      depends_on:
+        - mariadb
