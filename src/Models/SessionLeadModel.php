@@ -78,7 +78,7 @@ final class SessionLeadModel extends Model {
         if (empty($fields['user_passphrase'])) {
             $errors[] = '🔑 Your user passphrase is missing';
         }
-        if(!filter_var($fields['email'] ?? '', FILTER_VALIDATE_EMAIL)) {
+        if(!empty($fields['email']) && !filter_var($fields['email'] ?? '', FILTER_VALIDATE_EMAIL)) {
             $errors[] = '📧 Malformed email address';
         }
         return $errors;
