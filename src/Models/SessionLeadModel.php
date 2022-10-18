@@ -75,6 +75,9 @@ final class SessionLeadModel extends Model {
         if (empty($fields['google_app_password'])) {
             $errors[] = '🔑 Your Google application password is missing';
         }
+        if (empty($fields['user_password'])) {
+            $errors[] = '🔑 Your user password is missing';
+        }
         if(!filter_var($fields['email'] ?? '', FILTER_VALIDATE_EMAIL)) {
             $errors[] = '📧 Malformed email address';
         }

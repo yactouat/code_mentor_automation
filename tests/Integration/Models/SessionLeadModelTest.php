@@ -167,6 +167,10 @@ final class SessionLeadModelTest extends TestCase {
         $this->assertEquals($expected, $actual[0]['user_password']);     
     }
 
-    // TODO test user password presence
+    public function testValidateInputFieldsWithNoPasswordPushesCorrectErrorInErrorsArrray() {
+        $expected = '🔑 Your user password is missing';
+        $actual = SessionLeadModel::validateInputFields([]);
+        $this->assertTrue(in_array($expected, $actual));
+    }
     // TODO test user password strength
 }
