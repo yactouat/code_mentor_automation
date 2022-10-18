@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Udacity\Csv;
+namespace Udacity\Csvs;
 
 use Udacity\Models\StudentModel;
 

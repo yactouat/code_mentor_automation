@@ -2,8 +2,8 @@
 
 namespace Udacity\Commands;
 
-use Udacity\Csv\CsvExtractor;
-use Udacity\Emailing\Mailer;
+use Udacity\Csvs\CsvExtractor;
+use Udacity\Emails\Mailer;
 use Udacity\Intl;
 use Udacity\LoggerTrait;
 use Udacity\Processes\TrainingEndingEmailProcess;

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Udacity\Csv;
+namespace Udacity\Csvs;
 
 /**
  * class responsible for extracting data from CSVs

@@ -1,6 +1,6 @@
 <?php
 
-namespace Udacity\App;
+namespace Udacity\Apps;
 
 use Udacity\Controllers\ControllerInterface;
 use Udacity\Controllers\NotFoundController;

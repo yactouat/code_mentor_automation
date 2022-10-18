@@ -10,7 +10,7 @@ $rootDir = dirname(__DIR__);
 
 // loading deps
 require_once $rootDir."/vendor/autoload.php";
-use Udacity\App\CliApp;
+use Udacity\Apps\CliApp;
 
 $application = new CliApp($rootDir);
 

@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\Csv;
 
-use Udacity\Csv\StudentsCsvExtractor as CsvExtractor;
+use Udacity\Csvs\StudentsCsvExtractor as CsvExtractor;
 use Udacity\Models\StudentModel;
 use Exception;
 use PHPUnit\Framework\TestCase;

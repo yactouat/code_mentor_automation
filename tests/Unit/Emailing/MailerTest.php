@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\Emailing;
 
-use Udacity\Emailing\Mailer;
+use Udacity\Emails\Mailer;
 use PHPUnit\Framework\TestCase;
 
 final class MailerTest extends TestCase

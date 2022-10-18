@@ -1,6 +1,6 @@
 <?php
 
-namespace Udacity\App;
+namespace Udacity\Apps;
 
 use Symfony\Component\Console\Application;
 use Udacity\Commands\SendEmailsToBehindStudentsCommand;

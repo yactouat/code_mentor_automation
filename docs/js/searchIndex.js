@@ -126,46 +126,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Commands-SendEmailsToBehindStudentsCommand.html#property_defaultDescription"
         },                {
-            "fqsen": "\\Udacity\\Emailing\\Emails",
-            "name": "Emails",
-            "summary": "class\u0020responsible\u0020for\u0020setting\/getting\u0020emails\u0020templates",
-            "url": "classes/Udacity-Emailing-Emails.html"
-        },                {
-            "fqsen": "\\Udacity\\Emailing\\Emails\u003A\u003AgetBehindStudentEmailTemplate\u0028\u0029",
-            "name": "getBehindStudentEmailTemplate",
-            "summary": "gets\u0020the\u0020template\u0020for\u0020students\u0020who\u0020are\u0020behind\u0020on\u0020their\u0020nanodegree\u0020track",
-            "url": "classes/Udacity-Emailing-Emails.html#method_getBehindStudentEmailTemplate"
-        },                {
-            "fqsen": "\\Udacity\\Emailing\\Emails\u003A\u003AgetBehindStudentEmailFormatted\u0028\u0029",
-            "name": "getBehindStudentEmailFormatted",
-            "summary": "gets\u0020the\u0020email\u0020text\u0020for\u0020a\u0020given\u0020student\u0020who\u0020is\u0020behind\u0020hers\/his\u0020nanodegree\u0020track",
-            "url": "classes/Udacity-Emailing-Emails.html#method_getBehindStudentEmailFormatted"
-        },                {
-            "fqsen": "\\Udacity\\Emailing\\Emails\u003A\u003AgetTrainingEndingEmailTemplate\u0028\u0029",
-            "name": "getTrainingEndingEmailTemplate",
-            "summary": "gets\u0020the\u0020template\u0020for\u0020the\u0020email\u0020to\u0020send\u0020to\u0020students\u0020when\u0020the\u0020end\u0020of\u0020the\u0020training\u0020is\u0020near",
-            "url": "classes/Udacity-Emailing-Emails.html#method_getTrainingEndingEmailTemplate"
-        },                {
-            "fqsen": "\\Udacity\\Emailing\\Emails\u003A\u003AgetTrainingEndingEmailFormatted\u0028\u0029",
-            "name": "getTrainingEndingEmailFormatted",
-            "summary": "gets\u0020the\u0020email\u0020text\u0020for\u0020a\u0020given\u0020student\u0020to\u0020send\u0020when\u0020the\u0020end\u0020of\u0020the\u0020training\u0020is\u0020near",
-            "url": "classes/Udacity-Emailing-Emails.html#method_getTrainingEndingEmailFormatted"
-        },                {
-            "fqsen": "\\Udacity\\Emailing\\Mailer",
-            "name": "Mailer",
-            "summary": "class\u0020responsible\u0020for\u0020sending\u0020emails",
-            "url": "classes/Udacity-Emailing-Mailer.html"
-        },                {
-            "fqsen": "\\Udacity\\Emailing\\Mailer\u003A\u003AcheckMsmtprc\u0028\u0029",
-            "name": "checkMsmtprc",
-            "summary": "checks\u0020is\u0020msmtp\u0020config\u0020is\u0020set",
-            "url": "classes/Udacity-Emailing-Mailer.html#method_checkMsmtprc"
-        },                {
-            "fqsen": "\\Udacity\\Emailing\\Mailer\u003A\u003AsendEmail\u0028\u0029",
-            "name": "sendEmail",
-            "summary": "sends\u0020an\u0020email",
-            "url": "classes/Udacity-Emailing-Mailer.html#method_sendEmail"
-        },                {
             "fqsen": "\\Udacity\\Intl",
             "name": "Intl",
             "summary": "this\u0020class\u0020is\u0020responsible\u0020for\u0020managing\u0020the\u0020internationalization\u0020of\u0020the\u0020app\u0027",
@@ -391,36 +351,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Models-SessionLeadModel.html#property_user_passphrase"
         },                {
-            "fqsen": "\\Udacity\\Csv\\CsvExtractor",
-            "name": "CsvExtractor",
-            "summary": "class\u0020responsible\u0020for\u0020extracting\u0020data\u0020from\u0020CSVs",
-            "url": "classes/Udacity-Csv-CsvExtractor.html"
-        },                {
-            "fqsen": "\\Udacity\\Csv\\CsvExtractor\u003A\u003AcheckFileExistence\u0028\u0029",
-            "name": "checkFileExistence",
-            "summary": "checks\u0020if\u0020an\u0020input\u0020CSV\u0020exists,\u0020throws\u0020Exception\u0020if\u0020not",
-            "url": "classes/Udacity-Csv-CsvExtractor.html#method_checkFileExistence"
-        },                {
-            "fqsen": "\\Udacity\\Csv\\CsvExtractor\u003A\u003AgetCSVData\u0028\u0029",
-            "name": "getCSVData",
-            "summary": "gets\u0020an\u0020array\u002Dlike\u0020representation\u0020of\u0020a\u0020CSV\u0020file\u0020data",
-            "url": "classes/Udacity-Csv-CsvExtractor.html#method_getCSVData"
-        },                {
-            "fqsen": "\\Udacity\\Csv\\StudentsCsvExtractor",
-            "name": "StudentsCsvExtractor",
-            "summary": "class\u0020responsible\u0020for\u0020extracting\u0020data\u0020from\u0020session\u0020reports\u0020CSVs",
-            "url": "classes/Udacity-Csv-StudentsCsvExtractor.html"
-        },                {
-            "fqsen": "\\Udacity\\Csv\\StudentsCsvExtractor\u003A\u003AgetBehindStudentsCoordinates\u0028\u0029",
-            "name": "getBehindStudentsCoordinates",
-            "summary": "extracts\u0020students\u0020coordinates\u0020from\u0020a\u0020Udacity\u0020session\u0020report,\u0020scoped\u0020to\u0020students\u0020that\u0020are\u0020behind\u0020on\u0020their\u0020Nanodegree\u0020track",
-            "url": "classes/Udacity-Csv-StudentsCsvExtractor.html#method_getBehindStudentsCoordinates"
-        },                {
-            "fqsen": "\\Udacity\\Csv\\StudentsCsvExtractor\u003A\u003AgetAllStudentsCoordinates\u0028\u0029",
-            "name": "getAllStudentsCoordinates",
-            "summary": "extracts\u0020all\u0020students\u0020coordinates\u0020from\u0020a\u0020Udacity\u0020session\u0020report",
-            "url": "classes/Udacity-Csv-StudentsCsvExtractor.html#method_getAllStudentsCoordinates"
-        },                {
             "fqsen": "\\Udacity\\LoggerTrait",
             "name": "LoggerTrait",
             "summary": "",
@@ -460,96 +390,6 @@ Search.appendIndex(
             "name": "startTime",
             "summary": "",
             "url": "classes/Udacity-LoggerTrait.html#property_startTime"
-        },                {
-            "fqsen": "\\Udacity\\App\\CliApp",
-            "name": "CliApp",
-            "summary": "",
-            "url": "classes/Udacity-App-CliApp.html"
-        },                {
-            "fqsen": "\\Udacity\\App\\CliApp\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/Udacity-App-CliApp.html#method___construct"
-        },                {
-            "fqsen": "\\Udacity\\App\\CliApp\u003A\u003A_registerCommands\u0028\u0029",
-            "name": "_registerCommands",
-            "summary": "",
-            "url": "classes/Udacity-App-CliApp.html#method__registerCommands"
-        },                {
-            "fqsen": "\\Udacity\\App\\CliApp\u003A\u003Arun\u0028\u0029",
-            "name": "run",
-            "summary": "",
-            "url": "classes/Udacity-App-CliApp.html#method_run"
-        },                {
-            "fqsen": "\\Udacity\\App\\CliApp\u003A\u003A\u0024app",
-            "name": "app",
-            "summary": "",
-            "url": "classes/Udacity-App-CliApp.html#property_app"
-        },                {
-            "fqsen": "\\Udacity\\App\\CliApp\u003A\u003A\u0024rootDir",
-            "name": "rootDir",
-            "summary": "",
-            "url": "classes/Udacity-App-CliApp.html#property_rootDir"
-        },                {
-            "fqsen": "\\Udacity\\App\\WebApp",
-            "name": "WebApp",
-            "summary": "",
-            "url": "classes/Udacity-App-WebApp.html"
-        },                {
-            "fqsen": "\\Udacity\\App\\WebApp\u003A\u003AgetRegisteredRoutes\u0028\u0029",
-            "name": "getRegisteredRoutes",
-            "summary": "",
-            "url": "classes/Udacity-App-WebApp.html#method_getRegisteredRoutes"
-        },                {
-            "fqsen": "\\Udacity\\App\\WebApp\u003A\u003A_setResponseOutput\u0028\u0029",
-            "name": "_setResponseOutput",
-            "summary": "",
-            "url": "classes/Udacity-App-WebApp.html#method__setResponseOutput"
-        },                {
-            "fqsen": "\\Udacity\\App\\WebApp\u003A\u003AgetController\u0028\u0029",
-            "name": "getController",
-            "summary": "",
-            "url": "classes/Udacity-App-WebApp.html#method_getController"
-        },                {
-            "fqsen": "\\Udacity\\App\\WebApp\u003A\u003AgetResponseOutput\u0028\u0029",
-            "name": "getResponseOutput",
-            "summary": "",
-            "url": "classes/Udacity-App-WebApp.html#method_getResponseOutput"
-        },                {
-            "fqsen": "\\Udacity\\App\\WebApp\u003A\u003AgetStatusCode\u0028\u0029",
-            "name": "getStatusCode",
-            "summary": "",
-            "url": "classes/Udacity-App-WebApp.html#method_getStatusCode"
-        },                {
-            "fqsen": "\\Udacity\\App\\WebApp\u003A\u003AhandleRequest\u0028\u0029",
-            "name": "handleRequest",
-            "summary": "",
-            "url": "classes/Udacity-App-WebApp.html#method_handleRequest"
-        },                {
-            "fqsen": "\\Udacity\\App\\WebApp\u003A\u003AparseRequestRoute\u0028\u0029",
-            "name": "parseRequestRoute",
-            "summary": "",
-            "url": "classes/Udacity-App-WebApp.html#method_parseRequestRoute"
-        },                {
-            "fqsen": "\\Udacity\\App\\WebApp\u003A\u003A\u0024controller",
-            "name": "controller",
-            "summary": "",
-            "url": "classes/Udacity-App-WebApp.html#property_controller"
-        },                {
-            "fqsen": "\\Udacity\\App\\WebApp\u003A\u003A\u0024statusCode",
-            "name": "statusCode",
-            "summary": "",
-            "url": "classes/Udacity-App-WebApp.html#property_statusCode"
-        },                {
-            "fqsen": "\\Udacity\\App\\WebApp\u003A\u003A\u0024inputRoute",
-            "name": "inputRoute",
-            "summary": "",
-            "url": "classes/Udacity-App-WebApp.html#property_inputRoute"
-        },                {
-            "fqsen": "\\Udacity\\App\\WebApp\u003A\u003A\u0024responseOutput",
-            "name": "responseOutput",
-            "summary": "",
-            "url": "classes/Udacity-App-WebApp.html#property_responseOutput"
         },                {
             "fqsen": "\\Udacity\\Controllers\\Controller",
             "name": "Controller",
@@ -671,15 +511,175 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Controllers-Resource-SessionLeadsController.html#method_persist"
         },                {
+            "fqsen": "\\Udacity\\Apps\\CliApp",
+            "name": "CliApp",
+            "summary": "",
+            "url": "classes/Udacity-Apps-CliApp.html"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CliApp\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Udacity-Apps-CliApp.html#method___construct"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CliApp\u003A\u003A_registerCommands\u0028\u0029",
+            "name": "_registerCommands",
+            "summary": "",
+            "url": "classes/Udacity-Apps-CliApp.html#method__registerCommands"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CliApp\u003A\u003Arun\u0028\u0029",
+            "name": "run",
+            "summary": "",
+            "url": "classes/Udacity-Apps-CliApp.html#method_run"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CliApp\u003A\u003A\u0024app",
+            "name": "app",
+            "summary": "",
+            "url": "classes/Udacity-Apps-CliApp.html#property_app"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CliApp\u003A\u003A\u0024rootDir",
+            "name": "rootDir",
+            "summary": "",
+            "url": "classes/Udacity-Apps-CliApp.html#property_rootDir"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\WebApp",
+            "name": "WebApp",
+            "summary": "",
+            "url": "classes/Udacity-Apps-WebApp.html"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\WebApp\u003A\u003AgetRegisteredRoutes\u0028\u0029",
+            "name": "getRegisteredRoutes",
+            "summary": "",
+            "url": "classes/Udacity-Apps-WebApp.html#method_getRegisteredRoutes"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\WebApp\u003A\u003A_setResponseOutput\u0028\u0029",
+            "name": "_setResponseOutput",
+            "summary": "",
+            "url": "classes/Udacity-Apps-WebApp.html#method__setResponseOutput"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\WebApp\u003A\u003AgetController\u0028\u0029",
+            "name": "getController",
+            "summary": "",
+            "url": "classes/Udacity-Apps-WebApp.html#method_getController"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\WebApp\u003A\u003AgetResponseOutput\u0028\u0029",
+            "name": "getResponseOutput",
+            "summary": "",
+            "url": "classes/Udacity-Apps-WebApp.html#method_getResponseOutput"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\WebApp\u003A\u003AgetStatusCode\u0028\u0029",
+            "name": "getStatusCode",
+            "summary": "",
+            "url": "classes/Udacity-Apps-WebApp.html#method_getStatusCode"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\WebApp\u003A\u003AhandleRequest\u0028\u0029",
+            "name": "handleRequest",
+            "summary": "",
+            "url": "classes/Udacity-Apps-WebApp.html#method_handleRequest"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\WebApp\u003A\u003AparseRequestRoute\u0028\u0029",
+            "name": "parseRequestRoute",
+            "summary": "",
+            "url": "classes/Udacity-Apps-WebApp.html#method_parseRequestRoute"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\WebApp\u003A\u003A\u0024controller",
+            "name": "controller",
+            "summary": "",
+            "url": "classes/Udacity-Apps-WebApp.html#property_controller"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\WebApp\u003A\u003A\u0024statusCode",
+            "name": "statusCode",
+            "summary": "",
+            "url": "classes/Udacity-Apps-WebApp.html#property_statusCode"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\WebApp\u003A\u003A\u0024inputRoute",
+            "name": "inputRoute",
+            "summary": "",
+            "url": "classes/Udacity-Apps-WebApp.html#property_inputRoute"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\WebApp\u003A\u003A\u0024responseOutput",
+            "name": "responseOutput",
+            "summary": "",
+            "url": "classes/Udacity-Apps-WebApp.html#property_responseOutput"
+        },                {
+            "fqsen": "\\Udacity\\Csvs\\CsvExtractor",
+            "name": "CsvExtractor",
+            "summary": "class\u0020responsible\u0020for\u0020extracting\u0020data\u0020from\u0020CSVs",
+            "url": "classes/Udacity-Csvs-CsvExtractor.html"
+        },                {
+            "fqsen": "\\Udacity\\Csvs\\CsvExtractor\u003A\u003AcheckFileExistence\u0028\u0029",
+            "name": "checkFileExistence",
+            "summary": "checks\u0020if\u0020an\u0020input\u0020CSV\u0020exists,\u0020throws\u0020Exception\u0020if\u0020not",
+            "url": "classes/Udacity-Csvs-CsvExtractor.html#method_checkFileExistence"
+        },                {
+            "fqsen": "\\Udacity\\Csvs\\CsvExtractor\u003A\u003AgetCSVData\u0028\u0029",
+            "name": "getCSVData",
+            "summary": "gets\u0020an\u0020array\u002Dlike\u0020representation\u0020of\u0020a\u0020CSV\u0020file\u0020data",
+            "url": "classes/Udacity-Csvs-CsvExtractor.html#method_getCSVData"
+        },                {
+            "fqsen": "\\Udacity\\Csvs\\StudentsCsvExtractor",
+            "name": "StudentsCsvExtractor",
+            "summary": "class\u0020responsible\u0020for\u0020extracting\u0020data\u0020from\u0020session\u0020reports\u0020CSVs",
+            "url": "classes/Udacity-Csvs-StudentsCsvExtractor.html"
+        },                {
+            "fqsen": "\\Udacity\\Csvs\\StudentsCsvExtractor\u003A\u003AgetBehindStudentsCoordinates\u0028\u0029",
+            "name": "getBehindStudentsCoordinates",
+            "summary": "extracts\u0020students\u0020coordinates\u0020from\u0020a\u0020Udacity\u0020session\u0020report,\u0020scoped\u0020to\u0020students\u0020that\u0020are\u0020behind\u0020on\u0020their\u0020Nanodegree\u0020track",
+            "url": "classes/Udacity-Csvs-StudentsCsvExtractor.html#method_getBehindStudentsCoordinates"
+        },                {
+            "fqsen": "\\Udacity\\Csvs\\StudentsCsvExtractor\u003A\u003AgetAllStudentsCoordinates\u0028\u0029",
+            "name": "getAllStudentsCoordinates",
+            "summary": "extracts\u0020all\u0020students\u0020coordinates\u0020from\u0020a\u0020Udacity\u0020session\u0020report",
+            "url": "classes/Udacity-Csvs-StudentsCsvExtractor.html#method_getAllStudentsCoordinates"
+        },                {
+            "fqsen": "\\Udacity\\Emails\\Emails",
+            "name": "Emails",
+            "summary": "class\u0020responsible\u0020for\u0020setting\/getting\u0020emails\u0020templates",
+            "url": "classes/Udacity-Emails-Emails.html"
+        },                {
+            "fqsen": "\\Udacity\\Emails\\Emails\u003A\u003AgetBehindStudentEmailTemplate\u0028\u0029",
+            "name": "getBehindStudentEmailTemplate",
+            "summary": "gets\u0020the\u0020template\u0020for\u0020students\u0020who\u0020are\u0020behind\u0020on\u0020their\u0020nanodegree\u0020track",
+            "url": "classes/Udacity-Emails-Emails.html#method_getBehindStudentEmailTemplate"
+        },                {
+            "fqsen": "\\Udacity\\Emails\\Emails\u003A\u003AgetBehindStudentEmailFormatted\u0028\u0029",
+            "name": "getBehindStudentEmailFormatted",
+            "summary": "gets\u0020the\u0020email\u0020text\u0020for\u0020a\u0020given\u0020student\u0020who\u0020is\u0020behind\u0020hers\/his\u0020nanodegree\u0020track",
+            "url": "classes/Udacity-Emails-Emails.html#method_getBehindStudentEmailFormatted"
+        },                {
+            "fqsen": "\\Udacity\\Emails\\Emails\u003A\u003AgetTrainingEndingEmailTemplate\u0028\u0029",
+            "name": "getTrainingEndingEmailTemplate",
+            "summary": "gets\u0020the\u0020template\u0020for\u0020the\u0020email\u0020to\u0020send\u0020to\u0020students\u0020when\u0020the\u0020end\u0020of\u0020the\u0020training\u0020is\u0020near",
+            "url": "classes/Udacity-Emails-Emails.html#method_getTrainingEndingEmailTemplate"
+        },                {
+            "fqsen": "\\Udacity\\Emails\\Emails\u003A\u003AgetTrainingEndingEmailFormatted\u0028\u0029",
+            "name": "getTrainingEndingEmailFormatted",
+            "summary": "gets\u0020the\u0020email\u0020text\u0020for\u0020a\u0020given\u0020student\u0020to\u0020send\u0020when\u0020the\u0020end\u0020of\u0020the\u0020training\u0020is\u0020near",
+            "url": "classes/Udacity-Emails-Emails.html#method_getTrainingEndingEmailFormatted"
+        },                {
+            "fqsen": "\\Udacity\\Emails\\Mailer",
+            "name": "Mailer",
+            "summary": "class\u0020responsible\u0020for\u0020sending\u0020emails",
+            "url": "classes/Udacity-Emails-Mailer.html"
+        },                {
+            "fqsen": "\\Udacity\\Emails\\Mailer\u003A\u003AcheckMsmtprc\u0028\u0029",
+            "name": "checkMsmtprc",
+            "summary": "checks\u0020is\u0020msmtp\u0020config\u0020is\u0020set",
+            "url": "classes/Udacity-Emails-Mailer.html#method_checkMsmtprc"
+        },                {
+            "fqsen": "\\Udacity\\Emails\\Mailer\u003A\u003AsendEmail\u0028\u0029",
+            "name": "sendEmail",
+            "summary": "sends\u0020an\u0020email",
+            "url": "classes/Udacity-Emails-Mailer.html#method_sendEmail"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
             "url": "namespaces/default.html"
         },                {
-            "fqsen": "\\Udacity\\App",
-            "name": "App",
+            "fqsen": "\\Udacity\\Apps",
+            "name": "Apps",
             "summary": "",
-            "url": "namespaces/udacity-app.html"
+            "url": "namespaces/udacity-apps.html"
         },                {
             "fqsen": "\\Udacity\\Commands",
             "name": "Commands",
@@ -696,20 +696,20 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/udacity-controllers-resource.html"
         },                {
-            "fqsen": "\\Udacity\\Csv",
-            "name": "Csv",
+            "fqsen": "\\Udacity\\Csvs",
+            "name": "Csvs",
             "summary": "",
-            "url": "namespaces/udacity-csv.html"
+            "url": "namespaces/udacity-csvs.html"
         },                {
             "fqsen": "\\Udacity",
             "name": "Udacity",
             "summary": "",
             "url": "namespaces/udacity.html"
         },                {
-            "fqsen": "\\Udacity\\Emailing",
-            "name": "Emailing",
+            "fqsen": "\\Udacity\\Emails",
+            "name": "Emails",
             "summary": "",
-            "url": "namespaces/udacity-emailing.html"
+            "url": "namespaces/udacity-emails.html"
         },                {
             "fqsen": "\\Udacity\\Models",
             "name": "Models",

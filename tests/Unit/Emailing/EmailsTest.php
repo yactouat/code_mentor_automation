@@ -2,8 +2,8 @@
 
 namespace Tests\Unit\Emailing;
 
-use Udacity\Csv\CsvExtractor;
-use Udacity\Emailing\Emails;
+use Udacity\Csvs\CsvExtractor;
+use Udacity\Emails\Emails;
 use Udacity\Models\OnlineResourceModel;
 use PHPUnit\Framework\TestCase;
 

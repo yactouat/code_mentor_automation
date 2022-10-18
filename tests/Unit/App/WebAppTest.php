@@ -3,7 +3,7 @@
 namespace Tests\Unit\App;
 
 use PHPUnit\Framework\TestCase;
-use Udacity\App\WebApp;
+use Udacity\Apps\WebApp;
 use Udacity\Controllers\NotFoundController;
 use Udacity\Controllers\Resource\SessionLeadsController;
 

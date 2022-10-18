@@ -1,5 +1,6 @@
 volumes:
   mariadb-vol:
+  mariadbtest-vol:
 
 services:
 
@@ -12,8 +13,16 @@ services:
           MYSQL_DATABASE:  mariadb
       ports:
           - 3306:3306
-      expose:
-          - 3306
+
+  mariadbtest:
+      image: 'mariadb:10.9.3'
+      volumes:
+          - mariadbtest-vol:/var/lib/mysql
+      environment:
+          MYSQL_ROOT_PASSWORD: mariadb
+          MYSQL_DATABASE:  mariadb
+      ports:
+          - 3307:3306
 
   php:
     build:

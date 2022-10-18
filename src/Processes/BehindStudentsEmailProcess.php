@@ -2,9 +2,9 @@
 
 namespace Udacity\Processes;
 
-use Udacity\Csv\StudentsCsvExtractor as CsvExtractor;
-use Udacity\Emailing\Emails;
-use Udacity\Emailing\Mailer;
+use Udacity\Csvs\StudentsCsvExtractor as CsvExtractor;
+use Udacity\Emails\Emails;
+use Udacity\Emails\Mailer;
 use Udacity\LoggerTrait;
 
 /**

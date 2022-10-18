@@ -1,6 +1,6 @@
 <?php
 
-namespace Udacity\Emailing;
+namespace Udacity\Emails;
 
 use Monolog\Logger;
 
