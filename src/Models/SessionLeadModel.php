@@ -42,17 +42,20 @@ final class SessionLeadModel extends Model {
 
     public static function validateInputFields(array $fields): array {
         $errors = [];
-        if (!isset($_POST["submit"])) {
-            $errors[] = "⚠️ Please send a valid form using the `submit` button";
+        if (!isset($_POST['submit'])) {
+            $errors[] = '⚠️ Please send a valid form using the `submit` button';
         }
-        if (empty($_POST["email"])) {
-            $errors[] = "📧 Your email address is missing";
+        if (empty($_POST['email'])) {
+            $errors[] = '📧 Your email address is missing';
         }
-        if (empty($_POST["first_name"])) {
-            $errors[] = "❌ Your first name is missing";
+        if (empty($_POST['first_name'])) {
+            $errors[] = '❌ Your first name is missing';
         }
-        if (empty($_POST["google_app_password"])) {
-            $errors[] = "🔑 Your GMail application password is missing";
+        if (empty($_POST['google_app_password'])) {
+            $errors[] = '🔑 Your Google application password is missing';
+        }
+        if(!filter_var($_POST['email'] ?? '', FILTER_VALIDATE_EMAIL)) {
+            $errors[] = '📧 Malformed email address';
         }
         return $errors;
     }

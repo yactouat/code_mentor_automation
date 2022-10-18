@@ -19,7 +19,7 @@ final class SessionLeadModelTest extends TestCase {
 
     protected function tearDown(): void
     {
-        if (isset($this->dbPath)) {
+        if (isset($this->dbPath) && file_exists($this->dbPath)) {
             unlink($this->dbPath);
         }
     }
@@ -67,7 +67,7 @@ final class SessionLeadModelTest extends TestCase {
         $this->assertSame($expected, $actual);
     }
 
-    public function testCreatePersistsInstanceInDb() {
+    public function testPersistPersistsInstanceInDb() {
         // arrange
         $expected = [
             [
@@ -83,6 +83,12 @@ final class SessionLeadModelTest extends TestCase {
         $actual = $sessionLead->selectAll();
         // assert
         $this->assertEquals($expected, $actual);     
+    }
+
+    public function testValidateInputFieldsWithMalformedEmailPushesCorrectErrorsInErrorsArrray() {
+        $expected = '📧 Malformed email address';
+        $actual = SessionLeadModel::validateInputFields(['email' => 'yactouat@.com']);
+        $this->assertTrue(in_array($expected, $actual));
     }
 
 }

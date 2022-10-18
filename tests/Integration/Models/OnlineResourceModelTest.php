@@ -67,7 +67,7 @@ final class OnlineResourceModelTest extends TestCase {
         $this->assertSame($expected, $actual);
     }
 
-    public function testCreatePersistsInstanceInDb() {
+    public function testPersistPersistsInstanceInDb() {
         // arrange
         $expected = [
             [
