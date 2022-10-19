@@ -8,15 +8,18 @@ abstract class App {
 
     public function __construct(protected string $rootDir)
     {
-        $dotenv = Dotenv::createImmutable($this->rootDir);
-        // TODO test behavior when keys do not exist
-        $dotenv->required([
+        $dotenv = Dotenv::createImmutable($this->rootDir, '.env');
+        $dotenv->load();
+        foreach ([
             'DB_HOST', 
             'DB_PASSWORD', 
-            'DB_PORT',
+            'DB_PORT',  
             'DB_USER' 
-        ]);
-        $dotenv->load();
+        ] as $key) {
+            if (!isset($_ENV[$key])) {
+                throw new \Exception("The app environment is not properly set", 1);
+            }
+        }
     }
 
 }

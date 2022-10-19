@@ -9,9 +9,11 @@ trait EnvLoaderTrait {
 
     protected Database $database;
 
-    protected function loadEnv() {
+    protected function loadEnv(?string $envDir = null) {
         $_ENV["isTesting"] = true;
-        $dotenv = Dotenv::createImmutable('/var/www/tests/fixtures');
+        $dotenv = Dotenv::createImmutable(
+            is_null($envDir) ? '/var/www/tests/fixtures' : $envDir
+        );
         $dotenv->load();
         $this->database = new Database();
     }
