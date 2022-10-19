@@ -24,15 +24,6 @@ final class SessionLeadModel extends Model {
     )
     {
         parent::__construct();
-        $dbName = Database::$dbName;
-        $tableName = $this->tableName;
-        $this->database->writeQuery("CREATE TABLE IF NOT EXISTS $dbName.$tableName(
-            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
-            email VARCHAR(320) NOT NULL UNIQUE,
-            first_name TEXT NOT NULL,
-            google_app_password TEXT NOT NULL,
-            user_passphrase TEXT NOT NULL
-        )");
     }
 
     /**

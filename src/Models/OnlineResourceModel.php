@@ -11,14 +11,6 @@ final class OnlineResourceModel extends Model {
     public function __construct(private string $description, private string $name, private string $url)
     {
         parent::__construct();
-        $dbName = Database::$dbName;
-        $tableName = $this->tableName;
-        $this->database->writeQuery("CREATE TABLE IF NOT EXISTS $dbName.$tableName(
-            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
-            description TEXT NOT NULL,
-            name TEXT NOT NULL,
-            url TEXT NOT NULL UNIQUE
-        )");
     }
 
     public static function getCsvFields(): array {

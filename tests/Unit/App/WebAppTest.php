@@ -85,7 +85,7 @@ final class WebAppTest extends TestCase {
 
     public function testHandleRequestWithUnknownRouteSets404StatusCode() {
         $expected = 404;
-        $app = new WebApp();
+        $app = new WebApp('/var/www/tests/fixtures');
         $app->handleRequest("/unknown");
         $actual = $app->getStatusCode();
         $this->assertEquals($expected, $actual);
@@ -93,7 +93,7 @@ final class WebAppTest extends TestCase {
 
     public function testHandleRequestWithHomeRouteSets200StatusCode() {
         $expected = 200;
-        $app = new WebApp();
+        $app = new WebApp('/var/www/tests/fixtures');
         $app->handleRequest('/');
         $actual = $app->getStatusCode();
         $this->assertEquals($expected, $actual);
@@ -101,7 +101,7 @@ final class WebAppTest extends TestCase {
 
     public function testGetControllerWithHomeRouteGetsSessionLeadsController() {
         $expected = SessionLeadsController::class;
-        $app = new WebApp();
+        $app = new WebApp('/var/www/tests/fixtures');
         $app->handleRequest('/');
         $actual = $app->getController();
         $this->assertInstanceOf($expected, $actual);
@@ -109,7 +109,7 @@ final class WebAppTest extends TestCase {
 
     public function testGetControllerWithUnknownRouteGetsNotFoundController() {
         $expected = NotFoundController::class;
-        $app = new WebApp();
+        $app = new WebApp('/var/www/tests/fixtures');
         $app->handleRequest("/unknown");
         $actual = $app->getController();
         $this->assertInstanceOf($expected, $actual);
@@ -117,7 +117,7 @@ final class WebAppTest extends TestCase {
 
     public function testGetResponseOutputWithUnkownRouteGets404Page() {
         $expected = file_get_contents('/var/www/tests/fixtures/views/not-found.html');
-        $app = new WebApp();
+        $app = new WebApp('/var/www/tests/fixtures');
         $app->handleRequest("/unknown");
         $actual = $app->getResponseOutput();
         $this->assertEquals($expected, $actual);
@@ -125,7 +125,7 @@ final class WebAppTest extends TestCase {
 
     public function testGetResponseOutputWithHomeRouteGetsHomePage() {
         $expected = file_get_contents('/var/www/tests/fixtures/views/home.html');
-        $app = new WebApp();
+        $app = new WebApp('/var/www/tests/fixtures');
         $app->handleRequest("/");
         $actual = $app->getResponseOutput();
         $this->assertEquals($expected, $actual);
@@ -133,7 +133,7 @@ final class WebAppTest extends TestCase {
 
     public function testGetResponseOutputWithUsersCreateRouteGetsSignupPage() {
         $expected = str_replace(' ', '', file_get_contents('/var/www/tests/fixtures/views/session-leads.create.html'));
-        $app = new WebApp();
+        $app = new WebApp('/var/www/tests/fixtures');
         $app->handleRequest("/session-leads/create");
         $actual = $app->getResponseOutput();
         $this->assertEquals($expected, str_replace(' ', '', $actual));

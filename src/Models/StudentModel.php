@@ -16,15 +16,6 @@ final class StudentModel extends Model {
     )
     {
         parent::__construct();
-        $dbName = Database::$dbName;
-        $tableName = $this->tableName;
-        $this->database->writeQuery("CREATE TABLE IF NOT EXISTS $dbName.$tableName(
-            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
-            email TEXT NOT NULL UNIQUE,
-            first_name TEXT NOT NULL,
-            last_name TEXT NOT NULL,
-            on_track_status TEXT CHECK(on_track_status IN ('Behind', 'On Track')) NOT NULL
-        )");
     }
 
     public static function getCsvFields(): array {

@@ -9,22 +9,20 @@ use Udacity\Database;
 use DummyModel;
 use ModelWithNoTable;
 use PHPUnit\Framework\TestCase;
+use Tests\EnvLoaderTrait;
 
 final class ModelTest extends TestCase {
 
-    protected string $dbPath;
+    use EnvLoaderTrait;
 
     protected function setUp(): void
     {
-        $_ENV["isTesting"] = true;
-        $this->dbPath = '/var/www/tests/fixtures/sql/database.db';
+        $this->loadEnv();
     }
 
     protected function tearDown(): void
     {
-        if (isset($this->dbPath) && file_exists($this->dbPath)) {
-            unlink($this->dbPath);
-        }
+        $this->database->writeQuery('TRUNCATE udacity_sl_automation.dummy');
     }
 
     public function testConstructWithNoTableNameSetThrows() {
@@ -53,10 +51,9 @@ final class ModelTest extends TestCase {
                 "some_field" => "test4"
             ]
         ];
-        $database = new Database();
         $dummy = new DummyModel();
         $dbName = Database::$dbName;
-        $database->writeQuery("INSERT INTO $dbName.dummy (some_field) VALUES 
+        $this->database->writeQuery("INSERT INTO $dbName.dummy (some_field) VALUES 
             ('test'),
             ('test2'),
             ('test3'),

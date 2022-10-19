@@ -3,27 +3,28 @@
 namespace Tests\Integration;
 
 use Udacity\Database;
-use PDO;
 use PHPUnit\Framework\TestCase;
+use Tests\EnvLoaderTrait;
 
 final class DatabaseTest extends TestCase {
 
+    use EnvLoaderTrait;
+
     protected function setUp(): void
     {
-        $_ENV["isTesting"] = true;
+        $this->loadEnv();
     }
 
     public function testConstructCreatesDatabase() {
-        $dbPath = '/var/www/tests/fixtures/sql/database.db';
-        $database = new Database($dbPath);
+        $database = new Database();
         $expected = 'udacity_sl_automation';
-        $result = $database->readQuery('PRAGMA database_list');
+        $result = $database->readQuery('SHOW DATABASES');
         $filtered = array_filter($result, function($db) use($expected) {
-            return $db["name"] === $expected;
+            return $db["Database"] === $expected;
+            return $db;
         });
         $actual = array_pop($filtered);
-        unlink($dbPath);
-        $this->assertSame($expected, $actual["name"]);
+        $this->assertEquals($expected, $actual["Database"]);
     }
 
 }

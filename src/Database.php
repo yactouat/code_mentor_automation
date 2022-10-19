@@ -21,15 +21,10 @@ final class Database {
      */
     public static $dbName = "udacity_sl_automation";
 
-    private static $sqliteDBPath = '/var/www/data/sql/database.db';
-    private static $sqliteTestDBPath = '/var/www/tests/fixtures/sql/database.db';
-
-    public function __construct(?string $sqliteDBPath = null, bool $isTesting = false)
+    public function __construct(bool $isTesting = false)
     {
         $this->isTesting = !$isTesting ? ($_ENV["isTesting"] ?? false) : $isTesting;
-        $this->_setDbFilePath($sqliteDBPath);
         $this->_initConn();
-        $this->_setDatabase();
         $this->setNewLogger(!$this->isTesting ? '/var/www/data/logs/php/db.log' : 
             '/var/www/tests/fixtures/logs/php/db.log');
     }
@@ -40,26 +35,11 @@ final class Database {
 
     private function _initConn(): void {
         $this->databaseConn = new PDO(
-            dsn: 'sqlite:'.self::$sqliteDBPath, 
+            dsn: 'mysql:host=' . $_ENV['DB_HOST'] . ';port=' . $_ENV['DB_PORT'] . ';dbname=' . self::$dbName,
+            username: $_ENV['DB_USER'],
+            password: $_ENV['DB_PASSWORD'],
             options: [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]
         );
-    }
-
-    private function _setDatabase(): void {
-        $dbPath = self::$sqliteDBPath;
-        $dbName = self::$dbName;
-        $this->databaseConn->query("ATTACH DATABASE '$dbPath' AS $dbName");
-    }
-
-    private function _setDbFilePath(?string $sqliteDBPath = null) : void {
-        if(is_null($sqliteDBPath)) {
-            $sqliteDBPath = !$this->isTesting ? self::$sqliteDBPath : self::$sqliteTestDBPath;
-        } else {
-            self::$sqliteDBPath = $sqliteDBPath;
-        }
-        if (!file_exists($sqliteDBPath)) {
-            fopen($sqliteDBPath, "w");
-        }
     }
 
     public function readQuery(string $query): array {

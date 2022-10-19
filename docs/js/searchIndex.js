@@ -211,16 +211,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Database.html#method__initConn"
         },                {
-            "fqsen": "\\Udacity\\Database\u003A\u003A_setDatabase\u0028\u0029",
-            "name": "_setDatabase",
-            "summary": "",
-            "url": "classes/Udacity-Database.html#method__setDatabase"
-        },                {
-            "fqsen": "\\Udacity\\Database\u003A\u003A_setDbFilePath\u0028\u0029",
-            "name": "_setDbFilePath",
-            "summary": "",
-            "url": "classes/Udacity-Database.html#method__setDbFilePath"
-        },                {
             "fqsen": "\\Udacity\\Database\u003A\u003AreadQuery\u0028\u0029",
             "name": "readQuery",
             "summary": "",
@@ -245,16 +235,6 @@ Search.appendIndex(
             "name": "dbName",
             "summary": "name\u0020of\u0020the\u0020database",
             "url": "classes/Udacity-Database.html#property_dbName"
-        },                {
-            "fqsen": "\\Udacity\\Database\u003A\u003A\u0024sqliteDBPath",
-            "name": "sqliteDBPath",
-            "summary": "",
-            "url": "classes/Udacity-Database.html#property_sqliteDBPath"
-        },                {
-            "fqsen": "\\Udacity\\Database\u003A\u003A\u0024sqliteTestDBPath",
-            "name": "sqliteTestDBPath",
-            "summary": "",
-            "url": "classes/Udacity-Database.html#property_sqliteTestDBPath"
         },                {
             "fqsen": "\\Udacity\\Models\\Model",
             "name": "Model",
@@ -536,11 +516,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Apps-CliApp.html#property_app"
         },                {
-            "fqsen": "\\Udacity\\Apps\\CliApp\u003A\u003A\u0024rootDir",
-            "name": "rootDir",
-            "summary": "",
-            "url": "classes/Udacity-Apps-CliApp.html#property_rootDir"
-        },                {
             "fqsen": "\\Udacity\\Apps\\WebApp",
             "name": "WebApp",
             "summary": "",
@@ -670,6 +645,21 @@ Search.appendIndex(
             "name": "sendEmail",
             "summary": "sends\u0020an\u0020email",
             "url": "classes/Udacity-Emails-Mailer.html#method_sendEmail"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\App",
+            "name": "App",
+            "summary": "",
+            "url": "classes/Udacity-Apps-App.html"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\App\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Udacity-Apps-App.html#method___construct"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\App\u003A\u003A\u0024rootDir",
+            "name": "rootDir",
+            "summary": "",
+            "url": "classes/Udacity-Apps-App.html#property_rootDir"
         },                {
             "fqsen": "\\",
             "name": "\\",

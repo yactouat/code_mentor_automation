@@ -6,13 +6,16 @@ use Symfony\Component\Console\Application;
 use Udacity\Commands\SendEmailsToBehindStudentsCommand;
 use Udacity\Commands\SendTrainingEndingEmailsCommand;
 
+// TODO remove code related to SQLite
+// TODO test that env is loaded with required keys on app' startup
 // TODO validate that MariaDB data structure is up before anything else
-final class CliApp {
+final class CliApp extends App {
 
     private Application $app;
 
-    public function __construct(private string $rootDir)
+    public function __construct(string $rootDir)
     {
+        parent::__construct($rootDir);
         $this->app = new Application("Udacity Session Lead Automation");
         $this->_registerCommands();
     }

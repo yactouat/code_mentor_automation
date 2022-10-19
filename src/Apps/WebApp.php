@@ -6,8 +6,10 @@ use Udacity\Controllers\ControllerInterface;
 use Udacity\Controllers\NotFoundController;
 use Udacity\LoggerTrait;
 
+// TODO remove code related to SQLite
+// TODO test that env is loaded with required keys on app' startup
 // TODO validate that MariaDB data structure is up before anything else
-final class WebApp {
+final class WebApp extends App {
 
     use LoggerTrait;
 
