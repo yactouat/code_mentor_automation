@@ -6,6 +6,7 @@ use Symfony\Component\Console\Application;
 use Udacity\Commands\SendEmailsToBehindStudentsCommand;
 use Udacity\Commands\SendTrainingEndingEmailsCommand;
 
+// TODO validate that MariaDB data structure is up before anything else
 final class CliApp {
 
     private Application $app;

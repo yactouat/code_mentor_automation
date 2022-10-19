@@ -5,9 +5,13 @@
  * 
  * ! don't forget it to make it executable
  * 
- * using a Docker running PHP container, checks if
+ * checks if
  * - PHPUnit tests pass
  * - generates PHP documentation
+ * 
+ * clean up logic consists of:
+ * - adding the generated documentation to the commit
+ * - cleaning the logs
  */
 
 echo PHP_EOL."Running PHPUnit tests...".PHP_EOL;

@@ -5,33 +5,53 @@ volumes:
 services:
 
   mariadb:
-      image: 'mariadb:10.9.3'
-      volumes:
-          - mariadb-vol:/var/lib/mysql
-      environment:
-          MYSQL_ROOT_PASSWORD: mariadb
-          MYSQL_DATABASE:  mariadb
-      ports:
-          - 3306:3306
+    image: 'mariadb:10.9.3'
+    volumes:
+      - mariadb-vol:/var/lib/mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+      MYSQL_DATABASE:  udacity_sl_automation
+    ports:
+      - 3306:3306
 
+  # TODO test connectivity
   mariadbtest:
-      image: 'mariadb:10.9.3'
-      volumes:
-          - mariadbtest-vol:/var/lib/mysql
-      environment:
-          MYSQL_ROOT_PASSWORD: mariadb
-          MYSQL_DATABASE:  mariadb
-      ports:
-          - 3307:3306
+    image: 'mariadb:10.9.3'
+    volumes:
+        - mariadbtest-vol:/var/lib/mysql
+    environment:
+        MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+        MYSQL_DATABASE:  udacity_sl_automation
+    ports:
+        - 3307:3306
+
+  mariadb_seeder:
+    image: 'mariadb:10.9.3'
+    volumes:
+      - ./scripts/mariadb.database.sql:/database.sql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+    entrypoint: [
+      "bash", 
+      "-c", 
+      # taking 10 seconds just to be sure both dev and test dbs are up
+      "sleep 10 \
+        && mysql --user=root --host=mariadb --port=3306 udacity_sl_automation < /database.sql \ 
+        && mysql --user=root --host=mariadbtest --port=3306 udacity_sl_automation < /database.sql\
+        && exit"
+    ] 
+    depends_on:
+      - mariadb
+      - mariadbtest
 
   php:
     build:
       context: .
       dockerfile: docker/php/dev.Dockerfile
-    working_dir: /udacity_sl_automation
+    working_dir: /var/www
     volumes:
       - ./:/var/www
-      - ./vendor:/udacity_sl_automation/vendor/
+      - ./vendor:/var/www/vendor/
       - ./data/logs/nginx:/var/log/nginx/
     ports:
       - 80:80
@@ -39,13 +59,13 @@ services:
       - mariadb
 
   phpmyadmin:
-      image: phpmyadmin:5.2.0
-      restart: unless-stopped
-      ports:
-          - 8080:80
-      environment:
-          # we specify that we connect to an arbitrary server with the flag below
-          # "arbitrary" means you're able to specify which database server to use on login page of phpmyadmin      
-          - PMA_ARBITRARY=1
-      depends_on:
-        - mariadb
+    image: phpmyadmin:5.2.0
+    restart: unless-stopped
+    ports:
+        - 8080:80
+    environment:
+        # we specify that we connect to an arbitrary server with the flag below
+        # "arbitrary" means you're able to specify which database server to use on login page of phpmyadmin      
+        - PMA_ARBITRARY=1
+    depends_on:
+    - mariadb

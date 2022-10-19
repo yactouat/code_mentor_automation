@@ -6,6 +6,7 @@ use Udacity\Controllers\ControllerInterface;
 use Udacity\Controllers\NotFoundController;
 use Udacity\LoggerTrait;
 
+// TODO validate that MariaDB data structure is up before anything else
 final class WebApp {
 
     use LoggerTrait;
