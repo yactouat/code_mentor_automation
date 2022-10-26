@@ -1,8 +1,8 @@
 {% extends "layout.login-signup.html.twig" %}
 
-{% block description %}Sign up to do your Udacity session lead job with ease.{% endblock %}
+{% block description %}Login to your Udacity session lead job automation.{% endblock %}
 
-{% block title %}Sign up{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block content %}
     {% for error in errors %}
@@ -12,24 +12,11 @@
         </div>
     {% endfor %}
     <form 
-        action="/session-leads/create"
+        action="/session-leads/login"
         method="post"
         class="form-login-signup m-auto"
     >
-        <h1 class="h3 mb-3 fw-normal">Signup to Udacity SL Automation</h1>
-        <div class="form-floating">
-            <input
-                type="text" 
-                class="form-control" 
-                id="first_name" 
-                placeholder="Your First Name" 
-                name="first_name"
-                {% if userInput.first_name is defined %}
-                    value="{{userInput.first_name}}"
-                {% endif %}
-            >
-            <label for="first_name">Your First Name</label>
-        </div>
+        <h1 class="h3 mb-3 fw-normal">Login to Udacity SL Automation</h1>
         <div class="form-floating">
             <input 
                 type="email" 
@@ -47,23 +34,13 @@
             <input 
                 type="password" 
                 class="form-control" 
-                id="google_app_password" 
-                placeholder="Your Google Application Password"
-                name="google_app_password"
-            >
-            <label for="google_app_password">Your Google Application Password</label>
-        </div>
-        <div class="form-floating">
-            <input 
-                type="password" 
-                class="form-control" 
                 id="user_passphrase" 
                 placeholder="Your Password Or Passphrase"
                 name="user_passphrase"
             >
             <label for="user_passphrase">Your Password Or Passphrase</label>
         </div>
-        <input class="w-100 btn btn-lg btn-primary" type="submit" name="submit" value="Sign Up"/>
+        <input class="w-100 btn btn-lg btn-primary" type="submit" name="submit" value="Login"/>
         <p class="mt-5 mb-3 text-muted">&copy; yactouat 2022</p>
     </form>
 {% endblock %}

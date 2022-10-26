@@ -20,6 +20,7 @@ final class WebApp extends App {
             "GET" => [
                 '/' => ['Resource\SessionLeadsController', 'index'],
                 'session-leads/create' => ['Resource\SessionLeadsController', 'create']
+                // TODO test login route + template + status code
             ],
             "POST" => [
                 'session-leads/create' => ['Resource\SessionLeadsController', 'persist']

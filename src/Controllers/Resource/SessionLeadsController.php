@@ -14,13 +14,22 @@ final class SessionLeadsController extends Controller implements ResourceControl
 
     public function create(): string
     {
-        return $this->getRenderer()->render("session-leads.create.html.twig");
+        return $this->getRenderer()->render('session-leads.create.html.twig');
     }
     
-    // TODO redirect to /sessions/create if not connected
     public function index(): string
     {
+        $authed = isset($_SESSION['authed']) && $_SESSION['authed'] === true;
+        if(!$authed) {
+            $this->setStatusCode(401);
+            return $this->login();
+        }
         return $this->getRenderer()->render('home.html.twig');
+    }
+
+    public function login(): string
+    {
+        return $this->getRenderer()->render('session-leads.login.html.twig');
     }
 
     public function persist(): string

@@ -281,6 +281,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Controllers-Resource-SessionLeadsController.html#method_index"
         },                {
+            "fqsen": "\\Udacity\\Controllers\\Resource\\SessionLeadsController\u003A\u003Alogin\u0028\u0029",
+            "name": "login",
+            "summary": "",
+            "url": "classes/Udacity-Controllers-Resource-SessionLeadsController.html#method_login"
+        },                {
             "fqsen": "\\Udacity\\Controllers\\Resource\\SessionLeadsController\u003A\u003Apersist\u0028\u0029",
             "name": "persist",
             "summary": "",

@@ -12,6 +12,7 @@ final class WebAppTest extends TestCase {
     protected function setUp(): void
     {
         $_SERVER['REQUEST_METHOD'] = "GET";
+        $_SESSION = [];
     }
 
     public function testGetRequestRouteWithHomeRouteGetsCorrectRoute() {
@@ -74,7 +75,7 @@ final class WebAppTest extends TestCase {
                 '/' => ['Resource\SessionLeadsController', 'index'],
                 'session-leads/create' => ['Resource\SessionLeadsController', 'create']
             ],
-            "POST" => [
+            'POST' => [
                 'session-leads/create' => 
                 ['Resource\SessionLeadsController', 'persist']
             ]
@@ -86,12 +87,13 @@ final class WebAppTest extends TestCase {
     public function testHandleRequestWithUnknownRouteSets404StatusCode() {
         $expected = 404;
         $app = new WebApp('/var/www/tests/fixtures');
-        $app->handleRequest("/unknown");
+        $app->handleRequest('/unknown');
         $actual = $app->getStatusCode();
         $this->assertEquals($expected, $actual);
     }
 
     public function testHandleRequestWithHomeRouteSets200StatusCode() {
+        $_SESSION['authed'] = true;
         $expected = 200;
         $app = new WebApp('/var/www/tests/fixtures');
         $app->handleRequest('/');
@@ -124,6 +126,7 @@ final class WebAppTest extends TestCase {
     }
 
     public function testGetResponseOutputWithHomeRouteGetsHomePage() {
+        $_SESSION['authed'] = true;
         $expected = file_get_contents('/var/www/tests/fixtures/views/home.html');
         $app = new WebApp('/var/www/tests/fixtures');
         $app->handleRequest("/");
@@ -137,6 +140,14 @@ final class WebAppTest extends TestCase {
         $app->handleRequest("/session-leads/create");
         $actual = $app->getResponseOutput();
         $this->assertEquals($expected, str_replace(' ', '', $actual));
+    }
+
+    public function testHandleRequestWithHomeRouteUnauthedSets401StatusCode() {
+        $expected = 401;
+        $app = new WebApp('/var/www/tests/fixtures');
+        $app->handleRequest('/');
+        $actual = $app->getStatusCode();
+        $this->assertEquals($expected, $actual);
     }
 
 }
