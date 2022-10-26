@@ -3,12 +3,17 @@
 namespace Tests\Unit\Controllers;
 
 use PHPUnit\Framework\TestCase;
+use Tests\EnvLoaderTrait;
 use Udacity\Controllers\Resource\SessionLeadsController;
 
 final class SessionLeadsControllerTest extends TestCase {
 
+    use EnvLoaderTrait;
+
     protected function setUp(): void
     {
+        $this->loadEnv();
+        $this->database->writeQuery('TRUNCATE udacity_sl_automation.sessionlead');
         $_POST = [];
     }
 
@@ -73,6 +78,29 @@ final class SessionLeadsControllerTest extends TestCase {
         </div>');
         $actual = str_replace(' ', '', $ctlr->persist());
         $this->assertTrue(str_contains($actual, $expected));
+    }
+
+    public function testPersistWithValidInputActuallyPersistsASessionLead() {
+        $ctlr = new SessionLeadsController();
+        $expected = [
+            [
+                "id" => 1,
+                "email" => "test@gmail.com",
+                "first_name" => "test first name",
+                "google_app_password" => "test google app password",
+                "user_passphrase" => "test user password",
+            ]
+        ];
+        $_POST = [
+            "submit" => "1",
+            "email" => "test@gmail.com",
+            "first_name" => "test first name",
+            "google_app_password" => "test google app password",
+            "user_passphrase" => "test user password",
+        ];
+        $ctlr->persist();
+        $actual = $this->database->readQuery("SELECT * FROM sessionlead");
+        $this->assertEquals($expected, $actual);
     }
 
 }
