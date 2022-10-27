@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 // setting root dir
 $rootDir = dirname(__DIR__);
