@@ -1,6 +1,6 @@
 <?php
 
-namespace Udacity\Controllers;
+namespace Udacity\Apps\Web\Controllers;
 
 use Twig\Environment;
 use Twig\Extension\DebugExtension;

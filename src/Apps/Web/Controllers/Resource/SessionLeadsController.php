@@ -1,11 +1,14 @@
 <?php
 
-namespace Udacity\Controllers\Resource;
+namespace Udacity\Apps\Web\Controllers\Resource;
 
-use Udacity\Controllers\Controller;
+use Udacity\Apps\Web\Controllers\AuthedTrait;
+use Udacity\Apps\Web\Controllers\Controller;
 use Udacity\Models\SessionLeadModel;
 
 final class SessionLeadsController extends Controller implements ResourceControllerInterface {
+
+    use AuthedTrait;
 
     public function __construct()
     {
@@ -19,8 +22,7 @@ final class SessionLeadsController extends Controller implements ResourceControl
     
     public function index(): string
     {
-        $authed = isset($_SESSION['authed']) && $_SESSION['authed'] === true;
-        if(!$authed) {
+        if(!$this->isAuthed()) {
             $this->setStatusCode(401);
             return $this->login();
         }
@@ -29,6 +31,9 @@ final class SessionLeadsController extends Controller implements ResourceControl
 
     public function login(): string
     {
+        if($this->isAuthed()) {
+            return $this->index();
+        }
         return $this->getRenderer()->render('session-leads.login.html.twig');
     }
 

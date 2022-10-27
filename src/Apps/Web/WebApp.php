@@ -3,8 +3,8 @@
 namespace Udacity\Apps\Web;
 
 use Udacity\Apps\App;
-use Udacity\Controllers\ControllerInterface;
-use Udacity\Controllers\NotFoundController;
+use Udacity\Apps\Web\Controllers\ControllerInterface;
+use Udacity\Apps\Web\Controllers\NotFoundController;
 use Udacity\LoggerTrait;
 
 final class WebApp extends App {
@@ -22,7 +22,7 @@ final class WebApp extends App {
             $this->controller = new NotFoundController();
             $this->responseOutput = $this->controller->index();
         } else {
-            $controllerClass = 'Udacity\Controllers\\' . $parsedRoute[0];
+            $controllerClass = 'Udacity\Apps\Web\Controllers\\' . $parsedRoute[0];
             $this->controller = new $controllerClass();
             $this->responseOutput = $this->controller->{$parsedRoute[1]}();
         }

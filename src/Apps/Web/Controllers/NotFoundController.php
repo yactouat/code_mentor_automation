@@ -1,6 +1,6 @@
 <?php
 
-namespace Udacity\Controllers;
+namespace Udacity\Apps\Web\Controllers;
 
 final class NotFoundController extends Controller implements ControllerInterface {
 

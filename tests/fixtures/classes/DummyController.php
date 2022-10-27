@@ -1,7 +1,7 @@
 <?php
 
-use Udacity\Controllers\Controller;
-use Udacity\Controllers\ControllerInterface;
+use Udacity\Apps\Web\Controllers\Controller;
+use Udacity\Apps\Web\Controllers\ControllerInterface;
 
 final class DummyController extends Controller implements ControllerInterface {
 

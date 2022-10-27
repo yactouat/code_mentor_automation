@@ -4,8 +4,8 @@ namespace Tests\Unit\Apps\Web;
 
 use PHPUnit\Framework\TestCase;
 use Udacity\Apps\Web\WebApp;
-use Udacity\Controllers\NotFoundController;
-use Udacity\Controllers\Resource\SessionLeadsController;
+use Udacity\Apps\Web\Controllers\NotFoundController;
+use Udacity\Apps\Web\Controllers\Resource\SessionLeadsController;
 
 final class WebAppTest extends TestCase {
 
@@ -142,6 +142,23 @@ final class WebAppTest extends TestCase {
         $actual = $app->getResponseOutput();
         $this->assertEquals($expected, str_replace(' ', '', $actual));
     }
+
+    public function testHandleRequestWithLoginRouteUnauthedSets200() {
+        $expected = 200;
+        $app = new WebApp('/var/www/tests/fixtures');
+        $app->handleRequest('/login');
+        $actual = $app->getStatusCode();
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testGetResponseOutputWithSessionLeadsLoginRouteAuthedGetsHomePage() {
+        $_SESSION['authed'] = true;
+        $expected = str_replace(' ', '', file_get_contents('/var/www/tests/fixtures/views/home.html'));
+        $app = new WebApp('/var/www/tests/fixtures');
+        $app->handleRequest("/login");
+        $actual = $app->getResponseOutput();
+        $this->assertEquals($expected, str_replace(' ', '', $actual));
+    } 
 
 }
 

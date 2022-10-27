@@ -5,7 +5,6 @@ namespace Udacity\Apps\Web;
 final class Routes {
 
     public static function getRegisteredRoutes(): array {
-        // TODO test login template + status code
         return [
             "GET" => [
                 '/' => ['Resource\SessionLeadsController', 'index'],

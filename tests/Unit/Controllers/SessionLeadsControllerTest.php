@@ -4,7 +4,7 @@ namespace Tests\Unit\Controllers;
 
 use PHPUnit\Framework\TestCase;
 use Tests\EnvLoaderTrait;
-use Udacity\Controllers\Resource\SessionLeadsController;
+use Udacity\Apps\Web\Controllers\Resource\SessionLeadsController;
 
 final class SessionLeadsControllerTest extends TestCase {
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Udacity\Controllers\Resource;
+namespace Udacity\Apps\Web\Controllers\Resource;
 
-use Udacity\Controllers\ControllerInterface;
+use Udacity\Apps\Web\Controllers\ControllerInterface;
 
 interface ResourceControllerInterface extends ControllerInterface {
 
