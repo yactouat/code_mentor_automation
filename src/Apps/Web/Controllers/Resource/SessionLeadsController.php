@@ -43,9 +43,8 @@ final class SessionLeadsController extends Controller implements ResourceControl
         if (\session_status() === PHP_SESSION_ACTIVE) {
             session_destroy();
         }
-        // TODO test that login page is rendered
         // TODO test status code
-        return '';
+        return $this->login();
     }
 
     public function persist(): string

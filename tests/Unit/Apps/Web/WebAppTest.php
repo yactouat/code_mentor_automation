@@ -138,7 +138,7 @@ final class WebAppTest extends TestCase {
     public function testGetResponseOutputWithSessionLeadsLoginRouteGetsLoginPage() {
         $expected = str_replace(' ', '', file_get_contents('/var/www/tests/fixtures/views/session-leads.login.html'));
         $app = new WebApp('/var/www/tests/fixtures');
-        $app->handleRequest("/login");
+        $app->handleRequest('/login');
         $actual = $app->getResponseOutput();
         $this->assertEquals($expected, str_replace(' ', '', $actual));
     }
@@ -155,10 +155,18 @@ final class WebAppTest extends TestCase {
         $_SESSION['authed'] = true;
         $expected = str_replace(' ', '', file_get_contents('/var/www/tests/fixtures/views/home.html'));
         $app = new WebApp('/var/www/tests/fixtures');
-        $app->handleRequest("/login");
+        $app->handleRequest('/login');
         $actual = $app->getResponseOutput();
         $this->assertEquals($expected, str_replace(' ', '', $actual));
     } 
+
+    public function testGetResponseOutputWithSessionLeadsLogoutRouteGetsLoginPage() {
+        $expected = str_replace(' ', '', file_get_contents('/var/www/tests/fixtures/views/session-leads.login.html'));
+        $app = new WebApp('/var/www/tests/fixtures');
+        $app->handleRequest('/logout');
+        $actual = $app->getResponseOutput();
+        $this->assertEquals($expected, str_replace(' ', '', $actual));
+    }
 
 }
 
