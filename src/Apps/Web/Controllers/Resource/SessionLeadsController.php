@@ -29,6 +29,7 @@ final class SessionLeadsController extends Controller implements ResourceControl
         return $this->getRenderer()->render('home.html.twig');
     }
 
+    // TODO login feature
     public function login(): string
     {
         if($this->isAuthed()) {
@@ -59,9 +60,10 @@ final class SessionLeadsController extends Controller implements ResourceControl
                 $data['google_app_password'],
                 $data['user_passphrase']
             ))->persist();
-            // TODO test output after persistence 
+            $_SESSION['authed'] = true;
+            $this->setStatusCode(201);
+            return $this->index();
         }
-        return '';
     }
 
 }

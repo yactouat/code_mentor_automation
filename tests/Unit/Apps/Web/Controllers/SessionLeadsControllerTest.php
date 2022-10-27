@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Controllers;
+namespace Tests\Unit\Apps\Web\Controllers;
 
 use PHPUnit\Framework\TestCase;
 use Tests\EnvLoaderTrait;
@@ -100,6 +100,21 @@ final class SessionLeadsControllerTest extends TestCase {
         ];
         $ctlr->persist();
         $actual = $this->database->readQuery("SELECT * FROM sessionlead");
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testPersistWithValidInputSets201StatusCode() {
+        $expected = 201;
+        $ctlr = new SessionLeadsController();
+        $_POST = [
+            "submit" => "1",
+            "email" => "test@gmail.com",
+            "first_name" => "test first name",
+            "google_app_password" => "test google app password",
+            "user_passphrase" => "test user password",
+        ];
+        $ctlr->persist();
+        $actual = $ctlr->getStatusCode();
         $this->assertEquals($expected, $actual);
     }
 

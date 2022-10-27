@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Controllers;
+namespace Tests\Unit\Apps\Web\Controllers;
 
 require_once "/var/www/tests/fixtures/classes/DummyController.php";
 
