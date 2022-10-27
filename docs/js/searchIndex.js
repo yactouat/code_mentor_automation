@@ -676,6 +676,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#method_login"
         },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\SessionLeadsController\u003A\u003Alogout\u0028\u0029",
+            "name": "logout",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#method_logout"
+        },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\SessionLeadsController\u003A\u003Apersist\u0028\u0029",
             "name": "persist",
             "summary": "",

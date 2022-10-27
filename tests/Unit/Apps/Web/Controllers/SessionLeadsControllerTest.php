@@ -15,6 +15,7 @@ final class SessionLeadsControllerTest extends TestCase {
         $this->loadEnv();
         $this->database->writeQuery('TRUNCATE udacity_sl_automation.sessionlead');
         $_POST = [];
+        $_SESSION = [];
     }
 
     public function testPersistWithNoSubmitFieldReturnsSignUpFormWithRelevantAlert() {
@@ -116,6 +117,12 @@ final class SessionLeadsControllerTest extends TestCase {
         $ctlr->persist();
         $actual = $ctlr->getStatusCode();
         $this->assertEquals($expected, $actual);
+    }
+
+    public function testLogoutEmptiesSession() {
+        $_SESSION['authed'] = true;
+        (new SessionLeadsController())->logout();
+        $this->assertEmpty($_SESSION);
     }
 
 }

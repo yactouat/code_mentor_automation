@@ -12,6 +12,7 @@ final class RoutesTest extends TestCase {
             "GET" => [
                 '/' => ['Resource\SessionLeadsController', 'index'],
                 'login' => ['Resource\SessionLeadsController', 'login'],
+                'logout' => ['Resource\SessionLeadsController', 'logout'],
                 'session-leads/create' => ['Resource\SessionLeadsController', 'create']
             ],
             'POST' => [

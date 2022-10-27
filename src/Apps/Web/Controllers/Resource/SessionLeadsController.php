@@ -38,6 +38,16 @@ final class SessionLeadsController extends Controller implements ResourceControl
         return $this->getRenderer()->render('session-leads.login.html.twig');
     }
 
+    public function logout(): string {
+        $_SESSION = [];
+        if (\session_status() === PHP_SESSION_ACTIVE) {
+            session_destroy();
+        }
+        // TODO test that login page is rendered
+        // TODO test status code
+        return '';
+    }
+
     public function persist(): string
     {
         $errors = SessionLeadModel::validateInputFields($_POST);
