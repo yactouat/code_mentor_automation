@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\App;
+namespace Tests\Unit\Apps\Web;
 
 use PHPUnit\Framework\TestCase;
-use Udacity\Apps\WebApp;
+use Udacity\Apps\Web\WebApp;
 use Udacity\Controllers\NotFoundController;
 use Udacity\Controllers\Resource\SessionLeadsController;
 
@@ -66,21 +66,6 @@ final class WebAppTest extends TestCase {
     public function testGetRequestRouteWithSlashAndMultipleQueryStringsRemovesAllQueryStringsAndSlash() {
         $expected = 'test';
         $actual = WebApp::parseRequestRoute('/test/?q=v&q2=v2');
-        $this->assertEquals($expected, $actual);
-    }
-
-    public function testGetRegisteredRoutesReturnsExpectedRoutes() {
-        $expected = [
-            "GET" => [
-                '/' => ['Resource\SessionLeadsController', 'index'],
-                'session-leads/create' => ['Resource\SessionLeadsController', 'create']
-            ],
-            'POST' => [
-                'session-leads/create' => 
-                ['Resource\SessionLeadsController', 'persist']
-            ]
-        ];
-        $actual = WebApp::getRegisteredRoutes();
         $this->assertEquals($expected, $actual);
     }
 

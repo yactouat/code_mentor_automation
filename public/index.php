@@ -5,7 +5,7 @@ $rootDir = dirname(__DIR__);
 
 // loading deps
 require_once $rootDir."/vendor/autoload.php";
-use Udacity\Apps\WebApp;
+use Udacity\Apps\Web\WebApp;
 
 // initializing the app'
 $app = (new WebApp($rootDir))->setNewLogger($rootDir.'/data/logs/php/web_app.log');

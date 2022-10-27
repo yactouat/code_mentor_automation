@@ -41,66 +41,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Apps-CliApp.html#property_app"
         },                {
-            "fqsen": "\\Udacity\\Apps\\WebApp",
-            "name": "WebApp",
-            "summary": "",
-            "url": "classes/Udacity-Apps-WebApp.html"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\WebApp\u003A\u003AgetRegisteredRoutes\u0028\u0029",
-            "name": "getRegisteredRoutes",
-            "summary": "",
-            "url": "classes/Udacity-Apps-WebApp.html#method_getRegisteredRoutes"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\WebApp\u003A\u003A_setResponseOutput\u0028\u0029",
-            "name": "_setResponseOutput",
-            "summary": "",
-            "url": "classes/Udacity-Apps-WebApp.html#method__setResponseOutput"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\WebApp\u003A\u003AgetController\u0028\u0029",
-            "name": "getController",
-            "summary": "",
-            "url": "classes/Udacity-Apps-WebApp.html#method_getController"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\WebApp\u003A\u003AgetResponseOutput\u0028\u0029",
-            "name": "getResponseOutput",
-            "summary": "",
-            "url": "classes/Udacity-Apps-WebApp.html#method_getResponseOutput"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\WebApp\u003A\u003AgetStatusCode\u0028\u0029",
-            "name": "getStatusCode",
-            "summary": "",
-            "url": "classes/Udacity-Apps-WebApp.html#method_getStatusCode"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\WebApp\u003A\u003AhandleRequest\u0028\u0029",
-            "name": "handleRequest",
-            "summary": "",
-            "url": "classes/Udacity-Apps-WebApp.html#method_handleRequest"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\WebApp\u003A\u003AparseRequestRoute\u0028\u0029",
-            "name": "parseRequestRoute",
-            "summary": "",
-            "url": "classes/Udacity-Apps-WebApp.html#method_parseRequestRoute"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\WebApp\u003A\u003A\u0024controller",
-            "name": "controller",
-            "summary": "",
-            "url": "classes/Udacity-Apps-WebApp.html#property_controller"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\WebApp\u003A\u003A\u0024statusCode",
-            "name": "statusCode",
-            "summary": "",
-            "url": "classes/Udacity-Apps-WebApp.html#property_statusCode"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\WebApp\u003A\u003A\u0024inputRoute",
-            "name": "inputRoute",
-            "summary": "",
-            "url": "classes/Udacity-Apps-WebApp.html#property_inputRoute"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\WebApp\u003A\u003A\u0024responseOutput",
-            "name": "responseOutput",
-            "summary": "",
-            "url": "classes/Udacity-Apps-WebApp.html#property_responseOutput"
-        },                {
             "fqsen": "\\Udacity\\Commands\\SendEmailsToBehindStudentsCommand",
             "name": "SendEmailsToBehindStudentsCommand",
             "summary": "this\u0020class\u0020is\u0020responsible\u0020for\u0020handling\u0020CLI\u0020input\u0020of\u0020sending\u0020emails\u0020to\u0020behind\u0020students",
@@ -666,6 +606,71 @@ Search.appendIndex(
             "summary": "implements\u0020\u0060TrainingEndingEmailProcess\u0060\u0020business\u0020logic",
             "url": "classes/Udacity-Processes-TrainingEndingEmailProcess.html#method_run"
         },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Routes",
+            "name": "Routes",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-Routes.html"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Routes\u003A\u003AgetRegisteredRoutes\u0028\u0029",
+            "name": "getRegisteredRoutes",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-Routes.html#method_getRegisteredRoutes"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\WebApp",
+            "name": "WebApp",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-WebApp.html"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\WebApp\u003A\u003A_setResponseOutput\u0028\u0029",
+            "name": "_setResponseOutput",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-WebApp.html#method__setResponseOutput"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\WebApp\u003A\u003AgetController\u0028\u0029",
+            "name": "getController",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-WebApp.html#method_getController"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\WebApp\u003A\u003AgetResponseOutput\u0028\u0029",
+            "name": "getResponseOutput",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-WebApp.html#method_getResponseOutput"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\WebApp\u003A\u003AgetStatusCode\u0028\u0029",
+            "name": "getStatusCode",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-WebApp.html#method_getStatusCode"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\WebApp\u003A\u003AhandleRequest\u0028\u0029",
+            "name": "handleRequest",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-WebApp.html#method_handleRequest"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\WebApp\u003A\u003AparseRequestRoute\u0028\u0029",
+            "name": "parseRequestRoute",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-WebApp.html#method_parseRequestRoute"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\WebApp\u003A\u003A\u0024controller",
+            "name": "controller",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-WebApp.html#property_controller"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\WebApp\u003A\u003A\u0024statusCode",
+            "name": "statusCode",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-WebApp.html#property_statusCode"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\WebApp\u003A\u003A\u0024inputRoute",
+            "name": "inputRoute",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-WebApp.html#property_inputRoute"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\WebApp\u003A\u003A\u0024responseOutput",
+            "name": "responseOutput",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-WebApp.html#property_responseOutput"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -675,6 +680,11 @@ Search.appendIndex(
             "name": "Apps",
             "summary": "",
             "url": "namespaces/udacity-apps.html"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web",
+            "name": "Web",
+            "summary": "",
+            "url": "namespaces/udacity-apps-web.html"
         },                {
             "fqsen": "\\Udacity\\Commands",
             "name": "Commands",

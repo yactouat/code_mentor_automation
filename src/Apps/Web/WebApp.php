@@ -1,7 +1,8 @@
 <?php
 
-namespace Udacity\Apps;
+namespace Udacity\Apps\Web;
 
+use Udacity\Apps\App;
 use Udacity\Controllers\ControllerInterface;
 use Udacity\Controllers\NotFoundController;
 use Udacity\LoggerTrait;
@@ -15,21 +16,8 @@ final class WebApp extends App {
     private string $inputRoute;
     private string $responseOutput;
 
-    public static function getRegisteredRoutes(): array {
-        return [
-            "GET" => [
-                '/' => ['Resource\SessionLeadsController', 'index'],
-                'session-leads/create' => ['Resource\SessionLeadsController', 'create']
-                // TODO test login route + template + status code
-            ],
-            "POST" => [
-                'session-leads/create' => ['Resource\SessionLeadsController', 'persist']
-            ]
-        ];
-    }
-
     private function _setResponseOutput(): void {
-        $parsedRoute = self::getRegisteredRoutes()[$_SERVER['REQUEST_METHOD']][$this->inputRoute] ?? false;
+        $parsedRoute = Routes::getRegisteredRoutes()[$_SERVER['REQUEST_METHOD']][$this->inputRoute] ?? false;
         if (!$parsedRoute) {
             $this->controller = new NotFoundController();
             $this->responseOutput = $this->controller->index();

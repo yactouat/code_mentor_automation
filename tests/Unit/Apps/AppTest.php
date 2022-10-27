@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\App;
+namespace Tests\Unit\Apps;
 
 require_once '/var/www/tests/fixtures/classes/DummyApp.php';
 
