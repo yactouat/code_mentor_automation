@@ -43,7 +43,6 @@ final class SessionLeadsController extends Controller implements ResourceControl
         if (\session_status() === PHP_SESSION_ACTIVE) {
             session_destroy();
         }
-        // TODO test status code
         return $this->login();
     }
 
@@ -60,8 +59,8 @@ final class SessionLeadsController extends Controller implements ResourceControl
             $data = [
                 'email' => $_POST['email'],
                 'first_name' => $_POST['first_name'],
-                'google_app_password' => $_POST['google_app_password'],
-                'user_passphrase' => $_POST['user_passphrase']
+                'google_app_password' => password_hash($_POST['google_app_password'], PASSWORD_DEFAULT),
+                'user_passphrase' => password_hash($_POST['user_passphrase'], PASSWORD_DEFAULT)
             ];
             (new SessionLeadModel(
                 $data['email'],

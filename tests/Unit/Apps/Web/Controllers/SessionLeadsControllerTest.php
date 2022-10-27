@@ -84,24 +84,25 @@ final class SessionLeadsControllerTest extends TestCase {
     public function testPersistWithValidInputActuallyPersistsASessionLead() {
         $ctlr = new SessionLeadsController();
         $expected = [
-            [
-                "id" => 1,
-                "email" => "test@gmail.com",
-                "first_name" => "test first name",
-                "google_app_password" => "test google app password",
-                "user_passphrase" => "test user password",
-            ]
+            'id' => 1,
+            'email' => 'test@gmail.com',
+            'first_name' => 'test first name',
+            'google_app_password' => 'test google app password',
+            'user_passphrase' => 'test user password',
         ];
         $_POST = [
-            "submit" => "1",
-            "email" => "test@gmail.com",
-            "first_name" => "test first name",
-            "google_app_password" => "test google app password",
-            "user_passphrase" => "test user password",
+            'submit' => '1',
+            'email' => 'test@gmail.com',
+            'first_name' => 'test first name',
+            'google_app_password' => 'test google app password',
+            'user_passphrase' => 'test user password',
         ];
         $ctlr->persist();
-        $actual = $this->database->readQuery("SELECT * FROM sessionlead");
-        $this->assertEquals($expected, $actual);
+        $actual = $this->database->readQuery('SELECT * FROM sessionlead')[0];
+        $this->assertEquals($expected['email'], $actual['email']);
+        $this->assertEquals($expected['first_name'], $actual['first_name']);
+        $this->assertTrue(password_verify($expected['google_app_password'], $actual['google_app_password']));
+        $this->assertTrue(password_verify($expected['user_passphrase'], $actual['user_passphrase']));
     }
 
     public function testPersistWithValidInputSets201StatusCode() {
