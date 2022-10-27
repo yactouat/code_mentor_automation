@@ -119,7 +119,7 @@ final class WebAppTest extends TestCase {
         $this->assertEquals($expected, $actual);
     }
 
-    public function testGetResponseOutputWithUsersCreateRouteGetsSignupPage() {
+    public function testGetResponseOutputWithSessionLeadsCreateRouteGetsSignupPage() {
         $expected = str_replace(' ', '', file_get_contents('/var/www/tests/fixtures/views/session-leads.create.html'));
         $app = new WebApp('/var/www/tests/fixtures');
         $app->handleRequest("/session-leads/create");
@@ -133,6 +133,14 @@ final class WebAppTest extends TestCase {
         $app->handleRequest('/');
         $actual = $app->getStatusCode();
         $this->assertEquals($expected, $actual);
+    }
+
+    public function testGetResponseOutputWithSessionLeadsLoginRouteGetsLoginPage() {
+        $expected = str_replace(' ', '', file_get_contents('/var/www/tests/fixtures/views/session-leads.login.html'));
+        $app = new WebApp('/var/www/tests/fixtures');
+        $app->handleRequest("/login");
+        $actual = $app->getResponseOutput();
+        $this->assertEquals($expected, str_replace(' ', '', $actual));
     }
 
 }
