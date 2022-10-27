@@ -168,5 +168,13 @@ final class WebAppTest extends TestCase {
         $this->assertEquals($expected, str_replace(' ', '', $actual));
     }
 
+    public function testHandleRequestWithLogoutRouteUnauthedSets200() {
+        $expected = 200;
+        $app = new WebApp('/var/www/tests/fixtures');
+        $app->handleRequest('/logout');
+        $actual = $app->getStatusCode();
+        $this->assertEquals($expected, $actual);
+    }
+
 }
 
