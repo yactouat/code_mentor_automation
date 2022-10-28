@@ -48,8 +48,10 @@ final class SessionLeadsController extends Controller implements ResourceControl
                     $_POST['user_passphrase'],
                     $usr['user_passphrase']
                 );
+                $statusCode = $this->isAuthed() ? 200 : 401;
+                $this->setStatusCode($statusCode);
             }
-        } 
+        }
         return $this->isAuthed() ? $this->index() : 
             $this->getRenderer()->render('session-leads.login.html.twig');
     }

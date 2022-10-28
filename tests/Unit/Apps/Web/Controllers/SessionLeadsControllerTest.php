@@ -205,6 +205,28 @@ final class SessionLeadsControllerTest extends TestCase {
     } 
 
     // TODO test login status code with good/bad creds
+    public function testLoginWithGoodCredsSets200StatusCode() {
+        $expected = 200;
+        $ctlr = new SessionLeadsController();
+        $_SERVER['REQUEST_METHOD'] = 'POST';
+        $_POST = [
+            'submit' => '1',
+            'email' => 'test@gmail.com',
+            'first_name' => 'test first name',
+            'google_app_password' => 'test google app password',
+            'user_passphrase' => 'test user password',
+        ];
+        $ctlr->persist();
+        $_SESSION = []; // resetting the session since `persist` fills it
+        $_POST = [
+            'submit' => '1',
+            'email' => 'test@gmail.com',
+            'user_passphrase' => 'test user password',
+        ];
+        $ctlr->login();
+        $this->assertEquals($expected, $ctlr->getStatusCode());
+    }
+    
     // TODO test login without submit field
 
 }
