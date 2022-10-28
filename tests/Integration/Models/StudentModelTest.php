@@ -35,6 +35,15 @@ final class StudentModelTest extends TestCase {
         $this->assertEquals($expected, $actual);     
     }
 
-    // TODO test on_track_status can only be in 'Behind', 'On Track'
+    public function testPersistWithWrongOnTrackStatusDoesNotPersistInstanceInDb() {
+        // arrange
+        $expected = [];   
+        $sessionLead = new StudentModel('test email', 'test first name', 'test last name', 'Somewhere');
+        $sessionLead->persist();
+        // act
+        $actual = $sessionLead->selectAll();
+        // assert
+        $this->assertEquals($expected, $actual);     
+    }
 
 }
