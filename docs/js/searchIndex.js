@@ -146,6 +146,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Database.html#method___construct"
         },                {
+            "fqsen": "\\Udacity\\Database\u003A\u003A_closeConn\u0028\u0029",
+            "name": "_closeConn",
+            "summary": "",
+            "url": "classes/Udacity-Database.html#method__closeConn"
+        },                {
             "fqsen": "\\Udacity\\Database\u003A\u003A_getConn\u0028\u0029",
             "name": "_getConn",
             "summary": "",

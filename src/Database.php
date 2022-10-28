@@ -3,6 +3,7 @@
 namespace Udacity;
 
 use PDO;
+use PDOStatement;
 
 final class Database {
 
@@ -10,7 +11,7 @@ final class Database {
 
     private bool $isTesting;
 
-    private PDO $databaseConn;
+    private ?PDO $databaseConn;
 
     /**
      * name of the database
@@ -26,10 +27,19 @@ final class Database {
         $this->isTesting = !$isTesting ? ($_ENV["isTesting"] ?? false) : $isTesting;
         $this->_initConn();
         $this->setNewLogger(!$this->isTesting ? '/var/www/data/logs/php/db.log' : 
-            '/var/www/tests/fixtures/logs/php/db.log');
+            '/var/www/tests/fixtures/logs/php/db.log'
+        );
+    }
+
+    private function _closeConn(PDOStatement $statement): void {
+        $statement = null;
+        $this->databaseConn = null;
     }
 
     private function _getConn(): PDO {
+        if (is_null($this->databaseConn)) {
+            $this->_initConn();
+        }
         return $this->databaseConn;
     }
 
@@ -45,28 +55,30 @@ final class Database {
     public function readQuery(string $query): array {
         $this->logger->info("running READ query : ".$query);
         $this->startTimer();
-        $result = $this->databaseConn->query($query);
+        $statement = $this->_getConn()->query($query);
         $this->endTimer();
-        return $result->fetchAll();
+        $finalRes = $statement->fetchAll();
+        $this->_closeConn($statement);
+        return $finalRes;
     }
 
     public function writeQuery(string $sql, ?array $values = null): array {
         $this->logger->notice("running WRITE query : ".$sql);
         $this->startTimer();
-        $result = [];
+        $statement = null;
         if (is_null($values)) {
-            $executed = $this->databaseConn->query($sql);
-            $result = $executed->fetchAll();
+            $statement = $this->_getConn()->query($sql);
         } else {
-            $statement = $this->databaseConn->prepare($sql);
+            $statement = $this->_getConn()->prepare($sql);
             $statement->execute(array_map(
                 fn($val) => htmlspecialchars($val, ENT_QUOTES), 
                 $values)
             );
-            $result = $statement->fetchAll();
         }
         $this->endTimer();
-        return $result;
+        $finalRes = $statement->fetchAll();
+        $this->_closeConn($statement);
+        return $finalRes;
     }
 
 }
