@@ -381,6 +381,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Models-SessionLeadModel.html#method_persist"
         },                {
+            "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003AselectOneByEmail\u0028\u0029",
+            "name": "selectOneByEmail",
+            "summary": "",
+            "url": "classes/Udacity-Models-SessionLeadModel.html#method_selectOneByEmail"
+        },                {
             "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003AvalidateInputFields\u0028\u0029",
             "name": "validateInputFields",
             "summary": "",

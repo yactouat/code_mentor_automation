@@ -48,11 +48,28 @@ final class SessionLeadModel extends Model {
             VALUES(?,?,?,?)";
         $this->database->writeQuery(
             $sql, 
-            [$this->email, $this->first_name, $this->google_app_password, $this->user_passphrase]
+            [
+                $this->email, 
+                $this->first_name, 
+                password_hash(
+                    htmlspecialchars($this->google_app_password, ENT_QUOTES), PASSWORD_DEFAULT
+                ), 
+                password_hash(
+                    htmlspecialchars($this->user_passphrase, ENT_QUOTES), PASSWORD_DEFAULT
+                )
+            ]
         );
     }
 
     // TODO select one by email + validation
+    public function selectOneByEmail(string $email): array {
+        $res = $this->database->readQuery(
+            'SELECT * FROM '
+            . $this->tableName
+            . " WHERE email='$email'"
+        );
+        return $res[0] ?? [];
+    }
 
     public static function validateInputFields(array $fields): array {
         $errors = [];

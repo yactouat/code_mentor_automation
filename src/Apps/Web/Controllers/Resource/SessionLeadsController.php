@@ -62,8 +62,8 @@ final class SessionLeadsController extends Controller implements ResourceControl
             $data = [
                 'email' => $_POST['email'],
                 'first_name' => $_POST['first_name'],
-                'google_app_password' => password_hash($_POST['google_app_password'], PASSWORD_DEFAULT),
-                'user_passphrase' => password_hash($_POST['user_passphrase'], PASSWORD_DEFAULT)
+                'google_app_password' =>$_POST['google_app_password'],
+                'user_passphrase' =>$_POST['user_passphrase']
             ];
             (new SessionLeadModel(
                 $data['email'],

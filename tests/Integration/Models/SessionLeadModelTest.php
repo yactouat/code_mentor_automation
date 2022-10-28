@@ -16,16 +16,21 @@ final class SessionLeadModelTest extends TestCase {
         $this->database->writeQuery('TRUNCATE udacity_sl_automation.sessionlead');
     }
 
+    protected function verifyUser(array $expected, array $actual) {
+        $this->assertEquals($expected['email'], $actual['email']);
+        $this->assertEquals($expected['first_name'], $actual['first_name']);
+        $this->assertTrue(password_verify($expected['google_app_password'], $actual['google_app_password']));
+        $this->assertTrue(password_verify($expected['user_passphrase'], $actual['user_passphrase']));
+    }
+
     public function testPersistPersistsInstanceInDb() {
         // arrange
         $expected = [
-            [
-                "id" => 1,
-                "email" => "test email",
-                "first_name" => "test first name",
-                "google_app_password" => "test google app password",
-                "user_passphrase" => "test user password",
-            ]
+            "id" => 1,
+            "email" => "test email",
+            "first_name" => "test first name",
+            "google_app_password" => "test google app password",
+            "user_passphrase" => "test user password"
         ];   
         $sessionLead = new SessionLeadModel(
             email: "test email", 
@@ -35,9 +40,9 @@ final class SessionLeadModelTest extends TestCase {
         );
         $sessionLead->persist();
         // act
-        $actual = $sessionLead->selectAll();
+        $actual = $sessionLead->selectAll()[0];
         // assert
-        $this->assertEquals($expected, $actual);     
+        $this->verifyUser($expected, $actual);    
     }
 
     public function testValidateInputFieldsWithMalformedEmailPushesCorrectErrorInErrorsArrray() {
@@ -63,9 +68,9 @@ final class SessionLeadModelTest extends TestCase {
         );
         $sessionLead->persist();
         // act
-        $actual = $sessionLead->selectAll();
+        $actual = $sessionLead->selectAll()[0];
         // assert
-        $this->assertEquals($expected, $actual[0]['google_app_password']);     
+        $this->assertTrue(password_verify($expected, $actual['google_app_password']));  
     }
 
     public function testPersistWithFirstNameContainingCodePersistsSanitizedStringInDb() {
@@ -81,7 +86,7 @@ final class SessionLeadModelTest extends TestCase {
         // act
         $actual = $sessionLead->selectAll();
         // assert
-        $this->assertEquals($expected, $actual[0]['first_name']);     
+        $this->assertEquals($expected, $actual[0]['first_name']);  
     }
 
     public function testPersistWithUserPasswordContainingCodePersistsSanitizedStringInDb() {
@@ -95,9 +100,9 @@ final class SessionLeadModelTest extends TestCase {
         );
         $sessionLead->persist();
         // act
-        $actual = $sessionLead->selectAll();
+        $actual = $sessionLead->selectAll()[0];
         // assert
-        $this->assertEquals($expected, $actual[0]['user_passphrase']);     
+        $this->assertTrue(password_verify($expected, $actual['user_passphrase']));     
     }
 
     public function testValidateInputFieldsWithNoPasswordPushesCorrectErrorInErrorsArrray() {
@@ -113,4 +118,33 @@ final class SessionLeadModelTest extends TestCase {
         ]);
         $this->assertTrue(in_array($expected, $actual));
     }
+
+    public function testSelectOneByEmailReturnsRelevantUserData() {
+        // arrange
+        $expected = [
+            "id" => 1,
+            "email" => "test@gmail.com",
+            "first_name" => "test first name",
+            "google_app_password" => "test google app password",
+            "user_passphrase" => "test user password",
+        ];   
+        $sessionLead = new SessionLeadModel(
+            email: "test@gmail.com", 
+            first_name: "test first name", 
+            google_app_password: "test google app password",
+            user_passphrase: "test user password"
+        );
+        $sessionLead->persist();
+        // act
+        $actual = $sessionLead->selectOneByEmail("test@gmail.com");
+        // assert
+        $this->verifyUser($expected, $actual);
+    }
+
+    // TODO test selecting with a wrongly formatted email
+
+    // TODO test with an email that does not exist in the db
+
+    // TODO test behavior when persisting user with same email twice
+
 }
