@@ -13,6 +13,7 @@ final class WebAppTest extends TestCase {
     {
         $_SERVER['REQUEST_METHOD'] = "GET";
         $_SESSION = [];
+        $_POST = [];
     }
 
     public function testGetRequestRouteWithHomeRouteGetsCorrectRoute() {

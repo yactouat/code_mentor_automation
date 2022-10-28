@@ -38,18 +38,20 @@ final class SessionLeadsController extends Controller implements ResourceControl
                 google_app_password: '',
                 user_passphrase: ''
             );
-            if (isset($_POST['submit']) && isset($_POST['email']) && isset($_POST['user_passphrase']) ) {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST' 
+                && isset($_POST['submit']) 
+                && isset($_POST['email']) 
+                && isset($_POST['user_passphrase']) 
+            ) {
                 $usr = $sessionLead->selectOneByEmail($_POST['email']);
                 $_SESSION['authed'] = count($usr) > 0 && password_verify(
                     $_POST['user_passphrase'],
                     $usr['user_passphrase']
                 );
             }
-        }
-        if ($this->isAuthed()) {
-            return $this->index();
-        }
-        return $this->getRenderer()->render('session-leads.login.html.twig');
+        } 
+        return $this->isAuthed() ? $this->index() : 
+            $this->getRenderer()->render('session-leads.login.html.twig');
     }
 
     public function logout(): string {

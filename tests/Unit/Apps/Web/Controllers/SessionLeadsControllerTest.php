@@ -16,9 +16,10 @@ final class SessionLeadsControllerTest extends TestCase {
         $this->database->writeQuery('TRUNCATE udacity_sl_automation.sessionlead');
         $_POST = [];
         $_SESSION = [];
+        $_SERVER['REQUEST_METHOD'] = "GET";
     }
 
-    public function testPersistWithNoSubmitFieldReturnsSignUpFormWithRelevantAlert() {
+    public function testPersistWithNoSubmitFieldReturnsRelevantAlert() {
         $ctlr = new SessionLeadsController();
         $expected = str_replace(' ', '', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
             <div>⚠️ Please send a valid form using the `submit` button</div>
@@ -51,7 +52,7 @@ final class SessionLeadsControllerTest extends TestCase {
         $this->assertTrue(str_contains($actual, $expected));
     }
 
-    public function testPersistWithNoEmailFieldReturnsSignUpFormWithRelevantAlert() {
+    public function testPersistWithNoEmailFieldReturnsRelevantAlert() {
         $ctlr = new SessionLeadsController();
         $expected = str_replace(' ', '', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
             <div>📧 Your email address is missing</div>
@@ -61,7 +62,7 @@ final class SessionLeadsControllerTest extends TestCase {
         $this->assertTrue(str_contains($actual, $expected));
     }
 
-    public function testPersistWithNoGoogleAppPasswordFieldReturnsSignUpFormWithRelevantAlert() {
+    public function testPersistWithNoGoogleAppPasswordFieldReturnsRelevantAlert() {
         $ctlr = new SessionLeadsController();
         $expected = str_replace(' ', '', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
             <div>🔑 Your Google application password is missing</div>
@@ -71,7 +72,7 @@ final class SessionLeadsControllerTest extends TestCase {
         $this->assertTrue(str_contains($actual, $expected));
     }
 
-    public function testPersistWithNoFirstNameFieldReturnsSignUpFormWithRelevantAlert() {
+    public function testPersistWithNoFirstNameFieldReturnsRelevantAlert() {
         $ctlr = new SessionLeadsController();
         $expected = str_replace(' ', '', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
             <div>❌ Your first name is missing</div>
@@ -128,6 +129,7 @@ final class SessionLeadsControllerTest extends TestCase {
 
     public function testLoginWithValidInputSetsSession() {
         $ctlr = new SessionLeadsController();
+        $_SERVER['REQUEST_METHOD'] = 'POST';
         $_POST = [
             'submit' => '1',
             'email' => 'test@gmail.com',
@@ -148,6 +150,7 @@ final class SessionLeadsControllerTest extends TestCase {
 
     public function testLoginWithInvalidInputDoesNotSetSession() {
         $ctlr = new SessionLeadsController();
+        $_SERVER['REQUEST_METHOD'] = 'POST';
         $_POST = [
             'submit' => '1',
             'email' => 'test@gmail.com',
@@ -167,6 +170,28 @@ final class SessionLeadsControllerTest extends TestCase {
     }
 
     // TODO test login rendered template with good/bad creds
+    public function testLoginOutputWithGoodCredsReturnsHomePage() {
+        $expected = str_replace(' ', '', file_get_contents('/var/www/tests/fixtures/views/home.html'));
+        $ctlr = new SessionLeadsController();
+        $_SERVER['REQUEST_METHOD'] = 'POST';
+        $_POST = [
+            'submit' => '1',
+            'email' => 'test@gmail.com',
+            'first_name' => 'test first name',
+            'google_app_password' => 'test google app password',
+            'user_passphrase' => 'test user password',
+        ];
+        $ctlr->persist();
+        $_SESSION = []; // resetting the session since `persist` fills it
+        $_POST = [
+            'submit' => '1',
+            'email' => 'test@gmail.com',
+            'user_passphrase' => 'test user password',
+        ];
+        $actual = $ctlr->login();
+        $this->assertEquals($expected, str_replace(' ', '', $actual));
+    } 
+
     // TODO test login status code with good/bad creds
     // TODO test login without submit field
 
