@@ -146,26 +146,25 @@ final class SessionLeadsControllerTest extends TestCase {
         $this->assertTrue($_SESSION['authed']);
     }
 
-    // TODO
-    // public function testLoginWithInvalidInputDoesNotSetSession() {
-    //     $ctlr = new SessionLeadsController();
-    //     $_POST = [
-    //         'submit' => '1',
-    //         'email' => 'test@gmail.com',
-    //         'first_name' => 'test first name',
-    //         'google_app_password' => 'test google app password',
-    //         'user_passphrase' => 'test user password',
-    //     ];
-    //     $ctlr->persist();
-    //     $_SESSION = []; // resetting the session since `persist` fills it
-    //     $_POST = [
-    //         'submit' => '1',
-    //         'email' => 'test@gmail.com',
-    //         'user_passphrase' => 'wrong passphrase',
-    //     ];
-    //     $ctlr->login();
-    //     $this->assertEmpty($_SESSION['authed']);
-    // }
+    public function testLoginWithInvalidInputDoesNotSetSession() {
+        $ctlr = new SessionLeadsController();
+        $_POST = [
+            'submit' => '1',
+            'email' => 'test@gmail.com',
+            'first_name' => 'test first name',
+            'google_app_password' => 'test google app password',
+            'user_passphrase' => 'test user password',
+        ];
+        $ctlr->persist();
+        $_SESSION = []; // resetting the session since `persist` fills it
+        $_POST = [
+            'submit' => '1',
+            'email' => 'test@gmail.com',
+            'user_passphrase' => 'wrong passphrase',
+        ];
+        $ctlr->login();
+        $this->assertFalse($_SESSION['authed']);
+    }
 
     // TODO test login rendered template with good/bad creds
     // TODO test login status code with good/bad creds

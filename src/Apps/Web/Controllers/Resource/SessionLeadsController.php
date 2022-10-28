@@ -31,12 +31,23 @@ final class SessionLeadsController extends Controller implements ResourceControl
 
     public function login(): string
     {
-        if($this->isAuthed()) {
-            return $this->index();
+        if(!$this->isAuthed()) {
+            $sessionLead = new SessionLeadModel(
+                email: '',
+                first_name: '',
+                google_app_password: '',
+                user_passphrase: ''
+            );
+            if (isset($_POST['submit']) && isset($_POST['email']) && isset($_POST['user_passphrase']) ) {
+                $usr = $sessionLead->selectOneByEmail($_POST['email']);
+                $_SESSION['authed'] = count($usr) > 0 && password_verify(
+                    $_POST['user_passphrase'],
+                    $usr['user_passphrase']
+                );
+            }
         }
-        if (isset($_POST['submit'])) {
-            $_SESSION['authed'] = true;
-            // TODO verify password with existing user hash
+        if ($this->isAuthed()) {
+            return $this->index();
         }
         return $this->getRenderer()->render('session-leads.login.html.twig');
     }

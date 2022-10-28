@@ -18,8 +18,8 @@ final class SessionLeadModel extends Model {
      */
     public function __construct(
         private string $email, 
-        private ?string $first_name,
-        private ?string $google_app_password, 
+        private string $first_name,
+        private string $google_app_password, 
         private string $user_passphrase
     )
     {
@@ -61,8 +61,10 @@ final class SessionLeadModel extends Model {
         );
     }
 
-    // TODO select one by email + validation
     public function selectOneByEmail(string $email): array {
+        if (!filter_var($email ?? '', FILTER_VALIDATE_EMAIL)) {
+            return [];
+        }
         $res = $this->database->readQuery(
             'SELECT * FROM '
             . $this->tableName
