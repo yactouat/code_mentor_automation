@@ -169,7 +169,6 @@ final class SessionLeadsControllerTest extends TestCase {
         $this->assertFalse($_SESSION['authed']);
     }
 
-    // TODO test login rendered template with good/bad creds
     public function testLoginOutputWithGoodCredsReturnsHomePage() {
         $expected = str_replace(' ', '', file_get_contents('/var/www/tests/fixtures/views/home.html'));
         $ctlr = new SessionLeadsController();
@@ -183,6 +182,19 @@ final class SessionLeadsControllerTest extends TestCase {
         ];
         $ctlr->persist();
         $_SESSION = []; // resetting the session since `persist` fills it
+        $_POST = [
+            'submit' => '1',
+            'email' => 'test@gmail.com',
+            'user_passphrase' => 'test user password',
+        ];
+        $actual = $ctlr->login();
+        $this->assertEquals($expected, str_replace(' ', '', $actual));
+    } 
+
+    public function testLoginOutputWithBadCredsReturnsLoginPage() {
+        $expected = str_replace(' ', '', file_get_contents('/var/www/tests/fixtures/views/session-leads.login.html'));
+        $ctlr = new SessionLeadsController();
+        $_SERVER['REQUEST_METHOD'] = 'POST';
         $_POST = [
             'submit' => '1',
             'email' => 'test@gmail.com',
