@@ -204,7 +204,6 @@ final class SessionLeadsControllerTest extends TestCase {
         $this->assertEquals($expected, str_replace(' ', '', $actual));
     } 
 
-    // TODO test login status code with good/bad creds
     public function testLoginWithGoodCredsSets200StatusCode() {
         $expected = 200;
         $ctlr = new SessionLeadsController();
@@ -226,7 +225,20 @@ final class SessionLeadsControllerTest extends TestCase {
         $ctlr->login();
         $this->assertEquals($expected, $ctlr->getStatusCode());
     }
-    
+
+    public function testLoginWithBadCredsSets401StatusCode() {
+        $expected = 401;
+        $ctlr = new SessionLeadsController();
+        $_SERVER['REQUEST_METHOD'] = 'POST';
+        $_POST = [
+            'submit' => '1',
+            'email' => 'test@gmail.com',
+            'user_passphrase' => 'test user password',
+        ];
+        $ctlr->login();
+        $this->assertEquals($expected, $ctlr->getStatusCode());
+    }
+
     // TODO test login without submit field
 
 }
