@@ -52,18 +52,7 @@ final class Database {
         );
     }
 
-    public function readQuery(string $query): array {
-        $this->logger->info("running READ query : ".$query);
-        $this->startTimer();
-        $statement = $this->_getConn()->query($query);
-        $this->endTimer();
-        $finalRes = $statement->fetchAll();
-        $this->_closeConn($statement);
-        return $finalRes;
-    }
-
-    public function writeQuery(string $sql, ?array $values = null): array {
-        $this->logger->notice("running WRITE query : ".$sql);
+    private function _runQuery(string $sql, ?array $values = null): array {
         $this->startTimer();
         $statement = null;
         if (is_null($values)) {
@@ -72,13 +61,23 @@ final class Database {
             $statement = $this->_getConn()->prepare($sql);
             $statement->execute(array_map(
                 fn($val) => htmlspecialchars($val, ENT_QUOTES), 
-                $values)
-            );
+                $values
+            ));
         }
         $this->endTimer();
         $finalRes = $statement->fetchAll();
         $this->_closeConn($statement);
         return $finalRes;
+    }
+
+    public function readQuery(string $sql, ?array $values = null): array {
+        $this->logger->info("running READ query : ".$sql);
+        return $this->_runQuery($sql, $values);
+    }
+
+    public function writeQuery(string $sql, ?array $values = null): array {
+        $this->logger->notice("running WRITE query : ".$sql);
+        return $this->_runQuery($sql, $values);
     }
 
 }

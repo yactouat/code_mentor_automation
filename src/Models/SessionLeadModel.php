@@ -51,12 +51,8 @@ final class SessionLeadModel extends Model {
             [
                 $this->email, 
                 $this->first_name, 
-                password_hash(
-                    htmlspecialchars($this->google_app_password, ENT_QUOTES), PASSWORD_DEFAULT
-                ), 
-                password_hash(
-                    htmlspecialchars($this->user_passphrase, ENT_QUOTES), PASSWORD_DEFAULT
-                )
+                password_hash($this->google_app_password, PASSWORD_DEFAULT), 
+                password_hash($this->user_passphrase, PASSWORD_DEFAULT)
             ]
         );
     }
@@ -65,11 +61,8 @@ final class SessionLeadModel extends Model {
         if (!filter_var($email ?? '', FILTER_VALIDATE_EMAIL)) {
             return [];
         }
-        $res = $this->database->readQuery(
-            'SELECT * FROM '
-            . $this->tableName
-            . " WHERE email='$email'"
-        );
+        $sql ='SELECT * FROM ' . $this->tableName . " WHERE email=?";
+        $res = $this->database->readQuery($sql, [$email]);
         return $res[0] ?? [];
     }
 

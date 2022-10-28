@@ -57,22 +57,6 @@ final class SessionLeadModelTest extends TestCase {
         $this->assertTrue(!in_array($expected, $actual));
     }
 
-    public function testPersistWithGoogleAppPasswordContainingCodePersistsSanitizedStringInDb() {
-        // arrange
-        $expected = htmlspecialchars('<script>alert("I am a bad script")</script>', ENT_QUOTES);
-        $sessionLead = new SessionLeadModel(
-            email: 'test email', 
-            first_name: 'test first name', 
-            google_app_password: '<script>alert("I am a bad script")</script>',
-            user_passphrase: 'test user password'
-        );
-        $sessionLead->persist();
-        // act
-        $actual = $sessionLead->selectAll()[0];
-        // assert
-        $this->assertTrue(password_verify($expected, $actual['google_app_password']));  
-    }
-
     public function testPersistWithFirstNameContainingCodePersistsSanitizedStringInDb() {
         // arrange
         $expected = htmlspecialchars('<script>alert("I am a bad script")</script>', ENT_QUOTES);
@@ -87,22 +71,6 @@ final class SessionLeadModelTest extends TestCase {
         $actual = $sessionLead->selectAll();
         // assert
         $this->assertEquals($expected, $actual[0]['first_name']);  
-    }
-
-    public function testPersistWithUserPasswordContainingCodePersistsSanitizedStringInDb() {
-        // arrange
-        $expected = htmlspecialchars('<script>alert("I am a bad script")</script>', ENT_QUOTES);
-        $sessionLead = new SessionLeadModel(
-            email: 'test email', 
-            first_name: 'some first name', 
-            google_app_password: 'some password',
-            user_passphrase: '<script>alert("I am a bad script")</script>'
-        );
-        $sessionLead->persist();
-        // act
-        $actual = $sessionLead->selectAll()[0];
-        // assert
-        $this->assertTrue(password_verify($expected, $actual['user_passphrase']));     
     }
 
     public function testValidateInputFieldsWithNoPasswordPushesCorrectErrorInErrorsArrray() {

@@ -161,6 +161,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Database.html#method__initConn"
         },                {
+            "fqsen": "\\Udacity\\Database\u003A\u003A_runQuery\u0028\u0029",
+            "name": "_runQuery",
+            "summary": "",
+            "url": "classes/Udacity-Database.html#method__runQuery"
+        },                {
             "fqsen": "\\Udacity\\Database\u003A\u003AreadQuery\u0028\u0029",
             "name": "readQuery",
             "summary": "",
