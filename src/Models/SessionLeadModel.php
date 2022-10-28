@@ -73,9 +73,6 @@ final class SessionLeadModel extends Model {
 
     public static function validateInputFields(array $fields): array {
         $errors = [];
-        if (!isset($fields['submit'])) {
-            $errors[] = '⚠️ Please send a valid form using the `submit` button';
-        }
         if (empty($fields['email'])) {
             $errors[] = '📧 Your email address is missing';
         }
@@ -90,6 +87,17 @@ final class SessionLeadModel extends Model {
         }
         if(!empty($fields['email']) && !filter_var($fields['email'] ?? '', FILTER_VALIDATE_EMAIL)) {
             $errors[] = '📧 Malformed email address';
+        }
+        if (count($errors) <= 0) {
+            $sessionLead = new SessionLeadModel(
+                email: $fields['email'], 
+                first_name: $fields['first_name'], 
+                google_app_password: $fields['google_app_password'],
+                user_passphrase: $fields['user_passphrase']
+            );
+            if(count($sessionLead->selectOneByEmail($fields['email'])) > 0) {
+                $errors[] = '📧 This email already exists in our system';
+            }
         }
         return $errors;
     }

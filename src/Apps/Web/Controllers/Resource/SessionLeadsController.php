@@ -52,6 +52,9 @@ final class SessionLeadsController extends Controller implements ResourceControl
     public function persist(): string
     {
         $errors = SessionLeadModel::validateInputFields($_POST);
+        if (!isset($_POST['submit'])) {
+            $errors[] = '⚠️ Please send a valid form using the `submit` button';
+        }
         if (count($errors) > 0) {
             $this->setStatusCode(400);
             return $this->getRenderer()->render('session-leads.create.html.twig', [

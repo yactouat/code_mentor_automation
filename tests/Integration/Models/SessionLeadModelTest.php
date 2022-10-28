@@ -141,10 +141,54 @@ final class SessionLeadModelTest extends TestCase {
         $this->verifyUser($expected, $actual);
     }
 
-    // TODO test selecting with a wrongly formatted email
+    public function testSelectOneByEmailWithInvalidEmailReturnsEmptyArray() {
+        // arrange
+        $expected = [];   
+        $sessionLead = new SessionLeadModel(
+            email: 'test@gmail.com', 
+            first_name: 'test first name', 
+            google_app_password: 'test google app password',
+            user_passphrase: 'test user password'
+        );
+        $sessionLead->persist();
+        // act
+        $actual = $sessionLead->selectOneByEmail("test@.com");
+        // assert
+        $this->assertEquals($expected, $actual);
+    }
 
-    // TODO test with an email that does not exist in the db
+    public function testSelectOneByEmailWithNonExistingEmailReturnsEmptyArray() {
+        // arrange
+        $expected = [];   
+        $sessionLead = new SessionLeadModel(
+            email: "test@gmail.com", 
+            first_name: "test first name", 
+            google_app_password: "test google app password",
+            user_passphrase: "test user password"
+        );
+        $sessionLead->persist();
+        // act
+        $actual = $sessionLead->selectOneByEmail("test2@gmail.com");
+        // assert
+        $this->assertEquals($expected, $actual);
+    }
 
-    // TODO test behavior when persisting user with same email twice
+    public function testValidateInputFieldsWithAlreadyExistingEmailPushesCorrectErrorInErrorsArrray() {
+        $expected = '📧 This email already exists in our system';
+        $sessionLead = new SessionLeadModel(
+            email: 'yactouat@hotmail.com', 
+            first_name: 'test first name', 
+            google_app_password: 'test google app password',
+            user_passphrase: 'test user password'
+        );
+        $sessionLead->persist();
+        $actual = SessionLeadModel::validateInputFields([
+            'email' => 'yactouat@hotmail.com',
+            'first_name' => 'test first name',
+            'google_app_password' => 'test google app password',
+            'user_passphrase' => 'test user password'
+        ]);
+        $this->assertTrue(in_array($expected, $actual));
+    }
 
 }
