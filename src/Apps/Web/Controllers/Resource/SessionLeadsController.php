@@ -29,11 +29,14 @@ final class SessionLeadsController extends Controller implements ResourceControl
         return $this->getRenderer()->render('home.html.twig');
     }
 
-    // TODO login feature
     public function login(): string
     {
         if($this->isAuthed()) {
             return $this->index();
+        }
+        if (isset($_POST['submit'])) {
+            $_SESSION['authed'] = true;
+            // TODO verify password with existing user hash
         }
         return $this->getRenderer()->render('session-leads.login.html.twig');
     }

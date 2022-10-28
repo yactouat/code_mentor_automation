@@ -18,8 +18,8 @@ final class SessionLeadModel extends Model {
      */
     public function __construct(
         private string $email, 
-        private string $first_name,
-        private string $google_app_password, 
+        private ?string $first_name,
+        private ?string $google_app_password, 
         private string $user_passphrase
     )
     {
@@ -51,6 +51,8 @@ final class SessionLeadModel extends Model {
             [$this->email, $this->first_name, $this->google_app_password, $this->user_passphrase]
         );
     }
+
+    // TODO select one by email + validation
 
     public static function validateInputFields(array $fields): array {
         $errors = [];
