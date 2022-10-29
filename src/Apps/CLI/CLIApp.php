@@ -1,12 +1,13 @@
 <?php
 
-namespace Udacity\Apps;
+namespace Udacity\Apps\CLI;
 
 use Symfony\Component\Console\Application;
-use Udacity\Commands\SendEmailsToBehindStudentsCommand;
-use Udacity\Commands\SendTrainingEndingEmailsCommand;
+use Udacity\Apps\App;
+use Udacity\Apps\CLI\Commands\SendEmailsToBehindStudentsCommand;
+use Udacity\Apps\CLI\Commands\SendTrainingEndingEmailsCommand;
 
-final class CliApp extends App {
+final class CLIApp extends App {
 
     private Application $app;
 

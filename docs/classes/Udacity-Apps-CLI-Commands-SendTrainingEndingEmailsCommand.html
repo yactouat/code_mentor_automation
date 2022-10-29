@@ -110,13 +110,18 @@
             <div class="phpdocumentor-column -eight phpdocumentor-content">
                     <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/udacity.html">Udacity</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/udacity-processes.html">Processes</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/udacity-apps.html">Apps</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/udacity-apps-cli.html">CLI</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/udacity-apps-cli-commands.html">Commands</a></li>
     </ul>
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    TrainingEndingEmailProcess
+    SendTrainingEndingEmailsCommand
 
+        <span class="phpdocumentor-element__extends">
+        extends <abbr title="\Symfony\Component\Console\Command\Command">Command</abbr>
+    </span>
     
             <div class="phpdocumentor-element__package">
             in package
@@ -132,13 +137,13 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Processes/TrainingEndingEmailProcess.php"><a href="files/src-processes-trainingendingemailprocess.html"><abbr title="src/Processes/TrainingEndingEmailProcess.php">TrainingEndingEmailProcess.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/CLI/Commands/SendTrainingEndingEmailsCommand.php"><a href="files/src-apps-cli-commands-sendtrainingendingemailscommand.html"><abbr title="src/Apps/CLI/Commands/SendTrainingEndingEmailsCommand.php">SendTrainingEndingEmailsCommand.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">22</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">this class represents the business logic behind sending all students a cheering up email before the end of the training</p>
+            <p class="phpdocumentor-summary">this class is responsible for handling CLI input of sending all students a cheering up email before the end of the training</p>
 
 
 
@@ -154,7 +159,35 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#constant_CSV_ARG">CSV_ARG</a>
+    <span>
+        &nbsp;= &#039;csv&#039;                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#constant_LANG_ARG">LANG_ARG</a>
+    <span>
+        &nbsp;= &#039;language&#039;                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#constant_ONLINE_RESOURCES">ONLINE_RESOURCES</a>
+    <span>
+        &nbsp;= &#039;online-resources&#039;                            </span>
+</dt>
+<dd></dd>
+
                     <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#property_defaultDescription">$defaultDescription</a>
+    <span>
+                        &nbsp;: mixed            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Udacity-LoggerTrait.html#property_endTime">$endTime</a>
     <span>
                         &nbsp;: float            </span>
@@ -183,13 +216,6 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Udacity-Processes-TrainingEndingEmailProcess.html#method_run">run()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>implements `TrainingEndingEmailProcess` business logic</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Udacity-LoggerTrait.html#method_setLogger">setLogger()</a>
     <span>
                                 &nbsp;: mixed    </span>
@@ -210,18 +236,159 @@
 </dt>
 <dd></dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#method_configure">configure()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#method_execute">execute()</a>
+    <span>
+                                &nbsp;: int    </span>
+</dt>
+<dd></dd>
+
         </dl>
 
 
 
         
+    <section class="phpdocumentor-constants">
+        <h3 class="phpdocumentor-elements__header" id="constants">
+            Constants
+            <a href="classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_CSV_ARG">
+        CSV_ARG
+        <a href="classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#constant_CSV_ARG" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/CLI/Commands/SendTrainingEndingEmailsCommand.php"><a href="files/src-apps-cli-commands-sendtrainingendingemailscommand.html"><abbr title="src/Apps/CLI/Commands/SendTrainingEndingEmailsCommand.php">SendTrainingEndingEmailsCommand.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">28</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">CSV_ARG</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;csv&#039;</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_LANG_ARG">
+        LANG_ARG
+        <a href="classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#constant_LANG_ARG" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/CLI/Commands/SendTrainingEndingEmailsCommand.php"><a href="files/src-apps-cli-commands-sendtrainingendingemailscommand.html"><abbr title="src/Apps/CLI/Commands/SendTrainingEndingEmailsCommand.php">SendTrainingEndingEmailsCommand.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">29</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">LANG_ARG</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;language&#039;</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_ONLINE_RESOURCES">
+        ONLINE_RESOURCES
+        <a href="classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#constant_ONLINE_RESOURCES" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/CLI/Commands/SendTrainingEndingEmailsCommand.php"><a href="files/src-apps-cli-commands-sendtrainingendingemailscommand.html"><abbr title="src/Apps/CLI/Commands/SendTrainingEndingEmailsCommand.php">SendTrainingEndingEmailsCommand.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">30</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">ONLINE_RESOURCES</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;online-resources&#039;</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+            </section>
 
         
     <section class="phpdocumentor-properties">
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
-            <a href="classes/Udacity-Processes-TrainingEndingEmailProcess.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+            -static                                            "
+>
+    <h4 class="phpdocumentor-element__name" id="property_defaultDescription">
+        $defaultDescription
+        <a href="classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#property_defaultDescription" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/CLI/Commands/SendTrainingEndingEmailsCommand.php"><a href="files/src-apps-cli-commands-sendtrainingendingemailscommand.html"><abbr title="src/Apps/CLI/Commands/SendTrainingEndingEmailsCommand.php">SendTrainingEndingEmailsCommand.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">32</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">$defaultDescription</span>
+     = <span class="phpdocumentor-signature__default-value">&#039;Sends cheering up emails in bulk to all before the end of the Udacity training.&#039;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
                     <article
         class="
             phpdocumentor-element
@@ -329,7 +496,7 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/Udacity-Processes-TrainingEndingEmailProcess.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -371,64 +538,6 @@
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_run">
-        run()
-        <a href="classes/Udacity-Processes-TrainingEndingEmailProcess.html#method_run" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Processes/TrainingEndingEmailProcess.php"><a href="files/src-processes-trainingendingemailprocess.html"><abbr title="src/Processes/TrainingEndingEmailProcess.php">TrainingEndingEmailProcess.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">25</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">implements `TrainingEndingEmailProcess` business logic</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">run</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$csv</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$language</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$onlineResources</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$csv</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$language</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$onlineResources</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
         
     
@@ -554,6 +663,91 @@
         
     
 </article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_configure">
+        configure()
+        <a href="classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#method_configure" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/CLI/Commands/SendTrainingEndingEmailsCommand.php"><a href="files/src-apps-cli-commands-sendtrainingendingemailscommand.html"><abbr title="src/Apps/CLI/Commands/SendTrainingEndingEmailsCommand.php">SendTrainingEndingEmailsCommand.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">125</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">configure</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_execute">
+        execute()
+        <a href="classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#method_execute" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/CLI/Commands/SendTrainingEndingEmailsCommand.php"><a href="files/src-apps-cli-commands-sendtrainingendingemailscommand.html"><abbr title="src/Apps/CLI/Commands/SendTrainingEndingEmailsCommand.php">SendTrainingEndingEmailsCommand.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">34</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">execute</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\Console\Input\InputInterface">InputInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$input</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\Console\Output\OutputInterface">OutputInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$output</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$input</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\Console\Input\InputInterface">InputInterface</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$output</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\Console\Output\OutputInterface">OutputInterface</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+        
+    
+</article>
             </section>
 
         
@@ -632,7 +826,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/Udacity-Processes-TrainingEndingEmailProcess.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

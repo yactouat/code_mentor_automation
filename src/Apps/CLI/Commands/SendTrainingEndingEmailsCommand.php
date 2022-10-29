@@ -1,6 +1,6 @@
 <?php
 
-namespace Udacity\Commands;
+namespace Udacity\Apps\CLI\Commands;
 
 use Udacity\Csvs\CsvExtractor;
 use Udacity\Emails\Mailer;

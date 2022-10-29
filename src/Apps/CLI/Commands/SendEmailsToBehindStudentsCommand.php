@@ -1,6 +1,6 @@
 <?php
 
-namespace Udacity\Commands;
+namespace Udacity\Apps\CLI\Commands;
 
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;

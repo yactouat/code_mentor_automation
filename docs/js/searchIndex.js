@@ -16,96 +16,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Apps-App.html#property_rootDir"
         },                {
-            "fqsen": "\\Udacity\\Apps\\CliApp",
-            "name": "CliApp",
-            "summary": "",
-            "url": "classes/Udacity-Apps-CliApp.html"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\CliApp\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/Udacity-Apps-CliApp.html#method___construct"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\CliApp\u003A\u003A_registerCommands\u0028\u0029",
-            "name": "_registerCommands",
-            "summary": "",
-            "url": "classes/Udacity-Apps-CliApp.html#method__registerCommands"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\CliApp\u003A\u003Arun\u0028\u0029",
-            "name": "run",
-            "summary": "",
-            "url": "classes/Udacity-Apps-CliApp.html#method_run"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\CliApp\u003A\u003A\u0024app",
-            "name": "app",
-            "summary": "",
-            "url": "classes/Udacity-Apps-CliApp.html#property_app"
-        },                {
-            "fqsen": "\\Udacity\\Commands\\SendEmailsToBehindStudentsCommand",
-            "name": "SendEmailsToBehindStudentsCommand",
-            "summary": "this\u0020class\u0020is\u0020responsible\u0020for\u0020handling\u0020CLI\u0020input\u0020of\u0020sending\u0020emails\u0020to\u0020behind\u0020students",
-            "url": "classes/Udacity-Commands-SendEmailsToBehindStudentsCommand.html"
-        },                {
-            "fqsen": "\\Udacity\\Commands\\SendEmailsToBehindStudentsCommand\u003A\u003Aexecute\u0028\u0029",
-            "name": "execute",
-            "summary": "",
-            "url": "classes/Udacity-Commands-SendEmailsToBehindStudentsCommand.html#method_execute"
-        },                {
-            "fqsen": "\\Udacity\\Commands\\SendEmailsToBehindStudentsCommand\u003A\u003Aconfigure\u0028\u0029",
-            "name": "configure",
-            "summary": "",
-            "url": "classes/Udacity-Commands-SendEmailsToBehindStudentsCommand.html#method_configure"
-        },                {
-            "fqsen": "\\Udacity\\Commands\\SendEmailsToBehindStudentsCommand\u003A\u003ACSV_ARG",
-            "name": "CSV_ARG",
-            "summary": "",
-            "url": "classes/Udacity-Commands-SendEmailsToBehindStudentsCommand.html#constant_CSV_ARG"
-        },                {
-            "fqsen": "\\Udacity\\Commands\\SendEmailsToBehindStudentsCommand\u003A\u003ALANG_ARG",
-            "name": "LANG_ARG",
-            "summary": "",
-            "url": "classes/Udacity-Commands-SendEmailsToBehindStudentsCommand.html#constant_LANG_ARG"
-        },                {
-            "fqsen": "\\Udacity\\Commands\\SendEmailsToBehindStudentsCommand\u003A\u003A\u0024defaultDescription",
-            "name": "defaultDescription",
-            "summary": "",
-            "url": "classes/Udacity-Commands-SendEmailsToBehindStudentsCommand.html#property_defaultDescription"
-        },                {
-            "fqsen": "\\Udacity\\Commands\\SendTrainingEndingEmailsCommand",
-            "name": "SendTrainingEndingEmailsCommand",
-            "summary": "this\u0020class\u0020is\u0020responsible\u0020for\u0020handling\u0020CLI\u0020input\u0020of\u0020sending\u0020all\u0020students\u0020a\u0020cheering\u0020up\u0020email\u0020before\u0020the\u0020end\u0020of\u0020the\u0020training",
-            "url": "classes/Udacity-Commands-SendTrainingEndingEmailsCommand.html"
-        },                {
-            "fqsen": "\\Udacity\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003Aexecute\u0028\u0029",
-            "name": "execute",
-            "summary": "",
-            "url": "classes/Udacity-Commands-SendTrainingEndingEmailsCommand.html#method_execute"
-        },                {
-            "fqsen": "\\Udacity\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003Aconfigure\u0028\u0029",
-            "name": "configure",
-            "summary": "",
-            "url": "classes/Udacity-Commands-SendTrainingEndingEmailsCommand.html#method_configure"
-        },                {
-            "fqsen": "\\Udacity\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003ACSV_ARG",
-            "name": "CSV_ARG",
-            "summary": "",
-            "url": "classes/Udacity-Commands-SendTrainingEndingEmailsCommand.html#constant_CSV_ARG"
-        },                {
-            "fqsen": "\\Udacity\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003ALANG_ARG",
-            "name": "LANG_ARG",
-            "summary": "",
-            "url": "classes/Udacity-Commands-SendTrainingEndingEmailsCommand.html#constant_LANG_ARG"
-        },                {
-            "fqsen": "\\Udacity\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003AONLINE_RESOURCES",
-            "name": "ONLINE_RESOURCES",
-            "summary": "",
-            "url": "classes/Udacity-Commands-SendTrainingEndingEmailsCommand.html#constant_ONLINE_RESOURCES"
-        },                {
-            "fqsen": "\\Udacity\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003A\u0024defaultDescription",
-            "name": "defaultDescription",
-            "summary": "",
-            "url": "classes/Udacity-Commands-SendTrainingEndingEmailsCommand.html#property_defaultDescription"
-        },                {
             "fqsen": "\\Udacity\\Csvs\\CsvExtractor",
             "name": "CsvExtractor",
             "summary": "class\u0020responsible\u0020for\u0020extracting\u0020data\u0020from\u0020CSVs",
@@ -766,6 +676,96 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Exceptions-MsmtprcNotSetException.html#method___construct"
         },                {
+            "fqsen": "\\Udacity\\Apps\\CLI\\CLIApp",
+            "name": "CLIApp",
+            "summary": "",
+            "url": "classes/Udacity-Apps-CLI-CLIApp.html"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CLI\\CLIApp\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Udacity-Apps-CLI-CLIApp.html#method___construct"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CLI\\CLIApp\u003A\u003A_registerCommands\u0028\u0029",
+            "name": "_registerCommands",
+            "summary": "",
+            "url": "classes/Udacity-Apps-CLI-CLIApp.html#method__registerCommands"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CLI\\CLIApp\u003A\u003Arun\u0028\u0029",
+            "name": "run",
+            "summary": "",
+            "url": "classes/Udacity-Apps-CLI-CLIApp.html#method_run"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CLI\\CLIApp\u003A\u003A\u0024app",
+            "name": "app",
+            "summary": "",
+            "url": "classes/Udacity-Apps-CLI-CLIApp.html#property_app"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendEmailsToBehindStudentsCommand",
+            "name": "SendEmailsToBehindStudentsCommand",
+            "summary": "this\u0020class\u0020is\u0020responsible\u0020for\u0020handling\u0020CLI\u0020input\u0020of\u0020sending\u0020emails\u0020to\u0020behind\u0020students",
+            "url": "classes/Udacity-Apps-CLI-Commands-SendEmailsToBehindStudentsCommand.html"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendEmailsToBehindStudentsCommand\u003A\u003Aexecute\u0028\u0029",
+            "name": "execute",
+            "summary": "",
+            "url": "classes/Udacity-Apps-CLI-Commands-SendEmailsToBehindStudentsCommand.html#method_execute"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendEmailsToBehindStudentsCommand\u003A\u003Aconfigure\u0028\u0029",
+            "name": "configure",
+            "summary": "",
+            "url": "classes/Udacity-Apps-CLI-Commands-SendEmailsToBehindStudentsCommand.html#method_configure"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendEmailsToBehindStudentsCommand\u003A\u003ACSV_ARG",
+            "name": "CSV_ARG",
+            "summary": "",
+            "url": "classes/Udacity-Apps-CLI-Commands-SendEmailsToBehindStudentsCommand.html#constant_CSV_ARG"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendEmailsToBehindStudentsCommand\u003A\u003ALANG_ARG",
+            "name": "LANG_ARG",
+            "summary": "",
+            "url": "classes/Udacity-Apps-CLI-Commands-SendEmailsToBehindStudentsCommand.html#constant_LANG_ARG"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendEmailsToBehindStudentsCommand\u003A\u003A\u0024defaultDescription",
+            "name": "defaultDescription",
+            "summary": "",
+            "url": "classes/Udacity-Apps-CLI-Commands-SendEmailsToBehindStudentsCommand.html#property_defaultDescription"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendTrainingEndingEmailsCommand",
+            "name": "SendTrainingEndingEmailsCommand",
+            "summary": "this\u0020class\u0020is\u0020responsible\u0020for\u0020handling\u0020CLI\u0020input\u0020of\u0020sending\u0020all\u0020students\u0020a\u0020cheering\u0020up\u0020email\u0020before\u0020the\u0020end\u0020of\u0020the\u0020training",
+            "url": "classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003Aexecute\u0028\u0029",
+            "name": "execute",
+            "summary": "",
+            "url": "classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#method_execute"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003Aconfigure\u0028\u0029",
+            "name": "configure",
+            "summary": "",
+            "url": "classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#method_configure"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003ACSV_ARG",
+            "name": "CSV_ARG",
+            "summary": "",
+            "url": "classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#constant_CSV_ARG"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003ALANG_ARG",
+            "name": "LANG_ARG",
+            "summary": "",
+            "url": "classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#constant_LANG_ARG"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003AONLINE_RESOURCES",
+            "name": "ONLINE_RESOURCES",
+            "summary": "",
+            "url": "classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#constant_ONLINE_RESOURCES"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003A\u0024defaultDescription",
+            "name": "defaultDescription",
+            "summary": "",
+            "url": "classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#property_defaultDescription"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -775,6 +775,16 @@ Search.appendIndex(
             "name": "Apps",
             "summary": "",
             "url": "namespaces/udacity-apps.html"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CLI",
+            "name": "CLI",
+            "summary": "",
+            "url": "namespaces/udacity-apps-cli.html"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CLI\\Commands",
+            "name": "Commands",
+            "summary": "",
+            "url": "namespaces/udacity-apps-cli-commands.html"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers",
             "name": "Controllers",
@@ -795,11 +805,6 @@ Search.appendIndex(
             "name": "Udacity",
             "summary": "",
             "url": "namespaces/udacity.html"
-        },                {
-            "fqsen": "\\Udacity\\Commands",
-            "name": "Commands",
-            "summary": "",
-            "url": "namespaces/udacity-commands.html"
         },                {
             "fqsen": "\\Udacity\\Csvs",
             "name": "Csvs",
