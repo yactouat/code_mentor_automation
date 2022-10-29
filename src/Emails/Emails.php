@@ -37,11 +37,14 @@ final class Emails
     /**
      * gets the email text for a given student who is behind hers/his nanodegree track
      * 
-     * using a the students behind template email, replaces the placeholder values of the template and gets you the text of the actual email
-     *
+     * - using a the students behind template email, replaces the placeholder values of the template and gets you the text of the actual email
+     * - works only if the session lead is authenticated
+     * 
      * @param string $language the language to use in the template
      * @param string $studentFirstName the first name of the student to send the email to
      * @param string $studentLastName the last name of the student to send the email to
+     * 
+     * @throws UserNotAuthedException
      * 
      * @return string the personalized student behind email
      */
@@ -77,12 +80,15 @@ final class Emails
     /**
      * gets the email text for a given student to send when the end of the training is near
      * 
-     * using a the students behind template email, replaces the placeholder values of the template and gets you the text of the actual email
-     *
+     * - using a the students behind template email, replaces the placeholder values of the template and gets you the text of the actual email
+     * - works only if the session lead is authenticated
+     * 
      * @param string $language the language to use in the template
      * @param string $studentFirstName the first name of the student to send the email to
      * @param string $studentLastName the last name of the student to send the email to
      * @param ?array $onlineResources (optional) a list of online resources to help the student in his learning journey
+     * 
+     * @throws UserNotAuthedException
      * 
      * @return string the personalized cheering up email
      */

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Integration\Emailing;
+namespace Tests\Integration\Emails;
 
 use Udacity\Csvs\CsvExtractor;
 use Udacity\Emails\Emails;

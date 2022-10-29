@@ -138,7 +138,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Emails\\Mailer\u003A\u003AbuildMsmtprc\u0028\u0029",
             "name": "buildMsmtprc",
-            "summary": "",
+            "summary": "constructs\u0020a\u0020msmtprc\u0020file\u0020and\u0020puts\u0020in\u0020the\u0020right\u0020place",
             "url": "classes/Udacity-Emails-Mailer.html#method_buildMsmtprc"
         },                {
             "fqsen": "\\Udacity\\Emails\\Mailer\u003A\u003AcheckMsmtprc\u0028\u0029",

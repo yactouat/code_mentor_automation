@@ -15,6 +15,13 @@ use Udacity\Exceptions\MsmtprcNotSetException;
 final class Mailer
 {
 
+    /**
+     * constructs a msmtprc file and puts in the right place
+     *
+     * @param string $email - the session lead email
+     * @param string $gAppPass - the input Google App Password
+     * @return void
+     */
     public static function buildMsmtprc(string $email, string $gAppPass): void {
         $destPath = !empty($_ENV['isTesting']) ? '/etc/msmtprc.test' : '/etc/msmtprc';
         \file_put_contents($destPath, sprintf(
@@ -49,8 +56,9 @@ final class Mailer
      * @param string $subject
      * @param string $htmlEmail better rendering if you pass HTML formatted text in there
      * @param string $msmtprcPath the path to your `msmtp`config
+     * @param ?Logger $logger optional logger
      * 
-     * @throws Exception if `msmtprc` is not set
+     * @throws EmailNotDeliveredException if email is not delivered
      * 
      * @return void actually sends the email
      */

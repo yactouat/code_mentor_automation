@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Emailing;
+namespace Tests\Unit\Emails;
 
 use Udacity\Emails\Mailer;
 use PHPUnit\Framework\TestCase;
