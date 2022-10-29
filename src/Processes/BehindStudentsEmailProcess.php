@@ -3,6 +3,7 @@
 namespace Udacity\Processes;
 
 use Udacity\Csvs\StudentsCsvExtractor as CsvExtractor;
+use Udacity\Emails\EmailNotDeliveredException;
 use Udacity\Emails\Emails;
 use Udacity\Emails\Mailer;
 use Udacity\LoggerTrait;
@@ -10,7 +11,7 @@ use Udacity\LoggerTrait;
 /**
  * this class represents the business logic behind sending students behind emails
  */
-final class BehindStudentsEmailProcess {
+final class BehindStudentsEmailProcess extends Process {
 
     use LoggerTrait;
 
@@ -29,13 +30,18 @@ final class BehindStudentsEmailProcess {
         $count = 1;
         $this->startTimer();
         foreach ($behindStudentsCoordinates as $student) {
-            Mailer::sendEmail(
-                $student["Email"],
-                $subject,
-                Emails::getBehindStudentEmailFormatted($language, $student["First Name"], $student["Last Name"])
-            );
-            $this->logger->info("sent behind student email ".$count." out of ".count($behindStudentsCoordinates));
-            $count++;
+            try {
+                Mailer::sendEmail(
+                    $student["Email"],
+                    $subject,
+                    Emails::getBehindStudentEmailFormatted($language, $student["First Name"], $student["Last Name"])
+                );
+                $this->logger->info("sent behind student email ".$count." out of ".count($behindStudentsCoordinates));
+            } catch (EmailNotDeliveredException $ende) {
+                $this->errors[] = "email not sent to " . $student["Email"];
+            } finally {
+                $count++;
+            }
         }
         $this->endTimer("sending emails took : ");
     }

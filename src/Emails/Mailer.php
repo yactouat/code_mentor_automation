@@ -18,13 +18,13 @@ final class Mailer
      * 
      * @param string $msmtprcPath
      * 
-     * @throws Exception if `msmtprc` is not set
+     * @throws MsmtprcNotSetException
      *
      * @return void
      */
     public static function checkMsmtprc(string $msmtprcPath = '/etc/msmtprc'): void {
         if (!file_exists($msmtprcPath)) {
-            throw new \Exception("You have not set `msmtp` correctly", 1);
+            throw new MsmtprcNotSetException();
         }
     }
 
@@ -57,10 +57,10 @@ final class Mailer
             "MIME-Version: 1.0" . "\r\n". "Content-type: text/html; charset=utf8" . "\r\n"
         );
         if (!$delivered) {
+            throw new EmailNotDeliveredException();
             if (!is_null($logger)) {
                 $logger->alert("email not sent to $recipientEmail");
             }
-            echo PHP_EOL."email not sent to $recipientEmail".PHP_EOL;
         }
     }
 }

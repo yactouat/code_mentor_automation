@@ -701,6 +701,51 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#method_persist"
         },                {
+            "fqsen": "\\Udacity\\Emails\\EmailNotDeliveredException",
+            "name": "EmailNotDeliveredException",
+            "summary": "Exception\u0020thrown\u0020when\u0020an\u0020email\u0020fails\u0020to\u0020be\u0020delivered\u0020using\u0020the\u0020\u0060mail\u0060\u0020function",
+            "url": "classes/Udacity-Emails-EmailNotDeliveredException.html"
+        },                {
+            "fqsen": "\\Udacity\\Emails\\EmailNotDeliveredException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Udacity-Emails-EmailNotDeliveredException.html#method___construct"
+        },                {
+            "fqsen": "\\Udacity\\Emails\\MsmtprcNotSetException",
+            "name": "MsmtprcNotSetException",
+            "summary": "Exception\u0020thrown\u0020when\u0020the\u0020\u0060msmtprc\u0060\u0020file\u0020is\u0020not\u0020set\u0020in\u0020the\u0020system",
+            "url": "classes/Udacity-Emails-MsmtprcNotSetException.html"
+        },                {
+            "fqsen": "\\Udacity\\Emails\\MsmtprcNotSetException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Udacity-Emails-MsmtprcNotSetException.html#method___construct"
+        },                {
+            "fqsen": "\\Udacity\\Exception",
+            "name": "Exception",
+            "summary": "",
+            "url": "classes/Udacity-Exception.html"
+        },                {
+            "fqsen": "\\Udacity\\Exception\u003A\u003A__toString\u0028\u0029",
+            "name": "__toString",
+            "summary": "",
+            "url": "classes/Udacity-Exception.html#method___toString"
+        },                {
+            "fqsen": "\\Udacity\\Processes\\Process",
+            "name": "Process",
+            "summary": "",
+            "url": "classes/Udacity-Processes-Process.html"
+        },                {
+            "fqsen": "\\Udacity\\Processes\\Process\u003A\u003AgetErrors\u0028\u0029",
+            "name": "getErrors",
+            "summary": "",
+            "url": "classes/Udacity-Processes-Process.html#method_getErrors"
+        },                {
+            "fqsen": "\\Udacity\\Processes\\Process\u003A\u003A\u0024errors",
+            "name": "errors",
+            "summary": "",
+            "url": "classes/Udacity-Processes-Process.html#property_errors"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",

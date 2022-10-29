@@ -12,7 +12,7 @@
         - [Run the app'](#run-the-app)
             - [web UI](#web-ui)
             - [CLI commands](#cli-commands)
-                - [send emails who are behind on their Nanodegree program](#send-emails-who-are-behind-on-their-nanodegree-program)
+                - [send emails to students who are behind on their Nanodegree program](#send-emails-to-students-who-are-behind-on-their-nanodegree-program)
                 - [send emails to students to cheer them up as their Nanodegree program ending approaches](#send-emails-to-students-to-cheer-them-up-as-their-nanodegree-program-ending-approaches)
     - [Tests and Documentation](#tests-and-documentation)
         - [pre commit hook](#pre-commit-hook)
@@ -80,7 +80,7 @@ To use the web UI, just browse it, things should be pretty self-explanatory ;)
 
 #### CLI commands
 
-##### send emails who are behind on their Nanodegree program
+##### send emails to students who are behind on their Nanodegree program
 
 - `docker exec -it udacity_sl_automation-php-1 bash -c "php /var/www/bin/index.php emails:behind-students csv_path en_or_fr"`
 

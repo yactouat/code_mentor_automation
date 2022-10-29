@@ -96,17 +96,31 @@ class SendEmailsToBehindStudentsCommand extends Command
             '====================================',
             ''
         ]);
-        ((new BehindStudentsEmailProcess())->setLogger($this->logger))->run($csv, $language);
+        $process = ((new BehindStudentsEmailProcess())->setLogger($this->logger));
+        $process->run($csv, $language);
 
-        // feedback to user
-        $output->writeln([
-            '',
-            '==========================================',
-            'behind students emails successfully sent !',
-            ''
-        ]);
-
-        return Command::SUCCESS;
+        if (count($process->getErrors()) > 0) {
+            $output->writeln([
+                '',
+                '==========================================',
+                'some behind students emails were not successfully sent !',
+                ''
+            ]);
+            foreach ($process->getErrors() as $error) {
+                $output->writeln([
+                    $error,
+                ]);
+            }
+            return Command::FAILURE;
+        } else {
+            $output->writeln([
+                '',
+                '==========================================',
+                'behind students emails successfully sent !',
+                ''
+            ]);
+            return Command::SUCCESS;
+        }
     }
 
     protected function configure(): void
