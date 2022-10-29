@@ -6,6 +6,7 @@ use Udacity\Csvs\StudentsCsvExtractor as CsvExtractor;
 use Udacity\Models\StudentModel;
 use Exception;
 use PHPUnit\Framework\TestCase;
+use Udacity\Exceptions\InvalidCsvDataException;
 use Udacity\Exceptions\NonExistingFileException;
 
 final class StudentsCsvExtractorTest extends TestCase {
@@ -68,17 +69,17 @@ final class StudentsCsvExtractorTest extends TestCase {
         $this->assertEquals($expected, $actual);
     }
 
-    public function testGetCsvDataWithInvalidCSVThrowsInvalidInputCSVException() {
+    public function testGetCsvDataWithInvalidCSVThrowsInvalidInputCsvException() {
         $inputCsvPath = "/var/www/tests/fixtures/csv/invalid-session-report.csv";
-        $this->expectException(Exception::class);
-        $this->expectExceptionMessage("Please provide a valid input CSV");
+        $this->expectException(InvalidCsvDataException::class);
+        $this->expectExceptionMessage("please provide a valid input CSV");
         $actual = CsvExtractor::getCSVData($inputCsvPath, StudentModel::getCsvFields());
     }
 
-    public function testGetCsvDataWithInvalidStudentsDataThrowsInvalidStudentsDataException() {
+    public function testGetCsvDataWithInvalidStudentsDataThrowsInvalidInputCsvException() {
         $inputCsvPath = "/var/www/tests/fixtures/csv/invalid-session-report-data.csv";
-        $this->expectException(Exception::class);
-        $this->expectExceptionMessage("Please provide a valid input CSV");
+        $this->expectException(InvalidCsvDataException::class);
+        $this->expectExceptionMessage("please provide a valid input CSV");
         $actual = CsvExtractor::getCSVData($inputCsvPath, StudentModel::getCsvFields());
     }
 

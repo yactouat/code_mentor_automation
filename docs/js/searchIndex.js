@@ -811,6 +811,16 @@ Search.appendIndex(
             "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
             "url": "classes/Udacity-Exceptions-NonExistingFileException.html#method___construct"
         },                {
+            "fqsen": "\\Udacity\\Exceptions\\InvalidCsvDataException",
+            "name": "InvalidCsvDataException",
+            "summary": "Exception\u0020thrown\u0020when\u0020an\u0020input\u0020CSV\u0020does\u0020not\u0020contain\u0020valid\u0020data",
+            "url": "classes/Udacity-Exceptions-InvalidCsvDataException.html"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\InvalidCsvDataException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
+            "url": "classes/Udacity-Exceptions-InvalidCsvDataException.html#method___construct"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",

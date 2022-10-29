@@ -110,13 +110,16 @@
             <div class="phpdocumentor-column -eight phpdocumentor-content">
                     <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/udacity.html">Udacity</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/udacity-csvs.html">Csvs</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/udacity-exceptions.html">Exceptions</a></li>
     </ul>
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    CsvExtractor
+    InvalidCsvDataException
 
+        <span class="phpdocumentor-element__extends">
+        extends <a href="classes/Udacity-Exceptions-Exception.html"><abbr title="\Udacity\Exceptions\Exception">Exception</abbr></a>
+    </span>
     
             <div class="phpdocumentor-element__package">
             in package
@@ -129,13 +132,13 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Csvs/CsvExtractor.php"><a href="files/src-csvs-csvextractor.html"><abbr title="src/Csvs/CsvExtractor.php">CsvExtractor.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Exceptions/InvalidCsvDataException.php"><a href="files/src-exceptions-invalidcsvdataexception.html"><abbr title="src/Exceptions/InvalidCsvDataException.php">InvalidCsvDataException.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">8</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">class responsible for extracting data from CSVs</p>
+            <p class="phpdocumentor-summary">Exception thrown when an input CSV does not contain valid data</p>
 
 
 
@@ -152,18 +155,18 @@
 
 <dl class="phpdocumentor-table-of-contents">
                         <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Udacity-Csvs-CsvExtractor.html#method_checkFileExistence">checkFileExistence()</a>
+    <a href="classes/Udacity-Exceptions-InvalidCsvDataException.html#method___construct">__construct()</a>
     <span>
-                                &nbsp;: void    </span>
+                                &nbsp;: mixed    </span>
 </dt>
-<dd>checks if an input CSV exists, throws Exception if not</dd>
+<dd>constructor of all app&#039;s exceptions</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Udacity-Csvs-CsvExtractor.html#method_getCSVData">getCSVData()</a>
+    <a href="classes/Udacity-Exceptions-Exception.html#method___toString">__toString()</a>
     <span>
-                                &nbsp;: array&lt;string|int, array&lt;string|int, mixed&gt;&gt;    </span>
+                                &nbsp;: string    </span>
 </dt>
-<dd>gets an array-like representation of a CSV file data</dd>
+<dd>outputs a string representation of the instance exception</dd>
 
         </dl>
 
@@ -176,61 +179,39 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/Udacity-Csvs-CsvExtractor.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/Udacity-Exceptions-InvalidCsvDataException.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
             -method
             -public
-                                    -static                    "
+                                                        "
 >
-    <h4 class="phpdocumentor-element__name" id="method_checkFileExistence">
-        checkFileExistence()
-        <a href="classes/Udacity-Csvs-CsvExtractor.html#method_checkFileExistence" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method___construct">
+        __construct()
+        <a href="classes/Udacity-Exceptions-InvalidCsvDataException.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Csvs/CsvExtractor.php"><a href="files/src-csvs-csvextractor.html"><abbr title="src/Csvs/CsvExtractor.php">CsvExtractor.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Exceptions/InvalidCsvDataException.php"><a href="files/src-exceptions-invalidcsvdataexception.html"><abbr title="src/Exceptions/InvalidCsvDataException.php">InvalidCsvDataException.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">24</span>
+    <span class="phpdocumentor-element-found-in__line">10</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">checks if an input CSV exists, throws Exception if not</p>
+        <p class="phpdocumentor-summary">constructor of all app&#039;s exceptions</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">checkFileExistence</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$inputCsvPath</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"><p>all app' exceptions have an exit code of 1 by default</p>
+</section>
 
     
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$inputCsvPath</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Udacity-Exceptions-NonExistingFileException.html"><abbr title="\Udacity\Exceptions\NonExistingFileException">NonExistingFileException</abbr></a></span>
-                                                            
-                                             
-                                    </dd>
-                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
         
     
@@ -239,79 +220,33 @@
         class="phpdocumentor-element
             -method
             -public
-                                    -static                    "
+                                                        "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getCSVData">
-        getCSVData()
-        <a href="classes/Udacity-Csvs-CsvExtractor.html#method_getCSVData" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method___toString">
+        __toString()
+        <a href="classes/Udacity-Exceptions-Exception.html#method___toString" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Csvs/CsvExtractor.php"><a href="files/src-csvs-csvextractor.html"><abbr title="src/Csvs/CsvExtractor.php">CsvExtractor.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Exceptions/Exception.php"><a href="files/src-exceptions-exception.html"><abbr title="src/Exceptions/Exception.php">Exception.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">gets an array-like representation of a CSV file data</p>
+        <p class="phpdocumentor-summary">outputs a string representation of the instance exception</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">getCSVData</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$inputCsvPath</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$expectedFields</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">__toString</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
     
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$inputCsvPath</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>must be a path to a valid existing CSV file</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$expectedFields</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>list array describing the expected fields in the input CSV</p>
-</section>
-
-            </dd>
-            </dl>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Udacity-Exceptions-InvalidCsvDataException.html"><abbr title="\Udacity\Exceptions\InvalidCsvDataException">InvalidCsvDataException</abbr></a></span>
-                                                            
-                                             
-                                    </dd>
-                            <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Udacity-Exceptions-NonExistingFileException.html"><abbr title="\Udacity\Exceptions\NonExistingFileException">NonExistingFileException</abbr></a></span>
-                                                            
-                                             
-                                    </dd>
-                        </dl>
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;</span>
+    <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>returns an array containing the formatted CSV data as in =&gt;
-<code class="prettyprint">[ [ &quot;item_1_key&quot; =&gt; &quot;item_1_val&quot;, ] [ &quot;item_2_key&quot; =&gt; &quot;item_2_val&quot;, ] ]</code></p>
-</section>
-
+        
     
 </article>
             </section>
@@ -392,7 +327,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/Udacity-Csvs-CsvExtractor.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/Udacity-Exceptions-InvalidCsvDataException.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

@@ -2,6 +2,7 @@
 
 namespace Udacity\Csvs;
 
+use Udacity\Exceptions\InvalidCsvDataException;
 use Udacity\Exceptions\NonExistingFileException;
 
 /**
@@ -16,7 +17,7 @@ class CsvExtractor
      *
      * @param string $inputCsvPath
      *
-     * @throws Exception with message 'please provide an existing input file'
+     * @throws NonExistingFileException
      * 
      * @return void
      */
@@ -31,6 +32,9 @@ class CsvExtractor
      *
      * @param string $inputCsvPath must be a path to a valid existing CSV file
      * @param array $expectedFields list array describing the expected fields in the input CSV
+     * 
+     * @throws InvalidCsvDataException
+     * @throws NonExistingFileException 
      * 
      * @return array[] returns an array containing the formatted CSV data as in => 
      *               `[
@@ -48,7 +52,7 @@ class CsvExtractor
         // `file` returns an array containing one entry per line in the file
         $csv = array_map('str_getcsv', file($inputCsvPath));
         if (count(array_intersect($csv[0], $expectedFields)) < count($expectedFields)) {
-            throw new \Exception('Please provide a valid input CSV', 1);
+            throw new InvalidCsvDataException();
         }
         // transforming the output CSV repr by combining the header row for each item
         array_walk($csv, function(&$line) use ($csv) {
