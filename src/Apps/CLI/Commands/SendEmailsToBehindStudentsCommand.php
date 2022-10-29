@@ -13,6 +13,9 @@ use Symfony\Component\Console\Question\Question;
 use Udacity\AuthTrait;
 use Udacity\Csvs\CsvExtractor;
 use Udacity\Emails\Mailer;
+use Udacity\Exceptions\AllowedLanguageException;
+use Udacity\Exceptions\MsmtprcNotSetException;
+use Udacity\Exceptions\NonExistingFileException;
 use Udacity\Intl;
 use Udacity\LoggerTrait;
 use Udacity\Models\SessionLeadModel;
@@ -29,11 +32,33 @@ final class SendEmailsToBehindStudentsCommand extends Command
     use AuthTrait;
     use LoggerTrait;
 
+    
     const CSV_ARG = 'csv';
     const LANG_ARG = 'language';
 
-    protected static $defaultDescription = 'Sends emails in bulk to students who are behind on their Nanodegree program.';
+    /**
+     * description of the 'emails:behind-students' command that is given to the end-user
+     *
+     * @var string
+     */
+    protected static string $defaultDescription = 'Sends emails in bulk to students who are behind on their Nanodegree program.';
 
+    /**
+     * CLI interface of sending emails to students who are behind on their nanodegree program
+     * 
+     * after having authenticated, parses the input Udacity students CSV and language and sends the emails
+     *
+     * @param InputInterface $input - Symfony CLI input class
+     * @param OutputInterface $output - Symfony CLI output class
+     * @return integer - whether the operation was a success or a failure
+     * 
+     * @throws LogicException
+     * @throws MsmtprcNotSetException
+     * @throws NonExistingFileException
+     * @throws AllowedLanguageException
+     * @throws InvalidArgumentException
+     * 
+     */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
 
@@ -121,10 +146,10 @@ final class SendEmailsToBehindStudentsCommand extends Command
         $output->writeln('');
         try {
             Mailer::checkMsmtprc();
-        } catch (\Exception $e) {
+        } catch (MsmtprcNotSetException $mnse) {
             $output->writeln(
                 '<error>emailing conf: '
-                .$e->getMessage()
+                .$mnse->getMessage()
                 .'</error>'
             );
             $output->writeln([
@@ -138,13 +163,13 @@ final class SendEmailsToBehindStudentsCommand extends Command
         }
         try {
             CsvExtractor::checkFileExistence($csv);
-        } catch (\Exception $e) {
+        } catch (NonExistingFileException $nefe) {
             $output->writeln(
                 '<error>'
                 .self::CSV_ARG
                 .': '.$input->getArgument(self::CSV_ARG)
                 .' - '
-                .$e->getMessage()
+                .$nefe->getMessage()
                 .'</error>'
             );
             $output->writeln('');
@@ -152,13 +177,13 @@ final class SendEmailsToBehindStudentsCommand extends Command
         }
         try {
             Intl::languageIsAllowed($language);
-        } catch (\Exception $e) {
+        } catch (AllowedLanguageException $ale) {
             $output->writeln(
                 '<error>'
                 .self::LANG_ARG
                 .': '.$input->getArgument(self::LANG_ARG)
                 .' - '
-                .$e->getMessage()
+                .$ale->getMessage()
                 .'</error>'
             );
             $output->writeln('');
@@ -200,6 +225,11 @@ final class SendEmailsToBehindStudentsCommand extends Command
         }
     }
 
+    /**
+     * sets the helps text and the required parameters of this CLI commands
+     * 
+     * @return void
+     */
     protected function configure(): void
     {
         $this

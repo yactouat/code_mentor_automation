@@ -3,7 +3,7 @@
 namespace Udacity\Exceptions;
 
 /**
- * Exception thrown when an email fails to be delivered using the `mail` function
+ * Exception thrown when a user is not authenticated
  */
 final class UserNotAuthedException extends Exception {
 

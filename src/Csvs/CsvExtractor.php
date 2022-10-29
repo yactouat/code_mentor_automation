@@ -2,6 +2,8 @@
 
 namespace Udacity\Csvs;
 
+use Udacity\Exceptions\NonExistingFileException;
+
 /**
  * class responsible for extracting data from CSVs
  * 
@@ -14,13 +16,13 @@ class CsvExtractor
      *
      * @param string $inputCsvPath
      *
-     * @throws Exception with message 'Please provide an existing input CSV'
+     * @throws Exception with message 'please provide an existing input file'
      * 
      * @return void
      */
     public static function checkFileExistence(string $inputCsvPath): void {
         if (!file_exists($inputCsvPath) || pathinfo($inputCsvPath, PATHINFO_EXTENSION) != "csv") {
-            throw new \Exception('Please provide an existing input CSV', 1);
+            throw new NonExistingFileException();
         }
     }
 

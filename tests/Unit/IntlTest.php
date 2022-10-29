@@ -4,12 +4,13 @@ namespace Tests\Unit;
 
 use Udacity\Intl;
 use PHPUnit\Framework\TestCase;
+use Udacity\Exceptions\AllowedLanguageException;
 
 final class IntlTest extends TestCase {
 
     public function testLanguageIsAllowedWithNonAllowedLangThrowsLanguageNotAllowedExeption() {
-        $this->expectException(\Exception::class);
-        $this->expectExceptionMessage("Allowed languages are `en` or `fr`");
+        $this->expectException(AllowedLanguageException::class);
+        $this->expectExceptionMessage("allowed languages are `en` or `fr`");
         $actual = Intl::languageIsAllowed("zl");
     }
 

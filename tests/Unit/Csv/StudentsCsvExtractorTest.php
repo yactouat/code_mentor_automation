@@ -6,6 +6,7 @@ use Udacity\Csvs\StudentsCsvExtractor as CsvExtractor;
 use Udacity\Models\StudentModel;
 use Exception;
 use PHPUnit\Framework\TestCase;
+use Udacity\Exceptions\NonExistingFileException;
 
 final class StudentsCsvExtractorTest extends TestCase {
 
@@ -88,10 +89,10 @@ final class StudentsCsvExtractorTest extends TestCase {
         $this->assertCount($expected, $actual);
     }
 
-    public function testGetCsvDataWithNonExistingCSVThrowsInvalidInputCSVException() {
+    public function testGetCsvDataWithNonExistingCsvThrowsInvalidInputCsvException() {
         $inputCsvPath = "/var/www/tests/fixtures/csv/non-existing.csv";
-        $this->expectException(Exception::class);
-        $this->expectExceptionMessage("Please provide an existing input CSV");
+        $this->expectException(NonExistingFileException::class);
+        $this->expectExceptionMessage("please provide an existing input file");
         $actual = CsvExtractor::getCSVData($inputCsvPath, StudentModel::getCsvFields());
     }
 

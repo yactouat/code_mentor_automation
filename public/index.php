@@ -1,5 +1,9 @@
 <?php
 session_start();
+/**
+ * the web UI that centralizes all of the automations of the app'
+ * 
+ */
 
 // setting root dir
 $rootDir = dirname(__DIR__);

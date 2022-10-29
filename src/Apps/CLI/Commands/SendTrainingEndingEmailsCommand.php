@@ -17,6 +17,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Symfony\Component\Console\Question\Question;
 use Udacity\AuthTrait;
+use Udacity\Exceptions\AllowedLanguageException;
+use Udacity\Exceptions\MsmtprcNotSetException;
+use Udacity\Exceptions\NonExistingFileException;
 use Udacity\Models\SessionLeadModel;
 
 /**
@@ -34,8 +37,30 @@ final class SendTrainingEndingEmailsCommand extends Command
     const LANG_ARG = 'language';
     const ONLINE_RESOURCES = 'online-resources';
 
+    /**
+     * description of the 'emails:training-ending' command that is given to the end-user
+     *
+     * @var string
+     */
     protected static $defaultDescription = 'Sends cheering up emails in bulk to all before the end of the Udacity training.';
 
+    /**
+     * CLI interface of sending emails to students when their training nears its ending
+     * 
+     * after having authenticated, parses the input Udacity students CSV and language and sends the emails;
+     * it can also parse an optional online resources CSV
+     *
+     * @param InputInterface $input - Symfony CLI input class
+     * @param OutputInterface $output - Symfony CLI output class
+     * @return integer - whether the operation was a success or a failure
+     * 
+     * @throws LogicException
+     * @throws MsmtprcNotSetException
+     * @throws NonExistingFileException
+     * @throws AllowedLanguageException
+     * @throws InvalidArgumentException
+     * 
+     */    
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
 
@@ -124,10 +149,10 @@ final class SendTrainingEndingEmailsCommand extends Command
         $output->writeln('');
         try {
             Mailer::checkMsmtprc();
-        } catch (\Exception $e) {
+        } catch (MsmtprcNotSetException $mnse) {
             $output->writeln(
                 '<error>emailing conf: '
-                .$e->getMessage()
+                .$mnse->getMessage()
                 .'</error>'
             );
             $output->writeln([
@@ -141,13 +166,13 @@ final class SendTrainingEndingEmailsCommand extends Command
         }
         try {
             CsvExtractor::checkFileExistence($csv);
-        } catch (\Exception $e) {
+        } catch (NonExistingFileException $nefe) {
             $output->writeln(
                 '<error>'
                 .self::CSV_ARG
                 .': '.$input->getArgument(self::CSV_ARG)
                 .' - '
-                .$e->getMessage()
+                .$nefe->getMessage()
                 .'</error>'
             );
             $output->writeln('');
@@ -155,13 +180,13 @@ final class SendTrainingEndingEmailsCommand extends Command
         }
         try {
             Intl::languageIsAllowed($language);
-        } catch (\Exception $e) {
+        } catch (AllowedLanguageException $ale) {
             $output->writeln(
                 '<error>'
                 .self::LANG_ARG
                 .': '.$input->getArgument(self::LANG_ARG)
                 .' - '
-                .$e->getMessage()
+                .$ale->getMessage()
                 .'</error>'
             );
             $output->writeln('');
@@ -199,6 +224,11 @@ final class SendTrainingEndingEmailsCommand extends Command
         return Command::SUCCESS;
     }
 
+    /**
+     * sets the helps text and the required parameters of this CLI commands
+     * 
+     * @return void
+     */
     protected function configure(): void
     {
         $this

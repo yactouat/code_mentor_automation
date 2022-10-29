@@ -29,10 +29,10 @@
 As a [Udacity Full Stack Nanodegree session lead](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd0044),
 I felt the need to automate a few tasks to gain more efficiency and focus more on the great experience that is teaching and learning with other students ! ⚠️ This is not an official Udacity project, just a tool to help me do my job better.
 
-There are always 2 ways of running the automation:
+There are always 2 ways of running the automations:
 
 - the CLI, accessible from the `bin` directory
-- the web application UI, accessible from the `public` directory
+- the web application UI, accessible from the `public` directory (WIP)
 
 Currently enabled automations are:
 
@@ -49,17 +49,14 @@ The project is just getting started so it has a few rough edges, but it's functi
 
 - have a working Docker standard installation
 - have a Gmail email address
-- copy the contents of the `docker/msmtprc.example` to a `docker/msmtprc` file, **HEADS UP** if you copy it somewhere else don't forget to gitignore it as you dont want anybody on the Internet to send emails on your behalf ;)
-- create an app' password for your Google account, you can find guidelines on how to do so in <https://dev.to/yactouat/send-gmail-emails-from-a-dockerized-php-app-the-easy-and-free-way-4jn7>
-- use the newly created password to update your `docker/msmtprc`, also update this file with your actual gmail account address
-- ⚠️ then `docker compose up`, otherwise I cant guarantee how the app' will behave
+- create an app' password for your Google account, you can find guidelines on how to do so in <https://dev.to/yactouat/send-gmail-emails-from-a-dockerized-php-app-the-easy-and-free-way-4jn7> and store it somewhere safe as the app' will need it
+- `docker compose up`
 
 ##### Sending emails in bulk to students
 
-- fill the attendance on your latest session on your Udacity mentor dashboard
-- generate the CSV report on the same dashboard
+- fill the attendance of your latest session on your Udacity mentor dashboard
+- generate the CSV report from the same Udacity dashboard
 - put this report wherever you like (for instance in the `data/csv` folder, that already has its content git ignored)
-- ⚠️ IMPORTANT: you need to change the templates in Emails.php to replace all `Yacine` values by your first name in `src/Emails.php`
 - you can then tweak the email templates to your liking furthermore
 
 #### Prerequisites for dev

@@ -8,12 +8,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Apps\\App",
             "name": "App",
-            "summary": "",
+            "summary": "parent\u0020class\u0020of\u0020all\u0020apps\u0020\u0028CLI,\u0020Web\u0029",
             "url": "classes/Udacity-Apps-App.html"
         },                {
             "fqsen": "\\Udacity\\Apps\\App\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "constructs\u0020an\u0020instance\u0020of\u0020the\u0020app\u0027\u0020with\u0020its\u0020environment",
             "url": "classes/Udacity-Apps-App.html#method___construct"
         },                {
             "fqsen": "\\Udacity\\Apps\\App\u003A\u003A\u0024rootDir",
@@ -428,7 +428,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\WebApp",
             "name": "WebApp",
-            "summary": "",
+            "summary": "parent\u0020class\u0020of\u0020all\u0020apps\u0020\u0028CLI,\u0020Web\u0029",
             "url": "classes/Udacity-Apps-Web-WebApp.html"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\WebApp\u003A\u003A_setResponseOutput\u0028\u0029",
@@ -648,17 +648,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Exceptions\\EmailNotDeliveredException\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
             "url": "classes/Udacity-Exceptions-EmailNotDeliveredException.html#method___construct"
         },                {
             "fqsen": "\\Udacity\\Exceptions\\Exception",
             "name": "Exception",
-            "summary": "",
+            "summary": "parent\u0020class\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
             "url": "classes/Udacity-Exceptions-Exception.html"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\Exception\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
+            "url": "classes/Udacity-Exceptions-Exception.html#method___construct"
         },                {
             "fqsen": "\\Udacity\\Exceptions\\Exception\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
-            "summary": "",
+            "summary": "outputs\u0020a\u0020string\u0020representation\u0020of\u0020the\u0020instance\u0020exception",
             "url": "classes/Udacity-Exceptions-Exception.html#method___toString"
         },                {
             "fqsen": "\\Udacity\\Exceptions\\MsmtprcNotSetException",
@@ -668,32 +673,32 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Exceptions\\MsmtprcNotSetException\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
             "url": "classes/Udacity-Exceptions-MsmtprcNotSetException.html#method___construct"
         },                {
             "fqsen": "\\Udacity\\Apps\\CLI\\CLIApp",
             "name": "CLIApp",
-            "summary": "",
+            "summary": "entry\u0020point\u0020of\u0020the\u0020\u0028Symfony\u0029\u0020CLI\u0020app\u0027",
             "url": "classes/Udacity-Apps-CLI-CLIApp.html"
         },                {
             "fqsen": "\\Udacity\\Apps\\CLI\\CLIApp\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "constructs\u0020an\u0020instance\u0020of\u0020the\u0020CLI",
             "url": "classes/Udacity-Apps-CLI-CLIApp.html#method___construct"
         },                {
             "fqsen": "\\Udacity\\Apps\\CLI\\CLIApp\u003A\u003A_registerCommands\u0028\u0029",
             "name": "_registerCommands",
-            "summary": "",
+            "summary": "registers\u0020the\u0020CLI\u0020commands\u0020of\u0020the\u0020app\u0027",
             "url": "classes/Udacity-Apps-CLI-CLIApp.html#method__registerCommands"
         },                {
             "fqsen": "\\Udacity\\Apps\\CLI\\CLIApp\u003A\u003Arun\u0028\u0029",
             "name": "run",
-            "summary": "",
+            "summary": "runs\u0020the\u0020CLI",
             "url": "classes/Udacity-Apps-CLI-CLIApp.html#method_run"
         },                {
             "fqsen": "\\Udacity\\Apps\\CLI\\CLIApp\u003A\u003A\u0024app",
             "name": "app",
-            "summary": "",
+            "summary": "the\u0020application\u0020that\u0020holds\u0020all\u0020of\u0020the\u0020features",
             "url": "classes/Udacity-Apps-CLI-CLIApp.html#property_app"
         },                {
             "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendEmailsToBehindStudentsCommand",
@@ -703,12 +708,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendEmailsToBehindStudentsCommand\u003A\u003Aexecute\u0028\u0029",
             "name": "execute",
-            "summary": "",
+            "summary": "CLI\u0020interface\u0020of\u0020sending\u0020emails\u0020to\u0020students\u0020who\u0020are\u0020behind\u0020on\u0020their\u0020nanodegree\u0020program",
             "url": "classes/Udacity-Apps-CLI-Commands-SendEmailsToBehindStudentsCommand.html#method_execute"
         },                {
             "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendEmailsToBehindStudentsCommand\u003A\u003Aconfigure\u0028\u0029",
             "name": "configure",
-            "summary": "",
+            "summary": "sets\u0020the\u0020helps\u0020text\u0020and\u0020the\u0020required\u0020parameters\u0020of\u0020this\u0020CLI\u0020commands",
             "url": "classes/Udacity-Apps-CLI-Commands-SendEmailsToBehindStudentsCommand.html#method_configure"
         },                {
             "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendEmailsToBehindStudentsCommand\u003A\u003ACSV_ARG",
@@ -723,7 +728,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendEmailsToBehindStudentsCommand\u003A\u003A\u0024defaultDescription",
             "name": "defaultDescription",
-            "summary": "",
+            "summary": "description\u0020of\u0020the\u0020\u0027emails\u003Abehind\u002Dstudents\u0027\u0020command\u0020that\u0020is\u0020given\u0020to\u0020the\u0020end\u002Duser",
             "url": "classes/Udacity-Apps-CLI-Commands-SendEmailsToBehindStudentsCommand.html#property_defaultDescription"
         },                {
             "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendTrainingEndingEmailsCommand",
@@ -733,12 +738,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003Aexecute\u0028\u0029",
             "name": "execute",
-            "summary": "",
+            "summary": "CLI\u0020interface\u0020of\u0020sending\u0020emails\u0020to\u0020students\u0020when\u0020their\u0020training\u0020nears\u0020its\u0020ending",
             "url": "classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#method_execute"
         },                {
             "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003Aconfigure\u0028\u0029",
             "name": "configure",
-            "summary": "",
+            "summary": "sets\u0020the\u0020helps\u0020text\u0020and\u0020the\u0020required\u0020parameters\u0020of\u0020this\u0020CLI\u0020commands",
             "url": "classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#method_configure"
         },                {
             "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003ACSV_ARG",
@@ -758,17 +763,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003A\u0024defaultDescription",
             "name": "defaultDescription",
-            "summary": "",
+            "summary": "description\u0020of\u0020the\u0020\u0027emails\u003Atraining\u002Dending\u0027\u0020command\u0020that\u0020is\u0020given\u0020to\u0020the\u0020end\u002Duser",
             "url": "classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#property_defaultDescription"
         },                {
             "fqsen": "\\Udacity\\Exceptions\\UserNotAuthedException",
             "name": "UserNotAuthedException",
-            "summary": "Exception\u0020thrown\u0020when\u0020an\u0020email\u0020fails\u0020to\u0020be\u0020delivered\u0020using\u0020the\u0020\u0060mail\u0060\u0020function",
+            "summary": "Exception\u0020thrown\u0020when\u0020a\u0020user\u0020is\u0020not\u0020authenticated",
             "url": "classes/Udacity-Exceptions-UserNotAuthedException.html"
         },                {
             "fqsen": "\\Udacity\\Exceptions\\UserNotAuthedException\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
             "url": "classes/Udacity-Exceptions-UserNotAuthedException.html#method___construct"
         },                {
             "fqsen": "\\Udacity\\AuthTrait",
@@ -790,6 +795,36 @@ Search.appendIndex(
             "name": "logUserIn",
             "summary": "",
             "url": "classes/Udacity-AuthTrait.html#method_logUserIn"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\AllowedLanguageException",
+            "name": "AllowedLanguageException",
+            "summary": "Exception\u0020thrown\u0020when\u0020the\u0020input\u0020language\u0020is\u0020not\u0020allowed\u0020in\u0020the\u0020app\u0027",
+            "url": "classes/Udacity-Exceptions-AllowedLanguageException.html"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\AllowedLanguageException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
+            "url": "classes/Udacity-Exceptions-AllowedLanguageException.html#method___construct"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\BadEnvException",
+            "name": "BadEnvException",
+            "summary": "Exception\u0020thrown\u0020when\u0020the\u0020environment\u0020is\u0020not\u0020properly\u0020set",
+            "url": "classes/Udacity-Exceptions-BadEnvException.html"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\BadEnvException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
+            "url": "classes/Udacity-Exceptions-BadEnvException.html#method___construct"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\NonExistingFileException",
+            "name": "NonExistingFileException",
+            "summary": "Exception\u0020thrown\u0020when\u0020a\u0020file\u0020does\u0020not\u0020exist",
+            "url": "classes/Udacity-Exceptions-NonExistingFileException.html"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\NonExistingFileException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
+            "url": "classes/Udacity-Exceptions-NonExistingFileException.html#method___construct"
         },                {
             "fqsen": "\\",
             "name": "\\",
