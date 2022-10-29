@@ -3,12 +3,12 @@
 namespace Udacity\Apps\Web\Controllers\Resource;
 
 use Udacity\Apps\Web\Controllers\Controller;
-use Udacity\AuthedTrait;
+use Udacity\AuthTrait;
 use Udacity\Models\SessionLeadModel;
 
 final class SessionLeadsController extends Controller implements ResourceControllerInterface {
 
-    use AuthedTrait;
+    use AuthTrait;
 
     private static string $createTemplatePath = 'session-leads/create.html.twig';
     private static string $loginTemplatePath = 'session-leads/login.html.twig';

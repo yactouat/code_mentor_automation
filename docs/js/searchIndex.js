@@ -631,21 +631,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Processes-Process.html#property_errors"
         },                {
-            "fqsen": "\\Udacity\\AuthedTrait",
-            "name": "AuthedTrait",
-            "summary": "",
-            "url": "classes/Udacity-AuthedTrait.html"
-        },                {
-            "fqsen": "\\Udacity\\AuthedTrait\u003A\u003AisAuthed\u0028\u0029",
-            "name": "isAuthed",
-            "summary": "",
-            "url": "classes/Udacity-AuthedTrait.html#method_isAuthed"
-        },                {
-            "fqsen": "\\Udacity\\AuthedTrait\u003A\u003AgetAuthedUserFirstName\u0028\u0029",
-            "name": "getAuthedUserFirstName",
-            "summary": "",
-            "url": "classes/Udacity-AuthedTrait.html#method_getAuthedUserFirstName"
-        },                {
             "fqsen": "\\Udacity\\Exceptions\\EmailNotDeliveredException",
             "name": "EmailNotDeliveredException",
             "summary": "Exception\u0020thrown\u0020when\u0020an\u0020email\u0020fails\u0020to\u0020be\u0020delivered\u0020using\u0020the\u0020\u0060mail\u0060\u0020function",
@@ -775,6 +760,26 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "",
             "url": "classes/Udacity-Exceptions-UserNotAuthedException.html#method___construct"
+        },                {
+            "fqsen": "\\Udacity\\AuthTrait",
+            "name": "AuthTrait",
+            "summary": "",
+            "url": "classes/Udacity-AuthTrait.html"
+        },                {
+            "fqsen": "\\Udacity\\AuthTrait\u003A\u003AisAuthed\u0028\u0029",
+            "name": "isAuthed",
+            "summary": "",
+            "url": "classes/Udacity-AuthTrait.html#method_isAuthed"
+        },                {
+            "fqsen": "\\Udacity\\AuthTrait\u003A\u003AgetAuthedUserFirstName\u0028\u0029",
+            "name": "getAuthedUserFirstName",
+            "summary": "",
+            "url": "classes/Udacity-AuthTrait.html#method_getAuthedUserFirstName"
+        },                {
+            "fqsen": "\\Udacity\\AuthTrait\u003A\u003AlogUserIn\u0028\u0029",
+            "name": "logUserIn",
+            "summary": "",
+            "url": "classes/Udacity-AuthTrait.html#method_logUserIn"
         },                {
             "fqsen": "\\",
             "name": "\\",

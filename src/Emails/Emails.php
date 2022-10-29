@@ -2,7 +2,7 @@
 
 namespace Udacity\Emails;
 
-use Udacity\AuthedTrait;
+use Udacity\AuthTrait;
 use Udacity\Exceptions\UserNotAuthedException;
 
 /**
@@ -16,7 +16,7 @@ use Udacity\Exceptions\UserNotAuthedException;
 final class Emails
 {
 
-    use AuthedTrait;
+    use AuthTrait;
     
     /**
      * gets the template for students who are behind on their nanodegree track

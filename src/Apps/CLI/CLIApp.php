@@ -22,6 +22,7 @@ final class CLIApp extends App {
         // ! if commands properties need to be set at Command class level, check out https://symfony.com/doc/current/console.html#configuring-the-command
         // ! if options are in order, check out https://symfony.com/doc/current/console/input.html#using-command-options
         // ! to ask questions to the user, check out https://symfony.com/doc/current/components/console/helpers/questionhelper.html 
+        // ! to get confirmation from the user, check out https://symfony.com/doc/current/components/console/helpers/questionhelper.html#asking-the-user-for-confirmation
         $this->app->add(
             (new SendEmailsToBehindStudentsCommand())
             ->setNewLogger($this->rootDir . "/data/logs/php/cli.log")

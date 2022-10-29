@@ -8,6 +8,8 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\ConsoleOutputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Question\ConfirmationQuestion;
+use Symfony\Component\Console\Question\Question;
 use Udacity\Csvs\CsvExtractor;
 use Udacity\Emails\Mailer;
 use Udacity\Intl;
@@ -19,7 +21,7 @@ use Udacity\Processes\BehindStudentsEmailProcess;
  * 
  */
 #[AsCommand(name: 'emails:behind-students')]
-class SendEmailsToBehindStudentsCommand extends Command
+final class SendEmailsToBehindStudentsCommand extends Command
 {
 
     use LoggerTrait;
@@ -35,6 +37,17 @@ class SendEmailsToBehindStudentsCommand extends Command
         if (!$output instanceof ConsoleOutputInterface) {
             throw new \LogicException('This command accepts only an instance of "ConsoleOutputInterface".');
         }
+
+        // authenticating the user
+        // $qHelper = $this->getHelper('question');
+        // $userHasAccountQ = new ConfirmationQuestion('Do you have a Udacity SL Automation account ?');
+        // $userHasAccount = $qHelper->ask($input, $output, $userHasAccountQ);
+        // if ($userHasAccount) {
+        //     $emailQ = new Question('What is your email ?', '');
+        //     $passQ = new Question('What is your user password or passphrase ?', '');
+        //     $email = $qHelper->ask($input, $output, $emailQ);
+        //     $pass = $qHelper->ask($input, $output, $emailQ);
+        // }
 
         // retrieving the input
         $csv = $input->getArgument(self::CSV_ARG);

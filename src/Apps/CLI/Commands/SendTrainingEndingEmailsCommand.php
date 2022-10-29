@@ -20,7 +20,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  * 
  */
 #[AsCommand(name: 'emails:training-ending')]
-class SendTrainingEndingEmailsCommand extends Command
+final class SendTrainingEndingEmailsCommand extends Command
 {
 
     use LoggerTrait;
