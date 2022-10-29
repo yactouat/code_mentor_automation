@@ -10,15 +10,17 @@ abstract class Controller {
 
     private Environment $renderer;
     private int $statusCode = 200;
+
+    protected static string $homeTemplatePath = 'home.html.twig';
     
     protected function __construct()
     {
-        $loader = new FilesystemLoader("/var/www/views");
+        $loader = new FilesystemLoader('/var/www/views');
         $this->renderer = new Environment(
             $loader,
             [
-                "cache" => false,
-                "debug" => true
+                'cache' => false,
+                'debug' => true
             ]
         );
         $this->renderer->addExtension(new DebugExtension());

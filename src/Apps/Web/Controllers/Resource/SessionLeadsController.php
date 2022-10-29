@@ -10,6 +10,9 @@ final class SessionLeadsController extends Controller implements ResourceControl
 
     use AuthedTrait;
 
+    private static string $createTemplatePath = 'session-leads/create.html.twig';
+    private static string $loginTemplatePath = 'session-leads/login.html.twig';
+
     public function __construct()
     {
         parent::__construct();
@@ -17,7 +20,7 @@ final class SessionLeadsController extends Controller implements ResourceControl
 
     public function create(): string
     {
-        return $this->getRenderer()->render('session-leads.create.html.twig');
+        return $this->getRenderer()->render(self::$createTemplatePath);
     }
     
     public function index(): string
@@ -26,7 +29,7 @@ final class SessionLeadsController extends Controller implements ResourceControl
             $this->setStatusCode(401);
             return $this->login();
         }
-        return $this->getRenderer()->render('home.html.twig');
+        return $this->getRenderer()->render(self::$homeTemplatePath);
     }
 
     public function login(): string
@@ -53,7 +56,7 @@ final class SessionLeadsController extends Controller implements ResourceControl
             }
         }
         return $this->isAuthed() ? $this->index() : 
-            $this->getRenderer()->render('session-leads.login.html.twig');
+            $this->getRenderer()->render(self::$loginTemplatePath);
     }
 
     public function logout(): string {
@@ -72,7 +75,7 @@ final class SessionLeadsController extends Controller implements ResourceControl
         }
         if (count($errors) > 0) {
             $this->setStatusCode(400);
-            return $this->getRenderer()->render('session-leads.create.html.twig', [
+            return $this->getRenderer()->render(self::$createTemplatePath, [
                 'errors' => $errors,
                 'userInput' => $_POST
             ]);

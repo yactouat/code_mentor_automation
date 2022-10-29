@@ -606,6 +606,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#property_statusCode"
         },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003A\u0024homeTemplatePath",
+            "name": "homeTemplatePath",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#property_homeTemplatePath"
+        },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\ControllerInterface",
             "name": "ControllerInterface",
             "summary": "",
@@ -700,6 +705,16 @@ Search.appendIndex(
             "name": "persist",
             "summary": "",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#method_persist"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\SessionLeadsController\u003A\u003A\u0024createTemplatePath",
+            "name": "createTemplatePath",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#property_createTemplatePath"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\SessionLeadsController\u003A\u003A\u0024loginTemplatePath",
+            "name": "loginTemplatePath",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#property_loginTemplatePath"
         },                {
             "fqsen": "\\Udacity\\Emails\\EmailNotDeliveredException",
             "name": "EmailNotDeliveredException",
