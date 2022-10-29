@@ -8,6 +8,8 @@ $rootDir = dirname(__DIR__);
 require_once $rootDir."/vendor/autoload.php";
 use Udacity\Apps\Web\WebApp;
 
+define('APP_MODE', 'web');
+
 // initializing the app'
 $app = (new WebApp($rootDir))->setNewLogger($rootDir.'/data/logs/php/web_app.log');
 

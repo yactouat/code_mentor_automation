@@ -10,10 +10,12 @@ use Symfony\Component\Console\Output\ConsoleOutputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Symfony\Component\Console\Question\Question;
+use Udacity\AuthTrait;
 use Udacity\Csvs\CsvExtractor;
 use Udacity\Emails\Mailer;
 use Udacity\Intl;
 use Udacity\LoggerTrait;
+use Udacity\Models\SessionLeadModel;
 use Udacity\Processes\BehindStudentsEmailProcess;
 
 /**
@@ -24,6 +26,7 @@ use Udacity\Processes\BehindStudentsEmailProcess;
 final class SendEmailsToBehindStudentsCommand extends Command
 {
 
+    use AuthTrait;
     use LoggerTrait;
 
     const CSV_ARG = 'csv';
@@ -39,15 +42,76 @@ final class SendEmailsToBehindStudentsCommand extends Command
         }
 
         // authenticating the user
-        // $qHelper = $this->getHelper('question');
-        // $userHasAccountQ = new ConfirmationQuestion('Do you have a Udacity SL Automation account ?');
-        // $userHasAccount = $qHelper->ask($input, $output, $userHasAccountQ);
-        // if ($userHasAccount) {
-        //     $emailQ = new Question('What is your email ?', '');
-        //     $passQ = new Question('What is your user password or passphrase ?', '');
-        //     $email = $qHelper->ask($input, $output, $emailQ);
-        //     $pass = $qHelper->ask($input, $output, $emailQ);
-        // }
+        $qHelper = $this->getHelper('question');
+        $userHasAccountQ = new ConfirmationQuestion('Hello there, do you have a Udacity SL Automation account ?');
+        $userHasAccount = $qHelper->ask($input, $output, $userHasAccountQ);
+        $authFailed = false;
+        $email = '';
+        if ($userHasAccount) {
+            $emailQ = new Question('What is your email ? ', '');
+            $passQ = new Question('What is your user password or passphrase ? ', '');
+            $email = $qHelper->ask($input, $output, $emailQ);
+            $pass = $qHelper->ask($input, $output, $passQ);
+            if (!$this->logUserIn($email, $pass)) {
+                $authFailed = true;
+            }
+        } else { // user has no account
+            $output->writeln([
+                '',
+                'let\'s get your account set up...',
+                '====================================',
+                ''
+            ]);
+            $emailQ = new Question('Please enter your email ', '');
+            $firstNameQ = new Question('Please enter your first name ', '');
+            $gAppPassQ = new Question('Please enter your Google App Password ', '');
+            $usrPassQ = new Question('Please choose a password or a passphrase ', '');
+            $email = $qHelper->ask($input, $output, $emailQ);
+            $firstName = $qHelper->ask($input, $output, $firstNameQ);
+            $output->writeln([
+                '',
+                'the next step requires that you have a Gmail account and a Google application password setup...',
+                '====================================',
+                ''
+            ]);
+            $output->writeln([
+                '',
+                'to know how to get a Google account password => https://github.com/yactouat/udacity_sl_automation#sending-emails-in-bulk-to-students',
+                ''
+            ]);
+            $gAppPass = $qHelper->ask($input, $output, $gAppPassQ);
+            $usrPass = $qHelper->ask($input, $output, $usrPassQ);
+            $validationErrors = SessionLeadModel::validateInputFields([
+                'email' => $email,
+                'first_name' => $firstName,
+                'google_app_password' => $gAppPass,
+                'user_passphrase' => $usrPass
+            ]);
+            if (count($validationErrors) > 0) {
+                $authFailed = true;
+                foreach ($validationErrors as $error) {
+                    $output->writeln([
+                        '',
+                        $error,
+                        ''
+                    ]);
+                }
+            } else {
+                $usr = new SessionLeadModel(
+                    $email,
+                    $firstName,
+                    $gAppPass,
+                    $usrPass
+                );
+                $usr->persist();
+            }
+        }
+        if ($authFailed) {
+            $output->writeln('<error>authentication error: bad creds</error>');
+            return Command::FAILURE;
+        }
+        $_ENV['authed'] = true;
+        $_ENV['authed_user_email'] = $email;
 
         // retrieving the input
         $csv = $input->getArgument(self::CSV_ARG);

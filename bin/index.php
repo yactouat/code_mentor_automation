@@ -12,6 +12,8 @@ $rootDir = dirname(__DIR__);
 require_once $rootDir."/vendor/autoload.php";
 use Udacity\Apps\CLI\CLIApp;
 
+define('APP_MODE', 'cli');
+
 $application = new CLIApp($rootDir);
 
 $application->run();

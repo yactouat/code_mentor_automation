@@ -10,6 +10,9 @@ trait EnvLoaderTrait {
     protected Database $database;
 
     protected function loadEnv(?string $envDir = null) {
+        if (!defined('APP_MODE')) {
+            define('APP_MODE', 'web');
+        }
         $_ENV["isTesting"] = true;
         $dotenv = Dotenv::createImmutable(
             is_null($envDir) ? '/var/www/tests/fixtures' : $envDir

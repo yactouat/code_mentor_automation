@@ -1,6 +1,11 @@
 Search.appendIndex(
     [
                 {
+            "fqsen": "\\APP_MODE",
+            "name": "APP_MODE",
+            "summary": "",
+            "url": "namespaces/default.html#constant_APP_MODE"
+        },                {
             "fqsen": "\\Udacity\\Apps\\App",
             "name": "App",
             "summary": "",
