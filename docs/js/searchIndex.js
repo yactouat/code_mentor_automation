@@ -163,27 +163,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\LoggerTrait",
             "name": "LoggerTrait",
-            "summary": "",
+            "summary": "this\u0020trait\u0020shares\u0020the\u0020logic\u0020of\u0020logging\u0020stuff\u0020throughout\u0020the\u0020app\u0027",
             "url": "classes/Udacity-LoggerTrait.html"
         },                {
             "fqsen": "\\Udacity\\LoggerTrait\u003A\u003AendTimer\u0028\u0029",
             "name": "endTimer",
-            "summary": "",
+            "summary": "ends\u0020a\u0020logging\u0020time\u0020span\u0020and\u0020writes\u0020the\u0020result\u0020in\u0020the\u0020logs",
             "url": "classes/Udacity-LoggerTrait.html#method_endTimer"
         },                {
             "fqsen": "\\Udacity\\LoggerTrait\u003A\u003AsetLogger\u0028\u0029",
             "name": "setLogger",
-            "summary": "",
+            "summary": "sets\u0020the\u0020instance\u0020logger\u0020with\u0020an\u0020already\u0020configured\u0020logger",
             "url": "classes/Udacity-LoggerTrait.html#method_setLogger"
         },                {
             "fqsen": "\\Udacity\\LoggerTrait\u003A\u003AsetNewLogger\u0028\u0029",
             "name": "setNewLogger",
-            "summary": "",
+            "summary": "sets\u0020the\u0020instance\u0020logger\u0020from\u0020scratch",
             "url": "classes/Udacity-LoggerTrait.html#method_setNewLogger"
         },                {
             "fqsen": "\\Udacity\\LoggerTrait\u003A\u003AstartTimer\u0028\u0029",
             "name": "startTimer",
-            "summary": "",
+            "summary": "starts\u0020a\u0020logging\u0020time\u0020span",
             "url": "classes/Udacity-LoggerTrait.html#method_startTimer"
         },                {
             "fqsen": "\\Udacity\\LoggerTrait\u003A\u003A\u0024logger",
@@ -193,12 +193,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\LoggerTrait\u003A\u003A\u0024endTime",
             "name": "endTime",
-            "summary": "",
+            "summary": "the\u0020end\u0020time\u0020of\u0020a\u0020logging\u0020time\u0020span",
             "url": "classes/Udacity-LoggerTrait.html#property_endTime"
         },                {
             "fqsen": "\\Udacity\\LoggerTrait\u003A\u003A\u0024startTime",
             "name": "startTime",
-            "summary": "",
+            "summary": "the\u0020start\u0020time\u0020of\u0020a\u0020logging\u0020time\u0020span",
             "url": "classes/Udacity-LoggerTrait.html#property_startTime"
         },                {
             "fqsen": "\\Udacity\\Models\\Model",
