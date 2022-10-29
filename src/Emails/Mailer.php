@@ -15,6 +15,16 @@ use Udacity\Exceptions\MsmtprcNotSetException;
 final class Mailer
 {
 
+    public static function buildMsmtprc(string $email, string $gAppPass): void {
+        $destPath = !empty($_ENV['isTesting']) ? '/etc/msmtprc.test' : '/etc/msmtprc';
+        \file_put_contents($destPath, sprintf(
+            \file_get_contents('/var/www/scripts/msmtprc.template'),
+            $email,
+            $email,
+            $gAppPass
+        ));
+    }
+
     /**
      * checks is msmtp config is set
      * 

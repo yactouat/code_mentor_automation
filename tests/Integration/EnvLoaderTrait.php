@@ -19,6 +19,9 @@ trait EnvLoaderTrait {
         );
         $dotenv->load();
         $this->database = new Database();
+        if (\file_exists('/etc/msmptrc.test')) {
+            unlink('/etc/msmptrc.test');
+        }
     }
 
 }

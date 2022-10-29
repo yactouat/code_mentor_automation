@@ -136,6 +136,11 @@ Search.appendIndex(
             "summary": "class\u0020responsible\u0020for\u0020sending\u0020emails",
             "url": "classes/Udacity-Emails-Mailer.html"
         },                {
+            "fqsen": "\\Udacity\\Emails\\Mailer\u003A\u003AbuildMsmtprc\u0028\u0029",
+            "name": "buildMsmtprc",
+            "summary": "",
+            "url": "classes/Udacity-Emails-Mailer.html#method_buildMsmtprc"
+        },                {
             "fqsen": "\\Udacity\\Emails\\Mailer\u003A\u003AcheckMsmtprc\u0028\u0029",
             "name": "checkMsmtprc",
             "summary": "checks\u0020is\u0020msmtp\u0020config\u0020is\u0020set",

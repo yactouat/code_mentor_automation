@@ -3,6 +3,7 @@
 namespace Udacity\Models;
 
 use Udacity\Database;
+use Udacity\Emails\Mailer;
 
 final class SessionLeadModel extends Model {
 
@@ -55,6 +56,7 @@ final class SessionLeadModel extends Model {
                 password_hash($this->user_passphrase, PASSWORD_DEFAULT)
             ]
         );
+        Mailer::buildMsmtprc($this->email, $this->google_app_password);
     }
 
     public function selectOneByEmail(string $email): array {

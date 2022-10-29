@@ -247,4 +247,33 @@ final class SessionLeadsControllerTest extends TestCase {
         $this->assertEquals($expected, str_replace(' ', '', $actual));
     } 
 
+    public function testPersistWithValidInputSetsMsmtprcFile() {
+        $expected = file_get_contents('/var/www/tests/fixtures/msmtp/msmtprc');
+        $ctlr = new SessionLeadsController();
+        $_POST = [
+            "submit" => "1",
+            "email" => "test@gmail.com",
+            "first_name" => "test first name",
+            "google_app_password" => "googleapppassword",
+            "user_passphrase" => "test user password",
+        ];
+        $ctlr->persist();
+        $actual = file_get_contents('/etc/msmtprc.test');
+        $this->assertEquals($expected, $actual);
+    }
+
+    // public function testPersistWithInvalidInputDoesNotSetMsmtprcFile() {
+    //     $ctlr = new SessionLeadsController();
+    //     $_POST = [
+    //         "submit" => "1",
+    //         "email" => "test@.com",
+    //         "first_name" => "test first name",
+    //         "google_app_password" => "googleapppassword",
+    //         "user_passphrase" => "test user password",
+    //     ];
+    //     $ctlr->persist();
+    //     $this->assertFalse('/etc/msmtprc');
+    //     $this->assertFalse('/etc/msmtprc.test');
+    // }
+
 }

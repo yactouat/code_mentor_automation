@@ -16,9 +16,6 @@ FROM php:8.1.8-fpm
 RUN apt update && apt upgrade -y && apt install -y mailutils msmtp msmtp-mta nginx
 # installing PDO
 RUN docker-php-ext-install pdo pdo_mysql
-# configuring mailer
-# ! be sure not to push this image to a public registry as it may contain your email password
-COPY ./docker/msmtp/msmtprc /etc/msmtprc
 # configuring nginx
 COPY ./docker/php/nginx.conf /etc/nginx/nginx.conf
 # create system user ("udacity_sl_automation" with uid 1000)
