@@ -1,8 +1,6 @@
 <?php
 
-namespace Udacity\Emails;
-
-use Udacity\Exception;
+namespace Udacity\Exceptions;
 
 /**
  * Exception thrown when an email fails to be delivered using the `mail` function

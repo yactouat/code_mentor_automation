@@ -3,9 +3,9 @@
 namespace Udacity\Processes;
 
 use Udacity\Csvs\StudentsCsvExtractor as CsvExtractor;
-use Udacity\Emails\EmailNotDeliveredException;
 use Udacity\Emails\Emails;
 use Udacity\Emails\Mailer;
+use Udacity\Exceptions\EmailNotDeliveredException;
 use Udacity\LoggerTrait;
 
 /**

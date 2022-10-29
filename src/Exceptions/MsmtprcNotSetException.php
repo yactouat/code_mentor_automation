@@ -1,8 +1,6 @@
 <?php
 
-namespace Udacity\Emails;
-
-use Udacity\Exception;
+namespace Udacity\Exceptions;
 
 /**
  * Exception thrown when the `msmtprc` file is not set in the system

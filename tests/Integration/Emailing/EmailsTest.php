@@ -106,6 +106,12 @@ final class EmailsTest extends TestCase
             )
         );
         $this->assertEquals($expected, $actual);
-    }   
+    }
+
+    // TODO
+    // public function testGetBehindStudentEmailFormattedWithUnauthedUserThrowsException() {
+    // }
+    // public function testGetTrainingEndingEmailFormattedWithUnauthedUserThrowsException() {
+    // }
 
 }

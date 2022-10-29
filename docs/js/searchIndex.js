@@ -706,36 +706,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#property_loginTemplatePath"
         },                {
-            "fqsen": "\\Udacity\\Emails\\EmailNotDeliveredException",
-            "name": "EmailNotDeliveredException",
-            "summary": "Exception\u0020thrown\u0020when\u0020an\u0020email\u0020fails\u0020to\u0020be\u0020delivered\u0020using\u0020the\u0020\u0060mail\u0060\u0020function",
-            "url": "classes/Udacity-Emails-EmailNotDeliveredException.html"
-        },                {
-            "fqsen": "\\Udacity\\Emails\\EmailNotDeliveredException\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/Udacity-Emails-EmailNotDeliveredException.html#method___construct"
-        },                {
-            "fqsen": "\\Udacity\\Emails\\MsmtprcNotSetException",
-            "name": "MsmtprcNotSetException",
-            "summary": "Exception\u0020thrown\u0020when\u0020the\u0020\u0060msmtprc\u0060\u0020file\u0020is\u0020not\u0020set\u0020in\u0020the\u0020system",
-            "url": "classes/Udacity-Emails-MsmtprcNotSetException.html"
-        },                {
-            "fqsen": "\\Udacity\\Emails\\MsmtprcNotSetException\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/Udacity-Emails-MsmtprcNotSetException.html#method___construct"
-        },                {
-            "fqsen": "\\Udacity\\Exception",
-            "name": "Exception",
-            "summary": "",
-            "url": "classes/Udacity-Exception.html"
-        },                {
-            "fqsen": "\\Udacity\\Exception\u003A\u003A__toString\u0028\u0029",
-            "name": "__toString",
-            "summary": "",
-            "url": "classes/Udacity-Exception.html#method___toString"
-        },                {
             "fqsen": "\\Udacity\\Processes\\Process",
             "name": "Process",
             "summary": "",
@@ -765,6 +735,36 @@ Search.appendIndex(
             "name": "getAuthedUserFirstName",
             "summary": "",
             "url": "classes/Udacity-AuthedTrait.html#method_getAuthedUserFirstName"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\EmailNotDeliveredException",
+            "name": "EmailNotDeliveredException",
+            "summary": "Exception\u0020thrown\u0020when\u0020an\u0020email\u0020fails\u0020to\u0020be\u0020delivered\u0020using\u0020the\u0020\u0060mail\u0060\u0020function",
+            "url": "classes/Udacity-Exceptions-EmailNotDeliveredException.html"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\EmailNotDeliveredException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Udacity-Exceptions-EmailNotDeliveredException.html#method___construct"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\Exception",
+            "name": "Exception",
+            "summary": "",
+            "url": "classes/Udacity-Exceptions-Exception.html"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\Exception\u003A\u003A__toString\u0028\u0029",
+            "name": "__toString",
+            "summary": "",
+            "url": "classes/Udacity-Exceptions-Exception.html#method___toString"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\MsmtprcNotSetException",
+            "name": "MsmtprcNotSetException",
+            "summary": "Exception\u0020thrown\u0020when\u0020the\u0020\u0060msmtprc\u0060\u0020file\u0020is\u0020not\u0020set\u0020in\u0020the\u0020system",
+            "url": "classes/Udacity-Exceptions-MsmtprcNotSetException.html"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\MsmtprcNotSetException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Udacity-Exceptions-MsmtprcNotSetException.html#method___construct"
         },                {
             "fqsen": "\\",
             "name": "\\",
@@ -810,6 +810,11 @@ Search.appendIndex(
             "name": "Emails",
             "summary": "",
             "url": "namespaces/udacity-emails.html"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions",
+            "name": "Exceptions",
+            "summary": "",
+            "url": "namespaces/udacity-exceptions.html"
         },                {
             "fqsen": "\\Udacity\\Models",
             "name": "Models",

@@ -4,7 +4,7 @@ namespace Tests\Unit\Emailing;
 
 use Udacity\Emails\Mailer;
 use PHPUnit\Framework\TestCase;
-use Udacity\Emails\MsmtprcNotSetException;
+use Udacity\Exceptions\MsmtprcNotSetException;
 
 final class MailerTest extends TestCase
 {

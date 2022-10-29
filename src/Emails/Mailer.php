@@ -3,6 +3,8 @@
 namespace Udacity\Emails;
 
 use Monolog\Logger;
+use Udacity\Exceptions\EmailNotDeliveredException;
+use Udacity\Exceptions\MsmtprcNotSetException;
 
 /**
  * class responsible for sending emails

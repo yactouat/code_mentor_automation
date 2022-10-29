@@ -45,7 +45,6 @@ final class Emails
      * @return string the personalized student behind email
      */
     public static function getBehindStudentEmailFormatted(string $language, string $studentFirstName, string $studentLastName): string {
-        // TODO test that exception is thrown when user not authed
         return sprintf(
             self::getBehindStudentEmailTemplate($language), 
             $studentFirstName, 
@@ -89,7 +88,6 @@ final class Emails
         string $studentLastName,
         ?array $onlineResources = null
     ): string {
-        // TODO test that exception is thrown when user not authed
         $formatted = sprintf(
             self::getTrainingEndingEmailTemplate($language),
             $studentFirstName,
