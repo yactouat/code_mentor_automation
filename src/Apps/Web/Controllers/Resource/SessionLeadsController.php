@@ -28,7 +28,7 @@ final class SessionLeadsController extends Controller implements ResourceControl
     private static string $loginTemplatePath = 'session-leads/login.html.twig';
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function __construct()
     {
@@ -36,7 +36,7 @@ final class SessionLeadsController extends Controller implements ResourceControl
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */    
     public function create(): string
     {
@@ -106,7 +106,7 @@ final class SessionLeadsController extends Controller implements ResourceControl
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function persist(): string
     {

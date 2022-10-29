@@ -203,12 +203,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Models\\Model",
             "name": "Model",
-            "summary": "",
+            "summary": "the\u0020parent\u0020class\u0020of\u0020all\u0020app\u0027s\u0020MVC\u0020models",
             "url": "classes/Udacity-Models-Model.html"
         },                {
             "fqsen": "\\Udacity\\Models\\Model\u003A\u003Apersist\u0028\u0029",
             "name": "persist",
-            "summary": "",
+            "summary": "saves\u0020a\u0020record\u0020of\u0020the\u0020model\u0020in\u0020db",
             "url": "classes/Udacity-Models-Model.html#method_persist"
         },                {
             "fqsen": "\\Udacity\\Models\\Model\u003A\u003AgetCsvFields\u0028\u0029",
@@ -218,42 +218,42 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Models\\Model\u003A\u003AvalidateInputFields\u0028\u0029",
             "name": "validateInputFields",
-            "summary": "",
+            "summary": "this\u0020function\u0020is\u0020responsible\u0020for\u0020the\u0020business\u0020logic\u0020validation\u0020of\u0020the\u0020instance\u0020model",
             "url": "classes/Udacity-Models-Model.html#method_validateInputFields"
         },                {
             "fqsen": "\\Udacity\\Models\\Model\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "finishes\u0020the\u0020construction\u0020of\u0020the\u0020instance\u0020model",
             "url": "classes/Udacity-Models-Model.html#method___construct"
         },                {
             "fqsen": "\\Udacity\\Models\\Model\u003A\u003AgetTableName\u0028\u0029",
             "name": "getTableName",
-            "summary": "",
+            "summary": "gets\u0020the\u0020instance\u0020model\u0020SQL\u0020table\u0020name",
             "url": "classes/Udacity-Models-Model.html#method_getTableName"
         },                {
             "fqsen": "\\Udacity\\Models\\Model\u003A\u003AselectAll\u0028\u0029",
             "name": "selectAll",
-            "summary": "",
+            "summary": "gets\u0020all\u0020db\u0020records\u0020of\u0020the\u0020given\u0020model",
             "url": "classes/Udacity-Models-Model.html#method_selectAll"
         },                {
             "fqsen": "\\Udacity\\Models\\Model\u003A\u003A\u0024database",
             "name": "database",
-            "summary": "",
+            "summary": "the\u0020database\u0020connection\u0020class\u0020to\u0020use",
             "url": "classes/Udacity-Models-Model.html#property_database"
         },                {
             "fqsen": "\\Udacity\\Models\\Model\u003A\u003A\u0024tableName",
             "name": "tableName",
-            "summary": "",
+            "summary": "the\u0020SQL\u0020table\u0020name\u0020of\u0020the\u0020current\u0020instance",
             "url": "classes/Udacity-Models-Model.html#property_tableName"
         },                {
             "fqsen": "\\Udacity\\Models\\OnlineResourceModel",
             "name": "OnlineResourceModel",
-            "summary": "",
+            "summary": "this\u0020class\u0020represents\u0020an\u0020online\u0020ressource\u0020that\u0020is\u0020shared\u0020with\u0020the\u0020students",
             "url": "classes/Udacity-Models-OnlineResourceModel.html"
         },                {
             "fqsen": "\\Udacity\\Models\\OnlineResourceModel\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "finishes\u0020the\u0020construction\u0020of\u0020the\u0020instance\u0020model",
             "url": "classes/Udacity-Models-OnlineResourceModel.html#method___construct"
         },                {
             "fqsen": "\\Udacity\\Models\\OnlineResourceModel\u003A\u003AgetCsvFields\u0028\u0029",
@@ -263,17 +263,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Models\\OnlineResourceModel\u003A\u003Apersist\u0028\u0029",
             "name": "persist",
-            "summary": "",
+            "summary": "saves\u0020a\u0020record\u0020of\u0020the\u0020model\u0020in\u0020db",
             "url": "classes/Udacity-Models-OnlineResourceModel.html#method_persist"
         },                {
             "fqsen": "\\Udacity\\Models\\OnlineResourceModel\u003A\u003AvalidateInputFields\u0028\u0029",
             "name": "validateInputFields",
-            "summary": "",
+            "summary": "this\u0020function\u0020is\u0020responsible\u0020for\u0020the\u0020business\u0020logic\u0020validation\u0020of\u0020the\u0020instance\u0020model",
             "url": "classes/Udacity-Models-OnlineResourceModel.html#method_validateInputFields"
         },                {
             "fqsen": "\\Udacity\\Models\\OnlineResourceModel\u003A\u003A\u0024tableName",
             "name": "tableName",
-            "summary": "",
+            "summary": "the\u0020SQL\u0020table\u0020name\u0020of\u0020the\u0020current\u0020instance",
             "url": "classes/Udacity-Models-OnlineResourceModel.html#property_tableName"
         },                {
             "fqsen": "\\Udacity\\Models\\OnlineResourceModel\u003A\u003A\u0024description",
@@ -293,7 +293,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Models\\SessionLeadModel",
             "name": "SessionLeadModel",
-            "summary": "",
+            "summary": "this\u0020model\u0020represents\u0020a\u0020session\u0020lead,\u0020main\u0020actor\u0020of\u0020the\u0020app\u0027",
             "url": "classes/Udacity-Models-SessionLeadModel.html"
         },                {
             "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003A__construct\u0028\u0029",
@@ -308,22 +308,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003Apersist\u0028\u0029",
             "name": "persist",
-            "summary": "",
+            "summary": "saves\u0020a\u0020record\u0020of\u0020the\u0020model\u0020in\u0020db",
             "url": "classes/Udacity-Models-SessionLeadModel.html#method_persist"
         },                {
             "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003AselectOneByEmail\u0028\u0029",
             "name": "selectOneByEmail",
-            "summary": "",
+            "summary": "gets\u0020a\u0020persisted\u0020session\u0020lead\u0020with\u0020his\u0020email",
             "url": "classes/Udacity-Models-SessionLeadModel.html#method_selectOneByEmail"
         },                {
             "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003AvalidateInputFields\u0028\u0029",
             "name": "validateInputFields",
-            "summary": "",
+            "summary": "this\u0020function\u0020is\u0020responsible\u0020for\u0020the\u0020business\u0020logic\u0020validation\u0020of\u0020the\u0020instance\u0020model",
             "url": "classes/Udacity-Models-SessionLeadModel.html#method_validateInputFields"
         },                {
             "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003A\u0024tableName",
             "name": "tableName",
-            "summary": "",
+            "summary": "the\u0020SQL\u0020table\u0020name\u0020of\u0020the\u0020current\u0020instance",
             "url": "classes/Udacity-Models-SessionLeadModel.html#property_tableName"
         },                {
             "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003A\u0024email",
@@ -348,12 +348,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Models\\StudentModel",
             "name": "StudentModel",
-            "summary": "",
+            "summary": "this\u0020model\u0020represents\u0020a\u0020Udacity\u0020student\u0020in\u0020our\u0020business\u0020logic",
             "url": "classes/Udacity-Models-StudentModel.html"
         },                {
             "fqsen": "\\Udacity\\Models\\StudentModel\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "finishes\u0020the\u0020construction\u0020of\u0020the\u0020instance\u0020model",
             "url": "classes/Udacity-Models-StudentModel.html#method___construct"
         },                {
             "fqsen": "\\Udacity\\Models\\StudentModel\u003A\u003AgetCsvFields\u0028\u0029",
@@ -363,17 +363,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Models\\StudentModel\u003A\u003Apersist\u0028\u0029",
             "name": "persist",
-            "summary": "",
+            "summary": "saves\u0020a\u0020record\u0020of\u0020the\u0020model\u0020in\u0020db",
             "url": "classes/Udacity-Models-StudentModel.html#method_persist"
         },                {
             "fqsen": "\\Udacity\\Models\\StudentModel\u003A\u003AvalidateInputFields\u0028\u0029",
             "name": "validateInputFields",
-            "summary": "",
+            "summary": "this\u0020function\u0020is\u0020responsible\u0020for\u0020the\u0020business\u0020logic\u0020validation\u0020of\u0020the\u0020instance\u0020model",
             "url": "classes/Udacity-Models-StudentModel.html#method_validateInputFields"
         },                {
             "fqsen": "\\Udacity\\Models\\StudentModel\u003A\u003A\u0024tableName",
             "name": "tableName",
-            "summary": "",
+            "summary": "the\u0020SQL\u0020table\u0020name\u0020of\u0020the\u0020current\u0020instance",
             "url": "classes/Udacity-Models-StudentModel.html#property_tableName"
         },                {
             "fqsen": "\\Udacity\\Models\\StudentModel\u003A\u003A\u0024email",
@@ -498,7 +498,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003AgetStatusCode\u0028\u0029",
             "name": "getStatusCode",
-            "summary": "",
+            "summary": "\u007B\u0040inheritDoc\u007D",
             "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#method_getStatusCode"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003AsetStatusCode\u0028\u0029",
@@ -820,6 +820,16 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
             "url": "classes/Udacity-Exceptions-InvalidCsvDataException.html#method___construct"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\SQLTableNotSetException",
+            "name": "SQLTableNotSetException",
+            "summary": "Exception\u0020thrown\u0020when\u0020a\u0020SQL\u0020table\u0020that\u0020is\u0020supposed\u0020to\u0020exist\u0020does\u0020not\u0020exist",
+            "url": "classes/Udacity-Exceptions-SQLTableNotSetException.html"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\SQLTableNotSetException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
+            "url": "classes/Udacity-Exceptions-SQLTableNotSetException.html#method___construct"
         },                {
             "fqsen": "\\",
             "name": "\\",

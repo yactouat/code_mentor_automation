@@ -4,10 +4,24 @@ namespace Udacity\Models;
 
 use Udacity\Database;
 
+/**
+ * this model represents a Udacity student in our business logic
+ */
 final class StudentModel extends Model {
 
+    /**
+     * {@inheritDoc}
+     */
     protected string $tableName = "student";
 
+    /**
+     * {@inheritDoc}
+     *
+     * @param string $email
+     * @param string $first_name
+     * @param string $last_name
+     * @param string $on_track_status
+     */
     public function __construct(
         private string $email, 
         private string $first_name,
@@ -18,6 +32,9 @@ final class StudentModel extends Model {
         parent::__construct();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public static function getCsvFields(): array {
         return [
             "On-Track Status",
@@ -27,6 +44,11 @@ final class StudentModel extends Model {
         ];
     }
 
+    /**
+     * {@inheritDoc}
+     * 
+     * there is a specific validation that takes place for the on-track status of the student (allowed values only)
+     */
     public function persist(): void {
         if (count(self::validateInputFields([
             'on_track_status' => $this->on_track_status
@@ -43,6 +65,9 @@ final class StudentModel extends Model {
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public static function validateInputFields(array $fields): array
     {
         $errors = [];

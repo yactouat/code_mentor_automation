@@ -10,6 +10,7 @@ use DummyModel;
 use ModelWithNoTable;
 use PHPUnit\Framework\TestCase;
 use Tests\Integration\EnvLoaderTrait;
+use Udacity\Exceptions\SQLTableNotSetException;
 
 final class ModelTest extends TestCase {
 
@@ -26,8 +27,8 @@ final class ModelTest extends TestCase {
     }
 
     public function testConstructWithNoTableNameSetThrows() {
-        $this->expectException(\Exception::class);
-        $this->expectExceptionMessage("No table name set for this model");
+        $this->expectException(SQLTableNotSetException::class);
+        $this->expectExceptionMessage('the required SQL table does not exist');
         $model = new ModelWithNoTable();
     }
 
@@ -35,20 +36,20 @@ final class ModelTest extends TestCase {
         // arrange
         $expected = [
             [
-                "id" => 1,
-                "some_field" => "test"
+                'id' => 1,
+                'some_field' => 'test'
             ],
             [
-                "id" => 2,
-                "some_field" => "test2"
+                'id' => 2,
+                'some_field' => 'test2'
             ],
             [
-                "id" => 3,
-                "some_field" => "test3"
+                'id' => 3,
+                'some_field' => 'test3'
             ],
             [
-                "id" => 4,
-                "some_field" => "test4"
+                'id' => 4,
+                'some_field' => 'test4'
             ]
         ];
         $dummy = new DummyModel();

@@ -60,7 +60,7 @@ abstract class Controller {
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function getStatusCode(): int {
         return $this->statusCode;

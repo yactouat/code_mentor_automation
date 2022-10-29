@@ -5,8 +5,14 @@ namespace Udacity\Models;
 use Udacity\Database;
 use Udacity\Emails\Mailer;
 
+/**
+ * this model represents a session lead, main actor of the app'
+ */
 final class SessionLeadModel extends Model {
 
+    /**
+     * {@inheritDoc}
+     */
     protected string $tableName = "sessionlead";
 
     /**
@@ -29,10 +35,6 @@ final class SessionLeadModel extends Model {
 
     /**
      * {@inheritDoc}
-     * 
-     * getting Udacity CSV fields for a session lead
-     *
-     * @return array
      */
     public static function getCsvFields(): array
     {
@@ -42,6 +44,11 @@ final class SessionLeadModel extends Model {
         ];        
     }
 
+    /**
+     * {@inheritDoc}
+     * 
+     * also creates a msmtprc file for the newly created session lead
+     */
     public function persist(): void {
         $dbName = Database::$dbName;
         $tableName = $this->tableName;
@@ -59,6 +66,12 @@ final class SessionLeadModel extends Model {
         Mailer::buildMsmtprc($this->email, $this->google_app_password);
     }
 
+    /**
+     * gets a persisted session lead with his email
+     *
+     * @param string $email
+     * @return array - empty if not found
+     */
     public function selectOneByEmail(string $email): array {
         if (!filter_var($email ?? '', FILTER_VALIDATE_EMAIL)) {
             return [];
@@ -68,6 +81,9 @@ final class SessionLeadModel extends Model {
         return $res[0] ?? [];
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public static function validateInputFields(array $fields): array {
         $errors = [];
         if (empty($fields['email'])) {

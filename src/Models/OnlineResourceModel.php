@@ -4,15 +4,27 @@ namespace Udacity\Models;
 
 use Udacity\Database;
 
+/**
+ * this class represents an online ressource that is shared with the students
+ */
 final class OnlineResourceModel extends Model {
 
+    /**
+     * {@inheritDoc}
+     */
     protected string $tableName = "onlineresource";
 
+    /**
+     * {@inheritDoc}
+     */
     public function __construct(private string $description, private string $name, private string $url)
     {
         parent::__construct();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public static function getCsvFields(): array {
         return [
             "Name",
@@ -21,6 +33,9 @@ final class OnlineResourceModel extends Model {
         ];
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function persist(): void {
         $description = $this->description;
         $name = $this->name;
@@ -31,6 +46,9 @@ final class OnlineResourceModel extends Model {
         $this->database->writeQuery($query);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public static function validateInputFields(array $fields): array
     {
         return [];
