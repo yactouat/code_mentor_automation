@@ -533,42 +533,42 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\NotFoundController",
             "name": "NotFoundController",
-            "summary": "parent\u0020class\u0020of\u0020all\u0020the\u0020web\u0020app\u0027\u0020controllers",
+            "summary": "controller\u0020responsible\u0020for\u0020showing\u0020an\u0020output\u0020when\u0020a\u0020route\u0020is\u0020not\u0020found\u0020in\u0020the\u0020app\u0027",
             "url": "classes/Udacity-Apps-Web-Controllers-NotFoundController.html"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\NotFoundController\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "parent\u0020controller\u0020constructor",
+            "summary": "constructor",
             "url": "classes/Udacity-Apps-Web-Controllers-NotFoundController.html#method___construct"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\NotFoundController\u003A\u003Aindex\u0028\u0029",
             "name": "index",
-            "summary": "",
+            "summary": "builds\u0020the\u0020not\u0020found\u0020HTML\u0020page",
             "url": "classes/Udacity-Apps-Web-Controllers-NotFoundController.html#method_index"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\ResourceControllerInterface",
             "name": "ResourceControllerInterface",
-            "summary": "Web\u0020Controller\u0020interface",
+            "summary": "this\u0020inteface\u0020defines\u0020what\u0020a\u0020resource\u0020controller\u0020should\u0020do",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-ResourceControllerInterface.html"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\ResourceControllerInterface\u003A\u003Acreate\u0028\u0029",
             "name": "create",
-            "summary": "",
+            "summary": "shows\u0020the\u0020web\u0020form\u0020to\u0020create\u0020an\u0020instance\u0020of\u0020the\u0020related\u0020resource",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-ResourceControllerInterface.html#method_create"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\ResourceControllerInterface\u003A\u003Aindex\u0028\u0029",
             "name": "index",
-            "summary": "",
+            "summary": "shows\u0020the\u0020main\u0020view\u0020related\u0020to\u0020the\u0020linked\u0020resource",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-ResourceControllerInterface.html#method_index"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\ResourceControllerInterface\u003A\u003Apersist\u0028\u0029",
             "name": "persist",
-            "summary": "",
+            "summary": "saves\u0020data\u0020related\u0020to\u0020the\u0020linked\u0020resource",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-ResourceControllerInterface.html#method_persist"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\SessionLeadsController",
             "name": "SessionLeadsController",
-            "summary": "parent\u0020class\u0020of\u0020all\u0020the\u0020web\u0020app\u0027\u0020controllers",
+            "summary": "this\u0020controller\u0020is\u0020responsible\u0020for\u0020handling\u0020requests\u0020related\u0020to\u0020the\u0020main\u0020user\u0020of\u0020this\u0020app\u003A\u0020the\u0020session\u0020lead",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\SessionLeadsController\u003A\u003A__construct\u0028\u0029",
@@ -578,37 +578,37 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\SessionLeadsController\u003A\u003Acreate\u0028\u0029",
             "name": "create",
-            "summary": "",
+            "summary": "shows\u0020the\u0020web\u0020form\u0020to\u0020create\u0020an\u0020instance\u0020of\u0020the\u0020related\u0020resource",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#method_create"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\SessionLeadsController\u003A\u003Aindex\u0028\u0029",
             "name": "index",
-            "summary": "",
+            "summary": "shows\u0020the\u0020relevant\u0020page\u0020for\u0020the\u0020session\u0020lead\u0020based\u0020on\u0020his\/hers\u0020auth\u0020status",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#method_index"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\SessionLeadsController\u003A\u003Alogin\u0028\u0029",
             "name": "login",
-            "summary": "",
+            "summary": "logs\u0020a\u0020session\u0020lead\u0020in",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#method_login"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\SessionLeadsController\u003A\u003Alogout\u0028\u0029",
             "name": "logout",
-            "summary": "",
+            "summary": "logs\u0020a\u0020session\u0020lead\u0020out\u0020then\u0020renders\u0020the\u0020login\u0020page",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#method_logout"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\SessionLeadsController\u003A\u003Apersist\u0028\u0029",
             "name": "persist",
-            "summary": "",
+            "summary": "saves\u0020data\u0020related\u0020to\u0020the\u0020linked\u0020resource",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#method_persist"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\SessionLeadsController\u003A\u003A\u0024createTemplatePath",
             "name": "createTemplatePath",
-            "summary": "",
+            "summary": "path\u0020to\u0020the\u0020Twig\u0020template\u0020of\u0020the\u0020signup\u0020form",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#property_createTemplatePath"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\SessionLeadsController\u003A\u003A\u0024loginTemplatePath",
             "name": "loginTemplatePath",
-            "summary": "",
+            "summary": "path\u0020to\u0020the\u0020Twig\u0020template\u0020of\u0020the\u0020login\u0020form",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#property_loginTemplatePath"
         },                {
             "fqsen": "\\Udacity\\Processes\\Process",

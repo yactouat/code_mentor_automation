@@ -143,11 +143,11 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">9</span>
+    <span class="phpdocumentor-element-found-in__line">12</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">parent class of all the web app&#039; controllers</p>
+            <p class="phpdocumentor-summary">this controller is responsible for handling requests related to the main user of this app: the session lead</p>
 
 
 
@@ -162,7 +162,7 @@
 
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/Udacity-Apps-Web-Controllers-Resource-ResourceControllerInterface.html"><abbr title="\Udacity\Apps\Web\Controllers\Resource\ResourceControllerInterface">ResourceControllerInterface</abbr></a></dt>
-        <dd>Web Controller interface</dd>
+        <dd>this inteface defines what a resource controller should do</dd>
     
     
     
@@ -187,14 +187,14 @@
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
+<dd>path to the Twig template of the signup form</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#property_loginTemplatePath">$loginTemplatePath</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
+<dd>path to the Twig template of the login form</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#property_renderer">$renderer</a>
@@ -222,7 +222,7 @@
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
+<dd>shows the web form to create an instance of the related resource</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Udacity-AuthTrait.html#method_getAuthedUserFirstName">getAuthedUserFirstName()</a>
@@ -250,21 +250,21 @@
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
+<dd>shows the relevant page for the session lead based on his/hers auth status</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#method_login">login()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
+<dd>logs a session lead in</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#method_logout">logout()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
+<dd>logs a session lead out then renders the login page</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Udacity-AuthTrait.html#method_logUserIn">logUserIn()</a>
@@ -278,7 +278,7 @@
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
+<dd>saves data related to the linked resource</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Udacity-AuthTrait.html#method_isAuthed">isAuthed()</a>
@@ -355,21 +355,20 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">path to the Twig template of the signup form</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
     <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$createTemplatePath</span>
      = <span class="phpdocumentor-signature__default-value">&#039;session-leads/create.html.twig&#039;</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -389,21 +388,20 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">path to the Twig template of the login form</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
     <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$loginTemplatePath</span>
      = <span class="phpdocumentor-signature__default-value">&#039;session-leads/login.html.twig&#039;</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -493,7 +491,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">33</span>
 
     </aside>
 
@@ -503,13 +501,22 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"><ul>
-<li>sets the templating engine</li>
-</ul>
-</section>
-
     
     
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">inheritDoc</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                             
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
@@ -530,19 +537,32 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">41</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">shows the web form to create an instance of the related resource</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">create</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
     
     
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">inheritDoc</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                             
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
@@ -674,24 +694,28 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">shows the relevant page for the session lead based on his/hers auth status</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">index</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><ul>
+<li>the built login or session lead home page</li>
+</ul>
+</section>
+
     
 </article>
                     <article
@@ -707,16 +731,18 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">35</span>
+    <span class="phpdocumentor-element-found-in__line">67</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">logs a session lead in</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">login</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
+        <section class="phpdocumentor-description"><p>uses PHP sessions for auth state</p>
+</section>
 
     
     
@@ -740,17 +766,17 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">100</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">logs a session lead out then renders the login page</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">logout</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
@@ -825,19 +851,32 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">71</span>
+    <span class="phpdocumentor-element-found-in__line">111</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">saves data related to the linked resource</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">persist</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
     
     
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">inheritDoc</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                             
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
