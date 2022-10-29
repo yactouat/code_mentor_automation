@@ -52,6 +52,7 @@ services:
       - ./:/var/www
       - ./vendor:/var/www/vendor/
       - ./data/logs/nginx:/var/log/nginx/
+      - ./data/logs/php:/var/log/php/
     ports:
       - 80:80
     depends_on:
