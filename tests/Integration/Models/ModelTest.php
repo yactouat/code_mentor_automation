@@ -9,7 +9,7 @@ use Udacity\Database;
 use DummyModel;
 use ModelWithNoTable;
 use PHPUnit\Framework\TestCase;
-use Tests\EnvLoaderTrait;
+use Tests\Integration\EnvLoaderTrait;
 
 final class ModelTest extends TestCase {
 

@@ -561,16 +561,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Apps-Web-WebApp.html#property_responseOutput"
         },                {
-            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\AuthedTrait",
-            "name": "AuthedTrait",
-            "summary": "",
-            "url": "classes/Udacity-Apps-Web-Controllers-AuthedTrait.html"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\AuthedTrait\u003A\u003AisAuthed\u0028\u0029",
-            "name": "isAuthed",
-            "summary": "",
-            "url": "classes/Udacity-Apps-Web-Controllers-AuthedTrait.html#method_isAuthed"
-        },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller",
             "name": "Controller",
             "summary": "",
@@ -761,6 +751,21 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Processes-Process.html#property_errors"
         },                {
+            "fqsen": "\\Udacity\\AuthedTrait",
+            "name": "AuthedTrait",
+            "summary": "",
+            "url": "classes/Udacity-AuthedTrait.html"
+        },                {
+            "fqsen": "\\Udacity\\AuthedTrait\u003A\u003AisAuthed\u0028\u0029",
+            "name": "isAuthed",
+            "summary": "",
+            "url": "classes/Udacity-AuthedTrait.html#method_isAuthed"
+        },                {
+            "fqsen": "\\Udacity\\AuthedTrait\u003A\u003AgetAuthedUserFirstName\u0028\u0029",
+            "name": "getAuthedUserFirstName",
+            "summary": "",
+            "url": "classes/Udacity-AuthedTrait.html#method_getAuthedUserFirstName"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -786,6 +791,11 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/udacity-apps-web.html"
         },                {
+            "fqsen": "\\Udacity",
+            "name": "Udacity",
+            "summary": "",
+            "url": "namespaces/udacity.html"
+        },                {
             "fqsen": "\\Udacity\\Commands",
             "name": "Commands",
             "summary": "",
@@ -795,11 +805,6 @@ Search.appendIndex(
             "name": "Csvs",
             "summary": "",
             "url": "namespaces/udacity-csvs.html"
-        },                {
-            "fqsen": "\\Udacity",
-            "name": "Udacity",
-            "summary": "",
-            "url": "namespaces/udacity.html"
         },                {
             "fqsen": "\\Udacity\\Emails",
             "name": "Emails",

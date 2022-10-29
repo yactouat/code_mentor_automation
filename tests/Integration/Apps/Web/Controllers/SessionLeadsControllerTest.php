@@ -1,13 +1,15 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Apps\Web\Controllers;
+namespace Tests\Integration\Apps\Web\Controllers;
 
 use PHPUnit\Framework\TestCase;
-use Tests\EnvLoaderTrait;
+use Tests\Integration\Apps\Web\AuthenticateTrait;
+use Tests\Integration\EnvLoaderTrait;
 use Udacity\Apps\Web\Controllers\Resource\SessionLeadsController;
 
 final class SessionLeadsControllerTest extends TestCase {
 
+    use AuthenticateTrait;
     use EnvLoaderTrait;
 
     protected function setUp(): void
@@ -128,24 +130,9 @@ final class SessionLeadsControllerTest extends TestCase {
     }
 
     public function testLoginWithValidInputSetsSession() {
-        $ctlr = new SessionLeadsController();
-        $_SERVER['REQUEST_METHOD'] = 'POST';
-        $_POST = [
-            'submit' => '1',
-            'email' => 'test@gmail.com',
-            'first_name' => 'test first name',
-            'google_app_password' => 'test google app password',
-            'user_passphrase' => 'test user password',
-        ];
-        $ctlr->persist();
-        $_SESSION = []; // resetting the session since `persist` fills it
-        $_POST = [
-            'submit' => '1',
-            'email' => 'test@gmail.com',
-            'user_passphrase' => 'test user password',
-        ];
-        $ctlr->login();
+        $this->authenticate();
         $this->assertTrue($_SESSION['authed']);
+        $this->assertEquals('Yacine', $_SESSION['authed_first_name']);
     }
 
     public function testLoginWithInvalidInputDoesNotSetSession() {

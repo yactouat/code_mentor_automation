@@ -4,7 +4,7 @@ namespace Tests\Integration\Models;
 
 use Udacity\Models\SessionLeadModel;
 use PHPUnit\Framework\TestCase;
-use Tests\EnvLoaderTrait;
+use Tests\Integration\EnvLoaderTrait;
 
 final class SessionLeadModelTest extends TestCase {
 

@@ -4,7 +4,6 @@ namespace Tests\Integration;
 
 use Udacity\Database;
 use PHPUnit\Framework\TestCase;
-use Tests\EnvLoaderTrait;
 
 final class DatabaseTest extends TestCase {
 

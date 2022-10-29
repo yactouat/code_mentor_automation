@@ -1,13 +1,13 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Apps;
+namespace Tests\Integration\Apps;
 
 require_once '/var/www/tests/fixtures/classes/DummyApp.php';
 
 use DummyApp;
 use Exception;
 use PHPUnit\Framework\TestCase;
-use Tests\EnvLoaderTrait;
+use Tests\Integration\EnvLoaderTrait;
 
 final class AppTest extends TestCase {
 

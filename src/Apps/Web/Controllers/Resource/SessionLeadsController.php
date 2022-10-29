@@ -2,8 +2,8 @@
 
 namespace Udacity\Apps\Web\Controllers\Resource;
 
-use Udacity\Apps\Web\Controllers\AuthedTrait;
 use Udacity\Apps\Web\Controllers\Controller;
+use Udacity\AuthedTrait;
 use Udacity\Models\SessionLeadModel;
 
 final class SessionLeadsController extends Controller implements ResourceControllerInterface {
@@ -51,6 +51,7 @@ final class SessionLeadsController extends Controller implements ResourceControl
                     $_POST['user_passphrase'],
                     $usr['user_passphrase']
                 );
+                $_SESSION['authed_first_name'] = $this->isAuthed() ? $usr['first_name'] : '';
                 $statusCode = $this->isAuthed() ? 200 : 401;
                 $this->setStatusCode($statusCode);
             }
@@ -93,6 +94,7 @@ final class SessionLeadsController extends Controller implements ResourceControl
                 $data['user_passphrase']
             ))->persist();
             $_SESSION['authed'] = true;
+            $_SESSION['authed_first_name'] = $data['first_name'];
             $this->setStatusCode(201);
             return $this->index();
         }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Tests\Integration;
 
 use Dotenv\Dotenv;
 use Udacity\Database;
