@@ -3,6 +3,7 @@
 namespace Udacity\Emails;
 
 use Udacity\AuthedTrait;
+use Udacity\Exceptions\UserNotAuthedException;
 
 /**
  * class responsible for setting/getting emails templates
@@ -45,6 +46,9 @@ final class Emails
      * @return string the personalized student behind email
      */
     public static function getBehindStudentEmailFormatted(string $language, string $studentFirstName, string $studentLastName): string {
+        if (self::getAuthedUserFirstName() === '') {
+            throw new UserNotAuthedException();
+        }
         return sprintf(
             self::getBehindStudentEmailTemplate($language), 
             $studentFirstName, 
@@ -88,6 +92,9 @@ final class Emails
         string $studentLastName,
         ?array $onlineResources = null
     ): string {
+        if (self::getAuthedUserFirstName() === '') {
+            throw new UserNotAuthedException();
+        }
         $formatted = sprintf(
             self::getTrainingEndingEmailTemplate($language),
             $studentFirstName,

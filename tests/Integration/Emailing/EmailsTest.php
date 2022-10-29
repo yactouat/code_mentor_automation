@@ -8,6 +8,7 @@ use Udacity\Models\OnlineResourceModel;
 use PHPUnit\Framework\TestCase;
 use Tests\Integration\Apps\Web\AuthenticateTrait;
 use Tests\Integration\EnvLoaderTrait;
+use Udacity\Exceptions\UserNotAuthedException;
 
 final class EmailsTest extends TestCase
 {
@@ -108,10 +109,16 @@ final class EmailsTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    // TODO
-    // public function testGetBehindStudentEmailFormattedWithUnauthedUserThrowsException() {
-    // }
-    // public function testGetTrainingEndingEmailFormattedWithUnauthedUserThrowsException() {
-    // }
+    public function testGetBehindStudentEmailFormattedWithUnauthedUserThrowsException() {
+        $this->expectException(UserNotAuthedException::class);
+        $this->expectExceptionMessage('user not authenticated');
+        $actual = Emails::getBehindStudentEmailFormatted("fr", "Test2 FirstName", "Test2 LastName");
+    }
+    
+    public function testGetTrainingEndingEmailFormattedWithUnauthedUserThrowsException() {
+        $this->expectException(UserNotAuthedException::class);
+        $this->expectExceptionMessage('user not authenticated');
+        $actual = Emails::getTrainingEndingEmailFormatted("fr", "Test2 FirstName", "Test2 LastName");
+    }
 
 }

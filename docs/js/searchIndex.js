@@ -766,6 +766,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#property_defaultDescription"
         },                {
+            "fqsen": "\\Udacity\\Exceptions\\UserNotAuthedException",
+            "name": "UserNotAuthedException",
+            "summary": "Exception\u0020thrown\u0020when\u0020an\u0020email\u0020fails\u0020to\u0020be\u0020delivered\u0020using\u0020the\u0020\u0060mail\u0060\u0020function",
+            "url": "classes/Udacity-Exceptions-UserNotAuthedException.html"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\UserNotAuthedException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Udacity-Exceptions-UserNotAuthedException.html#method___construct"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
