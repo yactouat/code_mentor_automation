@@ -14,4 +14,8 @@ body {
   padding-bottom: 40px;
   background-color: var(--secondary-color);
 }
+
+.with-tooltip {
+  position: relative;
+}
   
