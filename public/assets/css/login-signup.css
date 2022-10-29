@@ -28,4 +28,9 @@ body {
   position: absolute;
   top: 25px;
   right: -25px;
+  cursor: pointer;
+}
+
+.modal-body ol li {
+  text-align: left;
 }
