@@ -483,17 +483,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller",
             "name": "Controller",
-            "summary": "",
+            "summary": "parent\u0020class\u0020of\u0020all\u0020the\u0020web\u0020app\u0027\u0020controllers",
             "url": "classes/Udacity-Apps-Web-Controllers-Controller.html"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "parent\u0020controller\u0020constructor",
             "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#method___construct"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003AgetRenderer\u0028\u0029",
             "name": "getRenderer",
-            "summary": "",
+            "summary": "gets\u0020the\u0020Twig\u0020instance\u0020of\u0020the\u0020controller",
             "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#method_getRenderer"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003AgetStatusCode\u0028\u0029",
@@ -503,57 +503,42 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003AsetStatusCode\u0028\u0029",
             "name": "setStatusCode",
-            "summary": "",
+            "summary": "sets\u0020the\u0020HTTP\u0020status\u0020code\u0020of\u0020the\u0020instance",
             "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#method_setStatusCode"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003A\u0024renderer",
             "name": "renderer",
-            "summary": "",
+            "summary": "the\u0020templating\u0020engine\u0020used\u0020to\u0020render\u0020the\u0020HTML\u0020of\u0020the\u0020app\u0027\u0020\u0028Twig\u0029",
             "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#property_renderer"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003A\u0024statusCode",
             "name": "statusCode",
-            "summary": "",
+            "summary": "the\u0020default\u0020HTTP\u0020status\u0020code\u0020\u0028200\u0029",
             "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#property_statusCode"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003A\u0024homeTemplatePath",
             "name": "homeTemplatePath",
-            "summary": "",
+            "summary": "the\u0020path\u0020to\u0020the\u0020homepage\u0020template",
             "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#property_homeTemplatePath"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\ControllerInterface",
             "name": "ControllerInterface",
-            "summary": "",
+            "summary": "Web\u0020Controller\u0020interface",
             "url": "classes/Udacity-Apps-Web-Controllers-ControllerInterface.html"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\ControllerInterface\u003A\u003AgetStatusCode\u0028\u0029",
             "name": "getStatusCode",
-            "summary": "",
+            "summary": "gets\u0020the\u0020HTTP\u0020status\u0020code\u0020of\u0020the\u0020current\u0020controller\u0020instance",
             "url": "classes/Udacity-Apps-Web-Controllers-ControllerInterface.html#method_getStatusCode"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\HomeController",
-            "name": "HomeController",
-            "summary": "",
-            "url": "classes/Udacity-Apps-Web-Controllers-HomeController.html"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\HomeController\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/Udacity-Apps-Web-Controllers-HomeController.html#method___construct"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\HomeController\u003A\u003Aindex\u0028\u0029",
-            "name": "index",
-            "summary": "",
-            "url": "classes/Udacity-Apps-Web-Controllers-HomeController.html#method_index"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\NotFoundController",
             "name": "NotFoundController",
-            "summary": "",
+            "summary": "parent\u0020class\u0020of\u0020all\u0020the\u0020web\u0020app\u0027\u0020controllers",
             "url": "classes/Udacity-Apps-Web-Controllers-NotFoundController.html"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\NotFoundController\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "parent\u0020controller\u0020constructor",
             "url": "classes/Udacity-Apps-Web-Controllers-NotFoundController.html#method___construct"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\NotFoundController\u003A\u003Aindex\u0028\u0029",
@@ -563,7 +548,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\ResourceControllerInterface",
             "name": "ResourceControllerInterface",
-            "summary": "",
+            "summary": "Web\u0020Controller\u0020interface",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-ResourceControllerInterface.html"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\ResourceControllerInterface\u003A\u003Acreate\u0028\u0029",
@@ -583,12 +568,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\SessionLeadsController",
             "name": "SessionLeadsController",
-            "summary": "",
+            "summary": "parent\u0020class\u0020of\u0020all\u0020the\u0020web\u0020app\u0027\u0020controllers",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\SessionLeadsController\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "parent\u0020controller\u0020constructor",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#method___construct"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\SessionLeadsController\u003A\u003Acreate\u0028\u0029",
