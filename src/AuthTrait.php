@@ -4,8 +4,16 @@ namespace Udacity;
 
 use Udacity\Models\SessionLeadModel;
 
+/**
+ * this trait is responsible for managing the auth state cross namespaces
+ */
 trait AuthTrait {
 
+    /**
+     * checks if the user is authenticated whether in web or cli mode
+     *
+     * @return boolean - if the user is authenticated
+     */
     protected function isAuthed(): bool {
         switch (APP_MODE) {
             case 'web':
@@ -17,6 +25,11 @@ trait AuthTrait {
         }
     }
 
+    /**
+     * gets the authenticated user first name, whether in web or cli mode
+     *
+     * @return string - the authed user first name or an empty string
+     */
     public static function getAuthedUserFirstName(): string {
         switch (APP_MODE) {
             case 'web':
@@ -31,10 +44,17 @@ trait AuthTrait {
                 $usr = $sessionLead->selectOneByEmail($_ENV['authed_user_email']);
                 return count($usr) > 0 ? $usr['first_name'] : '';
             default:
-                return false;
+                return '';
         }
     }
 
+    /**
+     * logs a user in outside the context of a web controller
+     *
+     * @param string $email
+     * @param string $password
+     * @return boolean - the outcome of the operation
+     */
     public static function logUserIn(string $email, string $password): bool {
         $sessionLead = new SessionLeadModel(
             email: '',

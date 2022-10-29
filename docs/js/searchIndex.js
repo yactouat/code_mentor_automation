@@ -763,22 +763,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\AuthTrait",
             "name": "AuthTrait",
-            "summary": "",
+            "summary": "this\u0020trait\u0020is\u0020responsible\u0020for\u0020managing\u0020the\u0020auth\u0020state\u0020cross\u0020namespaces",
             "url": "classes/Udacity-AuthTrait.html"
         },                {
             "fqsen": "\\Udacity\\AuthTrait\u003A\u003AisAuthed\u0028\u0029",
             "name": "isAuthed",
-            "summary": "",
+            "summary": "checks\u0020if\u0020the\u0020user\u0020is\u0020authenticated\u0020whether\u0020in\u0020web\u0020or\u0020cli\u0020mode",
             "url": "classes/Udacity-AuthTrait.html#method_isAuthed"
         },                {
             "fqsen": "\\Udacity\\AuthTrait\u003A\u003AgetAuthedUserFirstName\u0028\u0029",
             "name": "getAuthedUserFirstName",
-            "summary": "",
+            "summary": "gets\u0020the\u0020authenticated\u0020user\u0020first\u0020name,\u0020whether\u0020in\u0020web\u0020or\u0020cli\u0020mode",
             "url": "classes/Udacity-AuthTrait.html#method_getAuthedUserFirstName"
         },                {
             "fqsen": "\\Udacity\\AuthTrait\u003A\u003AlogUserIn\u0028\u0029",
             "name": "logUserIn",
-            "summary": "",
+            "summary": "logs\u0020a\u0020user\u0020in\u0020outside\u0020the\u0020context\u0020of\u0020a\u0020web\u0020controller",
             "url": "classes/Udacity-AuthTrait.html#method_logUserIn"
         },                {
             "fqsen": "\\Udacity\\Exceptions\\AllowedLanguageException",
