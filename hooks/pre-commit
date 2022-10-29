@@ -5,15 +5,19 @@
  * 
  * ! don't forget it to make it executable
  * 
- * using a Docker running PHP container, checks if
+ * checks if
  * - PHPUnit tests pass
  * - generates PHP documentation
+ * 
+ * clean up logic consists of:
+ * - adding the generated documentation to the commit
+ * - cleaning the logs
  */
 
 echo PHP_EOL."Running PHPUnit tests...".PHP_EOL;
 
 exec(
-    'docker exec -t udacity_sl_automation-php-1 bash -c "/udacity_sl_automation/vendor/bin/phpunit /udacity_sl_automation/tests"', 
+    'docker exec -t udacity_sl_automation-php-1 bash -c "/var/www/vendor/bin/phpunit /var/www/tests --colors --testdox"', 
     $phpUnitOutput, 
     $phpUnitReturnCode
 );
@@ -45,5 +49,8 @@ if ($genPhpDocsReturnCode !== 0) {
 
 // adding generated docs in current commit
 exec('git add .');
+
+// cleaning the logs after work done on this commit
+exec('sh clean-logs.sh');
 
 exit(0);

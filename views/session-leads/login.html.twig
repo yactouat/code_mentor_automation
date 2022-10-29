@@ -1,0 +1,47 @@
+{% extends "layout.login-signup.html.twig" %}
+
+{% block description %}Login to your Udacity session lead job automation.{% endblock %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    {% for error in errors %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <div>{{error}}</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+    <form 
+        action="/login"
+        method="post"
+        class="form-login-signup m-auto"
+    >
+        <h1 class="h3 mb-3 fw-normal">Login to Udacity SL Automation</h1>
+        <div class="form-floating">
+            <input 
+                type="email" 
+                class="form-control" 
+                id="email" 
+                placeholder="Your Email Address" 
+                {% if userInput.email is defined %}
+                    value="{{userInput.email}}"
+                {% endif %}
+                name="email"
+            >
+            <label for="email">Your Email Address</label>
+        </div>
+        <div class="form-floating">
+            <input 
+                type="password" 
+                class="form-control" 
+                id="user_passphrase" 
+                placeholder="Your Password Or Passphrase"
+                name="user_passphrase"
+            >
+            <label for="user_passphrase">Your Password Or Passphrase</label>
+        </div>
+        <input class="w-100 btn btn-lg btn-primary" type="submit" name="submit" value="Login"/>
+        <p class="mt-5 mb-3 text-muted">want to <a href="/session-leads/create">signup</a> instead ?</p>
+        <p class="mt-5 mb-3 text-muted">&copy; yactouat 2022</p>
+    </form>
+{% endblock %}

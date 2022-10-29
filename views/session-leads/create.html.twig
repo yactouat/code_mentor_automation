@@ -1,0 +1,112 @@
+{% extends "layout.login-signup.html.twig" %}
+
+{% block description %}Sign up to do your Udacity session lead job with ease.{% endblock %}
+
+{% block title %}Sign up{% endblock %}
+
+{% block cssLibs %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+{% endblock %}
+
+{% block content %}
+    {% for error in errors %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <div>{{error}}</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+    <form 
+        action="/session-leads/create"
+        method="post"
+        class="form-login-signup m-auto"
+    >
+        <h1 class="h3 mb-3 fw-normal">Signup to Udacity SL Automation</h1>
+        <div class="form-floating">
+            <input
+                type="text" 
+                class="form-control" 
+                id="first_name" 
+                placeholder="Your First Name" 
+                name="first_name"
+                {% if userInput.first_name is defined %}
+                    value="{{userInput.first_name}}"
+                {% endif %}
+            >
+            <label for="first_name">Your First Name</label>
+        </div>
+        <div class="form-floating">
+            <input 
+                type="email" 
+                class="form-control" 
+                id="email" 
+                placeholder="Your Email Address" 
+                {% if userInput.email is defined %}
+                    value="{{userInput.email}}"
+                {% endif %}
+                name="email"
+            >
+            <label for="email">Your Email Address</label>
+        </div>
+        <div class="form-floating with-tooltip">
+            <input 
+                type="password" 
+                class="form-control" 
+                id="google_app_password" 
+                placeholder="Your Google Application Password"
+                name="google_app_password"
+            >
+            <label for="google_app_password">Your Google Application Password</label>
+            <i class="bi bi-question-square" data-bs-toggle="modal" data-bs-target="#googleAppPasswordHelpModal"></i>
+        </div>
+        <div class="form-floating">
+            <input 
+                type="password" 
+                class="form-control" 
+                id="user_passphrase" 
+                placeholder="Your Password Or Passphrase"
+                name="user_passphrase"
+            >
+            <label for="user_passphrase">Your Password Or Passphrase</label>
+        </div>
+        <input class="w-100 btn btn-lg btn-primary" type="submit" name="submit" value="Sign Up"/>
+        <p class="mt-5 mb-3 text-muted">&copy; yactouat 2022</p>
+    </form>
+
+    <div class="modal fade" id="googleAppPasswordHelpModal" tabindex="-1" aria-labelledby="googleAppPasswordHelpModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="googleAppPasswordHelpModalLabel">Google App Password Help</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ol>
+                    <li>This application requires that you use Gmail to use its emailing features.</li>
+                    <li>To allow this application to send emails using a Gmail address you'll need to give it a Google Application password.</li>
+                    <li>To get this password, go to your Google account UI (accessible on the top right profile menu in your Google Chrome browser).</li>
+                    <li>Go to the security menu.</li>
+                    <img 
+                        src="https://res.cloudinary.com/practicaldev/image/fetch/s--XevkWiQt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hvzvft6vs49hevwy7p24.png"
+                        alt="showing the security menu in the Google account UI"
+                    />
+                    <li>In the Signing in to Google menu, enable 2FA (if not already done).</li>
+                    <img 
+                        src="https://res.cloudinary.com/practicaldev/image/fetch/s--yWII9Z2G--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5lz4b70j8ryc2lhhgdzb.png"
+                        alt="showing the 2FA menu in the Google account UI"
+                    />
+                    <li>Once it's done, in the same menu, go to App passwords; from there, you will be able to generate a password for your application</li>
+                    <img
+                        src="https://res.cloudinary.com/practicaldev/image/fetch/s--gfyRhk2_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/klnclardl9te7timy0mt.png"
+                        alt"showing the app password selection menu in the Google account UI"
+                    />
+                    <li>Choose 'Other' in the 'Select app' and 'Select device' dropdowns; you can keep track of this password by giving it a name that is explicit as to where it is used.</li>
+                    <li>Once you have generated your password, make sure you copy it in the google app' password field form (also, you wont be able to see this password again).</li>            
+                </ol>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

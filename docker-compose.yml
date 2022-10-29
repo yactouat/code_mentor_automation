@@ -1,10 +1,70 @@
+volumes:
+  mariadb-vol:
+  mariadbtest-vol:
+
 services:
+
+  mariadb:
+    image: 'mariadb:10.9.3'
+    volumes:
+      - mariadb-vol:/var/lib/mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+      MYSQL_DATABASE:  udacity_sl_automation
+    ports:
+      - 3306:3306
+
+  mariadbtest:
+    image: 'mariadb:10.9.3'
+    volumes:
+        - mariadbtest-vol:/var/lib/mysql
+    environment:
+        MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+        MYSQL_DATABASE:  udacity_sl_automation
+    ports:
+        - 3307:3306
+
+  mariadb_seeder:
+    image: 'mariadb:10.9.3'
+    volumes:
+      - ./scripts/:/scripts
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+    entrypoint: [
+      "bash", 
+      "-c", 
+      # taking 10 seconds just to be sure both dev and test dbs are up
+      "sleep 10 \
+        && mysql --user=root --host=mariadb --port=3306 udacity_sl_automation < /scripts/database.sql \ 
+        && mysql --user=root --host=mariadbtest --port=3306 udacity_sl_automation < /scripts/testdatabase.sql\
+        && exit"
+    ] 
+    depends_on:
+      - mariadb
+      - mariadbtest
 
   php:
     build:
       context: .
       dockerfile: docker/php/dev.Dockerfile
-    working_dir: /udacity_sl_automation
+    working_dir: /var/www
     volumes:
-      - ./:/udacity_sl_automation
-      - ./vendor:/udacity_sl_automation/vendor/
+      - ./:/var/www
+      - ./vendor:/var/www/vendor/
+      - ./data/logs/nginx:/var/log/nginx/
+    ports:
+      - 80:80
+    depends_on:
+      - mariadb
+
+  phpmyadmin:
+    image: phpmyadmin:5.2.0
+    restart: unless-stopped
+    ports:
+        - 8080:80
+    environment:
+        # we specify that we connect to an arbitrary server with the flag below
+        # "arbitrary" means you're able to specify which database server to use on login page of phpmyadmin      
+        - PMA_ARBITRARY=1
+    depends_on:
+    - mariadb

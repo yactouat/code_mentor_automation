@@ -1,0 +1,36 @@
+body {
+  display: flex;
+  align-items: center;
+}
+
+.form-login-signup {
+  max-width: 330px;
+  padding: 15px;
+}
+
+.form-login-signup .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-login-signup input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-login-signup input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.bi-question-square {
+  position: absolute;
+  top: 25px;
+  right: -25px;
+  cursor: pointer;
+}
+
+.modal-body ol li {
+  text-align: left;
+}
