@@ -418,67 +418,67 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Routes",
             "name": "Routes",
-            "summary": "",
+            "summary": "this\u0020class\u0020is\u0020responsible\u0020for\u0020storing\u0020web\u0020routing\u0020information",
             "url": "classes/Udacity-Apps-Web-Routes.html"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Routes\u003A\u003AgetRegisteredRoutes\u0028\u0029",
             "name": "getRegisteredRoutes",
-            "summary": "",
+            "summary": "gets\u0020the\u0020routes\u0020of\u0020the\u0020app",
             "url": "classes/Udacity-Apps-Web-Routes.html#method_getRegisteredRoutes"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\WebApp",
             "name": "WebApp",
-            "summary": "parent\u0020class\u0020of\u0020all\u0020apps\u0020\u0028CLI,\u0020Web\u0029",
+            "summary": "this\u0020class\u0020represents\u0020the\u0020main\u0020entry\u0020point\u0020of\u0020the\u0020web\u0020application",
             "url": "classes/Udacity-Apps-Web-WebApp.html"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\WebApp\u003A\u003A_setResponseOutput\u0028\u0029",
             "name": "_setResponseOutput",
-            "summary": "",
+            "summary": "sets\u0020the\u0020output\u0020after\u0020parsing\u0020the\u0020client\u0027s\u0020request",
             "url": "classes/Udacity-Apps-Web-WebApp.html#method__setResponseOutput"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\WebApp\u003A\u003AgetController\u0028\u0029",
             "name": "getController",
-            "summary": "",
+            "summary": "gets\u0020the\u0020set\u0020controller\u0020for\u0020this\u0020request",
             "url": "classes/Udacity-Apps-Web-WebApp.html#method_getController"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\WebApp\u003A\u003AgetResponseOutput\u0028\u0029",
             "name": "getResponseOutput",
-            "summary": "",
+            "summary": "gets\u0020the\u0020string\u0020response\u0020when\u0020needing\u0020to\u0020output\u0020it\u0020to\u0020the\u0020client",
             "url": "classes/Udacity-Apps-Web-WebApp.html#method_getResponseOutput"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\WebApp\u003A\u003AgetStatusCode\u0028\u0029",
             "name": "getStatusCode",
-            "summary": "",
+            "summary": "gets\u0020the\u0020set\u0020HTTP\u0020status\u0020code\u0020after\u0020having\u0020parsed\u0020the\u0020client\u0027s\u0020request",
             "url": "classes/Udacity-Apps-Web-WebApp.html#method_getStatusCode"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\WebApp\u003A\u003AhandleRequest\u0028\u0029",
             "name": "handleRequest",
-            "summary": "",
+            "summary": "parses\u0020the\u0020client\u0027s\u0020request",
             "url": "classes/Udacity-Apps-Web-WebApp.html#method_handleRequest"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\WebApp\u003A\u003AparseRequestRoute\u0028\u0029",
             "name": "parseRequestRoute",
-            "summary": "",
+            "summary": "gets\u0020the\u0020client\u0027s\u0020requested\u0020route",
             "url": "classes/Udacity-Apps-Web-WebApp.html#method_parseRequestRoute"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\WebApp\u003A\u003A\u0024controller",
             "name": "controller",
-            "summary": "",
+            "summary": "the\u0020controller\u0020that\u0020is\u0020set\u0020after\u0020parsing\u0020the\u0020client\u0020request",
             "url": "classes/Udacity-Apps-Web-WebApp.html#property_controller"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\WebApp\u003A\u003A\u0024statusCode",
             "name": "statusCode",
-            "summary": "",
+            "summary": "the\u0020HTTP\u0020status\u0020code\u0020that\u0020is\u0020set\u0020after\u0020parsing\u0020the\u0020client\u0020request",
             "url": "classes/Udacity-Apps-Web-WebApp.html#property_statusCode"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\WebApp\u003A\u003A\u0024inputRoute",
             "name": "inputRoute",
-            "summary": "",
+            "summary": "the\u0020client\u0027s\u0020request\u0020route",
             "url": "classes/Udacity-Apps-Web-WebApp.html#property_inputRoute"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\WebApp\u003A\u003A\u0024responseOutput",
             "name": "responseOutput",
-            "summary": "",
+            "summary": "the\u0020response\u0020that\u0020is\u0020set\u0020after\u0020parsing\u0020the\u0020client\u0020request",
             "url": "classes/Udacity-Apps-Web-WebApp.html#property_responseOutput"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller",

@@ -2,8 +2,16 @@
 
 namespace Udacity\Apps\Web;
 
+/**
+ * this class is responsible for storing web routing information
+ */
 final class Routes {
 
+    /**
+     * gets the routes of the app
+     *
+     * @return array - an array of the routes and their linked controllers/methods, sorted by HTTP verb
+     */
     public static function getRegisteredRoutes(): array {
         return [
             "GET" => [
