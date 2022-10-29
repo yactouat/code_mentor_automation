@@ -53,52 +53,52 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Database",
             "name": "Database",
-            "summary": "",
+            "summary": "this\u0020class\u0020is\u0020responsible\u0020for\u0020talking\u0020to\u0020a\u0020MariaDB\/MySQL\u0020database",
             "url": "classes/Udacity-Database.html"
         },                {
             "fqsen": "\\Udacity\\Database\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "the\u0020database\u0020connection\u0020constructor",
             "url": "classes/Udacity-Database.html#method___construct"
         },                {
             "fqsen": "\\Udacity\\Database\u003A\u003A_closeConn\u0028\u0029",
             "name": "_closeConn",
-            "summary": "",
+            "summary": "closes\u0020PDO\u0020connections",
             "url": "classes/Udacity-Database.html#method__closeConn"
         },                {
             "fqsen": "\\Udacity\\Database\u003A\u003A_getConn\u0028\u0029",
             "name": "_getConn",
-            "summary": "",
+            "summary": "gets\u0020the\u0020current\u0020PDO\u0020connection",
             "url": "classes/Udacity-Database.html#method__getConn"
         },                {
             "fqsen": "\\Udacity\\Database\u003A\u003A_initConn\u0028\u0029",
             "name": "_initConn",
-            "summary": "",
+            "summary": "initializes\u0020a\u0020connection\u0020to\u0020the\u0020DB",
             "url": "classes/Udacity-Database.html#method__initConn"
         },                {
             "fqsen": "\\Udacity\\Database\u003A\u003A_runQuery\u0028\u0029",
             "name": "_runQuery",
-            "summary": "",
+            "summary": "runs\u0020a\u0020SQL\u0020query\u0020with\u0020or\u0020without\u0020variable\u0020parameters",
             "url": "classes/Udacity-Database.html#method__runQuery"
         },                {
             "fqsen": "\\Udacity\\Database\u003A\u003AreadQuery\u0028\u0029",
             "name": "readQuery",
-            "summary": "",
+            "summary": "executes\u0020a\u0020SQL\u0020read\u0020query\u0020and\u0020logs\u0020it",
             "url": "classes/Udacity-Database.html#method_readQuery"
         },                {
             "fqsen": "\\Udacity\\Database\u003A\u003AwriteQuery\u0028\u0029",
             "name": "writeQuery",
-            "summary": "",
+            "summary": "executes\u0020a\u0020SQL\u0020write\u0020query\u0020and\u0020logs\u0020it",
             "url": "classes/Udacity-Database.html#method_writeQuery"
         },                {
             "fqsen": "\\Udacity\\Database\u003A\u003A\u0024isTesting",
             "name": "isTesting",
-            "summary": "",
+            "summary": "whether\u0020we\u0020are\u0020in\u0020testing\u0020environment\u0020or\u0020not",
             "url": "classes/Udacity-Database.html#property_isTesting"
         },                {
             "fqsen": "\\Udacity\\Database\u003A\u003A\u0024databaseConn",
             "name": "databaseConn",
-            "summary": "",
+            "summary": "the\u0020nullable\u0020PDO\u0020object\u0020to\u0020connect\u0020to\u0020the\u0020db",
             "url": "classes/Udacity-Database.html#property_databaseConn"
         },                {
             "fqsen": "\\Udacity\\Database\u003A\u003A\u0024dbName",

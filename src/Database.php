@@ -5,12 +5,27 @@ namespace Udacity;
 use PDO;
 use PDOStatement;
 
+/**
+ * this class is responsible for talking to a MariaDB/MySQL database
+ */
 final class Database {
 
     use LoggerTrait;
 
+    /**
+     * whether we are in testing environment or not
+     * 
+     * this conditions wiring to the test database
+     *
+     * @var boolean
+     */
     private bool $isTesting;
 
+    /**
+     * the nullable PDO object to connect to the db
+     *
+     * @var PDO|null
+     */
     private ?PDO $databaseConn;
 
     /**
@@ -22,6 +37,13 @@ final class Database {
      */
     public static $dbName = "udacity_sl_automation";
 
+    /**
+     * the database connection constructor
+     * 
+     * initialises the connection to the database and sets a logger 
+     *
+     * @param boolean $isTesting
+     */
     public function __construct(bool $isTesting = false)
     {
         $this->isTesting = !$isTesting ? ($_ENV["isTesting"] ?? false) : $isTesting;
@@ -31,11 +53,24 @@ final class Database {
         );
     }
 
+    /**
+     * closes PDO connections
+     *
+     * @param PDOStatement $statement
+     * @return void
+     */
     private function _closeConn(PDOStatement $statement): void {
         $statement = null;
         $this->databaseConn = null;
     }
 
+    /**
+     * gets the current PDO connection
+     * 
+     * creates a new one if none existing
+     *
+     * @return PDO
+     */
     private function _getConn(): PDO {
         if (is_null($this->databaseConn)) {
             $this->_initConn();
@@ -43,6 +78,11 @@ final class Database {
         return $this->databaseConn;
     }
 
+    /**
+     * initializes a connection to the DB
+     *
+     * @return void
+     */
     private function _initConn(): void {
         $this->databaseConn = new PDO(
             dsn: 'mysql:host=' . $_ENV['DB_HOST'] . ';port=' . $_ENV['DB_PORT'] . ';dbname=' . self::$dbName,
@@ -52,6 +92,13 @@ final class Database {
         );
     }
 
+    /**
+     * runs a SQL query with or without variable parameters
+     *
+     * @param string $sql
+     * @param array|null $values
+     * @return array
+     */
     private function _runQuery(string $sql, ?array $values = null): array {
         $this->startTimer();
         $statement = null;
@@ -70,11 +117,25 @@ final class Database {
         return $finalRes;
     }
 
+    /**
+     * executes a SQL read query and logs it
+     *
+     * @param string $sql
+     * @param array|null $values
+     * @return array
+     */
     public function readQuery(string $sql, ?array $values = null): array {
         $this->logger->info("running READ query : ".$sql);
         return $this->_runQuery($sql, $values);
     }
 
+    /**
+     * executes a SQL write query and logs it
+     *
+     * @param string $sql
+     * @param array|null $values
+     * @return array
+     */
     public function writeQuery(string $sql, ?array $values = null): array {
         $this->logger->notice("running WRITE query : ".$sql);
         return $this->_runQuery($sql, $values);
