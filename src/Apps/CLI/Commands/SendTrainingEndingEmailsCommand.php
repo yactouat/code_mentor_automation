@@ -6,7 +6,6 @@ use Udacity\Csvs\CsvExtractor;
 use Udacity\Emails\Mailer;
 use Udacity\Intl;
 use Udacity\LoggerTrait;
-use Udacity\Processes\TrainingEndingEmailProcess;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
@@ -17,6 +16,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Symfony\Component\Console\Question\Question;
 use Udacity\AuthTrait;
+use Udacity\Automations\TrainingEndingEmailAutomation;
 use Udacity\Exceptions\AllowedLanguageException;
 use Udacity\Exceptions\MsmtprcNotSetException;
 use Udacity\Exceptions\NonExistingFileException;
@@ -36,13 +36,6 @@ final class SendTrainingEndingEmailsCommand extends Command
     const CSV_ARG = 'csv';
     const LANG_ARG = 'language';
     const ONLINE_RESOURCES = 'online-resources';
-
-    /**
-     * description of the 'emails:training-ending' command that is given to the end-user
-     *
-     * @var string
-     */
-    protected static $defaultDescription = 'Sends cheering up emails in bulk to all before the end of the Udacity training.';
 
     /**
      * CLI interface of sending emails to students when their training nears its ending
@@ -211,7 +204,7 @@ final class SendTrainingEndingEmailsCommand extends Command
             '=============================================',
             ''
         ]);
-        ((new TrainingEndingEmailProcess())->setLogger($this->logger))->run($csv, $language, $onlineResources);
+        ((new TrainingEndingEmailAutomation())->setLogger($this->logger))->run($csv, $language, $onlineResources);
 
         // feedback to user
         $output->writeln([

@@ -64,6 +64,10 @@
                 
             </li>
                     <li>
+                <a href="namespaces/udacity-automations.html" class="">Automations</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/udacity-csvs.html" class="">Csvs</a>
                 
             </li>
@@ -77,10 +81,6 @@
             </li>
                     <li>
                 <a href="namespaces/udacity-models.html" class="">Models</a>
-                
-            </li>
-                    <li>
-                <a href="namespaces/udacity-processes.html" class="">Processes</a>
                 
             </li>
             </ul>
@@ -149,10 +149,6 @@
         <dd>this model represents a session lead, main actor of the app&#039;</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Models-StudentModel.html"><abbr title="\Udacity\Models\StudentModel">StudentModel</abbr></a></dt>
         <dd>this model represents a Udacity student in our business logic</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Processes-BehindStudentsEmailProcess.html"><abbr title="\Udacity\Processes\BehindStudentsEmailProcess">BehindStudentsEmailProcess</abbr></a></dt>
-        <dd>this class represents the business logic behind sending students behind emails</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Processes-TrainingEndingEmailProcess.html"><abbr title="\Udacity\Processes\TrainingEndingEmailProcess">TrainingEndingEmailProcess</abbr></a></dt>
-        <dd>this class represents the business logic behind sending all students a cheering up email before the end of the training</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Apps-Web-Routes.html"><abbr title="\Udacity\Apps\Web\Routes">Routes</abbr></a></dt>
         <dd>this class is responsible for storing web routing information</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Apps-Web-WebApp.html"><abbr title="\Udacity\Apps\Web\WebApp">WebApp</abbr></a></dt>
@@ -163,8 +159,6 @@
         <dd>controller responsible for showing an output when a route is not found in the app&#039;</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html"><abbr title="\Udacity\Apps\Web\Controllers\Resource\SessionLeadsController">SessionLeadsController</abbr></a></dt>
         <dd>this controller is responsible for handling requests related to the main user of this app: the session lead</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Processes-Process.html"><abbr title="\Udacity\Processes\Process">Process</abbr></a></dt>
-        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Exceptions-EmailNotDeliveredException.html"><abbr title="\Udacity\Exceptions\EmailNotDeliveredException">EmailNotDeliveredException</abbr></a></dt>
         <dd>Exception thrown when an email fails to be delivered using the `mail` function</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Exceptions-Exception.html"><abbr title="\Udacity\Exceptions\Exception">Exception</abbr></a></dt>
@@ -189,6 +183,12 @@
         <dd>Exception thrown when an input CSV does not contain valid data</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Exceptions-SQLTableNotSetException.html"><abbr title="\Udacity\Exceptions\SQLTableNotSetException">SQLTableNotSetException</abbr></a></dt>
         <dd>Exception thrown when a SQL table that is supposed to exist does not exist</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Automations-Automation.html"><abbr title="\Udacity\Automations\Automation">Automation</abbr></a></dt>
+        <dd>this is the parent class of all specifc processes run by the app</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Automations-BehindStudentsEmailAutomation.html"><abbr title="\Udacity\Automations\BehindStudentsEmailAutomation">BehindStudentsEmailAutomation</abbr></a></dt>
+        <dd>this class represents the business logic behind sending students behind emails</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Automations-TrainingEndingEmailAutomation.html"><abbr title="\Udacity\Automations\TrainingEndingEmailAutomation">TrainingEndingEmailAutomation</abbr></a></dt>
+        <dd>this class represents the business logic behind sending all students a cheering up email before the end of the training</dd>
     
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/Udacity-LoggerTrait.html"><abbr title="\Udacity\LoggerTrait">LoggerTrait</abbr></a></dt>
         <dd>this trait shares the logic of logging stuff throughout the app&#039;</dd>

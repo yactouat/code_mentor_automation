@@ -110,12 +110,12 @@
             <div class="phpdocumentor-column -eight phpdocumentor-content">
                     <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/udacity.html">Udacity</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/udacity-apps.html">Apps</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/udacity-automations.html">Automations</a></li>
     </ul>
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    App
+    Automation
 
     
             <div class="phpdocumentor-element__package">
@@ -129,16 +129,14 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/App.php"><a href="files/src-apps-app.html"><abbr title="src/Apps/App.php">App.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Automations/Automation.php"><a href="files/src-automations-automation.html"><abbr title="src/Automations/Automation.php">Automation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">8</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">parent class of all apps (CLI, Web)</p>
+            <p class="phpdocumentor-summary">this is the parent class of all specifc processes run by the app</p>
 
-    <section class="phpdocumentor-description"><p>this is where the app' environment is loaded</p>
-</section>
 
 
 
@@ -154,18 +152,18 @@
 
 <dl class="phpdocumentor-table-of-contents">
                     <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Udacity-Apps-App.html#property_rootDir">$rootDir</a>
+    <a href="classes/Udacity-Automations-Automation.html#property_errors">$errors</a>
     <span>
-                        &nbsp;: string            </span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
+<dd>errors that happened during the automation execution</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Udacity-Apps-App.html#method___construct">__construct()</a>
+    <a href="classes/Udacity-Automations-Automation.html#method_getErrors">getErrors()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd>constructs an instance of the app&#039; with its environment</dd>
+<dd></dd>
 
         </dl>
 
@@ -177,7 +175,7 @@
     <section class="phpdocumentor-properties">
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
-            <a href="classes/Udacity-Apps-App.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/Udacity-Automations-Automation.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="
@@ -186,30 +184,29 @@
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_rootDir">
-        $rootDir
-        <a href="classes/Udacity-Apps-App.html#property_rootDir" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_errors">
+        $errors
+        <a href="classes/Udacity-Automations-Automation.html#property_errors" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/App.php"><a href="files/src-apps-app.html"><abbr title="src/Apps/App.php">App.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Automations/Automation.php"><a href="files/src-automations-automation.html"><abbr title="src/Automations/Automation.php">Automation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">errors that happened during the automation execution</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$rootDir</span>
-    </code>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$errors</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -218,7 +215,7 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/Udacity-Apps-App.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/Udacity-Automations-Automation.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -226,57 +223,29 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method___construct">
-        __construct()
-        <a href="classes/Udacity-Apps-App.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getErrors">
+        getErrors()
+        <a href="classes/Udacity-Automations-Automation.html#method_getErrors" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/App.php"><a href="files/src-apps-app.html"><abbr title="src/Apps/App.php">App.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Automations/Automation.php"><a href="files/src-automations-automation.html"><abbr title="src/Automations/Automation.php">Automation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">constructs an instance of the app&#039; with its environment</p>
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rootDir</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">getErrors</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
 
     
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$rootDir</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>where to find the <code class="prettyprint">.env</code> file</li>
-</ul>
-</section>
-
-            </dd>
-            </dl>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Udacity-Exceptions-BadEnvException.html"><abbr title="\Udacity\Exceptions\BadEnvException">BadEnvException</abbr></a></span>
-                                                            
-                                             
-                                    </dd>
-                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
             &mdash;
         
     
@@ -359,7 +328,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/Udacity-Apps-App.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/Udacity-Automations-Automation.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

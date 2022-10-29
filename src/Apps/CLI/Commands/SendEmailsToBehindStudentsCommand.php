@@ -11,6 +11,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Symfony\Component\Console\Question\Question;
 use Udacity\AuthTrait;
+use Udacity\Automations\BehindStudentsEmailAutomation;
 use Udacity\Csvs\CsvExtractor;
 use Udacity\Emails\Mailer;
 use Udacity\Exceptions\AllowedLanguageException;
@@ -19,7 +20,6 @@ use Udacity\Exceptions\NonExistingFileException;
 use Udacity\Intl;
 use Udacity\LoggerTrait;
 use Udacity\Models\SessionLeadModel;
-use Udacity\Processes\BehindStudentsEmailProcess;
 
 /**
  * this class is responsible for handling CLI input of sending emails to behind students
@@ -35,13 +35,6 @@ final class SendEmailsToBehindStudentsCommand extends Command
     
     const CSV_ARG = 'csv';
     const LANG_ARG = 'language';
-
-    /**
-     * description of the 'emails:behind-students' command that is given to the end-user
-     *
-     * @var string
-     */
-    protected static string $defaultDescription = 'Sends emails in bulk to students who are behind on their Nanodegree program.';
 
     /**
      * CLI interface of sending emails to students who are behind on their nanodegree program
@@ -198,7 +191,7 @@ final class SendEmailsToBehindStudentsCommand extends Command
             '====================================',
             ''
         ]);
-        $process = ((new BehindStudentsEmailProcess())->setLogger($this->logger));
+        $process = ((new BehindStudentsEmailAutomation())->setLogger($this->logger));
         $process->run($csv, $language);
 
         if (count($process->getErrors()) > 0) {

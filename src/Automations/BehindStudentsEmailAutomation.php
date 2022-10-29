@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Udacity\Processes;
+namespace Udacity\Automations;
 
 use Udacity\Csvs\StudentsCsvExtractor as CsvExtractor;
 use Udacity\Emails\Emails;
@@ -11,12 +11,12 @@ use Udacity\LoggerTrait;
 /**
  * this class represents the business logic behind sending students behind emails
  */
-final class BehindStudentsEmailProcess extends Process {
+final class BehindStudentsEmailAutomation extends Automation {
 
     use LoggerTrait;
 
     /**
-     * implements `BehindStudentsEmailProcess` business logic
+     * implements `BehindStudentsEmailAutomation` business logic
      *
      * @param string $csv
      * @param string $language

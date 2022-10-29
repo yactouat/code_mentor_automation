@@ -396,26 +396,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Models-StudentModel.html#property_on_track_status"
         },                {
-            "fqsen": "\\Udacity\\Processes\\BehindStudentsEmailProcess",
-            "name": "BehindStudentsEmailProcess",
-            "summary": "this\u0020class\u0020represents\u0020the\u0020business\u0020logic\u0020behind\u0020sending\u0020students\u0020behind\u0020emails",
-            "url": "classes/Udacity-Processes-BehindStudentsEmailProcess.html"
-        },                {
-            "fqsen": "\\Udacity\\Processes\\BehindStudentsEmailProcess\u003A\u003Arun\u0028\u0029",
-            "name": "run",
-            "summary": "implements\u0020\u0060BehindStudentsEmailProcess\u0060\u0020business\u0020logic",
-            "url": "classes/Udacity-Processes-BehindStudentsEmailProcess.html#method_run"
-        },                {
-            "fqsen": "\\Udacity\\Processes\\TrainingEndingEmailProcess",
-            "name": "TrainingEndingEmailProcess",
-            "summary": "this\u0020class\u0020represents\u0020the\u0020business\u0020logic\u0020behind\u0020sending\u0020all\u0020students\u0020a\u0020cheering\u0020up\u0020email\u0020before\u0020the\u0020end\u0020of\u0020the\u0020training",
-            "url": "classes/Udacity-Processes-TrainingEndingEmailProcess.html"
-        },                {
-            "fqsen": "\\Udacity\\Processes\\TrainingEndingEmailProcess\u003A\u003Arun\u0028\u0029",
-            "name": "run",
-            "summary": "implements\u0020\u0060TrainingEndingEmailProcess\u0060\u0020business\u0020logic",
-            "url": "classes/Udacity-Processes-TrainingEndingEmailProcess.html#method_run"
-        },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Routes",
             "name": "Routes",
             "summary": "this\u0020class\u0020is\u0020responsible\u0020for\u0020storing\u0020web\u0020routing\u0020information",
@@ -611,21 +591,6 @@ Search.appendIndex(
             "summary": "path\u0020to\u0020the\u0020Twig\u0020template\u0020of\u0020the\u0020login\u0020form",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#property_loginTemplatePath"
         },                {
-            "fqsen": "\\Udacity\\Processes\\Process",
-            "name": "Process",
-            "summary": "",
-            "url": "classes/Udacity-Processes-Process.html"
-        },                {
-            "fqsen": "\\Udacity\\Processes\\Process\u003A\u003AgetErrors\u0028\u0029",
-            "name": "getErrors",
-            "summary": "",
-            "url": "classes/Udacity-Processes-Process.html#method_getErrors"
-        },                {
-            "fqsen": "\\Udacity\\Processes\\Process\u003A\u003A\u0024errors",
-            "name": "errors",
-            "summary": "",
-            "url": "classes/Udacity-Processes-Process.html#property_errors"
-        },                {
             "fqsen": "\\Udacity\\Exceptions\\EmailNotDeliveredException",
             "name": "EmailNotDeliveredException",
             "summary": "Exception\u0020thrown\u0020when\u0020an\u0020email\u0020fails\u0020to\u0020be\u0020delivered\u0020using\u0020the\u0020\u0060mail\u0060\u0020function",
@@ -711,11 +676,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Apps-CLI-Commands-SendEmailsToBehindStudentsCommand.html#constant_LANG_ARG"
         },                {
-            "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendEmailsToBehindStudentsCommand\u003A\u003A\u0024defaultDescription",
-            "name": "defaultDescription",
-            "summary": "description\u0020of\u0020the\u0020\u0027emails\u003Abehind\u002Dstudents\u0027\u0020command\u0020that\u0020is\u0020given\u0020to\u0020the\u0020end\u002Duser",
-            "url": "classes/Udacity-Apps-CLI-Commands-SendEmailsToBehindStudentsCommand.html#property_defaultDescription"
-        },                {
             "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendTrainingEndingEmailsCommand",
             "name": "SendTrainingEndingEmailsCommand",
             "summary": "this\u0020class\u0020is\u0020responsible\u0020for\u0020handling\u0020CLI\u0020input\u0020of\u0020sending\u0020all\u0020students\u0020a\u0020cheering\u0020up\u0020email\u0020before\u0020the\u0020end\u0020of\u0020the\u0020training",
@@ -745,11 +705,6 @@ Search.appendIndex(
             "name": "ONLINE_RESOURCES",
             "summary": "",
             "url": "classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#constant_ONLINE_RESOURCES"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003A\u0024defaultDescription",
-            "name": "defaultDescription",
-            "summary": "description\u0020of\u0020the\u0020\u0027emails\u003Atraining\u002Dending\u0027\u0020command\u0020that\u0020is\u0020given\u0020to\u0020the\u0020end\u002Duser",
-            "url": "classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#property_defaultDescription"
         },                {
             "fqsen": "\\Udacity\\Exceptions\\UserNotAuthedException",
             "name": "UserNotAuthedException",
@@ -831,6 +786,41 @@ Search.appendIndex(
             "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
             "url": "classes/Udacity-Exceptions-SQLTableNotSetException.html#method___construct"
         },                {
+            "fqsen": "\\Udacity\\Automations\\Automation",
+            "name": "Automation",
+            "summary": "this\u0020is\u0020the\u0020parent\u0020class\u0020of\u0020all\u0020specifc\u0020processes\u0020run\u0020by\u0020the\u0020app",
+            "url": "classes/Udacity-Automations-Automation.html"
+        },                {
+            "fqsen": "\\Udacity\\Automations\\Automation\u003A\u003AgetErrors\u0028\u0029",
+            "name": "getErrors",
+            "summary": "",
+            "url": "classes/Udacity-Automations-Automation.html#method_getErrors"
+        },                {
+            "fqsen": "\\Udacity\\Automations\\Automation\u003A\u003A\u0024errors",
+            "name": "errors",
+            "summary": "errors\u0020that\u0020happened\u0020during\u0020the\u0020automation\u0020execution",
+            "url": "classes/Udacity-Automations-Automation.html#property_errors"
+        },                {
+            "fqsen": "\\Udacity\\Automations\\BehindStudentsEmailAutomation",
+            "name": "BehindStudentsEmailAutomation",
+            "summary": "this\u0020class\u0020represents\u0020the\u0020business\u0020logic\u0020behind\u0020sending\u0020students\u0020behind\u0020emails",
+            "url": "classes/Udacity-Automations-BehindStudentsEmailAutomation.html"
+        },                {
+            "fqsen": "\\Udacity\\Automations\\BehindStudentsEmailAutomation\u003A\u003Arun\u0028\u0029",
+            "name": "run",
+            "summary": "implements\u0020\u0060BehindStudentsEmailAutomation\u0060\u0020business\u0020logic",
+            "url": "classes/Udacity-Automations-BehindStudentsEmailAutomation.html#method_run"
+        },                {
+            "fqsen": "\\Udacity\\Automations\\TrainingEndingEmailAutomation",
+            "name": "TrainingEndingEmailAutomation",
+            "summary": "this\u0020class\u0020represents\u0020the\u0020business\u0020logic\u0020behind\u0020sending\u0020all\u0020students\u0020a\u0020cheering\u0020up\u0020email\u0020before\u0020the\u0020end\u0020of\u0020the\u0020training",
+            "url": "classes/Udacity-Automations-TrainingEndingEmailAutomation.html"
+        },                {
+            "fqsen": "\\Udacity\\Automations\\TrainingEndingEmailAutomation\u003A\u003Arun\u0028\u0029",
+            "name": "run",
+            "summary": "implements\u0020\u0060TrainingEndingEmailAutomation\u0060\u0020business\u0020logic",
+            "url": "classes/Udacity-Automations-TrainingEndingEmailAutomation.html#method_run"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -871,6 +861,11 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/udacity.html"
         },                {
+            "fqsen": "\\Udacity\\Automations",
+            "name": "Automations",
+            "summary": "",
+            "url": "namespaces/udacity-automations.html"
+        },                {
             "fqsen": "\\Udacity\\Csvs",
             "name": "Csvs",
             "summary": "",
@@ -890,10 +885,5 @@ Search.appendIndex(
             "name": "Models",
             "summary": "",
             "url": "namespaces/udacity-models.html"
-        },                {
-            "fqsen": "\\Udacity\\Processes",
-            "name": "Processes",
-            "summary": "",
-            "url": "namespaces/udacity-processes.html"
         }            ]
 );
