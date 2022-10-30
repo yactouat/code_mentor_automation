@@ -246,9 +246,5 @@ final class WebAppTest extends TestCase {
         $this->assertEquals($expected, $actual);
     }
 
-    // TODO test language input for emails
-    // TODO test (for controller ?) showing alerts case errors on persist
-    // TODO test thoroughly $_POST payload for emails
-
 }
 

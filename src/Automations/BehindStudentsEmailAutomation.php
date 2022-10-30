@@ -22,7 +22,6 @@ final class BehindStudentsEmailAutomation extends Automation {
      * @param string $language
      * @return void
      * 
-     * TODO test behavior with non allowed language
      */
     public function run(string $csv, string $language): void {
         // get students who are behind coordinates (first and last name, email)

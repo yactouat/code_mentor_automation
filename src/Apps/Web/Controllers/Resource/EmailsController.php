@@ -3,6 +3,7 @@
 namespace Udacity\Apps\Web\Controllers\Resource;
 
 use Udacity\Apps\Web\Controllers\Controller;
+use Udacity\Automations\BehindStudentsEmailAutomation;
 use Udacity\Models\EmailsModel;
 
 /**
@@ -85,10 +86,16 @@ final class EmailsController extends Controller implements ResourceControllerInt
                 );
             } else {
                 $emails = new EmailsModel($_FILES['sessreportcsv']['name']);
+                $csvDestFile = EmailsModel::$dataFolder . $emails->getSessReportCsv();
                 move_uploaded_file(
                     $_FILES['sessreportcsv']['tmp_name'],
                     EmailsModel::$dataFolder . $emails->getSessReportCsv()
                 );
+                (new BehindStudentsEmailAutomation())
+                    ->setNewLogger(empty($_ENV['isTesting']) ? '/var/www/data/logs/php/web_app.log' : 
+                        '/var/www/tests/fixtures/logs/php/web_app.log'
+                    )
+                    ->run($csvDestFile, $_POST['language']);
                 $statusCode = 200;
                 $template = 'home.html.twig';
             }
