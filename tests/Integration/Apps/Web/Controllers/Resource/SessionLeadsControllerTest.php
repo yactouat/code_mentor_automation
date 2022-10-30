@@ -15,10 +15,6 @@ final class SessionLeadsControllerTest extends TestCase {
     protected function setUp(): void
     {
         $this->loadEnv();
-        $this->database->writeQuery('TRUNCATE udacity_sl_automation.sessionlead');
-        $_POST = [];
-        $_SESSION = [];
-        $_SERVER['REQUEST_METHOD'] = "GET";
     }
 
     public function testPersistWithNoSubmitFieldReturnsRelevantAlert() {
@@ -262,18 +258,18 @@ final class SessionLeadsControllerTest extends TestCase {
         $this->assertEquals($expected, $actual);
     }
 
-    // public function testPersistWithInvalidInputDoesNotSetMsmtprcFile() {
-    //     $ctlr = new SessionLeadsController();
-    //     $_POST = [
-    //         "submit" => "1",
-    //         "email" => "test@.com",
-    //         "first_name" => "test first name",
-    //         "google_app_password" => "googleapppassword",
-    //         "user_passphrase" => "test user password",
-    //     ];
-    //     $ctlr->persist();
-    //     $this->assertFalse('/etc/msmtprc');
-    //     $this->assertFalse('/etc/msmtprc.test');
-    // }
+    public function testPersistWithInvalidInputDoesNotSetMsmtprcConf() {
+        $ctlr = new SessionLeadsController();
+        $_POST = [
+            "submit" => "1",
+            "email" => "test@.com",
+            "first_name" => "test first name",
+            "google_app_password" => "googleapppassword",
+            "user_passphrase" => "test user password",
+        ];
+        $ctlr->persist();
+        $this->assertTrue(!file_exists('/etc/msmtprc.test'));
+        $this->assertTrue(!file_exists('/etc/msmtprc'));
+    }
 
 }

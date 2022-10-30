@@ -1,19 +1,21 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Apps\Web;
+namespace Tests\Integration\Apps\Web;
 
 use PHPUnit\Framework\TestCase;
+use Tests\Integration\EnvLoaderTrait;
 use Udacity\Apps\Web\WebApp;
 use Udacity\Apps\Web\Controllers\NotFoundController;
 use Udacity\Apps\Web\Controllers\Resource\SessionLeadsController;
 
 final class WebAppTest extends TestCase {
 
+    use AuthenticateTrait;
+    use EnvLoaderTrait;
+
     protected function setUp(): void
     {
-        $_SERVER['REQUEST_METHOD'] = "GET";
-        $_SESSION = [];
-        $_POST = [];
+        $this->loadEnv();
     }
 
     public function testGetRequestRouteWithHomeRouteGetsCorrectRoute() {
@@ -79,7 +81,7 @@ final class WebAppTest extends TestCase {
     }
 
     public function testHandleRequestWithHomeRouteSets200StatusCode() {
-        $_SESSION['authed'] = true;
+        $this->authenticate();
         $expected = 200;
         $app = new WebApp('/var/www/tests/fixtures');
         $app->handleRequest('/');
@@ -112,10 +114,10 @@ final class WebAppTest extends TestCase {
     }
 
     public function testGetResponseOutputWithHomeRouteGetsHomePage() {
-        $_SESSION['authed'] = true;
+        $this->authenticate();
         $expected = str_replace([' ', "\n"], ['', ''], file_get_contents('/var/www/tests/fixtures/views/home.html'));
         $app = new WebApp('/var/www/tests/fixtures');
-        $app->handleRequest("/");
+        $app->handleRequest('/');
         $actual = $app->getResponseOutput();
         $this->assertEquals($expected, str_replace([' ', "\n"], ['', ''], $actual));
     }
@@ -153,7 +155,7 @@ final class WebAppTest extends TestCase {
     }
 
     public function testGetResponseOutputWithSessionLeadsLoginRouteAuthedGetsHomePage() {
-        $_SESSION['authed'] = true;
+        $this->authenticate();
         $expected = str_replace([' ', "\n"], ['', ''], file_get_contents('/var/www/tests/fixtures/views/home.html'));
         $app = new WebApp('/var/www/tests/fixtures');
         $app->handleRequest('/login');
@@ -176,6 +178,27 @@ final class WebAppTest extends TestCase {
         $actual = $app->getStatusCode();
         $this->assertEquals($expected, $actual);
     }
+
+    public function testGetResponseOutputWithEmailBehindStudentsRouteAuthedGetsRelevantForm() {
+        $this->authenticate();
+        $expected = str_replace([' ', "\n"], ['', ''], file_get_contents('/var/www/tests/fixtures/views/emails.behind-students.create.html'));
+        $app = new WebApp('/var/www/tests/fixtures');
+        $app->handleRequest('/emails?type=behind-students');
+        $actual = $app->getResponseOutput();
+        $this->assertEquals($expected, str_replace([' ', "\n"], ['', ''], $actual));
+    }
+
+    public function testGetResponseOutputWithEmailBehindStudentsRouteUnauthedShowsLoginPage() {
+        $expected = str_replace([' ', "\n"], ['', ''], file_get_contents('/var/www/tests/fixtures/views/session-leads.login.html'));
+        $app = new WebApp('/var/www/tests/fixtures');
+        $app->handleRequest('/emails?type=behind-students');
+        $actual = $app->getResponseOutput();
+        $this->assertEquals($expected, str_replace([' ', "\n"], ['', ''], $actual));
+    } 
+
+    // TODO test (for controller ?) not found (template and status code) if type of email does not exist
+
+    // TODO test (for controller ?) showing alerts case errors on persist
 
 }
 

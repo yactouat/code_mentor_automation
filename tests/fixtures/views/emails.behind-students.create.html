@@ -15,10 +15,11 @@
     
       <main class="w-100">
         <form 
-          action="/session-leads/create"
+          action="/emails"
           method="post"
           class="app-form m-auto"
         >
+          <input type="hidden" name="type" value="behind-students">
           <h1 class="h3 mb-3 fw-normal">Emails to Behind Students</h1>
           <div class="mb-3 with-tooltip">
             <label for="formFile" class="form-label">Udacity session report CSV file generated from the mentor dashboard</label>

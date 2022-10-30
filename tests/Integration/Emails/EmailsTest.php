@@ -19,10 +19,6 @@ final class EmailsTest extends TestCase
     protected function setUp(): void
     {
         $this->loadEnv();
-        $this->database->writeQuery('TRUNCATE udacity_sl_automation.sessionlead');
-        $_POST = [];
-        $_SESSION = [];
-        $_SERVER['REQUEST_METHOD'] = "GET";
     }
 
     public function testGetBehindStudentsEmailTemplateInEnglish() {

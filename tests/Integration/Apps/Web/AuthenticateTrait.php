@@ -27,6 +27,8 @@ trait AuthenticateTrait {
             'user_passphrase' => 'test user password',
         ];
         $ctlr->login();
+        $_POST = []; // resetting the $_POST array after login
+        $_SERVER['REQUEST_METHOD'] = 'GET'; // resetting the server request method after login
     }
 
 }

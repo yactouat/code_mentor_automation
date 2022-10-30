@@ -13,7 +13,6 @@ final class SessionLeadModelTest extends TestCase {
     protected function setUp(): void
     {
         $this->loadEnv();
-        $this->database->writeQuery('TRUNCATE udacity_sl_automation.sessionlead');
     }
 
     protected function verifyUser(array $expected, array $actual) {

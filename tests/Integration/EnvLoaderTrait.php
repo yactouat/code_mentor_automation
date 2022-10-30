@@ -10,18 +10,24 @@ trait EnvLoaderTrait {
     protected Database $database;
 
     protected function loadEnv(?string $envDir = null) {
+        foreach (['/etc/msmtprc', '/etc/msmtprc.test'] as $file) {
+            if (\file_exists($file)) {
+                unlink($file);
+            }
+        }
         if (!defined('APP_MODE')) {
             define('APP_MODE', 'web');
         }
-        $_ENV["isTesting"] = true;
+        $_POST = [];
+        $_SESSION = [];
+        $_SERVER['REQUEST_METHOD'] = "GET";
         $dotenv = Dotenv::createImmutable(
             is_null($envDir) ? '/var/www/tests/fixtures' : $envDir
         );
         $dotenv->load();
+        $_ENV["isTesting"] = true;
         $this->database = new Database();
-        if (\file_exists('/etc/msmptrc.test')) {
-            unlink('/etc/msmptrc.test');
-        }
+        $this->database->writeQuery('TRUNCATE udacity_sl_automation.sessionlead');
     }
 
 }
