@@ -182,7 +182,9 @@ final class WebAppTest extends TestCase {
     public function testGetResponseOutputWithEmailBehindStudentsRouteAuthedGetsRelevantForm() {
         $this->authenticate();
         $expected = str_replace([' ', "\n"], ['', ''], file_get_contents('/var/www/tests/fixtures/views/emails.behind-students.create.html'));
+        $_GET['type'] = "behind-students";
         $app = new WebApp('/var/www/tests/fixtures');
+        $_GET['type'] = 'behind-students';
         $app->handleRequest('/emails?type=behind-students');
         $actual = $app->getResponseOutput();
         $this->assertEquals($expected, str_replace([' ', "\n"], ['', ''], $actual));
@@ -191,12 +193,58 @@ final class WebAppTest extends TestCase {
     public function testGetResponseOutputWithEmailBehindStudentsRouteUnauthedShowsLoginPage() {
         $expected = str_replace([' ', "\n"], ['', ''], file_get_contents('/var/www/tests/fixtures/views/session-leads.login.html'));
         $app = new WebApp('/var/www/tests/fixtures');
+        $_GET['type'] = 'behind-students';
         $app->handleRequest('/emails?type=behind-students');
         $actual = $app->getResponseOutput();
         $this->assertEquals($expected, str_replace([' ', "\n"], ['', ''], $actual));
     } 
 
-    // TODO test (for controller ?) not found (template and status code) if type of email does not exist
+    public function testOutputWithEmailsRouteAuthedButNonExistingEmailTypeGetsNotFoundPage() {
+        $this->authenticate();
+        $expected = str_replace([' ', "\n"], ['', ''], file_get_contents('/var/www/tests/fixtures/views/not-found.html'));
+        $app = new WebApp('/var/www/tests/fixtures');
+        $_GET['type'] = 'non-existing';
+        $app->handleRequest('/emails?type=non-existing');
+        $actual = $app->getResponseOutput();
+        $this->assertEquals($expected, str_replace([' ', "\n"], ['', ''], $actual));
+    }
+
+    public function testOutputWithEmailsRouteAuthedButNonExistingEmailTypeGets404Code() {
+        $this->authenticate();
+        $expected = 404;
+        $app = new WebApp('/var/www/tests/fixtures');
+        $_GET['type'] = 'non-existing';
+        $app->handleRequest('/emails?type=non-existing');
+        $actual = $app->getStatusCode();
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testHandleRequestWithLogoutRouteAfterHavingAuthenticatedSets200StatusCode() {
+        $this->authenticate();
+        $expected = 200;
+        $app = new WebApp('/var/www/tests/fixtures');
+        $app->handleRequest('/logout');
+        $actual = $app->getStatusCode();
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testGetResponseOutputWithSessionLeadsLogoutRouteAfterHavingAuthenticatedGetsLoginPage() {
+        $this->authenticate();
+        $expected = str_replace([' ', "\n"], ['', ''], file_get_contents('/var/www/tests/fixtures/views/session-leads.login.html'));
+        $app = new WebApp('/var/www/tests/fixtures');
+        $app->handleRequest('/logout');
+        $actual = $app->getResponseOutput();
+        $this->assertEquals($expected, str_replace([' ', "\n"], ['', ''], $actual));
+    }
+
+    public function testOutputWithEmailsRouteUnauthedGets401Code() {
+        $expected = 401;
+        $app = new WebApp('/var/www/tests/fixtures');
+        $_GET['type'] = 'behind-students';
+        $app->handleRequest('/emails?type=behind-students');
+        $actual = $app->getStatusCode();
+        $this->assertEquals($expected, $actual);
+    }
 
     // TODO test (for controller ?) showing alerts case errors on persist
 

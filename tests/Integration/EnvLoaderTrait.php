@@ -19,6 +19,7 @@ trait EnvLoaderTrait {
             define('APP_MODE', 'web');
         }
         $_POST = [];
+        $_GET = [];
         $_SESSION = [];
         $_SERVER['REQUEST_METHOD'] = "GET";
         $dotenv = Dotenv::createImmutable(

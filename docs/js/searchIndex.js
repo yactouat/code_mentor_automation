@@ -856,6 +856,41 @@ Search.appendIndex(
             "summary": "saves\u0020data\u0020related\u0020to\u0020the\u0020linked\u0020resource",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method_persist"
         },                {
+            "fqsen": "\\Udacity\\Models\\EmailModel",
+            "name": "EmailModel",
+            "summary": "this\u0020class\u0020represents\u0020an\u0020online\u0020ressource\u0020that\u0020is\u0020shared\u0020with\u0020the\u0020students",
+            "url": "classes/Udacity-Models-EmailModel.html"
+        },                {
+            "fqsen": "\\Udacity\\Models\\EmailModel\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "finishes\u0020the\u0020construction\u0020of\u0020the\u0020instance\u0020model",
+            "url": "classes/Udacity-Models-EmailModel.html#method___construct"
+        },                {
+            "fqsen": "\\Udacity\\Models\\EmailModel\u003A\u003AgetCsvFields\u0028\u0029",
+            "name": "getCsvFields",
+            "summary": "getting\u0020Udacity\u0020CSV\u0020fields\u0020for\u0020the\u0020given\u0020model",
+            "url": "classes/Udacity-Models-EmailModel.html#method_getCsvFields"
+        },                {
+            "fqsen": "\\Udacity\\Models\\EmailModel\u003A\u003AgetValidEmailsTypes\u0028\u0029",
+            "name": "getValidEmailsTypes",
+            "summary": "",
+            "url": "classes/Udacity-Models-EmailModel.html#method_getValidEmailsTypes"
+        },                {
+            "fqsen": "\\Udacity\\Models\\EmailModel\u003A\u003Apersist\u0028\u0029",
+            "name": "persist",
+            "summary": "saves\u0020a\u0020record\u0020of\u0020the\u0020model\u0020in\u0020db",
+            "url": "classes/Udacity-Models-EmailModel.html#method_persist"
+        },                {
+            "fqsen": "\\Udacity\\Models\\EmailModel\u003A\u003AvalidateInputFields\u0028\u0029",
+            "name": "validateInputFields",
+            "summary": "this\u0020function\u0020is\u0020responsible\u0020for\u0020the\u0020business\u0020logic\u0020validation\u0020of\u0020the\u0020instance\u0020model",
+            "url": "classes/Udacity-Models-EmailModel.html#method_validateInputFields"
+        },                {
+            "fqsen": "\\Udacity\\Models\\EmailModel\u003A\u003A\u0024tableName",
+            "name": "tableName",
+            "summary": "the\u0020SQL\u0020table\u0020name\u0020of\u0020the\u0020current\u0020instance",
+            "url": "classes/Udacity-Models-EmailModel.html#property_tableName"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",

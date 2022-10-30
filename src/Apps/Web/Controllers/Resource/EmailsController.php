@@ -3,6 +3,7 @@
 namespace Udacity\Apps\Web\Controllers\Resource;
 
 use Udacity\Apps\Web\Controllers\Controller;
+use Udacity\Models\EmailModel;
 
 /**
  * this controller is responsible for handling requests related to sending emails from the web
@@ -23,8 +24,18 @@ final class EmailsController extends Controller implements ResourceControllerInt
     public function create(): string
     {
         $showLoginForm = $this->showLoginFormIfNotAuthed();
-        return empty($showLoginForm) ? $this->getRenderer()->render('emails/behind-students.create.html.twig') : 
-            $showLoginForm;
+        $template = empty($showLoginForm) ? self::$notFoundTemplatePath : self::$loginTemplatePath;
+        $statusCode = empty($showLoginForm) ? 404 : 401;
+        if (
+            empty($showLoginForm) 
+            && !empty($_GET['type']) 
+            && in_array($_GET['type'], EmailModel::getValidEmailsTypes())
+        ) {
+            $template = 'emails/' . $_GET['type'] . '.create.html.twig';
+            $statusCode = 200;
+        }
+        $this->setStatusCode($statusCode);
+        return $this->getRenderer()->render($template);
     }
  
     /**
