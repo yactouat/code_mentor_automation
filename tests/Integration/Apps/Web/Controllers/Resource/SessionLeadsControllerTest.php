@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Integration\Apps\Web\Controllers;
+namespace Tests\Integration\Apps\Web\Controllers\Resource;
 
 use PHPUnit\Framework\TestCase;
 use Tests\Integration\Apps\Web\AuthenticateTrait;

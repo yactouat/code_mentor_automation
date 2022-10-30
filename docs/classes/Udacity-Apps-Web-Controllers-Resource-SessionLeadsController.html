@@ -135,15 +135,12 @@
             implements
                             <a href="classes/Udacity-Apps-Web-Controllers-Resource-ResourceControllerInterface.html"><abbr title="\Udacity\Apps\Web\Controllers\Resource\ResourceControllerInterface">ResourceControllerInterface</abbr></a>                    </span>
     
-            <span class="phpdocumentor-element__extends">
-            Uses
-                            <a href="classes/Udacity-AuthTrait.html"><abbr title="\Udacity\AuthTrait">AuthTrait</abbr></a>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">12</span>
 
     </aside>
 
@@ -182,19 +179,26 @@
 </dt>
 <dd>the path to the homepage template</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#property_loginTemplatePath">$loginTemplatePath</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+<dd>path to the Twig template of the login form</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#property_notFoundTemplatePath">$notFoundTemplatePath</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+<dd>the path to the not found page template</dd>
+
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#property_createTemplatePath">$createTemplatePath</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
 <dd>path to the Twig template of the signup form</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#property_loginTemplatePath">$loginTemplatePath</a>
-    <span>
-                        &nbsp;: string            </span>
-</dt>
-<dd>path to the Twig template of the login form</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#property_renderer">$renderer</a>
@@ -294,6 +298,13 @@
 </dt>
 <dd>sets the HTTP status code of the instance</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#method_showLoginFormIfNotAuthed">showLoginFormIfNotAuthed()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>returns the built login HTML page if user is not authenticated</dd>
+
         </dl>
 
 
@@ -322,7 +333,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Controller.php"><a href="files/src-apps-web-controllers-controller.html"><abbr title="src/Apps/Web/Controllers/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">22</span>
 
     </aside>
 
@@ -333,6 +344,72 @@
     <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$homeTemplatePath</span>
      = <span class="phpdocumentor-signature__default-value">&#039;home.html.twig&#039;</span></code>
+
+    
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+            -static                                            "
+>
+    <h4 class="phpdocumentor-element__name" id="property_loginTemplatePath">
+        $loginTemplatePath
+        <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#property_loginTemplatePath" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Controller.php"><a href="files/src-apps-web-controllers-controller.html"><abbr title="src/Apps/Web/Controllers/Controller.php">Controller.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">29</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">path to the Twig template of the login form</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$loginTemplatePath</span>
+     = <span class="phpdocumentor-signature__default-value">&#039;session-leads/login.html.twig&#039;</span></code>
+
+    
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+            -static                                            "
+>
+    <h4 class="phpdocumentor-element__name" id="property_notFoundTemplatePath">
+        $notFoundTemplatePath
+        <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#property_notFoundTemplatePath" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Controller.php"><a href="files/src-apps-web-controllers-controller.html"><abbr title="src/Apps/Web/Controllers/Controller.php">Controller.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">36</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">the path to the not found page template</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$notFoundTemplatePath</span>
+     = <span class="phpdocumentor-signature__default-value">&#039;not-found.html.twig&#039;</span></code>
 
     
     
@@ -355,7 +432,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 
     </aside>
 
@@ -366,39 +443,6 @@
     <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$createTemplatePath</span>
      = <span class="phpdocumentor-signature__default-value">&#039;session-leads/create.html.twig&#039;</span></code>
-
-    
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -private
-            -static                                            "
->
-    <h4 class="phpdocumentor-element__name" id="property_loginTemplatePath">
-        $loginTemplatePath
-        <a href="classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#property_loginTemplatePath" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">29</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">path to the Twig template of the login form</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$loginTemplatePath</span>
-     = <span class="phpdocumentor-signature__default-value">&#039;session-leads/login.html.twig&#039;</span></code>
 
     
     
@@ -421,7 +465,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Controller.php"><a href="files/src-apps-web-controllers-controller.html"><abbr title="src/Apps/Web/Controllers/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">43</span>
 
     </aside>
 
@@ -454,7 +498,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Controller.php"><a href="files/src-apps-web-controllers-controller.html"><abbr title="src/Apps/Web/Controllers/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 
     </aside>
 
@@ -491,7 +535,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">34</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 
     </aside>
 
@@ -524,7 +568,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">42</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 
     </aside>
 
@@ -594,7 +638,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Controller.php"><a href="files/src-apps-web-controllers-controller.html"><abbr title="src/Apps/Web/Controllers/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 
     </aside>
 
@@ -627,7 +671,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Controller.php"><a href="files/src-apps-web-controllers-controller.html"><abbr title="src/Apps/Web/Controllers/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">82</span>
 
     </aside>
 
@@ -660,7 +704,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">42</span>
 
     </aside>
 
@@ -697,7 +741,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">68</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 
     </aside>
 
@@ -732,7 +776,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">101</span>
+    <span class="phpdocumentor-element-found-in__line">88</span>
 
     </aside>
 
@@ -819,7 +863,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">112</span>
+    <span class="phpdocumentor-element-found-in__line">99</span>
 
     </aside>
 
@@ -889,7 +933,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Controller.php"><a href="files/src-apps-web-controllers-controller.html"><abbr title="src/Apps/Web/Controllers/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">94</span>
 
     </aside>
 
@@ -917,6 +961,39 @@
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_showLoginFormIfNotAuthed">
+        showLoginFormIfNotAuthed()
+        <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#method_showLoginFormIfNotAuthed" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Controller.php"><a href="files/src-apps-web-controllers-controller.html"><abbr title="src/Apps/Web/Controllers/Controller.php">Controller.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">103</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">returns the built login HTML page if user is not authenticated</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">showLoginFormIfNotAuthed</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
         
     

@@ -126,6 +126,26 @@ Search.appendIndex(
             "summary": "sets\u0020the\u0020HTTP\u0020status\u0020code\u0020of\u0020the\u0020instance",
             "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#method_setStatusCode"
         },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003AshowLoginFormIfNotAuthed\u0028\u0029",
+            "name": "showLoginFormIfNotAuthed",
+            "summary": "returns\u0020the\u0020built\u0020login\u0020HTML\u0020page\u0020if\u0020user\u0020is\u0020not\u0020authenticated",
+            "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#method_showLoginFormIfNotAuthed"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003A\u0024homeTemplatePath",
+            "name": "homeTemplatePath",
+            "summary": "the\u0020path\u0020to\u0020the\u0020homepage\u0020template",
+            "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#property_homeTemplatePath"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003A\u0024loginTemplatePath",
+            "name": "loginTemplatePath",
+            "summary": "path\u0020to\u0020the\u0020Twig\u0020template\u0020of\u0020the\u0020login\u0020form",
+            "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#property_loginTemplatePath"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003A\u0024notFoundTemplatePath",
+            "name": "notFoundTemplatePath",
+            "summary": "the\u0020path\u0020to\u0020the\u0020not\u0020found\u0020page\u0020template",
+            "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#property_notFoundTemplatePath"
+        },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003A\u0024renderer",
             "name": "renderer",
             "summary": "the\u0020templating\u0020engine\u0020used\u0020to\u0020render\u0020the\u0020HTML\u0020of\u0020the\u0020app\u0027\u0020\u0028Twig\u0029",
@@ -135,11 +155,6 @@ Search.appendIndex(
             "name": "statusCode",
             "summary": "the\u0020default\u0020HTTP\u0020status\u0020code\u0020\u0028200\u0029",
             "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#property_statusCode"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003A\u0024homeTemplatePath",
-            "name": "homeTemplatePath",
-            "summary": "the\u0020path\u0020to\u0020the\u0020homepage\u0020template",
-            "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#property_homeTemplatePath"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\ControllerInterface",
             "name": "ControllerInterface",
@@ -225,11 +240,6 @@ Search.appendIndex(
             "name": "createTemplatePath",
             "summary": "path\u0020to\u0020the\u0020Twig\u0020template\u0020of\u0020the\u0020signup\u0020form",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#property_createTemplatePath"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\SessionLeadsController\u003A\u003A\u0024loginTemplatePath",
-            "name": "loginTemplatePath",
-            "summary": "path\u0020to\u0020the\u0020Twig\u0020template\u0020of\u0020the\u0020login\u0020form",
-            "url": "classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#property_loginTemplatePath"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Routes",
             "name": "Routes",
@@ -820,6 +830,31 @@ Search.appendIndex(
             "name": "on_track_status",
             "summary": "",
             "url": "classes/Udacity-Models-StudentModel.html#property_on_track_status"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\EmailsController",
+            "name": "EmailsController",
+            "summary": "this\u0020controller\u0020is\u0020responsible\u0020for\u0020handling\u0020requests\u0020related\u0020to\u0020sending\u0020emails\u0020from\u0020the\u0020web",
+            "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\EmailsController\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "parent\u0020controller\u0020constructor",
+            "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method___construct"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\EmailsController\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "shows\u0020the\u0020web\u0020form\u0020to\u0020create\u0020an\u0020instance\u0020of\u0020the\u0020related\u0020resource",
+            "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method_create"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\EmailsController\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "\u0021\u0020not\u0020implemented",
+            "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method_index"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\EmailsController\u003A\u003Apersist\u0028\u0029",
+            "name": "persist",
+            "summary": "saves\u0020data\u0020related\u0020to\u0020the\u0020linked\u0020resource",
+            "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method_persist"
         },                {
             "fqsen": "\\",
             "name": "\\",

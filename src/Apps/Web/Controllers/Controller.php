@@ -5,11 +5,35 @@ namespace Udacity\Apps\Web\Controllers;
 use Twig\Environment;
 use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
+use Udacity\AuthTrait;
 
 /**
  * parent class of all the web app' controllers
  */
 abstract class Controller {
+
+    use AuthTrait;
+
+    /**
+     * the path to the homepage template
+     *
+     * @var string
+     */
+    protected static string $homeTemplatePath = 'home.html.twig';
+
+    /**
+     * path to the Twig template of the login form
+     *
+     * @var string
+     */    
+    protected static string $loginTemplatePath = 'session-leads/login.html.twig';
+
+    /**
+     * the path to the not found page template
+     *
+     * @var string
+     */
+    protected static string $notFoundTemplatePath = 'not-found.html.twig';
 
     /**
      * the templating engine used to render the HTML of the app' (Twig)
@@ -24,13 +48,6 @@ abstract class Controller {
      * @var integer
      */
     private int $statusCode = 200;
-
-    /**
-     * the path to the homepage template
-     *
-     * @var string
-     */
-    protected static string $homeTemplatePath = 'home.html.twig';
     
     /**
      * parent controller constructor
@@ -76,6 +93,19 @@ abstract class Controller {
      */
     protected function setStatusCode(int $statusCode) {
         $this->statusCode = $statusCode;
+    }
+
+    /**
+     * returns the built login HTML page if user is not authenticated
+     *
+     * @return string
+     */
+    protected function showLoginFormIfNotAuthed(): string {
+        if(!$this->isAuthed()) {
+            $this->setStatusCode(401);
+            return $this->getRenderer()->render(self::$loginTemplatePath);
+        }
+        return '';
     }
 
 

@@ -113,12 +113,16 @@
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/udacity-apps.html">Apps</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/udacity-apps-web.html">Web</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/udacity-apps-web-controllers.html">Controllers</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/udacity-apps-web-controllers-resource.html">Resource</a></li>
     </ul>
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    Controller
+    EmailsController
 
+        <span class="phpdocumentor-element__extends">
+        extends <a href="classes/Udacity-Apps-Web-Controllers-Controller.html"><abbr title="\Udacity\Apps\Web\Controllers\Controller">Controller</abbr></a>
+    </span>
     
             <div class="phpdocumentor-element__package">
             in package
@@ -127,20 +131,20 @@
                             </ul>
         </div>
     
+            <span class="phpdocumentor-element__implements">
+            implements
+                            <a href="classes/Udacity-Apps-Web-Controllers-Resource-ResourceControllerInterface.html"><abbr title="\Udacity\Apps\Web\Controllers\Resource\ResourceControllerInterface">ResourceControllerInterface</abbr></a>                    </span>
     
-            <span class="phpdocumentor-element__extends">
-            Uses
-                            <a href="classes/Udacity-AuthTrait.html"><abbr title="\Udacity\AuthTrait">AuthTrait</abbr></a>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Controller.php"><a href="files/src-apps-web-controllers-controller.html"><abbr title="src/Apps/Web/Controllers/Controller.php">Controller.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/EmailsController.php"><a href="files/src-apps-web-controllers-resource-emailscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/EmailsController.php">EmailsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">10</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">parent class of all the web app&#039; controllers</p>
+            <p class="phpdocumentor-summary">this controller is responsible for handling requests related to sending emails from the web</p>
 
 
 
@@ -148,6 +152,18 @@
 
 
 
+<h3 id="interfaces_class_traits">
+    Interfaces, Classes, Traits and Enums
+    <a href="#interfaces_class_traits" class="headerlink"><i class="fas fa-link"></i></a>
+</h3>
+
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/Udacity-Apps-Web-Controllers-Resource-ResourceControllerInterface.html"><abbr title="\Udacity\Apps\Web\Controllers\Resource\ResourceControllerInterface">ResourceControllerInterface</abbr></a></dt>
+        <dd>this inteface defines what a resource controller should do</dd>
+    
+    
+    
+    </dl>
 
 
 <h3 id="toc">
@@ -192,6 +208,20 @@
 <dd>the default HTTP status code (200)</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method___construct">__construct()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>parent controller constructor</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method_create">create()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>shows the web form to create an instance of the related resource</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Udacity-AuthTrait.html#method_getAuthedUserFirstName">getAuthedUserFirstName()</a>
     <span>
                                 &nbsp;: string    </span>
@@ -213,18 +243,25 @@
 <dd>{@inheritDoc}</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method_index">index()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>! not implemented</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Udacity-AuthTrait.html#method_logUserIn">logUserIn()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
 <dd>logs a user in outside the context of a web controller</dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#method___construct">__construct()</a>
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method_persist">persist()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: string    </span>
 </dt>
-<dd>parent controller constructor</dd>
+<dd>saves data related to the linked resource</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Udacity-AuthTrait.html#method_isAuthed">isAuthed()</a>
@@ -257,7 +294,7 @@
     <section class="phpdocumentor-properties">
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
-            <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="
@@ -429,8 +466,74 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method___construct">
+        __construct()
+        <a href="classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/EmailsController.php"><a href="files/src-apps-web-controllers-resource-emailscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/EmailsController.php">EmailsController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">15</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">parent controller constructor</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_create">
+        create()
+        <a href="classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method_create" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/EmailsController.php"><a href="files/src-apps-web-controllers-resource-emailscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/EmailsController.php">EmailsController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">23</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">shows the web form to create an instance of the related resource</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">create</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
                     <article
         class="phpdocumentor-element
             -method
@@ -538,6 +641,39 @@
         class="phpdocumentor-element
             -method
             -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_index">
+        index()
+        <a href="classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method_index" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/EmailsController.php"><a href="files/src-apps-web-controllers-resource-emailscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/EmailsController.php">EmailsController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">35</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">! not implemented</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">index</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
                                     -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_logUserIn">
@@ -591,36 +727,34 @@
                     <article
         class="phpdocumentor-element
             -method
-            -protected
+            -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method___construct">
-        __construct()
-        <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_persist">
+        persist()
+        <a href="classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method_persist" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Controller.php"><a href="files/src-apps-web-controllers-controller.html"><abbr title="src/Apps/Web/Controllers/Controller.php">Controller.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/EmailsController.php"><a href="files/src-apps-web-controllers-resource-emailscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/EmailsController.php">EmailsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">parent controller constructor</p>
+        <p class="phpdocumentor-summary">saves data related to the linked resource</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">persist</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"><ul>
-<li>sets the templating engine</li>
-</ul>
+        <section class="phpdocumentor-description"><p>TODO</p>
 </section>
 
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
         
     
@@ -818,7 +952,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
