@@ -856,40 +856,60 @@ Search.appendIndex(
             "summary": "saves\u0020data\u0020related\u0020to\u0020the\u0020linked\u0020resource",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method_persist"
         },                {
-            "fqsen": "\\Udacity\\Models\\EmailModel",
-            "name": "EmailModel",
-            "summary": "this\u0020class\u0020represents\u0020an\u0020online\u0020ressource\u0020that\u0020is\u0020shared\u0020with\u0020the\u0020students",
-            "url": "classes/Udacity-Models-EmailModel.html"
+            "fqsen": "\\Udacity\\Models\\EmailsModel",
+            "name": "EmailsModel",
+            "summary": "this\u0020class\u0020represents\u0020a\u0020batch\u0020of\u0020emails\u0020to\u0020send\u0020to\u0020the\u0020students",
+            "url": "classes/Udacity-Models-EmailsModel.html"
         },                {
-            "fqsen": "\\Udacity\\Models\\EmailModel\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "finishes\u0020the\u0020construction\u0020of\u0020the\u0020instance\u0020model",
-            "url": "classes/Udacity-Models-EmailModel.html#method___construct"
+            "url": "classes/Udacity-Models-EmailsModel.html#method___construct"
         },                {
-            "fqsen": "\\Udacity\\Models\\EmailModel\u003A\u003AgetCsvFields\u0028\u0029",
+            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AgetCsvFields\u0028\u0029",
             "name": "getCsvFields",
             "summary": "getting\u0020Udacity\u0020CSV\u0020fields\u0020for\u0020the\u0020given\u0020model",
-            "url": "classes/Udacity-Models-EmailModel.html#method_getCsvFields"
+            "url": "classes/Udacity-Models-EmailsModel.html#method_getCsvFields"
         },                {
-            "fqsen": "\\Udacity\\Models\\EmailModel\u003A\u003AgetValidEmailsTypes\u0028\u0029",
+            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AgetSessReportCsv\u0028\u0029",
+            "name": "getSessReportCsv",
+            "summary": "gets\u0020the\u0020Udacity\u0020session\u0020report\u0020CSV\u0020file\u0020name\u0020attached\u0020from\u0020which\u0020the\u0020batch\u0020of\u0020emails\u0020must\u0020be\u0020constructed",
+            "url": "classes/Udacity-Models-EmailsModel.html#method_getSessReportCsv"
+        },                {
+            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AgetValidEmailsTypes\u0028\u0029",
             "name": "getValidEmailsTypes",
             "summary": "",
-            "url": "classes/Udacity-Models-EmailModel.html#method_getValidEmailsTypes"
+            "url": "classes/Udacity-Models-EmailsModel.html#method_getValidEmailsTypes"
         },                {
-            "fqsen": "\\Udacity\\Models\\EmailModel\u003A\u003Apersist\u0028\u0029",
+            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003Apersist\u0028\u0029",
             "name": "persist",
             "summary": "saves\u0020a\u0020record\u0020of\u0020the\u0020model\u0020in\u0020db",
-            "url": "classes/Udacity-Models-EmailModel.html#method_persist"
+            "url": "classes/Udacity-Models-EmailsModel.html#method_persist"
         },                {
-            "fqsen": "\\Udacity\\Models\\EmailModel\u003A\u003AvalidateInputFields\u0028\u0029",
+            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AvalidateEmailType\u0028\u0029",
+            "name": "validateEmailType",
+            "summary": "",
+            "url": "classes/Udacity-Models-EmailsModel.html#method_validateEmailType"
+        },                {
+            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AvalidateInputFields\u0028\u0029",
             "name": "validateInputFields",
             "summary": "this\u0020function\u0020is\u0020responsible\u0020for\u0020the\u0020business\u0020logic\u0020validation\u0020of\u0020the\u0020instance\u0020model",
-            "url": "classes/Udacity-Models-EmailModel.html#method_validateInputFields"
+            "url": "classes/Udacity-Models-EmailsModel.html#method_validateInputFields"
         },                {
-            "fqsen": "\\Udacity\\Models\\EmailModel\u003A\u003A\u0024tableName",
+            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003A\u0024dataFolder",
+            "name": "dataFolder",
+            "summary": "where\u0020the\u0020Udacity\u0020session\u0020reports\u0020CSV\u0020files\u0020will\u0020be\u0020stored",
+            "url": "classes/Udacity-Models-EmailsModel.html#property_dataFolder"
+        },                {
+            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003A\u0024tableName",
             "name": "tableName",
             "summary": "the\u0020SQL\u0020table\u0020name\u0020of\u0020the\u0020current\u0020instance",
-            "url": "classes/Udacity-Models-EmailModel.html#property_tableName"
+            "url": "classes/Udacity-Models-EmailsModel.html#property_tableName"
+        },                {
+            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003A\u0024sessreportcsv",
+            "name": "sessreportcsv",
+            "summary": "",
+            "url": "classes/Udacity-Models-EmailsModel.html#property_sessreportcsv"
         },                {
             "fqsen": "\\",
             "name": "\\",

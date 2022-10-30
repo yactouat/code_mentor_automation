@@ -13,59 +13,59 @@
     </head>
     <body class="text-center">
     
-      <main class="w-100">
-        <form 
-          action="/emails"
-          method="post"
-          class="app-form m-auto"
-          encytpe="multipart/form-data"
-        >
-          <input type="hidden" name="type" value="behind-students">
-          <h1 class="h3 mb-3 fw-normal">Emails to Behind Students</h1>
-          <div class="mb-3 with-tooltip">
-            <label for="formFile" class="form-label">Udacity session report CSV</label>
-            <input class="form-control" type="file" id="formFile">
-            <i class="bi bi-question-square" data-bs-toggle="modal" data-bs-target="#udacitySessionReportCsvHelpModal"></i>
-          </div>
-          <h2 class="h6 mb-2 fw-normal">Select the emails language <i class="bi bi-translate"></i></h2>
-          <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="language" id="enRadio" value="en">
-              <label class="form-check-label" for="enRadio">EN</label>
-              <img src="en_language.png" alt="english language flag" class="form-flag"/>
-          </div>
-          <div class="form-check form-check-inline mb-3">
-              <input class="form-check-input" type="radio" name="language" id="frRadio" value="fr">
-              <label class="form-check-label" for="frRadio">FR</label>
-              <img src="fr_language.png" alt="french language flag" class="form-flag"/>
-          </div>
-          <input class="w-100 btn btn-lg btn-primary" type="submit" name="submit" value="Send Emails"/>
-          <p class="mt-5 mb-3 text-muted"><a href="/">go back</a></p>
-          <p class="mt-5 mb-3 text-muted">&copy; yactouat 2022</p>
-        </form>
+    <main class="w-100">
+      <form 
+        action="/emails"
+        method="post"
+        enctype="multipart/form-data"
+        class="app-form m-auto"
+      >
+        <input type="hidden" name="type" value="behind-students"/>
+        <h1 class="h3 mb-3 fw-normal">Emails to Behind Students</h1>
+        <div class="mb-3 with-tooltip">
+          <label for="formFile" class="form-label">Udacity session report CSV</label>
+          <input class="form-control" id="formFile" type="file" name="sessreportcsv" accept=".csv">
+          <i class="bi bi-question-square" data-bs-toggle="modal" data-bs-target="#udacitySessionReportCsvHelpModal"></i>
+        </div>
+        <h2 class="h6 mb-2 fw-normal">Select the emails language <i class="bi bi-translate"></i></h2>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="language" id="enRadio" value="en">
+          <label class="form-check-label" for="enRadio">EN</label>
+          <img src="en_language.png" alt="english language flag" class="form-flag"/>
+        </div>
+        <div class="form-check form-check-inline mb-3">
+            <input class="form-check-input" type="radio" name="language" id="frRadio" value="fr">
+            <label class="form-check-label" for="frRadio">FR</label>
+            <img src="fr_language.png" alt="french language flag" class="form-flag"/>
+        </div>
+        <input class="w-100 btn btn-lg btn-primary" type="submit" name="submit" value="Send Emails">
+        <p class="mt-5 mb-3 text-muted"><a href="/">go back</a></p>
+        <p class="mt-5 mb-3 text-muted">&copy; yactouat 2022</p>
+      </form>
 
-        <div class="modal fade" id="udacitySessionReportCsvHelpModal" tabindex="-1" aria-labelledby="udacitySessionReportCsvHelpModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl">
-              <div class="modal-content">
-              <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="udacitySessionReportCsvHelpModalLabel">Udacity session report CSV Help</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                  <ol>
-                      <li>This automation requires that you import a Udacity Connect Session report CSV.</li>
-                      <li>You can generate such a report from your Udacity mentor dashboard (bottom right of the page).</li>
-                      <img 
-                          src="udacity_csv_session_report_generation.png"
-                          alt="showing the security menu in the Google account UI"
-                      />
-                      <li>Once you have downloaded the file, you can input it here to send the emails to behind students.</li>
-                  </ol>
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-              </div>
+      <div class="modal fade" id="udacitySessionReportCsvHelpModal" tabindex="-1" aria-labelledby="udacitySessionReportCsvHelpModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl">
+          <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="udacitySessionReportCsvHelpModalLabel">Udacity session report CSV Help</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
+          <div class="modal-body">
+            <ol>
+              <li>This automation requires that you import a Udacity Connect Session report CSV.</li>
+              <li>You can generate such a report from your Udacity mentor dashboard (bottom right of the page).</li>
+              <img 
+                src="udacity_csv_session_report_generation.png"
+                alt="showing the security menu in the Google account UI"
+              />
+              <li>Once you have downloaded the file, you can input it here to send the emails to behind students.</li>
+            </ol>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+          </div>
+        </div>
       </div>
     </main>
     

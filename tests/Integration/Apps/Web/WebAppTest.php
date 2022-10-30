@@ -181,13 +181,13 @@ final class WebAppTest extends TestCase {
 
     public function testGetResponseOutputWithEmailBehindStudentsRouteAuthedGetsRelevantForm() {
         $this->authenticate();
-        $expected = str_replace([' ', "\n"], ['', ''], file_get_contents('/var/www/tests/fixtures/views/emails.behind-students.create.html'));
+        $expected = str_replace([' ', "\n", "\t"], ['', '', ''], file_get_contents('/var/www/tests/fixtures/views/emails.behind-students.create.html'));
         $_GET['type'] = "behind-students";
         $app = new WebApp('/var/www/tests/fixtures');
         $_GET['type'] = 'behind-students';
         $app->handleRequest('/emails?type=behind-students');
         $actual = $app->getResponseOutput();
-        $this->assertEquals($expected, str_replace([' ', "\n"], ['', ''], $actual));
+        $this->assertEquals($expected, str_replace([' ', "\n", "\t"], ['', '', ''], $actual));
     }
 
     public function testGetResponseOutputWithEmailBehindStudentsRouteUnauthedShowsLoginPage() {

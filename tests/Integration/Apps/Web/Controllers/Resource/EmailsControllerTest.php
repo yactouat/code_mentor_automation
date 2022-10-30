@@ -35,10 +35,4 @@ final class EmailsControllerTest extends TestCase {
         $this->assertEquals($expected, $actual);
     }
 
-    // TODO
-    // public function testPersistAuthedWithInalidInputGetsRelevantErrorFeedback() {
-    // }
-    // public function testPersistAuthedWithValidInputGetsSuccessFeedback() {
-    // }
-
 }

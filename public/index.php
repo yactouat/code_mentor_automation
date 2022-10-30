@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 /**
  * the web UI that centralizes all of the automations of the app'
  * 

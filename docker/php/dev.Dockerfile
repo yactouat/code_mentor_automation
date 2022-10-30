@@ -41,8 +41,8 @@ COPY --chown=udacity_sl_automation:udacity_sl_automation ./ /var/www
 COPY ./scripts/msmtp/msmtprc.template /etc/msmtprc
 
 ENTRYPOINT ["sh", "-c", "php-fpm -D \ 
-    && chgrp www-data -R /var/www/data/logs/ \
-    && chmod -R g+rwx /var/www/data/logs/ \
+    && chgrp www-data -R /var/www/data \
+    && chmod -R g+rwx /var/www/data \
     && groupadd msmtp_users \
     && adduser www-data msmtp_users \
     && adduser root msmtp_users \
@@ -52,6 +52,6 @@ ENTRYPOINT ["sh", "-c", "php-fpm -D \
     && groupadd tmp_users \
     && adduser www-data tmp_users \
     && adduser root tmp_users \
-    && chown www-data:tmp_users /tmp \
-    && chmod g+rwx /tmp \
+    && chown -R www-data:tmp_users /tmp \
+    && chmod -R g+rwx /tmp \
     && nginx -g 'daemon off;'"]

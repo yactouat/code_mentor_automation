@@ -3,7 +3,7 @@
 namespace Udacity\Apps\Web\Controllers\Resource;
 
 use Udacity\Apps\Web\Controllers\Controller;
-use Udacity\Models\EmailModel;
+use Udacity\Models\EmailsModel;
 
 /**
  * this controller is responsible for handling requests related to sending emails from the web
@@ -34,7 +34,7 @@ final class EmailsController extends Controller implements ResourceControllerInt
         if (
             empty($showLoginForm) 
             && !empty($_GET['type']) 
-            && in_array($_GET['type'], EmailModel::getValidEmailsTypes())
+            && EmailsModel::validateEmailType($_GET['type'])
         ) {
             $template = 'emails/' . $_GET['type'] . '.create.html.twig';
             $statusCode = 200;
@@ -62,15 +62,37 @@ final class EmailsController extends Controller implements ResourceControllerInt
         $showLoginForm = $this->showLoginFormIfNotAuthed();
         $template = empty($showLoginForm) ? self::$notFoundTemplatePath : self::$loginTemplatePath;
         $statusCode = empty($showLoginForm) ? 404 : 401;
-        // TODO test unauthed
-        // TODO test when uploaded file > `upload_max_filesize`
-        // TODO test that we accept only one uploaded file at a time
-        // TODO test that uploaded file is a CSV (MIME types and actual extensions)
-        // TODO test file name length
-        // TODO test uploaded file is stored in correct location
-        // TODO test behavior on moving uploading file error
-        // TODO test input language
-        // TODO test that emails were indeed sent
+        if ($statusCode !== 401) {
+            $errors = [];
+            $filesArr = [];
+            $filesArr['sessreportcsv'] = '';
+            if (!empty($_FILES['sessreportcsv']['name'])) {
+                $filesArr['sessreportcsv'] = $_FILES['sessreportcsv']['name'];
+            }
+            $errors = EmailsModel::validateInputFields(array_merge(
+                $_POST,
+                $filesArr
+            ));
+            if (!isset($_POST['submit'])) {
+                $errors[] = '⚠️ Please send a valid form using the `submit` button';
+            }
+            if (count($errors) > 0) {
+                $this->setStatusCode(400);
+                $invalidEmailType = empty($_POST['type']) || !EmailsModel::validateEmailType($_POST['type']);
+                return $this->getRenderer()->render(
+                    $invalidEmailType ? self::$homeTemplatePath : 'emails/' . $_POST['type'] . '.create.html.twig', 
+                    $invalidEmailType ? [] :['errors' => $errors, 'userInput' => $_POST]
+                );
+            } else {
+                $emails = new EmailsModel($_FILES['sessreportcsv']['name']);
+                move_uploaded_file(
+                    $_FILES['sessreportcsv']['tmp_name'],
+                    EmailsModel::$dataFolder . $emails->getSessReportCsv()
+                );
+                $statusCode = 200;
+                $template = 'home.html.twig';
+            }
+        }
         $this->setStatusCode($statusCode);
         return $this->getRenderer()->render($template);
     }

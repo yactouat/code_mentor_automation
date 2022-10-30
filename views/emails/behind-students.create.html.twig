@@ -18,14 +18,14 @@
     <form 
         action="/emails"
         method="post"
+	    enctype="multipart/form-data"
         class="app-form m-auto"
-        encytpe="multipart/form-data"
     >
-        <input type="hidden" name="type" value="behind-students">
+        <input type="hidden" name="type" value="behind-students"/>
         <h1 class="h3 mb-3 fw-normal">Emails to Behind Students</h1>
         <div class="mb-3 with-tooltip">
             <label for="formFile" class="form-label">Udacity session report CSV</label>
-            <input class="form-control" type="file" id="formFile">
+            <input class="form-control" id="formFile" type="file" name="sessreportcsv" accept=".csv">
             <i class="bi bi-question-square" data-bs-toggle="modal" data-bs-target="#udacitySessionReportCsvHelpModal"></i>
         </div>
         <h2 class="h6 mb-2 fw-normal">Select the emails language <i class="bi bi-translate"></i></h2>
@@ -39,7 +39,7 @@
             <label class="form-check-label" for="frRadio">FR</label>
             <img src="fr_language.png" alt="french language flag" class="form-flag"/>
         </div>
-        <input class="w-100 btn btn-lg btn-primary" type="submit" name="submit" value="Send Emails"/>
+        <input class="w-100 btn btn-lg btn-primary" type="submit" name="submit" value="Send Emails">
         <p class="mt-5 mb-3 text-muted"><a href="/">go back</a></p>
         <p class="mt-5 mb-3 text-muted">&copy; yactouat 2022</p>
     </form>

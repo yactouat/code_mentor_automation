@@ -27,7 +27,7 @@ services:
   mariadb_seeder:
     image: 'mariadb:10.9.3'
     volumes:
-      - ./scripts/sql/:/scripts
+      - ./docker/sql/:/sql
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "true"
     entrypoint: [
@@ -35,8 +35,8 @@ services:
       "-c", 
       # taking 10 seconds just to be sure both dev and test dbs are up
       "sleep 10 \
-        && mysql --user=root --host=mariadb --port=3306 udacity_sl_automation < /scripts/database.sql \ 
-        && mysql --user=root --host=mariadbtest --port=3306 udacity_sl_automation < /scripts/testdatabase.sql\
+        && mysql --user=root --host=mariadb --port=3306 udacity_sl_automation < /sql/database.sql \ 
+        && mysql --user=root --host=mariadbtest --port=3306 udacity_sl_automation < /sql/testdatabase.sql\
         && exit"
     ] 
     depends_on:
@@ -52,7 +52,6 @@ services:
       - ./:/var/www
       - ./vendor:/var/www/vendor/
       - ./data/logs/nginx:/var/log/nginx/
-      - ./data/logs/php:/var/log/php/
     ports:
       - 80:80
     depends_on:
