@@ -21,6 +21,7 @@ trait EnvLoaderTrait {
         $_POST = [];
         $_GET = [];
         $_SESSION = [];
+        $_FILES = [];
         $_SERVER['REQUEST_METHOD'] = "GET";
         $dotenv = Dotenv::createImmutable(
             is_null($envDir) ? '/var/www/tests/fixtures' : $envDir

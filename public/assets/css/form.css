@@ -36,3 +36,9 @@ body {
 .modal-body ol li {
   text-align: left;
 }
+
+.form-check-inline .form-flag {
+  width: 25px;
+  height: 15px;
+  vertical-align: initial;
+}

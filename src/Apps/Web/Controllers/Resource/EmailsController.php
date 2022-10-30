@@ -12,6 +12,8 @@ final class EmailsController extends Controller implements ResourceControllerInt
 
     /**
      * {@inheritDoc}
+     * 
+     * ! not implemented
      */
     public function __construct()
     {
@@ -20,6 +22,9 @@ final class EmailsController extends Controller implements ResourceControllerInt
 
     /**
      * {@inheritDoc}
+     * 
+     * - is auth protected
+     * - checks if provided email type via query string exists otherwise 404's
      */    
     public function create(): string
     {
@@ -51,11 +56,23 @@ final class EmailsController extends Controller implements ResourceControllerInt
     /**
      * {@inheritDoc}
      * 
-     * TODO
      */
     public function persist(): string
     {
-        return '';
+        $showLoginForm = $this->showLoginFormIfNotAuthed();
+        $template = empty($showLoginForm) ? self::$notFoundTemplatePath : self::$loginTemplatePath;
+        $statusCode = empty($showLoginForm) ? 404 : 401;
+        // TODO test unauthed
+        // TODO test when uploaded file > `upload_max_filesize`
+        // TODO test that we accept only one uploaded file at a time
+        // TODO test that uploaded file is a CSV (MIME types and actual extensions)
+        // TODO test file name length
+        // TODO test uploaded file is stored in correct location
+        // TODO test behavior on moving uploading file error
+        // TODO test input language
+        // TODO test that emails were indeed sent
+        $this->setStatusCode($statusCode);
+        return $this->getRenderer()->render($template);
     }
 
 }
