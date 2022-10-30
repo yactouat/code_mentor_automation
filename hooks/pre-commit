@@ -51,6 +51,6 @@ if ($genPhpDocsReturnCode !== 0) {
 exec('git add .');
 
 // cleaning the logs after work done on this commit
-exec('sh clean-logs.sh');
+exec('sh scripts/sh/clean-logs.sh');
 
 exit(0);

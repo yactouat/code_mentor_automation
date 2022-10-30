@@ -27,7 +27,7 @@ services:
   mariadb_seeder:
     image: 'mariadb:10.9.3'
     volumes:
-      - ./scripts/:/scripts
+      - ./scripts/sql/:/scripts
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "true"
     entrypoint: [

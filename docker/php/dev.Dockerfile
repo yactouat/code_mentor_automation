@@ -38,7 +38,7 @@ RUN mv /var/www/docker/php/dev.ini /usr/local/etc/php/conf.d/dev.ini
 COPY --chown=udacity_sl_automation:udacity_sl_automation ./ /var/www
 
 # copying `msmtprc` template so correct permissions can be set to itP
-COPY ./scripts/msmtprc.template /etc/msmtprc
+COPY ./scripts/msmtp/msmtprc.template /etc/msmtprc
 
 ENTRYPOINT ["sh", "-c", "php-fpm -D \ 
     && chgrp www-data -R /var/www/data/logs/ \

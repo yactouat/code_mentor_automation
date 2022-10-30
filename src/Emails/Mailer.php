@@ -25,7 +25,7 @@ final class Mailer
     public static function buildMsmtprc(string $email, string $gAppPass): void {
         $destPath = !empty($_ENV['isTesting']) ? '/etc/msmtprc.test' : '/etc/msmtprc';
         \file_put_contents($destPath, sprintf(
-            \file_get_contents('/var/www/scripts/msmtprc.template'),
+            \file_get_contents('/var/www/scripts/msmtp/msmtprc.template'),
             $email,
             $email,
             $gAppPass

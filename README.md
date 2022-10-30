@@ -109,7 +109,7 @@ To use the web UI, just browse it, things should be pretty self-explanatory ;)
 
 ### Tests
 
-- you should have the application stack up and running (`docker compose up`) before running tests (so we are sure that the environment remains the same) => `docker exec -t udacity_sl_automation-php-1 bash -c "/var/www/vendor/bin/phpunit /var/www/tests --colors --testdox"`
+- you should have the application stack up and running (`docker compose up`) before running tests (so we are sure that the environment remains the same) => `sh tests.sh`
 - you can also open a terminal in the PHP container and run `/var/www/bin/vendor/bin/phpunit tests`
 - moreover there is a `./tests/fixtures/csv/integration-test-session-report.csv` file (which contains my email, so feel free to replace that) if you want to be sure the real thing actually works as expected when it comes to sending emails
 - also, you have test online resources located in `./tests/fixtures/csv/online-resources.csv`
