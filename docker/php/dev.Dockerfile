@@ -35,4 +35,16 @@ RUN mv /var/www/docker/php/dev.ini /usr/local/etc/php/conf.d/dev.ini
 # copy existing application directory permissions
 COPY --chown=udacity_sl_automation:udacity_sl_automation ./ /var/www
 
-ENTRYPOINT ["sh", "-c", "php-fpm -D && chgrp www-data -R /var/www/data/logs/ && chmod -R g+rwx /var/www/data/logs/ && nginx -g 'daemon off;'"]
+# copying `msmtprc` template so correct permissions can be set to itP
+COPY ./scripts/msmtprc.template /etc/msmtprc
+
+ENTRYPOINT ["sh", "-c", "php-fpm -D \ 
+    && chgrp www-data -R /var/www/data/logs/ \
+    && chmod -R g+rwx /var/www/data/logs/ \
+    && groupadd msmtp_users \
+    && adduser www-data msmtp_users \
+    && adduser root msmtp_users \
+    && chgrp msmtp_users /etc/msmtprc \ 
+    && chown www-data:msmtp_users /etc/msmtprc \
+    && chmod g+rwx /etc/msmtprc \
+    && nginx -g 'daemon off;'"]
