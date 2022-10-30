@@ -16,11 +16,7 @@
 
 echo PHP_EOL."Running PHPUnit tests...".PHP_EOL;
 
-exec(
-    'docker exec -t udacity_sl_automation-php-1 bash -c "/var/www/vendor/bin/phpunit /var/www/tests --colors --testdox"', 
-    $phpUnitOutput, 
-    $phpUnitReturnCode
-);
+exec('sh tests.sh', $phpUnitOutput, $phpUnitReturnCode);
 
 echo PHP_EOL . implode(PHP_EOL, $phpUnitOutput) . PHP_EOL;
 
