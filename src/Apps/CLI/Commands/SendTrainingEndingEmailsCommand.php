@@ -226,7 +226,7 @@ final class SendTrainingEndingEmailsCommand extends Command
     {
         $this
             // the command help shown when running the command with the "--help" option
-            ->setHelp('This command allows you to send emails in bulk to students that are behind in their Nanodegree program using a Udacity session report CSV file.')
+            ->setHelp('This command allows you to send emails in bulk to students to cheer them up as the end of the nanodegree program approaches.')
             ->addArgument(self::CSV_ARG, InputArgument::REQUIRED, 'Path to a valid session report existing CSV file.')
             ->addArgument(self::LANG_ARG, InputArgument::REQUIRED, 'fr OR en')
             ->addArgument(self::ONLINE_RESOURCES, InputArgument::OPTIONAL, 'Path to a CSV containing online resources containing `Name,Description,URL` fields.')

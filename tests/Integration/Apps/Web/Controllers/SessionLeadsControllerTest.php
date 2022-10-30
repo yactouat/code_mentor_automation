@@ -157,7 +157,7 @@ final class SessionLeadsControllerTest extends TestCase {
     }
 
     public function testLoginOutputWithGoodCredsReturnsHomePage() {
-        $expected = str_replace(' ', '', file_get_contents('/var/www/tests/fixtures/views/home.html'));
+        $expected = str_replace([' ', "\n"], ['', ''], file_get_contents('/var/www/tests/fixtures/views/home.html'));
         $ctlr = new SessionLeadsController();
         $_SERVER['REQUEST_METHOD'] = 'POST';
         $_POST = [
@@ -175,7 +175,7 @@ final class SessionLeadsControllerTest extends TestCase {
             'user_passphrase' => 'test user password',
         ];
         $actual = $ctlr->login();
-        $this->assertEquals($expected, str_replace(' ', '', $actual));
+        $this->assertEquals($expected, str_replace([' ', "\n"], ['', ''], $actual));
     } 
 
     public function testLoginOutputWithBadCredsReturnsLoginPage() {

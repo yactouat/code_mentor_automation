@@ -4,4 +4,28 @@
 
 {% block title %}Home{% endblock %}
 
+{% block cssLibs %}<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">{% endblock %}
+
 {% block navTitle %} | Home{% endblock %}
+
+{% block content %}
+  <div class="container px-4 py-5">
+    <h2 class="pb-2 border-bottom">Available automations</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+      <div class="col">
+        <h3 class="fs-2">Emails to behind students</h3>
+        <p>Send emails in bulk to students that are behind in their Nanodegree program using a Udacity session report CSV file generated from the mentor dashboard.</p>
+        <a href="/emails/behind-students" class="icon-link d-inline-flex align-items-center">
+          Send emails to behind students
+        </a>
+      </div>
+      <div class="col">
+        <h3 class="fs-2">Emails to students as training ends</h3>
+        <p>Send emails in bulk to students to cheer them up as the end of the nanodegree program approaches.</p>
+        <a href="/emails/training-ending" class="icon-link d-inline-flex align-items-center">
+          Send training ending emails
+        </a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

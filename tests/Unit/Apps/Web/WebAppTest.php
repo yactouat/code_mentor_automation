@@ -104,20 +104,20 @@ final class WebAppTest extends TestCase {
     }
 
     public function testGetResponseOutputWithUnkownRouteGets404Page() {
-        $expected = file_get_contents('/var/www/tests/fixtures/views/not-found.html');
+        $expected = str_replace([' ', "\n"], ['', ''], file_get_contents('/var/www/tests/fixtures/views/not-found.html'));
         $app = new WebApp('/var/www/tests/fixtures');
         $app->handleRequest("/unknown");
         $actual = $app->getResponseOutput();
-        $this->assertEquals($expected, $actual);
+        $this->assertEquals($expected, str_replace([' ', "\n"], ['', ''], $actual));
     }
 
     public function testGetResponseOutputWithHomeRouteGetsHomePage() {
         $_SESSION['authed'] = true;
-        $expected = file_get_contents('/var/www/tests/fixtures/views/home.html');
+        $expected = str_replace([' ', "\n"], ['', ''], file_get_contents('/var/www/tests/fixtures/views/home.html'));
         $app = new WebApp('/var/www/tests/fixtures');
         $app->handleRequest("/");
         $actual = $app->getResponseOutput();
-        $this->assertEquals($expected, $actual);
+        $this->assertEquals($expected, str_replace([' ', "\n"], ['', ''], $actual));
     }
 
     public function testGetResponseOutputWithSessionLeadsCreateRouteGetsSignupPage() {
@@ -154,19 +154,19 @@ final class WebAppTest extends TestCase {
 
     public function testGetResponseOutputWithSessionLeadsLoginRouteAuthedGetsHomePage() {
         $_SESSION['authed'] = true;
-        $expected = str_replace(' ', '', file_get_contents('/var/www/tests/fixtures/views/home.html'));
+        $expected = str_replace([' ', "\n"], ['', ''], file_get_contents('/var/www/tests/fixtures/views/home.html'));
         $app = new WebApp('/var/www/tests/fixtures');
         $app->handleRequest('/login');
         $actual = $app->getResponseOutput();
-        $this->assertEquals($expected, str_replace(' ', '', $actual));
+        $this->assertEquals($expected, str_replace([' ', "\n"], ['', ''], $actual));
     } 
 
     public function testGetResponseOutputWithSessionLeadsLogoutRouteGetsLoginPage() {
-        $expected = str_replace(' ', '', file_get_contents('/var/www/tests/fixtures/views/session-leads.login.html'));
+        $expected = str_replace([' ', "\n"], ['', ''], file_get_contents('/var/www/tests/fixtures/views/session-leads.login.html'));
         $app = new WebApp('/var/www/tests/fixtures');
         $app->handleRequest('/logout');
         $actual = $app->getResponseOutput();
-        $this->assertEquals($expected, str_replace(' ', '', $actual));
+        $this->assertEquals($expected, str_replace([' ', "\n"], ['', ''], $actual));
     }
 
     public function testHandleRequestWithLogoutRouteSets200StatusCode() {
