@@ -4,7 +4,7 @@ namespace Udacity\Emails;
 
 use Monolog\Logger;
 use Udacity\Exceptions\EmailNotDeliveredException;
-use Udacity\Exceptions\FileWritePermissionException;
+use Udacity\Exceptions\WritePermissionException;
 use Udacity\Exceptions\MsmtprcNotSetException;
 
 /**
@@ -39,7 +39,7 @@ final class Mailer
      * @param string $msmtprcPath
      * 
      * @throws MsmtprcNotSetException
-     * @throws FileWritePermissionException
+     * @throws WritePermissionException
      *
      * @return void
      */
@@ -48,7 +48,7 @@ final class Mailer
             throw new MsmtprcNotSetException();
         }
         if(!is_writable($msmtprcPath)) {
-            throw new FileWritePermissionException();
+            throw new WritePermissionException();
         }
     }
 
