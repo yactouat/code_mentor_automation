@@ -2,7 +2,9 @@
 
 namespace Udacity\Csvs;
 
+use Udacity\ArraysTrait;
 use Udacity\Exceptions\InvalidCsvDataException;
+use Udacity\Exceptions\KeyValueArrayExpectedException;
 use Udacity\Exceptions\NonExistingFileException;
 
 /**
@@ -11,6 +13,8 @@ use Udacity\Exceptions\NonExistingFileException;
  */
 class CsvExtractor
 {
+
+    use ArraysTrait;
 
     /**
      * checks if an input CSV exists, throws Exception if not
@@ -61,6 +65,38 @@ class CsvExtractor
         // removing the CSV header
         array_shift($csv);
         return $csv;
+    }
+
+    /**
+     * takes a data array as an input and stores it as a CSV in a file
+     *
+     * @param array $data
+     * 
+     * @throws KeyValueArrayExpectedException
+     * 
+     * @return string the path to the CSV
+     */
+    public function stringToCsvFile(array $data): string {
+        // TODO test that input is an array of key/value arrays
+        $depth0Validated = $this->arrayIsZeroIndexedOrderedList(array_keys($data));
+        $depth1Validated = (function() use($data) {
+            foreach (array_values($data) as $val) {
+                if (!is_array($val) || $this->arrayIsZeroIndexedOrderedList($val)) {
+                    return false;
+                }
+            }
+            return true;
+        })();
+        if (!$depth0Validated || !$depth1Validated) {
+            throw new KeyValueArrayExpectedException();
+        }
+
+        // TODO test that all sub arrays have a depth of one
+        // TODO test all that sub arrays have the same keys
+        // TODO test that all sub arrays have string or null values
+        // TODO test that CSVs dest folder is writable
+        // TODO test that the returned path corresponds to an existing file
+        return '';
     }
 
 }

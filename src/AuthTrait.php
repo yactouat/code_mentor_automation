@@ -28,7 +28,7 @@ trait AuthTrait {
     /**
      * gets the authenticated user first name, whether in web or cli mode
      *
-     * @return string - the authed user first name or an empty string
+     * @return string the authed user first name or an empty string
      */
     public static function getAuthedUserFirstName(): string {
         switch ($_ENV['APP_MODE']) {

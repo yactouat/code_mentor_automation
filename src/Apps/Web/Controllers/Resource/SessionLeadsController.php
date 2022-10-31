@@ -36,7 +36,7 @@ final class SessionLeadsController extends Controller implements ResourceControl
     /**
      * shows the relevant page for the session lead based on his/hers auth status
      * 
-     * @return string - the built login or session lead home page
+     * @return string the built login or session lead home page
      */    
     public function index(): string
     {

@@ -421,6 +421,11 @@ Search.appendIndex(
             "summary": "gets\u0020an\u0020array\u002Dlike\u0020representation\u0020of\u0020a\u0020CSV\u0020file\u0020data",
             "url": "classes/Udacity-Csvs-CsvExtractor.html#method_getCSVData"
         },                {
+            "fqsen": "\\Udacity\\Csvs\\CsvExtractor\u003A\u003AstringToCsvFile\u0028\u0029",
+            "name": "stringToCsvFile",
+            "summary": "takes\u0020a\u0020data\u0020array\u0020as\u0020an\u0020input\u0020and\u0020stores\u0020it\u0020as\u0020a\u0020CSV\u0020in\u0020a\u0020file",
+            "url": "classes/Udacity-Csvs-CsvExtractor.html#method_stringToCsvFile"
+        },                {
             "fqsen": "\\Udacity\\Csvs\\StudentsCsvExtractor",
             "name": "StudentsCsvExtractor",
             "summary": "class\u0020responsible\u0020for\u0020extracting\u0020data\u0020from\u0020session\u0020reports\u0020CSVs",
@@ -1025,6 +1030,26 @@ Search.appendIndex(
             "name": "validateEmail",
             "summary": "",
             "url": "classes/Udacity-Models-ValidationTrait.html#method_validateEmail"
+        },                {
+            "fqsen": "\\Udacity\\ArraysTrait",
+            "name": "ArraysTrait",
+            "summary": "",
+            "url": "classes/Udacity-ArraysTrait.html"
+        },                {
+            "fqsen": "\\Udacity\\ArraysTrait\u003A\u003AarrayIsZeroIndexedOrderedList\u0028\u0029",
+            "name": "arrayIsZeroIndexedOrderedList",
+            "summary": "checks\u0020if\u0020an\u0020input\u0020array\u0020is\u0020a\u0020list\u0020with\u0020ascending\u0020ordered\u0020keys\u0020starting\u0020with\u00200",
+            "url": "classes/Udacity-ArraysTrait.html#method_arrayIsZeroIndexedOrderedList"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\KeyValueArrayExpectedException",
+            "name": "KeyValueArrayExpectedException",
+            "summary": "Exception\u0020thrown\u0020when\u0020an\u0020input\u0020CSV\u0020does\u0020not\u0020contain\u0020valid\u0020data",
+            "url": "classes/Udacity-Exceptions-KeyValueArrayExpectedException.html"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\KeyValueArrayExpectedException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
+            "url": "classes/Udacity-Exceptions-KeyValueArrayExpectedException.html#method___construct"
         },                {
             "fqsen": "\\",
             "name": "\\",
