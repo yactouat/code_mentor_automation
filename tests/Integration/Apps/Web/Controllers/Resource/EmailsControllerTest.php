@@ -49,6 +49,17 @@ final class EmailsControllerTest extends TestCase {
         $actual = $ctlr->getEmailsPayloadToValidate($fileKey);
         $this->assertEquals($expected, $actual);
     }
-    // TODO test with unset file key
+
+    public function testGetEmailsPayloadToValidateWithUnsetFileKeyReturnsExpectedPayload() {
+        $fileKey = 'test';
+        $_POST['some_key'] = 'some value';
+        $expected = [
+            'some_key' => 'some value',
+            $fileKey => []
+        ];
+        $ctlr = new EmailsController();
+        $actual = $ctlr->getEmailsPayloadToValidate($fileKey);
+        $this->assertEquals($expected, $actual);
+    }
 
 }
