@@ -4,12 +4,15 @@ namespace Udacity\Apps\Web\Controllers\Resource;
 
 use Udacity\Apps\Web\Controllers\Controller;
 use Udacity\Automations\BehindStudentsEmailAutomation;
+use Udacity\LoggerTrait;
 use Udacity\Models\EmailsModel;
 
 /**
  * this controller is responsible for handling requests related to sending emails from the web
  */
 final class EmailsController extends Controller implements ResourceControllerInterface {
+
+    use LoggerTrait;
 
     /**
      * {@inheritDoc}
@@ -92,9 +95,7 @@ final class EmailsController extends Controller implements ResourceControllerInt
                     EmailsModel::$dataFolder . $emails->getSessReportCsv()
                 );
                 (new BehindStudentsEmailAutomation())
-                    ->setNewLogger(empty($_ENV['IS_TESTING']) ? '/var/www/data/logs/php/web_app.log' : 
-                        '/var/www/tests/fixtures/logs/php/web_app.log'
-                    )
+                    ->setNewLogger($this->getLogsDir() . 'web_app.log')
                     ->run($csvDestFile, $_POST['language']);
                 $statusCode = 200;
                 $template = 'home.html.twig';
