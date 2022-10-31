@@ -2,6 +2,9 @@
 
 namespace Udacity;
 
+/**
+ * this trait holds common logic for manipulating arrays
+ */
 trait ArraysTrait {
 
     /**

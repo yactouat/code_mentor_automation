@@ -14,18 +14,18 @@ final class CsvExtractorTest extends TestCase {
         $actual = (new CsvExtractor())->stringToCsvFile([1,2,3]);
     }
 
-    // public function testStringToCsvFileWithTopLevelKeyValueArrThrows() {
-    //     $this->expectException(KeyValueArrayExpectedException::class);
-    //     $this->expectExceptionMessage('a key value array was expected');
-    //     $actual = (new CsvExtractor())->stringToCsvFile([
-    //         "key" => [
-    //             "sub" => "val" 
-    //         ],
-    //         "key2" => [
-    //             "sub2" => "val" 
-    //         ],
-    //     ]);
-    // }
+    public function testStringToCsvFileWithTopLevelKeyValueArrThrows() {
+        $this->expectException(KeyValueArrayExpectedException::class);
+        $this->expectExceptionMessage('a key value array was expected');
+        $actual = (new CsvExtractor())->stringToCsvFile([
+            "key" => [
+                "sub" => "val" 
+            ],
+            "key2" => [
+                "sub2" => "val" 
+            ],
+        ]);
+    }
 
     // public function testStringToCsvFileWithBiDimensionalArrContainingListsThrows() {
     //     $this->expectException(KeyValueArrayExpectedException::class);

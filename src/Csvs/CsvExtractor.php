@@ -78,7 +78,7 @@ class CsvExtractor
      */
     public function stringToCsvFile(array $data): string {
         // TODO test that input is an array of key/value arrays
-        $depth0Validated = $this->arrayIsZeroIndexedOrderedList(array_keys($data));
+        $depth0Validated = $this->arrayIsZeroIndexedOrderedList($data);
         $depth1Validated = (function() use($data) {
             foreach (array_values($data) as $val) {
                 if (!is_array($val) || $this->arrayIsZeroIndexedOrderedList($val)) {

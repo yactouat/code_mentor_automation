@@ -1033,7 +1033,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\ArraysTrait",
             "name": "ArraysTrait",
-            "summary": "",
+            "summary": "this\u0020trait\u0020holds\u0020common\u0020logic\u0020for\u0020manipulating\u0020arrays",
             "url": "classes/Udacity-ArraysTrait.html"
         },                {
             "fqsen": "\\Udacity\\ArraysTrait\u003A\u003AarrayIsZeroIndexedOrderedList\u0028\u0029",

@@ -60,4 +60,19 @@ final class ArraysTraitTest extends TestCase {
         $this->assertTrue($actual);
     }
 
+    public function testArrayIsZeroIndexedOrderedListWithArrayOfKeyValueArrsReturnsFalse() {
+        $class = new class {
+            use ArraysTrait;
+        };
+        $actual = $class->arrayIsZeroIndexedOrderedList([
+            "key" => [
+                "sub" => "val" 
+            ],
+            "key2" => [
+                "sub2" => "val" 
+            ],
+        ]);
+        $this->assertFalse($actual);
+    }
+
 }
