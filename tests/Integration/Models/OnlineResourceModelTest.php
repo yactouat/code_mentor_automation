@@ -4,11 +4,11 @@ namespace Tests\Integration\Models;
 
 use Udacity\Models\OnlineResourceModel;
 use PHPUnit\Framework\TestCase;
-use Tests\Integration\EnvLoaderTrait;
+use Tests\Traits\TestsLoaderTrait;
 
 final class OnlineResourceModelTest extends TestCase {
 
-    use EnvLoaderTrait;
+    use TestsLoaderTrait;
 
     protected function setUp(): void
     {

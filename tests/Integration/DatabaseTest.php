@@ -4,10 +4,11 @@ namespace Tests\Integration;
 
 use Udacity\Database;
 use PHPUnit\Framework\TestCase;
+use Tests\Traits\TestsLoaderTrait;
 
 final class DatabaseTest extends TestCase {
 
-    use EnvLoaderTrait;
+    use TestsLoaderTrait;
 
     protected function setUp(): void
     {

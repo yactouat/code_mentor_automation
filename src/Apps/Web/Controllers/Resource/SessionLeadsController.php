@@ -3,7 +3,6 @@
 namespace Udacity\Apps\Web\Controllers\Resource;
 
 use Udacity\Apps\Web\Controllers\Controller;
-use Udacity\AuthTrait;
 use Udacity\Models\SessionLeadModel;
 
 /**
@@ -11,21 +10,12 @@ use Udacity\Models\SessionLeadModel;
  */
 final class SessionLeadsController extends Controller implements ResourceControllerInterface {
 
-    use AuthTrait;
-
     /**
      * path to the Twig template of the signup form
      *
      * @var string
      */
     private static string $createTemplatePath = 'session-leads/create.html.twig';
-
-    /**
-     * path to the Twig template of the login form
-     *
-     * @var string
-     */    
-    private static string $loginTemplatePath = 'session-leads/login.html.twig';
 
     /**
      * {@inheritDoc}
@@ -50,11 +40,8 @@ final class SessionLeadsController extends Controller implements ResourceControl
      */    
     public function index(): string
     {
-        if(!$this->isAuthed()) {
-            $this->setStatusCode(401);
-            return $this->login();
-        }
-        return $this->getRenderer()->render(self::$homeTemplatePath);
+        $this->setAuthedStatusCode(200);
+        return $this->getRenderer()->render($this->getAuthedTwigTemplate(self::$homeTemplatePath));
     }
 
     /**
@@ -67,18 +54,12 @@ final class SessionLeadsController extends Controller implements ResourceControl
     public function login(): string
     {
         if(!$this->isAuthed()) {
-            $sessionLead = new SessionLeadModel(
-                email: '',
-                first_name: '',
-                google_app_password: '',
-                user_passphrase: ''
-            );
             if ($_SERVER['REQUEST_METHOD'] === 'POST' 
                 && isset($_POST['submit']) 
                 && isset($_POST['email']) 
                 && isset($_POST['user_passphrase']) 
             ) {
-                $usr = $sessionLead->selectOneByEmail($_POST['email']);
+                $usr = SessionLeadModel::getEmptyInstance()->selectOneByEmail($_POST['email']);
                 $_SESSION['authed'] = count($usr) > 0 && password_verify(
                     $_POST['user_passphrase'],
                     $usr['user_passphrase']
@@ -116,7 +97,8 @@ final class SessionLeadsController extends Controller implements ResourceControl
         }
         if (count($errors) > 0) {
             $this->setStatusCode(400);
-            return $this->getRenderer()->render(self::$createTemplatePath, [
+            $this->setTwigTemplate(self::$createTemplatePath);
+            $this->setTwigData([
                 'errors' => $errors,
                 'userInput' => $_POST
             ]);
@@ -136,8 +118,9 @@ final class SessionLeadsController extends Controller implements ResourceControl
             $_SESSION['authed'] = true;
             $_SESSION['authed_first_name'] = $data['first_name'];
             $this->setStatusCode(201);
-            return $this->index();
+            $this->setTwigTemplate(self::$homeTemplatePath);
         }
+        return $this->getRenderer()->render($this->getTwigTemplate(), $this->getTwigData());
     }
 
 }

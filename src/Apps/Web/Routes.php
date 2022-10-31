@@ -14,13 +14,15 @@ final class Routes {
      */
     public static function getRegisteredRoutes(): array {
         return [
-            "GET" => [
+            'GET' => [
                 '/' => ['Resource\SessionLeadsController', 'index'],
+                'emails' => ['Resource\EmailsController', 'create'],
                 'login' => ['Resource\SessionLeadsController', 'login'],
                 'logout' => ['Resource\SessionLeadsController', 'logout'],
                 'session-leads/create' => ['Resource\SessionLeadsController', 'create']
             ],
             'POST' => [
+                'emails' => ['Resource\EmailsController', 'persist'],
                 'login' => ['Resource\SessionLeadsController', 'login'],
                 'session-leads/create' => ['Resource\SessionLeadsController', 'persist']
             ]

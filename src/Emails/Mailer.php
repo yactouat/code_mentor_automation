@@ -4,6 +4,7 @@ namespace Udacity\Emails;
 
 use Monolog\Logger;
 use Udacity\Exceptions\EmailNotDeliveredException;
+use Udacity\Exceptions\WritePermissionException;
 use Udacity\Exceptions\MsmtprcNotSetException;
 
 /**
@@ -23,9 +24,9 @@ final class Mailer
      * @return void
      */
     public static function buildMsmtprc(string $email, string $gAppPass): void {
-        $destPath = !empty($_ENV['isTesting']) ? '/etc/msmtprc.test' : '/etc/msmtprc';
+        $destPath = !empty($_ENV['IS_TESTING']) ? '/etc/msmtprc.test' : '/etc/msmtprc';
         \file_put_contents($destPath, sprintf(
-            \file_get_contents('/var/www/scripts/msmtprc.template'),
+            \file_get_contents('/var/www/scripts/msmtp/msmtprc.template'),
             $email,
             $email,
             $gAppPass
@@ -38,12 +39,16 @@ final class Mailer
      * @param string $msmtprcPath
      * 
      * @throws MsmtprcNotSetException
+     * @throws WritePermissionException
      *
      * @return void
      */
     public static function checkMsmtprc(string $msmtprcPath = '/etc/msmtprc'): void {
         if (!file_exists($msmtprcPath)) {
             throw new MsmtprcNotSetException();
+        }
+        if(!is_writable($msmtprcPath)) {
+            throw new WritePermissionException();
         }
     }
 

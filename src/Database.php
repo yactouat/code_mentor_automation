@@ -19,7 +19,7 @@ final class Database {
      *
      * @var boolean
      */
-    private bool $isTesting;
+    private bool $IS_TESTING;
 
     /**
      * the nullable PDO object to connect to the db
@@ -42,15 +42,12 @@ final class Database {
      * 
      * initialises the connection to the database and sets a logger 
      *
-     * @param boolean $isTesting
+     * @param boolean $IS_TESTING
      */
-    public function __construct(bool $isTesting = false)
+    public function __construct()
     {
-        $this->isTesting = !$isTesting ? ($_ENV["isTesting"] ?? false) : $isTesting;
         $this->_initConn();
-        $this->setNewLogger(!$this->isTesting ? '/var/www/data/logs/php/db.log' : 
-            '/var/www/tests/fixtures/logs/php/db.log'
-        );
+        $this->setNewLogger($this->getLogsDir() . 'db.log');
     }
 
     /**

@@ -1,19 +1,24 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Apps\Web;
+namespace Tests\Integration\Apps\Web;
 
 use PHPUnit\Framework\TestCase;
+use Tests\Traits\TestsLoaderTrait;
+use Tests\Traits\TestsAuthenticateTrait;
+use Tests\Traits\TestsStringsTrait;
 use Udacity\Apps\Web\WebApp;
 use Udacity\Apps\Web\Controllers\NotFoundController;
 use Udacity\Apps\Web\Controllers\Resource\SessionLeadsController;
 
 final class WebAppTest extends TestCase {
 
+    use TestsAuthenticateTrait;
+    use TestsLoaderTrait;
+    use TestsStringsTrait;
+
     protected function setUp(): void
     {
-        $_SERVER['REQUEST_METHOD'] = "GET";
-        $_SESSION = [];
-        $_POST = [];
+        $this->loadEnv();
     }
 
     public function testGetRequestRouteWithHomeRouteGetsCorrectRoute() {
@@ -79,7 +84,7 @@ final class WebAppTest extends TestCase {
     }
 
     public function testHandleRequestWithHomeRouteSets200StatusCode() {
-        $_SESSION['authed'] = true;
+        $this->authenticate();
         $expected = 200;
         $app = new WebApp('/var/www/tests/fixtures');
         $app->handleRequest('/');
@@ -108,24 +113,24 @@ final class WebAppTest extends TestCase {
         $app = new WebApp('/var/www/tests/fixtures');
         $app->handleRequest("/unknown");
         $actual = $app->getResponseOutput();
-        $this->assertEquals($expected, $actual);
+        $this->assertTrue($this->stringsHaveSameContent($expected, $actual));
     }
 
     public function testGetResponseOutputWithHomeRouteGetsHomePage() {
-        $_SESSION['authed'] = true;
+        $this->authenticate();
         $expected = file_get_contents('/var/www/tests/fixtures/views/home.html');
         $app = new WebApp('/var/www/tests/fixtures');
-        $app->handleRequest("/");
+        $app->handleRequest('/');
         $actual = $app->getResponseOutput();
-        $this->assertEquals($expected, $actual);
+        $this->assertTrue($this->stringsHaveSameContent($expected, $actual));
     }
 
     public function testGetResponseOutputWithSessionLeadsCreateRouteGetsSignupPage() {
-        $expected = str_replace(' ', '', file_get_contents('/var/www/tests/fixtures/views/session-leads.create.html'));
+        $expected = file_get_contents('/var/www/tests/fixtures/views/session-leads.create.html');
         $app = new WebApp('/var/www/tests/fixtures');
         $app->handleRequest("/session-leads/create");
         $actual = $app->getResponseOutput();
-        $this->assertEquals($expected, str_replace(' ', '', $actual));
+        $this->assertTrue($this->stringsHaveSameContent($expected, $actual));
     }
 
     public function testHandleRequestWithHomeRouteUnauthedSets401StatusCode() {
@@ -137,11 +142,11 @@ final class WebAppTest extends TestCase {
     }
 
     public function testGetResponseOutputWithSessionLeadsLoginRouteGetsLoginPage() {
-        $expected = str_replace(' ', '', file_get_contents('/var/www/tests/fixtures/views/session-leads.login.html'));
+        $expected = file_get_contents('/var/www/tests/fixtures/views/session-leads.login.html');
         $app = new WebApp('/var/www/tests/fixtures');
         $app->handleRequest('/login');
         $actual = $app->getResponseOutput();
-        $this->assertEquals($expected, str_replace(' ', '', $actual));
+        $this->assertTrue($this->stringsHaveSameContent($expected, $actual));
     }
 
     public function testHandleRequestWithLoginRouteUnauthedSets200() {
@@ -153,20 +158,20 @@ final class WebAppTest extends TestCase {
     }
 
     public function testGetResponseOutputWithSessionLeadsLoginRouteAuthedGetsHomePage() {
-        $_SESSION['authed'] = true;
-        $expected = str_replace(' ', '', file_get_contents('/var/www/tests/fixtures/views/home.html'));
+        $this->authenticate();
+        $expected = file_get_contents('/var/www/tests/fixtures/views/home.html');
         $app = new WebApp('/var/www/tests/fixtures');
         $app->handleRequest('/login');
         $actual = $app->getResponseOutput();
-        $this->assertEquals($expected, str_replace(' ', '', $actual));
+        $this->assertTrue($this->stringsHaveSameContent($expected, $actual));
     } 
 
     public function testGetResponseOutputWithSessionLeadsLogoutRouteGetsLoginPage() {
-        $expected = str_replace(' ', '', file_get_contents('/var/www/tests/fixtures/views/session-leads.login.html'));
+        $expected = file_get_contents('/var/www/tests/fixtures/views/session-leads.login.html');
         $app = new WebApp('/var/www/tests/fixtures');
         $app->handleRequest('/logout');
         $actual = $app->getResponseOutput();
-        $this->assertEquals($expected, str_replace(' ', '', $actual));
+        $this->assertTrue($this->stringsHaveSameContent($expected, $actual));
     }
 
     public function testHandleRequestWithLogoutRouteSets200StatusCode() {
@@ -175,6 +180,82 @@ final class WebAppTest extends TestCase {
         $app->handleRequest('/logout');
         $actual = $app->getStatusCode();
         $this->assertEquals($expected, $actual);
+    }
+
+    public function testGetResponseOutputWithEmailBehindStudentsRouteAuthedGetsRelevantForm() {
+        $this->authenticate();
+        $expected = file_get_contents('/var/www/tests/fixtures/views/emails.behind-students.create.html');
+        $_GET['type'] = "behind-students";
+        $app = new WebApp('/var/www/tests/fixtures');
+        $_GET['type'] = 'behind-students';
+        $app->handleRequest('/emails?type=behind-students');
+        $actual = $app->getResponseOutput();
+        $this->assertTrue($this->stringsHaveSameContent($expected, $actual));
+    }
+
+    public function testGetResponseOutputWithEmailBehindStudentsRouteUnauthedShowsLoginPage() {
+        $expected = file_get_contents('/var/www/tests/fixtures/views/session-leads.login.html');
+        $app = new WebApp('/var/www/tests/fixtures');
+        $_GET['type'] = 'behind-students';
+        $app->handleRequest('/emails?type=behind-students');
+        $actual = $app->getResponseOutput();
+        $this->assertTrue($this->stringsHaveSameContent($expected, $actual));
+    } 
+
+    public function testOutputWithEmailsRouteAuthedButNonExistingEmailTypeGetsNotFoundPage() {
+        $this->authenticate();
+        $expected = file_get_contents('/var/www/tests/fixtures/views/not-found.html');
+        $app = new WebApp('/var/www/tests/fixtures');
+        $_GET['type'] = 'non-existing';
+        $app->handleRequest('/emails?type=non-existing');
+        $actual = $app->getResponseOutput();
+        $this->assertTrue($this->stringsHaveSameContent($expected, $actual));
+    }
+
+    public function testOutputWithEmailsGetRouteAuthedButNonExistingEmailTypeGets404Code() {
+        $this->authenticate();
+        $expected = 404;
+        $app = new WebApp('/var/www/tests/fixtures');
+        $_GET['type'] = 'non-existing';
+        $app->handleRequest('/emails?type=non-existing');
+        $actual = $app->getStatusCode();
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testHandleRequestWithLogoutRouteAfterHavingAuthenticatedSets200StatusCode() {
+        $this->authenticate();
+        $expected = 200;
+        $app = new WebApp('/var/www/tests/fixtures');
+        $app->handleRequest('/logout');
+        $actual = $app->getStatusCode();
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testGetResponseOutputWithSessionLeadsLogoutRouteAfterHavingAuthenticatedGetsLoginPage() {
+        $this->authenticate();
+        $expected = file_get_contents('/var/www/tests/fixtures/views/session-leads.login.html');
+        $app = new WebApp('/var/www/tests/fixtures');
+        $app->handleRequest('/logout');
+        $actual = $app->getResponseOutput();
+        $this->assertTrue($this->stringsHaveSameContent($expected, $actual));
+    }
+
+    public function testOutputWithEmailsRouteUnauthedGets401Code() {
+        $expected = 401;
+        $app = new WebApp('/var/www/tests/fixtures');
+        $_GET['type'] = 'behind-students';
+        $app->handleRequest('/emails?type=behind-students');
+        $actual = $app->getStatusCode();
+        $this->assertEquals($expected, $actual);
+    }
+
+    /**
+     * this makes sure we can write sessions
+     *
+     * @return void
+     */
+    public function testTmpIsWritable() {
+        $this->assertTrue(is_writable('/var/www/data/sessions'));
     }
 
 }

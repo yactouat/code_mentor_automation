@@ -6,23 +6,19 @@ use Udacity\Csvs\CsvExtractor;
 use Udacity\Emails\Emails;
 use Udacity\Models\OnlineResourceModel;
 use PHPUnit\Framework\TestCase;
-use Tests\Integration\Apps\Web\AuthenticateTrait;
-use Tests\Integration\EnvLoaderTrait;
+use Tests\Traits\TestsAuthenticateTrait;
+use Tests\Traits\TestsLoaderTrait;
 use Udacity\Exceptions\UserNotAuthedException;
 
 final class EmailsTest extends TestCase
 {
 
-    use AuthenticateTrait;
-    use EnvLoaderTrait;
+    use TestsAuthenticateTrait;
+    use TestsLoaderTrait;
 
     protected function setUp(): void
     {
         $this->loadEnv();
-        $this->database->writeQuery('TRUNCATE udacity_sl_automation.sessionlead');
-        $_POST = [];
-        $_SESSION = [];
-        $_SERVER['REQUEST_METHOD'] = "GET";
     }
 
     public function testGetBehindStudentsEmailTemplateInEnglish() {

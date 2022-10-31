@@ -10,6 +10,8 @@ use Udacity\Emails\Mailer;
  */
 final class SessionLeadModel extends Model {
 
+    use ValidationTrait;
+
     /**
      * {@inheritDoc}
      */
@@ -46,10 +48,31 @@ final class SessionLeadModel extends Model {
 
     /**
      * {@inheritDoc}
+     */
+    public static function getEmptyInstance(): self
+    {
+        return new self(
+            email: '',
+            first_name: '',
+            google_app_password: '',
+            user_passphrase: ''
+        );        
+    }
+
+    /**
+     * {@inheritDoc}
      * 
      * also creates a msmtprc file for the newly created session lead
      */
     public function persist(): void {
+        if (count(self::validateInputFields([
+            'email' => $this->email,
+            'first_name' => $this->first_name,
+            'google_app_password' => $this->google_app_password,
+            'user_passphrase' => $this->user_passphrase
+        ])) > 0) {
+            return;
+        }
         $dbName = Database::$dbName;
         $tableName = $this->tableName;
         $sql = "INSERT INTO $dbName.$tableName (email, first_name, google_app_password, user_passphrase) 
@@ -63,6 +86,7 @@ final class SessionLeadModel extends Model {
                 password_hash($this->user_passphrase, PASSWORD_DEFAULT)
             ]
         );
+        // setting the `msmtprc` config for the given user
         Mailer::buildMsmtprc($this->email, $this->google_app_password);
     }
 
@@ -73,7 +97,7 @@ final class SessionLeadModel extends Model {
      * @return array - empty if not found
      */
     public function selectOneByEmail(string $email): array {
-        if (!filter_var($email ?? '', FILTER_VALIDATE_EMAIL)) {
+        if (!self::validateEmail($email)) {
             return [];
         }
         $sql ='SELECT * FROM ' . $this->tableName . " WHERE email=?";
@@ -86,8 +110,8 @@ final class SessionLeadModel extends Model {
      */
     public static function validateInputFields(array $fields): array {
         $errors = [];
-        if (empty($fields['email'])) {
-            $errors[] = '📧 Your email address is missing';
+        if (!self::validateEmail($fields['email'] ?? '')) {
+            $errors[] = '📧 Malformed or missing email address';
         }
         if (empty($fields['first_name'])) {
             $errors[] = '❌ Your first name is missing';
@@ -97,9 +121,6 @@ final class SessionLeadModel extends Model {
         }
         if (empty($fields['user_passphrase'])) {
             $errors[] = '🔑 Your user passphrase is missing';
-        }
-        if(!empty($fields['email']) && !filter_var($fields['email'] ?? '', FILTER_VALIDATE_EMAIL)) {
-            $errors[] = '📧 Malformed email address';
         }
         if (count($errors) <= 0) {
             $sessionLead = new SessionLeadModel(

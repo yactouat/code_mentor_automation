@@ -1,34 +1,32 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Integration\Apps\Web\Controllers;
+namespace Tests\Integration\Apps\Web\Controllers\Resource;
 
 use PHPUnit\Framework\TestCase;
-use Tests\Integration\Apps\Web\AuthenticateTrait;
-use Tests\Integration\EnvLoaderTrait;
+use Tests\Traits\TestsAuthenticateTrait;
+use Tests\Traits\TestsLoaderTrait;
+use Tests\Traits\TestsStringsTrait;
 use Udacity\Apps\Web\Controllers\Resource\SessionLeadsController;
 
 final class SessionLeadsControllerTest extends TestCase {
 
-    use AuthenticateTrait;
-    use EnvLoaderTrait;
+    use TestsAuthenticateTrait;
+    use TestsLoaderTrait;
+    use TestsStringsTrait;
 
     protected function setUp(): void
     {
         $this->loadEnv();
-        $this->database->writeQuery('TRUNCATE udacity_sl_automation.sessionlead');
-        $_POST = [];
-        $_SESSION = [];
-        $_SERVER['REQUEST_METHOD'] = "GET";
     }
 
     public function testPersistWithNoSubmitFieldReturnsRelevantAlert() {
         $ctlr = new SessionLeadsController();
-        $expected = str_replace(' ', '', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        $expected = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
             <div>⚠️ Please send a valid form using the `submit` button</div>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>');
-        $actual = str_replace(' ', '', $ctlr->persist());
-        $this->assertTrue(str_contains($actual, $expected));
+        </div>';
+        $actual = $ctlr->persist();
+        $this->assertTrue($this->stringIsContainedInAnother($expected, $actual));
     }
 
     public function testPersistWithNoSubmitFieldSets400StatusCode() {
@@ -41,47 +39,46 @@ final class SessionLeadsControllerTest extends TestCase {
     public function testPersistWithErrorsKeepsOldUserInput() {
         $_POST["email"] = "john@doe.com";
         $ctlr = new SessionLeadsController();
-        $expected = str_replace([' ', "\n"], ['', ''], '<input 
+        $expected = '<input 
             type="email" 
             class="form-control" 
             id="email" 
             placeholder="Your Email Address"
             value="john@doe.com"
             name="email"
-        >');
-        $actual = str_replace([' ', "\n"], ['', ''], $ctlr->persist());
-        // $this->assertEquals($expected, $actual);
-        $this->assertTrue(str_contains($actual, $expected));
+        >';
+        $actual = $ctlr->persist();
+        $this->assertTrue($this->stringIsContainedInAnother($expected, $actual));
     }
 
     public function testPersistWithNoEmailFieldReturnsRelevantAlert() {
         $ctlr = new SessionLeadsController();
-        $expected = str_replace(' ', '', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <div>📧 Your email address is missing</div>
+        $expected = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <div>📧 Malformed or missing email address</div>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>');
-        $actual = str_replace(' ', '', $ctlr->persist());
-        $this->assertTrue(str_contains($actual, $expected));
+        </div>';
+        $actual = $ctlr->persist();
+        $this->assertTrue($this->stringIsContainedInAnother($expected, $actual));
     }
 
     public function testPersistWithNoGoogleAppPasswordFieldReturnsRelevantAlert() {
         $ctlr = new SessionLeadsController();
-        $expected = str_replace(' ', '', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        $expected = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
             <div>🔑 Your Google application password is missing</div>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>');
-        $actual = str_replace(' ', '', $ctlr->persist());
-        $this->assertTrue(str_contains($actual, $expected));
+        </div>';
+        $actual = $ctlr->persist();
+        $this->assertTrue($this->stringIsContainedInAnother($expected, $actual));
     }
 
     public function testPersistWithNoFirstNameFieldReturnsRelevantAlert() {
         $ctlr = new SessionLeadsController();
-        $expected = str_replace(' ', '', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        $expected = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
             <div>❌ Your first name is missing</div>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>');
-        $actual = str_replace(' ', '', $ctlr->persist());
-        $this->assertTrue(str_contains($actual, $expected));
+        </div>';
+        $actual = $ctlr->persist();
+        $this->assertTrue($this->stringIsContainedInAnother($expected, $actual));
     }
 
     public function testPersistWithValidInputActuallyPersistsASessionLead() {
@@ -157,7 +154,7 @@ final class SessionLeadsControllerTest extends TestCase {
     }
 
     public function testLoginOutputWithGoodCredsReturnsHomePage() {
-        $expected = str_replace(' ', '', file_get_contents('/var/www/tests/fixtures/views/home.html'));
+        $expected = file_get_contents('/var/www/tests/fixtures/views/home.html');
         $ctlr = new SessionLeadsController();
         $_SERVER['REQUEST_METHOD'] = 'POST';
         $_POST = [
@@ -175,11 +172,11 @@ final class SessionLeadsControllerTest extends TestCase {
             'user_passphrase' => 'test user password',
         ];
         $actual = $ctlr->login();
-        $this->assertEquals($expected, str_replace(' ', '', $actual));
+        $this->assertTrue($this->stringsHaveSameContent($expected, $actual));
     } 
 
     public function testLoginOutputWithBadCredsReturnsLoginPage() {
-        $expected = str_replace(' ', '', file_get_contents('/var/www/tests/fixtures/views/session-leads.login.html'));
+        $expected = file_get_contents('/var/www/tests/fixtures/views/session-leads.login.html');
         $ctlr = new SessionLeadsController();
         $_SERVER['REQUEST_METHOD'] = 'POST';
         $_POST = [
@@ -188,7 +185,7 @@ final class SessionLeadsControllerTest extends TestCase {
             'user_passphrase' => 'test user password',
         ];
         $actual = $ctlr->login();
-        $this->assertEquals($expected, str_replace(' ', '', $actual));
+        $this->assertTrue($this->stringsHaveSameContent($expected, $actual));
     } 
 
     public function testLoginWithGoodCredsSets200StatusCode() {
@@ -227,7 +224,7 @@ final class SessionLeadsControllerTest extends TestCase {
     }
 
     public function testLoginWithoutSubmitFieldsReturnsLoginPage() {
-        $expected = str_replace(' ', '', file_get_contents('/var/www/tests/fixtures/views/session-leads.login.html'));
+        $expected = file_get_contents('/var/www/tests/fixtures/views/session-leads.login.html');
         $ctlr = new SessionLeadsController();
         $_SERVER['REQUEST_METHOD'] = 'POST';
         $_POST = [
@@ -244,7 +241,7 @@ final class SessionLeadsControllerTest extends TestCase {
             'user_passphrase' => 'test user password',
         ];
         $actual = $ctlr->login();
-        $this->assertEquals($expected, str_replace(' ', '', $actual));
+        $this->assertTrue($this->stringsHaveSameContent($expected, $actual));
     } 
 
     public function testPersistWithValidInputSetsMsmtprcFile() {
@@ -262,18 +259,24 @@ final class SessionLeadsControllerTest extends TestCase {
         $this->assertEquals($expected, $actual);
     }
 
-    // public function testPersistWithInvalidInputDoesNotSetMsmtprcFile() {
-    //     $ctlr = new SessionLeadsController();
-    //     $_POST = [
-    //         "submit" => "1",
-    //         "email" => "test@.com",
-    //         "first_name" => "test first name",
-    //         "google_app_password" => "googleapppassword",
-    //         "user_passphrase" => "test user password",
-    //     ];
-    //     $ctlr->persist();
-    //     $this->assertFalse('/etc/msmtprc');
-    //     $this->assertFalse('/etc/msmtprc.test');
-    // }
+    public function testPersistWithInvalidInputDoesNotSetMsmtprcConf() {
+        $expected = file_get_contents('/var/www/scripts/msmtp/msmtprc.template');
+        $ctlr = new SessionLeadsController();
+        $_POST = [
+            "submit" => "1",
+            "email" => "test@.com",
+            "first_name" => "test first name",
+            "google_app_password" => "googleapppassword",
+            "user_passphrase" => "test user password",
+        ];
+        $ctlr->persist();
+        $actual = file_get_contents('/etc/msmtprc.test');
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testMsmtprcFilesAreWritable() {
+        $this->assertTrue(is_writable('/etc/msmtprc'));
+        $this->assertTrue(is_writable('/etc/msmtprc.test'));
+    }
 
 }

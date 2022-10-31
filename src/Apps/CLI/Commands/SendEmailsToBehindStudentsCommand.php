@@ -32,7 +32,7 @@ final class SendEmailsToBehindStudentsCommand extends Command
     use AuthTrait;
     use LoggerTrait;
 
-    
+    const COMMAND_HELP = 'This command allows you to send emails in bulk to students that are behind in their Nanodegree program using a Udacity session report CSV file.';
     const CSV_ARG = 'csv';
     const LANG_ARG = 'language';
 
@@ -227,7 +227,7 @@ final class SendEmailsToBehindStudentsCommand extends Command
     {
         $this
             // the command help shown when running the command with the "--help" option
-            ->setHelp('This command allows you to send emails in bulk to students that are behind in their Nanodegree program using a Udacity session report CSV file.')
+            ->setHelp(self::COMMAND_HELP)
             ->addArgument(self::CSV_ARG, InputArgument::REQUIRED, 'Path to a valid session report existing CSV file.')
             ->addArgument(self::LANG_ARG, InputArgument::REQUIRED, 'fr OR en')
         ;

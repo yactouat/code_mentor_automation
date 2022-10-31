@@ -42,6 +42,16 @@ final class WebApp extends App {
      */    
     private string $responseOutput;
 
+    public function __construct(string $rootDir)
+    {
+        parent::__construct($rootDir, 'web');
+        if (empty($_ENV['IS_TESTING'])) {
+            session_save_path('/var/www/data/sessions');
+            session_start();
+        }
+        $this->setNewLogger($this->getLogsDir() . 'web_app.log');
+    }
+
     /**
      * sets the output after parsing the client's request
      *

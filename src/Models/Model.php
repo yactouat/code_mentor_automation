@@ -39,6 +39,13 @@ abstract class Model {
     public abstract static function getCsvFields(): array;
 
     /**
+     * gets an empty instance of the current model, useful to select records for instance
+     *
+     * @return self
+     */
+    public abstract static function getEmptyInstance(): self;
+
+    /**
      * this function is responsible for the business logic validation of the instance model
      *
      * @param array $fields - a key value array of all the fields to parse

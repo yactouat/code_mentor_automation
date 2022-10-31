@@ -14,6 +14,7 @@
             - [CLI commands](#cli-commands)
                 - [send emails to students who are behind on their Nanodegree program](#send-emails-to-students-who-are-behind-on-their-nanodegree-program)
                 - [send emails to students to cheer them up as their Nanodegree program ending approaches](#send-emails-to-students-to-cheer-them-up-as-their-nanodegree-program-ending-approaches)
+    - [Debug the app'](#debug-the-app)
     - [Tests and Documentation](#tests-and-documentation)
         - [pre commit hook](#pre-commit-hook)
         - [Tests](#tests)
@@ -86,6 +87,18 @@ To use the web UI, just browse it, things should be pretty self-explanatory ;)
 - `docker exec -it udacity_sl_automation-php-1 bash -c "php /var/www/bin/index.php emails:training-ending csv_path en_or_fr"`
 - with additional online resources => `docker exec -it udacity_sl_automation-php-1 bash -c "php /var/www/bin/index.php emails:training-ending csv_path en_or_fr resources_csv_path"`
 
+## Debug the app'
+
+- you need to have the `ms-vscode-remote.remote-containers` extension installed
+- in VSCode, open the command palette and execute `Dev Containers: Attach to Running Container`
+- select the PHP container
+- this will open a new VSCode window in which you can enable debugging features directly in the dockerized env
+- you can now open the `/var/www/` folder within this window editor if it's not already open there
+- inside this window, hit `ctrl + shift + d` and click on the `Run and Debug` button
+- in the debuggers selection, choose the `install extension` option to install the `PHP Debug` extension in the dockerized editor if it's not already installed
+- then, you can just click on launch in the debug pane and a new browser tab running the app' in debug mode will be opened for you
+- from there on, happy step debugging !
+
 ## Tests and Documentation
 
 ### pre commit hook
@@ -96,7 +109,7 @@ To use the web UI, just browse it, things should be pretty self-explanatory ;)
 
 ### Tests
 
-- you should have the application stack up and running (`docker compose up`) before running tests (so we are sure that the environment remains the same) => `docker exec -t udacity_sl_automation-php-1 bash -c "/var/www/vendor/bin/phpunit /var/www/tests --colors --testdox"`
+- you should have the application stack up and running (`docker compose up`) before running tests (so we are sure that the environment remains the same) => `sh tests.sh`
 - you can also open a terminal in the PHP container and run `/var/www/bin/vendor/bin/phpunit tests`
 - moreover there is a `./tests/fixtures/csv/integration-test-session-report.csv` file (which contains my email, so feel free to replace that) if you want to be sure the real thing actually works as expected when it comes to sending emails
 - also, you have test online resources located in `./tests/fixtures/csv/online-resources.csv`

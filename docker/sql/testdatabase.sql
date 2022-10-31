@@ -1,3 +1,8 @@
+CREATE TABLE IF NOT EXISTS udacity_sl_automation.dummy(
+    `id` INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT UNIQUE NOT NULL,
+    `some_field` TEXT NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS udacity_sl_automation.onlineresource (
     `id` INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT UNIQUE NOT NULL,
     `description` TEXT NOT NULL,
@@ -19,4 +24,9 @@ CREATE TABLE IF NOT EXISTS udacity_sl_automation.student (
     `first_name` TEXT NOT NULL,
     `last_name` TEXT NOT NULL,
     `on_track_status` TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS udacity_sl_automation.emails (
+    `id` INTEGER PRIMARY KEY AUTO_INCREMENT UNIQUE NOT NULL,
+    `sessReportCsv` TEXT NOT NULL UNIQUE
 );

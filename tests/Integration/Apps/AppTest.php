@@ -2,32 +2,33 @@
 
 namespace Tests\Integration\Apps;
 
-require_once '/var/www/tests/fixtures/classes/DummyApp.php';
-
-use DummyApp;
 use PHPUnit\Framework\TestCase;
-use Tests\Integration\EnvLoaderTrait;
+use Tests\Traits\TestsLoaderTrait;
+use Udacity\Apps\CLI\CLIApp;
+use Udacity\Apps\Web\WebApp;
 use Udacity\Exceptions\BadEnvException;
 
 final class AppTest extends TestCase {
 
-    use EnvLoaderTrait;
+    use TestsLoaderTrait;
 
     protected function setUp(): void
     {
         $this->loadEnv();
     }
 
-    protected function tearDown(): void
-    {
-        $_ENV['DB_HOST'] = 'mariadbtest';
-    }
-
-    public function testConstructWithIncompleteEnvThrowsBadEnvException() {
+    public function testWebAppConstructWithIncompleteEnvThrowsBadEnvException() {
         $this->expectException(BadEnvException::class);
         $this->expectExceptionMessage('the app environment is not properly set');
         unset($_ENV['DB_HOST']);
-        $actual = new DummyApp('/var/www/tests/fixtures/envs/incomplete');
+        $actual = new WebApp('/var/www');
+    }
+
+    public function testCliAppConstructWithIncompleteEnvThrowsBadEnvException() {
+        $this->expectException(BadEnvException::class);
+        $this->expectExceptionMessage('the app environment is not properly set');
+        unset($_ENV['DB_HOST']);
+        $actual = new CLIApp('/var/www');
     }
 
 }

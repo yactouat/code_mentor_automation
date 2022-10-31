@@ -1,4 +1,4 @@
-{% extends "layout.login-signup.html.twig" %}
+{% extends "layouts/layout.form.html.twig" %}
 
 {% block description %}Sign up to do your Udacity session lead job with ease.{% endblock %}
 
@@ -18,7 +18,7 @@
     <form 
         action="/session-leads/create"
         method="post"
-        class="form-login-signup m-auto"
+        class="app-form m-auto"
     >
         <h1 class="h3 mb-3 fw-normal">Signup to Udacity SL Automation</h1>
         <div class="form-floating">
@@ -69,6 +69,7 @@
             <label for="user_passphrase">Your Password Or Passphrase</label>
         </div>
         <input class="w-100 btn btn-lg btn-primary" type="submit" name="submit" value="Sign Up"/>
+        <p class="mt-5 mb-3 text-muted">want to <a href="/login">login</a> instead ?</p>
         <p class="mt-5 mb-3 text-muted">&copy; yactouat 2022</p>
     </form>
 
