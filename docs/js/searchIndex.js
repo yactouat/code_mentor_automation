@@ -56,6 +56,11 @@ Search.appendIndex(
             "summary": "sets\u0020the\u0020helps\u0020text\u0020and\u0020the\u0020required\u0020parameters\u0020of\u0020this\u0020CLI\u0020commands",
             "url": "classes/Udacity-Apps-CLI-Commands-SendEmailsToBehindStudentsCommand.html#method_configure"
         },                {
+            "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendEmailsToBehindStudentsCommand\u003A\u003ACOMMAND_HELP",
+            "name": "COMMAND_HELP",
+            "summary": "",
+            "url": "classes/Udacity-Apps-CLI-Commands-SendEmailsToBehindStudentsCommand.html#constant_COMMAND_HELP"
+        },                {
             "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendEmailsToBehindStudentsCommand\u003A\u003ACSV_ARG",
             "name": "CSV_ARG",
             "summary": "",
@@ -80,6 +85,11 @@ Search.appendIndex(
             "name": "configure",
             "summary": "sets\u0020the\u0020helps\u0020text\u0020and\u0020the\u0020required\u0020parameters\u0020of\u0020this\u0020CLI\u0020commands",
             "url": "classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#method_configure"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003ACOMMAND_HELP",
+            "name": "COMMAND_HELP",
+            "summary": "",
+            "url": "classes/Udacity-Apps-CLI-Commands-SendTrainingEndingEmailsCommand.html#constant_COMMAND_HELP"
         },                {
             "fqsen": "\\Udacity\\Apps\\CLI\\Commands\\SendTrainingEndingEmailsCommand\u003A\u003ACSV_ARG",
             "name": "CSV_ARG",

@@ -33,6 +33,7 @@ final class SendTrainingEndingEmailsCommand extends Command
     use AuthTrait;
     use LoggerTrait;
 
+    const COMMAND_HELP = 'This command allows you to send emails in bulk to students to cheer them up as the end of the nanodegree program approaches.';
     const CSV_ARG = 'csv';
     const LANG_ARG = 'language';
     const ONLINE_RESOURCES = 'online-resources';
@@ -226,7 +227,7 @@ final class SendTrainingEndingEmailsCommand extends Command
     {
         $this
             // the command help shown when running the command with the "--help" option
-            ->setHelp('This command allows you to send emails in bulk to students to cheer them up as the end of the nanodegree program approaches.')
+            ->setHelp(self::COMMAND_HELP)
             ->addArgument(self::CSV_ARG, InputArgument::REQUIRED, 'Path to a valid session report existing CSV file.')
             ->addArgument(self::LANG_ARG, InputArgument::REQUIRED, 'fr OR en')
             ->addArgument(self::ONLINE_RESOURCES, InputArgument::OPTIONAL, 'Path to a CSV containing online resources containing `Name,Description,URL` fields.')
