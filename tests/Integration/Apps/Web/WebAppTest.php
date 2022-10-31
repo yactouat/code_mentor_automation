@@ -252,7 +252,7 @@ final class WebAppTest extends TestCase {
      * @return void
      */
     public function testTmpIsWritable() {
-        $this->assertTrue(is_writable('/tmp'));
+        $this->assertTrue(is_writable('/var/www/data/sessions'));
     }
 
 }

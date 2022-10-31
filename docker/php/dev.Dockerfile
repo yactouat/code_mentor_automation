@@ -50,9 +50,4 @@ ENTRYPOINT ["sh", "-c", "php-fpm -D \
     && chgrp msmtp_users /etc/msmtprc \ 
     && chown www-data:msmtp_users /etc/msmtprc \
     && chmod g+rwx /etc/msmtprc \
-    && groupadd tmp_users \
-    && adduser www-data tmp_users \
-    && adduser root tmp_users \
-    && chown -R www-data:tmp_users /tmp \
-    && chmod -R g+rwx /tmp \
     && nginx -g 'daemon off;'"]

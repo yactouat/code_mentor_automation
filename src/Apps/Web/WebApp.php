@@ -46,6 +46,7 @@ final class WebApp extends App {
     {
         parent::__construct($rootDir, 'web');
         if (empty($_ENV['IS_TESTING'])) {
+            session_save_path('/var/www/data/sessions');
             session_start();
         }
         $this->setNewLogger($this->getLogsDir() . 'web_app.log');

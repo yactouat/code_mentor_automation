@@ -31,10 +31,7 @@ final class EmailsController extends Controller implements ResourceControllerInt
      */
     private function _processBatchEmailsInput(string $automation): void {
         $fileKey = 'sessreportcsv';
-        $errors = EmailsModel::validateInputFields(array_merge(
-            $_POST,
-            $this->getUploadedFile($fileKey)
-        ));
+        $errors = EmailsModel::validateInputFields($this->getEmailsPayloadToValidate($fileKey));
         if (!isset($_POST['submit'])) {
             $errors[] = '⚠️ Please send a valid form using the `submit` button';
         }
@@ -72,6 +69,13 @@ final class EmailsController extends Controller implements ResourceControllerInt
             $this->setAuthedStatusCode(404);
         }
         return $this->getRenderer()->render($this->getTwigTemplate());
+    }
+
+    public function getEmailsPayloadToValidate(string $fileKey): array {
+        return array_merge(
+            $_POST,
+            [$fileKey => $this->getUploadedFile($fileKey)]
+        );
     }
  
     /**

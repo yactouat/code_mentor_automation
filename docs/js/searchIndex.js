@@ -901,6 +901,11 @@ Search.appendIndex(
             "summary": "shows\u0020the\u0020web\u0020form\u0020to\u0020create\u0020an\u0020instance\u0020of\u0020the\u0020related\u0020resource",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method_create"
         },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\EmailsController\u003A\u003AgetEmailsPayloadToValidate\u0028\u0029",
+            "name": "getEmailsPayloadToValidate",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method_getEmailsPayloadToValidate"
+        },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\EmailsController\u003A\u003Aindex\u0028\u0029",
             "name": "index",
             "summary": "\u0021\u0020not\u0020implemented",

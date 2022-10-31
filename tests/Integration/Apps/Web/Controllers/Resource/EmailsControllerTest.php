@@ -3,13 +3,11 @@
 namespace Tests\Integration\Apps\Web\Controllers\Resource;
 
 use PHPUnit\Framework\TestCase;
-use Tests\Integration\Apps\Web\AuthenticateTrait;
 use Tests\Integration\TestsLoaderTrait;
 use Udacity\Apps\Web\Controllers\Resource\EmailsController;
 
 final class EmailsControllerTest extends TestCase {
 
-    use AuthenticateTrait;
     use TestsLoaderTrait;
 
     protected function setUp(): void
@@ -34,5 +32,23 @@ final class EmailsControllerTest extends TestCase {
         $actual = $ctlr->getStatusCode();
         $this->assertEquals($expected, $actual);
     }
+
+    public function testGetEmailsPayloadToValidateReturnsExpectedPayload() {
+        $fileKey = 'test';
+        $_FILES[$fileKey] = [
+            'name' => 'some_file_name'
+        ];
+        $_POST['some_key'] = 'some value';
+        $expected = [
+            'some_key' => 'some value',
+            $fileKey => [
+                'name' => 'some_file_name'
+            ]
+        ];
+        $ctlr = new EmailsController();
+        $actual = $ctlr->getEmailsPayloadToValidate($fileKey);
+        $this->assertEquals($expected, $actual);
+    }
+    // TODO test with unset file key
 
 }
