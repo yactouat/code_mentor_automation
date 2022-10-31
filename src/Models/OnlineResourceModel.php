@@ -36,6 +36,18 @@ final class OnlineResourceModel extends Model {
     /**
      * {@inheritDoc}
      */
+    public static function getEmptyInstance(): self
+    {
+        return new self(
+            description: '',
+            name: '',
+            url: ''
+        );        
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function persist(): void {
         $description = $this->description;
         $name = $this->name;

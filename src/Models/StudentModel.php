@@ -9,6 +9,8 @@ use Udacity\Database;
  */
 final class StudentModel extends Model {
 
+    use ValidationTrait;
+
     /**
      * {@inheritDoc}
      */
@@ -46,23 +48,38 @@ final class StudentModel extends Model {
 
     /**
      * {@inheritDoc}
+     */
+    public static function getEmptyInstance(): self
+    {
+        return new self(
+            email: '',
+            first_name: '',
+            last_name: '',
+            on_track_status: ''
+        );        
+    }
+
+    /**
+     * {@inheritDoc}
      * 
-     * there is a specific validation that takes place for the on-track status of the student (allowed values only)
+     * specific validation is set for the on-track status of the student (allowed values only)
      */
     public function persist(): void {
-        if (count(self::validateInputFields([
-            'on_track_status' => $this->on_track_status
-        ])) <= 0) {
-            $email = $this->email;
-            $first_name = $this->first_name;
-            $last_name = $this->last_name;
-            $on_track_status = $this->on_track_status;
-            $dbName = Database::$dbName;
-            $tableName = $this->tableName;
-            $query = "INSERT INTO $dbName.$tableName (email, first_name, last_name, on_track_status) VALUES 
-                ('$email', '$first_name', '$last_name', '$on_track_status')";
-            $this->database->writeQuery($query);
+        if (
+            count(self::validateInputFields(['on_track_status' => $this->on_track_status])) > 0
+            || !self::validateEmail($this->email)
+        ) {
+            return;
         }
+        $email = $this->email;
+        $first_name = $this->first_name;
+        $last_name = $this->last_name;
+        $on_track_status = $this->on_track_status;
+        $dbName = Database::$dbName;
+        $tableName = $this->tableName;
+        $query = "INSERT INTO $dbName.$tableName (email, first_name, last_name, on_track_status) VALUES 
+            ('$email', '$first_name', '$last_name', '$on_track_status')";
+        $this->database->writeQuery($query);
     }
 
     /**

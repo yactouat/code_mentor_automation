@@ -16,7 +16,7 @@ final class SessionLeadModelTest extends TestCase {
     }
 
     protected function verifyUser(array $expected, array $actual) {
-        $this->assertEquals($expected['email'], $actual['email']);
+        $this->assertEquals($expected['email'] ?? '', $actual['email']);
         $this->assertEquals($expected['first_name'], $actual['first_name']);
         $this->assertTrue(password_verify($expected['google_app_password'], $actual['google_app_password']));
         $this->assertTrue(password_verify($expected['user_passphrase'], $actual['user_passphrase']));
@@ -25,17 +25,17 @@ final class SessionLeadModelTest extends TestCase {
     public function testPersistPersistsInstanceInDb() {
         // arrange
         $expected = [
-            "id" => 1,
-            "email" => "test email",
-            "first_name" => "test first name",
-            "google_app_password" => "test google app password",
-            "user_passphrase" => "test user password"
+            'id' => 1,
+            'email' => 'test@test.com',
+            'first_name' => 'test first name',
+            'google_app_password' => 'test google app password',
+            'user_passphrase' => 'test user password'
         ];   
         $sessionLead = new SessionLeadModel(
-            email: "test email", 
-            first_name: "test first name", 
-            google_app_password: "test google app password",
-            user_passphrase: "test user password"
+            email: 'test@test.com', 
+            first_name: 'test first name', 
+            google_app_password: 'test google app password',
+            user_passphrase: 'test user password'
         );
         $sessionLead->persist();
         // act
@@ -44,14 +44,30 @@ final class SessionLeadModelTest extends TestCase {
         $this->verifyUser($expected, $actual);    
     }
 
+    public function testPersistWithInvalidEmailDoesNotPersistInstanceInDb() {
+        // arrange
+        $expected = [];   
+        $sessionLead = new SessionLeadModel(
+            email: 'test@.com', 
+            first_name: 'test first name', 
+            google_app_password: 'test google app password',
+            user_passphrase: 'test user password'
+        );
+        $sessionLead->persist();
+        // act
+        $actual = $sessionLead->selectAll();
+        // assert
+        $this->assertEquals($expected, $actual);    
+    }
+
     public function testValidateInputFieldsWithMalformedEmailPushesCorrectErrorInErrorsArrray() {
-        $expected = '📧 Malformed email address';
+        $expected = '📧 Malformed or missing email address';
         $actual = SessionLeadModel::validateInputFields(['email' => 'yactouat@.com']);
         $this->assertTrue(in_array($expected, $actual));
     }
 
     public function testValidateInputFieldsWithValidEmailPushesNoRelatedErrorInErrorsArrray() {
-        $expected = '📧 Malformed email address';
+        $expected = '📧 Malformed or missing email address';
         $actual = SessionLeadModel::validateInputFields(['email' => 'yactouat@gmail.com']);
         $this->assertTrue(!in_array($expected, $actual));
     }
@@ -60,7 +76,7 @@ final class SessionLeadModelTest extends TestCase {
         // arrange
         $expected = htmlspecialchars('<script>alert("I am a bad script")</script>', ENT_QUOTES);
         $sessionLead = new SessionLeadModel(
-            email: 'test email', 
+            email: 'test@test.com', 
             first_name: '<script>alert("I am a bad script")</script>', 
             google_app_password: 'some password',
             user_passphrase: 'test user password'
@@ -79,9 +95,9 @@ final class SessionLeadModelTest extends TestCase {
     }
 
     public function testValidateInputFieldsWithAnEmailThatTooLongPushesCorrectErrorInErrorsArrray() {
-        $expected = '📧 Malformed email address';
+        $expected = '📧 Malformed or missing email address';
         $actual = SessionLeadModel::validateInputFields([
-            "email" => "testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest@gmail.com"
+            'email' => 'testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest@gmail.com'
         ]);
         $this->assertTrue(in_array($expected, $actual));
     }
@@ -89,21 +105,21 @@ final class SessionLeadModelTest extends TestCase {
     public function testSelectOneByEmailReturnsRelevantUserData() {
         // arrange
         $expected = [
-            "id" => 1,
-            "email" => "test@gmail.com",
-            "first_name" => "test first name",
-            "google_app_password" => "test google app password",
-            "user_passphrase" => "test user password",
+            'id' => 1,
+            'email' => 'test@gmail.com',
+            'first_name' => 'test first name',
+            'google_app_password' => 'test google app password',
+            'user_passphrase' => 'test user password',
         ];   
         $sessionLead = new SessionLeadModel(
-            email: "test@gmail.com", 
-            first_name: "test first name", 
-            google_app_password: "test google app password",
-            user_passphrase: "test user password"
+            email: 'test@gmail.com', 
+            first_name: 'test first name', 
+            google_app_password: 'test google app password',
+            user_passphrase: 'test user password'
         );
         $sessionLead->persist();
         // act
-        $actual = $sessionLead->selectOneByEmail("test@gmail.com");
+        $actual = $sessionLead->selectOneByEmail('test@gmail.com');
         // assert
         $this->verifyUser($expected, $actual);
     }
@@ -119,7 +135,7 @@ final class SessionLeadModelTest extends TestCase {
         );
         $sessionLead->persist();
         // act
-        $actual = $sessionLead->selectOneByEmail("test@.com");
+        $actual = $sessionLead->selectOneByEmail('test@.com');
         // assert
         $this->assertEquals($expected, $actual);
     }
@@ -128,14 +144,14 @@ final class SessionLeadModelTest extends TestCase {
         // arrange
         $expected = [];   
         $sessionLead = new SessionLeadModel(
-            email: "test@gmail.com", 
-            first_name: "test first name", 
-            google_app_password: "test google app password",
-            user_passphrase: "test user password"
+            email: 'test@gmail.com', 
+            first_name: 'test first name', 
+            google_app_password: 'test google app password',
+            user_passphrase: 'test user password'
         );
         $sessionLead->persist();
         // act
-        $actual = $sessionLead->selectOneByEmail("test2@gmail.com");
+        $actual = $sessionLead->selectOneByEmail('test2@gmail.com');
         // assert
         $this->assertEquals($expected, $actual);
     }

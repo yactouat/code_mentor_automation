@@ -39,10 +39,29 @@ final class EmailsModel extends Model {
         return [];
     }
 
+    /**
+     * {@inheritDoc}
+     * 
+     */
+    public static function getEmptyInstance(): self
+    {
+        return new self();        
+    }
+
+    /**
+     * gets the error message when the required email type is missing or wrong
+     *
+     * @return string
+     */
     public static function getUnallowedEmailTypeErrorMess(): string {
         return '📧 Unallowed email type, allowed types are ' . implode(' ', self::getValidEmailsTypes());
     }
 
+    /**
+     * gets the array of valid emails types supported by the app'
+     *
+     * @return array
+     */
     public static function getValidEmailsTypes(): array {
         return [
             'behind-students'
@@ -54,10 +73,14 @@ final class EmailsModel extends Model {
      * 
      * ! not implemented
      */
-    public function persist(): void {
+    public function persist(): void {}
 
-    }
-
+    /**
+     * validates an email type against the supported emails types of the app'
+     *
+     * @param string $type
+     * @return boolean
+     */
     public static function validateEmailType(string $type): bool {
         return in_array($type, self::getValidEmailsTypes());
     }
@@ -65,7 +88,6 @@ final class EmailsModel extends Model {
     /**
      * {@inheritDoc}
      * 
-     * ! not implemented
      */
     public static function validateInputFields(array $fields): array
     {

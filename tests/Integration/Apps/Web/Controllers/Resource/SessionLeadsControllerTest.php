@@ -53,7 +53,7 @@ final class SessionLeadsControllerTest extends TestCase {
     public function testPersistWithNoEmailFieldReturnsRelevantAlert() {
         $ctlr = new SessionLeadsController();
         $expected = str_replace(' ', '', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <div>📧 Your email address is missing</div>
+            <div>📧 Malformed or missing email address</div>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>');
         $actual = str_replace(' ', '', $ctlr->persist());

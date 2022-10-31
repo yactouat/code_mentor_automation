@@ -59,13 +59,7 @@ final class SessionLeadsController extends Controller implements ResourceControl
                 && isset($_POST['email']) 
                 && isset($_POST['user_passphrase']) 
             ) {
-                $sessionLead = new SessionLeadModel(
-                    email: '',
-                    first_name: '',
-                    google_app_password: '',
-                    user_passphrase: ''
-                );
-                $usr = $sessionLead->selectOneByEmail($_POST['email']);
+                $usr = SessionLeadModel::getEmptyInstance()->selectOneByEmail($_POST['email']);
                 $_SESSION['authed'] = count($usr) > 0 && password_verify(
                     $_POST['user_passphrase'],
                     $usr['user_passphrase']

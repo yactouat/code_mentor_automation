@@ -35,13 +35,7 @@ trait AuthTrait {
             case 'web':
                 return !empty($_SESSION['authed_first_name']) ? $_SESSION['authed_first_name'] : '';
             case 'cli':
-                $sessionLead = new SessionLeadModel(
-                    email: '',
-                    first_name: '',
-                    google_app_password: '',
-                    user_passphrase: ''
-                );
-                $usr = $sessionLead->selectOneByEmail($_ENV['authed_user_email']);
+                $usr = SessionLeadModel::getEmptyInstance()->selectOneByEmail($_ENV['authed_user_email']);
                 return count($usr) > 0 ? $usr['first_name'] : '';
             default:
                 return '';
@@ -56,13 +50,7 @@ trait AuthTrait {
      * @return boolean - the outcome of the operation
      */
     public static function logUserIn(string $email, string $password): bool {
-        $sessionLead = new SessionLeadModel(
-            email: '',
-            first_name: '',
-            google_app_password: '',
-            user_passphrase: ''
-        );
-        $usr = $sessionLead->selectOneByEmail($email);
+        $usr = SessionLeadModel::getEmptyInstance()->selectOneByEmail($email);
         return count($usr) > 0 && password_verify(
             $password,
             $usr['user_passphrase']

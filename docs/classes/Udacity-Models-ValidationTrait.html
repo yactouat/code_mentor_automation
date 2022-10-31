@@ -110,21 +110,22 @@
             <div class="phpdocumentor-column -eight phpdocumentor-content">
                     <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/udacity.html">Udacity</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/udacity-models.html">Models</a></li>
     </ul>
 
     <article class="phpdocumentor-element -trait">
         <h2 class="phpdocumentor-content__title">
-    AuthTrait
+    ValidationTrait
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/AuthTrait.php"><a href="files/src-authtrait.html"><abbr title="src/AuthTrait.php">AuthTrait.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Models/ValidationTrait.php"><a href="files/src-models-validationtrait.html"><abbr title="src/Models/ValidationTrait.php">ValidationTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">8</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">this trait is responsible for managing the auth state cross namespaces</p>
+            <p class="phpdocumentor-summary">this trait holds common validation logic across models</p>
 
 
 
@@ -140,26 +141,12 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-                        <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Udacity-AuthTrait.html#method_getAuthedUserFirstName">getAuthedUserFirstName()</a>
-    <span>
-                                &nbsp;: string    </span>
-</dt>
-<dd>gets the authenticated user first name, whether in web or cli mode</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Udacity-AuthTrait.html#method_logUserIn">logUserIn()</a>
+                        <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Udacity-Models-ValidationTrait.html#method_validateEmail">validateEmail()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd>logs a user in outside the context of a web controller</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/Udacity-AuthTrait.html#method_isAuthed">isAuthed()</a>
-    <span>
-                                &nbsp;: bool    </span>
-</dt>
-<dd>checks if the user is authenticated whether in web or cli mode</dd>
+<dd></dd>
 
         </dl>
 
@@ -170,84 +157,41 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/Udacity-AuthTrait.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/Udacity-Models-ValidationTrait.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
             -method
-            -public
+            -protected
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getAuthedUserFirstName">
-        getAuthedUserFirstName()
-        <a href="classes/Udacity-AuthTrait.html#method_getAuthedUserFirstName" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_validateEmail">
+        validateEmail()
+        <a href="classes/Udacity-Models-ValidationTrait.html#method_validateEmail" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/AuthTrait.php"><a href="files/src-authtrait.html"><abbr title="src/AuthTrait.php">AuthTrait.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Models/ValidationTrait.php"><a href="files/src-models-validationtrait.html"><abbr title="src/Models/ValidationTrait.php">ValidationTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">10</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">gets the authenticated user first name, whether in web or cli mode</p>
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">getAuthedUserFirstName</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+    <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">validateEmail</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$inputEmail</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
-    
-    
-    
+        <section class="phpdocumentor-description"></section>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-            <section class="phpdocumentor-description"><ul>
-<li>the authed user first name or an empty string</li>
-</ul>
-</section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                    -static                    "
->
-    <h4 class="phpdocumentor-element__name" id="method_logUserIn">
-        logUserIn()
-        <a href="classes/Udacity-AuthTrait.html#method_logUserIn" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/AuthTrait.php"><a href="files/src-authtrait.html"><abbr title="src/AuthTrait.php">AuthTrait.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">52</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">logs a user in outside the context of a web controller</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">logUserIn</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$email</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$password</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$email</span>
+                <span class="phpdocumentor-signature__argument__name">$inputEmail</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$password</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -256,48 +200,7 @@
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-            <section class="phpdocumentor-description"><ul>
-<li>the outcome of the operation</li>
-</ul>
-</section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_isAuthed">
-        isAuthed()
-        <a href="classes/Udacity-AuthTrait.html#method_isAuthed" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/AuthTrait.php"><a href="files/src-authtrait.html"><abbr title="src/AuthTrait.php">AuthTrait.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">17</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">checks if the user is authenticated whether in web or cli mode</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">isAuthed</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-            <section class="phpdocumentor-description"><ul>
-<li>if the user is authenticated</li>
-</ul>
-</section>
-
+        
     
 </article>
             </section>
@@ -378,7 +281,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/Udacity-AuthTrait.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/Udacity-Models-ValidationTrait.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

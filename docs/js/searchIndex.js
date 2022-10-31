@@ -701,6 +701,11 @@ Search.appendIndex(
             "summary": "getting\u0020Udacity\u0020CSV\u0020fields\u0020for\u0020the\u0020given\u0020model",
             "url": "classes/Udacity-Models-Model.html#method_getCsvFields"
         },                {
+            "fqsen": "\\Udacity\\Models\\Model\u003A\u003AgetEmptyInstance\u0028\u0029",
+            "name": "getEmptyInstance",
+            "summary": "gets\u0020an\u0020empty\u0020instance\u0020of\u0020the\u0020current\u0020model,\u0020useful\u0020to\u0020select\u0020records\u0020for\u0020instance",
+            "url": "classes/Udacity-Models-Model.html#method_getEmptyInstance"
+        },                {
             "fqsen": "\\Udacity\\Models\\Model\u003A\u003AvalidateInputFields\u0028\u0029",
             "name": "validateInputFields",
             "summary": "this\u0020function\u0020is\u0020responsible\u0020for\u0020the\u0020business\u0020logic\u0020validation\u0020of\u0020the\u0020instance\u0020model",
@@ -746,6 +751,11 @@ Search.appendIndex(
             "summary": "getting\u0020Udacity\u0020CSV\u0020fields\u0020for\u0020the\u0020given\u0020model",
             "url": "classes/Udacity-Models-OnlineResourceModel.html#method_getCsvFields"
         },                {
+            "fqsen": "\\Udacity\\Models\\OnlineResourceModel\u003A\u003AgetEmptyInstance\u0028\u0029",
+            "name": "getEmptyInstance",
+            "summary": "gets\u0020an\u0020empty\u0020instance\u0020of\u0020the\u0020current\u0020model,\u0020useful\u0020to\u0020select\u0020records\u0020for\u0020instance",
+            "url": "classes/Udacity-Models-OnlineResourceModel.html#method_getEmptyInstance"
+        },                {
             "fqsen": "\\Udacity\\Models\\OnlineResourceModel\u003A\u003Apersist\u0028\u0029",
             "name": "persist",
             "summary": "saves\u0020a\u0020record\u0020of\u0020the\u0020model\u0020in\u0020db",
@@ -790,6 +800,11 @@ Search.appendIndex(
             "name": "getCsvFields",
             "summary": "getting\u0020Udacity\u0020CSV\u0020fields\u0020for\u0020the\u0020given\u0020model",
             "url": "classes/Udacity-Models-SessionLeadModel.html#method_getCsvFields"
+        },                {
+            "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003AgetEmptyInstance\u0028\u0029",
+            "name": "getEmptyInstance",
+            "summary": "gets\u0020an\u0020empty\u0020instance\u0020of\u0020the\u0020current\u0020model,\u0020useful\u0020to\u0020select\u0020records\u0020for\u0020instance",
+            "url": "classes/Udacity-Models-SessionLeadModel.html#method_getEmptyInstance"
         },                {
             "fqsen": "\\Udacity\\Models\\SessionLeadModel\u003A\u003Apersist\u0028\u0029",
             "name": "persist",
@@ -845,6 +860,11 @@ Search.appendIndex(
             "name": "getCsvFields",
             "summary": "getting\u0020Udacity\u0020CSV\u0020fields\u0020for\u0020the\u0020given\u0020model",
             "url": "classes/Udacity-Models-StudentModel.html#method_getCsvFields"
+        },                {
+            "fqsen": "\\Udacity\\Models\\StudentModel\u003A\u003AgetEmptyInstance\u0028\u0029",
+            "name": "getEmptyInstance",
+            "summary": "gets\u0020an\u0020empty\u0020instance\u0020of\u0020the\u0020current\u0020model,\u0020useful\u0020to\u0020select\u0020records\u0020for\u0020instance",
+            "url": "classes/Udacity-Models-StudentModel.html#method_getEmptyInstance"
         },                {
             "fqsen": "\\Udacity\\Models\\StudentModel\u003A\u003Apersist\u0028\u0029",
             "name": "persist",
@@ -931,14 +951,19 @@ Search.appendIndex(
             "summary": "getting\u0020Udacity\u0020CSV\u0020fields\u0020for\u0020the\u0020given\u0020model",
             "url": "classes/Udacity-Models-EmailsModel.html#method_getCsvFields"
         },                {
+            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AgetEmptyInstance\u0028\u0029",
+            "name": "getEmptyInstance",
+            "summary": "gets\u0020an\u0020empty\u0020instance\u0020of\u0020the\u0020current\u0020model,\u0020useful\u0020to\u0020select\u0020records\u0020for\u0020instance",
+            "url": "classes/Udacity-Models-EmailsModel.html#method_getEmptyInstance"
+        },                {
             "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AgetUnallowedEmailTypeErrorMess\u0028\u0029",
             "name": "getUnallowedEmailTypeErrorMess",
-            "summary": "",
+            "summary": "gets\u0020the\u0020error\u0020message\u0020when\u0020the\u0020required\u0020email\u0020type\u0020is\u0020missing\u0020or\u0020wrong",
             "url": "classes/Udacity-Models-EmailsModel.html#method_getUnallowedEmailTypeErrorMess"
         },                {
             "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AgetValidEmailsTypes\u0028\u0029",
             "name": "getValidEmailsTypes",
-            "summary": "",
+            "summary": "gets\u0020the\u0020array\u0020of\u0020valid\u0020emails\u0020types\u0020supported\u0020by\u0020the\u0020app\u0027",
             "url": "classes/Udacity-Models-EmailsModel.html#method_getValidEmailsTypes"
         },                {
             "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003Apersist\u0028\u0029",
@@ -948,7 +973,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AvalidateEmailType\u0028\u0029",
             "name": "validateEmailType",
-            "summary": "",
+            "summary": "validates\u0020an\u0020email\u0020type\u0020against\u0020the\u0020supported\u0020emails\u0020types\u0020of\u0020the\u0020app\u0027",
             "url": "classes/Udacity-Models-EmailsModel.html#method_validateEmailType"
         },                {
             "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AvalidateInputFields\u0028\u0029",
@@ -990,6 +1015,16 @@ Search.appendIndex(
             "name": "uploadFile",
             "summary": "",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-FilesUploadsTrait.html#method_uploadFile"
+        },                {
+            "fqsen": "\\Udacity\\Models\\ValidationTrait",
+            "name": "ValidationTrait",
+            "summary": "this\u0020trait\u0020holds\u0020common\u0020validation\u0020logic\u0020across\u0020models",
+            "url": "classes/Udacity-Models-ValidationTrait.html"
+        },                {
+            "fqsen": "\\Udacity\\Models\\ValidationTrait\u003A\u003AvalidateEmail\u0028\u0029",
+            "name": "validateEmail",
+            "summary": "",
+            "url": "classes/Udacity-Models-ValidationTrait.html#method_validateEmail"
         },                {
             "fqsen": "\\",
             "name": "\\",

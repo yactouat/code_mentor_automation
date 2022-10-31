@@ -19,6 +19,11 @@ final class DummyModel extends Model {
         ];
     }
 
+    public static function getEmptyInstance(): self
+    {
+        return new self();
+    }
+
     public function persist(): void {}
 
     public static function validateInputFields(array $fields): array
