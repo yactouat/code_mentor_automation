@@ -6,6 +6,7 @@ use Symfony\Component\Console\Application;
 use Udacity\Apps\App;
 use Udacity\Apps\CLI\Commands\SendEmailsToBehindStudentsCommand;
 use Udacity\Apps\CLI\Commands\SendTrainingEndingEmailsCommand;
+use Udacity\LoggerTrait;
 
 /**
  * entry point of the (Symfony) CLI app'
@@ -13,6 +14,8 @@ use Udacity\Apps\CLI\Commands\SendTrainingEndingEmailsCommand;
  * sets an instance of the Udacity automation app', registers commands, runs the CLI
  */
 final class CLIApp extends App {
+
+    use LoggerTrait;
 
     /**
      * the application that holds all of the features
@@ -44,12 +47,10 @@ final class CLIApp extends App {
         // ! to ask questions to the user, check out https://symfony.com/doc/current/components/console/helpers/questionhelper.html 
         // ! to get confirmation from the user, check out https://symfony.com/doc/current/components/console/helpers/questionhelper.html#asking-the-user-for-confirmation
         $this->app->add(
-            (new SendEmailsToBehindStudentsCommand())
-            ->setNewLogger($_ENV['ROOT_DIR'] . "/data/logs/php/cli.log")
+            (new SendEmailsToBehindStudentsCommand())->setNewLogger($this->getLogsDir() . "cli.log")
         );
         $this->app->add(
-            (new SendTrainingEndingEmailsCommand())
-            ->setNewLogger($_ENV['ROOT_DIR'] . "/data/logs/php/cli.log")
+            (new SendTrainingEndingEmailsCommand())->setNewLogger($this->getLogsDir() . "cli.log")
         );
     }
 
