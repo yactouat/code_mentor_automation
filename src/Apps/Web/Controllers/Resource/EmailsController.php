@@ -92,7 +92,7 @@ final class EmailsController extends Controller implements ResourceControllerInt
                     EmailsModel::$dataFolder . $emails->getSessReportCsv()
                 );
                 (new BehindStudentsEmailAutomation())
-                    ->setNewLogger(empty($_ENV['isTesting']) ? '/var/www/data/logs/php/web_app.log' : 
+                    ->setNewLogger(empty($_ENV['IS_TESTING']) ? '/var/www/data/logs/php/web_app.log' : 
                         '/var/www/tests/fixtures/logs/php/web_app.log'
                     )
                     ->run($csvDestFile, $_POST['language']);

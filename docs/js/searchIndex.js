@@ -431,10 +431,10 @@ Search.appendIndex(
             "summary": "executes\u0020a\u0020SQL\u0020write\u0020query\u0020and\u0020logs\u0020it",
             "url": "classes/Udacity-Database.html#method_writeQuery"
         },                {
-            "fqsen": "\\Udacity\\Database\u003A\u003A\u0024isTesting",
-            "name": "isTesting",
+            "fqsen": "\\Udacity\\Database\u003A\u003A\u0024IS_TESTING",
+            "name": "IS_TESTING",
             "summary": "whether\u0020we\u0020are\u0020in\u0020testing\u0020environment\u0020or\u0020not",
-            "url": "classes/Udacity-Database.html#property_isTesting"
+            "url": "classes/Udacity-Database.html#property_IS_TESTING"
         },                {
             "fqsen": "\\Udacity\\Database\u003A\u003A\u0024databaseConn",
             "name": "databaseConn",
@@ -605,6 +605,11 @@ Search.appendIndex(
             "name": "endTimer",
             "summary": "ends\u0020a\u0020logging\u0020time\u0020span\u0020and\u0020writes\u0020the\u0020result\u0020in\u0020the\u0020logs",
             "url": "classes/Udacity-LoggerTrait.html#method_endTimer"
+        },                {
+            "fqsen": "\\Udacity\\LoggerTrait\u003A\u003AgetLogsDir\u0028\u0029",
+            "name": "getLogsDir",
+            "summary": "returns\u0020the\u0020location\u0020of\u0020the\u0020PHP\u0020logs\u0020directory",
+            "url": "classes/Udacity-LoggerTrait.html#method_getLogsDir"
         },                {
             "fqsen": "\\Udacity\\LoggerTrait\u003A\u003AsetLogger\u0028\u0029",
             "name": "setLogger",

@@ -3,7 +3,7 @@
 namespace Tests\Integration\Apps\Web;
 
 use PHPUnit\Framework\TestCase;
-use Tests\Integration\EnvLoaderTrait;
+use Tests\Integration\TestsLoaderTrait;
 use Udacity\Apps\Web\WebApp;
 use Udacity\Apps\Web\Controllers\NotFoundController;
 use Udacity\Apps\Web\Controllers\Resource\SessionLeadsController;
@@ -11,7 +11,7 @@ use Udacity\Apps\Web\Controllers\Resource\SessionLeadsController;
 final class WebAppTest extends TestCase {
 
     use AuthenticateTrait;
-    use EnvLoaderTrait;
+    use TestsLoaderTrait;
 
     protected function setUp(): void
     {

@@ -19,10 +19,12 @@ abstract class App {
      * 
      * @throws BadEnvException
      */
-    public function __construct(protected string $rootDir)
+    public function __construct(protected string $rootDir = '/var/www')
     {
-        $dotenv = Dotenv::createImmutable($this->rootDir, '.env');
-        $dotenv->load();
+        if (empty($_ENV['IS_TESTING'])) {
+            $dotenv = Dotenv::createImmutable($this->rootDir, '.env');
+            $dotenv->safeLoad();
+        }
         foreach ([
             'DB_HOST', 
             'DB_PASSWORD', 

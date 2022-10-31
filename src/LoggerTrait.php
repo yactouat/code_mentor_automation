@@ -4,6 +4,7 @@ namespace Udacity;
 
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
+use Udacity\Exceptions\WritePermissionException;
 
 /**
  * this trait shares the logic of logging stuff throughout the app'
@@ -39,6 +40,21 @@ trait LoggerTrait {
                 (is_null($logText) ? "it took " : $logText) . (round($this->endTime - $this->startTime, 2)) . "seconds"
             );
         }
+    }
+
+    /**
+     * returns the location of the PHP logs directory
+     *
+     * @throws WritePermissionException if the logs directory is not writable
+     * 
+     * @return string
+     */
+    public function getLogsDir(): string {
+        $logsDir = empty($_ENV['IS_TESTING']) ? '/var/www/data/logs/php/' : '/var/www/tests/fixtures/logs/php/';
+        if (!is_writable($logsDir)) {
+            throw new WritePermissionException();
+        }
+        return $logsDir;
     }
 
     /**

@@ -4,7 +4,6 @@ namespace Udacity;
 
 use PDO;
 use PDOStatement;
-use Udacity\Exceptions\WritePermissionException;
 
 /**
  * this class is responsible for talking to a MariaDB/MySQL database
@@ -20,7 +19,7 @@ final class Database {
      *
      * @var boolean
      */
-    private bool $isTesting;
+    private bool $IS_TESTING;
 
     /**
      * the nullable PDO object to connect to the db
@@ -43,17 +42,12 @@ final class Database {
      * 
      * initialises the connection to the database and sets a logger 
      *
-     * @param boolean $isTesting
+     * @param boolean $IS_TESTING
      */
-    public function __construct(bool $isTesting = false)
+    public function __construct()
     {
-        $this->isTesting = !$isTesting ? ($_ENV["isTesting"] ?? false) : $isTesting;
         $this->_initConn();
-        $logsDir = !$this->isTesting ? '/var/www/data/logs/php/' : '/var/www/tests/fixtures/logs/php/';
-        if (!is_writable($logsDir)) {
-            throw new WritePermissionException();
-        }
-        $this->setNewLogger($logsDir . 'db.log');
+        $this->setNewLogger($this->getLogsDir() . 'db.log');
     }
 
     /**

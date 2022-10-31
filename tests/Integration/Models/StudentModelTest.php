@@ -4,11 +4,11 @@ namespace Tests\Integration\Models;
 
 use Udacity\Models\StudentModel;
 use PHPUnit\Framework\TestCase;
-use Tests\Integration\EnvLoaderTrait;
+use Tests\Integration\TestsLoaderTrait;
 
 final class StudentModelTest extends TestCase {
 
-    use EnvLoaderTrait;
+    use TestsLoaderTrait;
 
     protected function setUp(): void
     {

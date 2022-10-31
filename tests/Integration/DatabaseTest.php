@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 final class DatabaseTest extends TestCase {
 
-    use EnvLoaderTrait;
+    use TestsLoaderTrait;
 
     protected function setUp(): void
     {

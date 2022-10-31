@@ -7,14 +7,14 @@ use Udacity\Emails\Emails;
 use Udacity\Models\OnlineResourceModel;
 use PHPUnit\Framework\TestCase;
 use Tests\Integration\Apps\Web\AuthenticateTrait;
-use Tests\Integration\EnvLoaderTrait;
+use Tests\Integration\TestsLoaderTrait;
 use Udacity\Exceptions\UserNotAuthedException;
 
 final class EmailsTest extends TestCase
 {
 
     use AuthenticateTrait;
-    use EnvLoaderTrait;
+    use TestsLoaderTrait;
 
     protected function setUp(): void
     {

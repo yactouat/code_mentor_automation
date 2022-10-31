@@ -4,13 +4,13 @@ namespace Tests\Integration\Apps\Web\Controllers\Resource;
 
 use PHPUnit\Framework\TestCase;
 use Tests\Integration\Apps\Web\AuthenticateTrait;
-use Tests\Integration\EnvLoaderTrait;
+use Tests\Integration\TestsLoaderTrait;
 use Udacity\Apps\Web\Controllers\Resource\SessionLeadsController;
 
 final class SessionLeadsControllerTest extends TestCase {
 
     use AuthenticateTrait;
-    use EnvLoaderTrait;
+    use TestsLoaderTrait;
 
     protected function setUp(): void
     {
