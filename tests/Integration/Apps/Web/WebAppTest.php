@@ -246,5 +246,9 @@ final class WebAppTest extends TestCase {
         $this->assertEquals($expected, $actual);
     }
 
+    public function testTmpIsWritable() {
+        $this->assertTrue(is_writable('/tmp'));
+    }
+
 }
 
