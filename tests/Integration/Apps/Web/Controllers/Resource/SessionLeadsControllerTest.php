@@ -259,6 +259,7 @@ final class SessionLeadsControllerTest extends TestCase {
     }
 
     public function testPersistWithInvalidInputDoesNotSetMsmtprcConf() {
+        $expected = file_get_contents('/var/www/scripts/msmtp/msmtprc.template');
         $ctlr = new SessionLeadsController();
         $_POST = [
             "submit" => "1",
@@ -268,8 +269,13 @@ final class SessionLeadsControllerTest extends TestCase {
             "user_passphrase" => "test user password",
         ];
         $ctlr->persist();
-        $this->assertTrue(!file_exists('/etc/msmtprc.test'));
-        $this->assertTrue(!file_exists('/etc/msmtprc'));
+        $actual = file_get_contents('/etc/msmtprc.test');
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testMsmtprcFilesAreWritable() {
+        $this->assertTrue(is_writable('/etc/msmtprc'));
+        $this->assertTrue(is_writable('/etc/msmtprc.test'));
     }
 
 }

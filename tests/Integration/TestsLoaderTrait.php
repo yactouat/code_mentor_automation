@@ -14,9 +14,7 @@ trait TestsLoaderTrait {
         $this->database = new Database();
         $this->database->writeQuery('TRUNCATE udacity_sl_automation.sessionlead');
         foreach (['/etc/msmtprc', '/etc/msmtprc.test'] as $file) {
-            if (\file_exists($file)) {
-                unlink($file);
-            }
+            file_put_contents($file, file_get_contents('/var/www/scripts/msmtp/msmtprc.template'));
         }
         if (!defined('APP_MODE')) {
             define('APP_MODE', 'web');

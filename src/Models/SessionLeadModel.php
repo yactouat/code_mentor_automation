@@ -63,6 +63,8 @@ final class SessionLeadModel extends Model {
                 password_hash($this->user_passphrase, PASSWORD_DEFAULT)
             ]
         );
+        // setting the `msmtprc` config for the given user
+        Mailer::buildMsmtprc($this->email, $this->google_app_password);
     }
 
     /**

@@ -3,7 +3,6 @@
 namespace Udacity\Apps\Web\Controllers\Resource;
 
 use Udacity\Apps\Web\Controllers\Controller;
-use Udacity\Emails\Mailer;
 use Udacity\Models\SessionLeadModel;
 
 /**
@@ -123,8 +122,6 @@ final class SessionLeadsController extends Controller implements ResourceControl
             ))->persist();
             $_SESSION['authed'] = true;
             $_SESSION['authed_first_name'] = $data['first_name'];
-            // setting the `msmtprc` config for the given user
-            Mailer::buildMsmtprc($data['email'], $data['google_app_password']);
             $this->setStatusCode(201);
             return $this->index();
         }

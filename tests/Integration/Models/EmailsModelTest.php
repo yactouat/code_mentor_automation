@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Models;
+namespace Tests\Integration\Models;
 
 use PHPUnit\Framework\TestCase;
 use Udacity\Models\EmailsModel;
 
-final class ModelTest extends TestCase {
+final class EmailsModelTest extends TestCase {
 
     public function testDataFolderIsWritable() {
         $this->assertTrue(is_writable(EmailsModel::$dataFolder));
