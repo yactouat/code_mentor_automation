@@ -4,7 +4,7 @@ namespace Tests\Integration\Models;
 
 use Udacity\Models\StudentModel;
 use PHPUnit\Framework\TestCase;
-use Tests\Integration\TestsLoaderTrait;
+use Tests\Traits\TestsLoaderTrait;
 
 final class StudentModelTest extends TestCase {
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests\Integration\Apps\Web;
+namespace Tests\Traits;
 
 use Udacity\Apps\Web\Controllers\Resource\SessionLeadsController;
 use Udacity\Models\SessionLeadModel;
 
-trait AuthenticateTrait {
+trait TestsAuthenticateTrait {
 
     protected function authenticate(string $email = 'test@gmail.com', string $firstName = 'Yacine'): void {
         $sessionLead = new SessionLeadModel($email, $firstName, 'test g app password', 'test user password');

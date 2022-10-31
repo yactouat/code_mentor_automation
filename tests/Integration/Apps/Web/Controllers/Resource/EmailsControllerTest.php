@@ -3,12 +3,14 @@
 namespace Tests\Integration\Apps\Web\Controllers\Resource;
 
 use PHPUnit\Framework\TestCase;
-use Tests\Integration\TestsLoaderTrait;
+use Tests\Traits\TestsLoaderTrait;
+use Tests\Traits\TestsStringsTrait;
 use Udacity\Apps\Web\Controllers\Resource\EmailsController;
 
 final class EmailsControllerTest extends TestCase {
 
     use TestsLoaderTrait;
+    use TestsStringsTrait;
 
     protected function setUp(): void
     {
@@ -16,13 +18,10 @@ final class EmailsControllerTest extends TestCase {
     }
 
     public function testPersistUnauthedGetsLoginPage() {
-        $expected = str_replace(
-            [' ', "\n"], ['', ''],
-            file_get_contents('/var/www/tests/fixtures/views/session-leads.login.html')
-        );
+        $expected = file_get_contents('/var/www/tests/fixtures/views/session-leads.login.html');
         $ctlr = new EmailsController();
         $actual = $ctlr->persist();
-        $this->assertEquals($expected, str_replace([' ', "\n"], ['', ''], $actual));
+        $this->assertTrue($this->stringsHaveSameContent($expected, $actual));
     }
 
     public function testPersistUnauthedGets401Code() {

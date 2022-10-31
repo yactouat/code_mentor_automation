@@ -9,7 +9,7 @@ use Udacity\Database;
 use DummyModel;
 use ModelWithNoTable;
 use PHPUnit\Framework\TestCase;
-use Tests\Integration\TestsLoaderTrait;
+use Tests\Traits\TestsLoaderTrait;
 use Udacity\Exceptions\SQLTableNotSetException;
 
 final class ModelTest extends TestCase {

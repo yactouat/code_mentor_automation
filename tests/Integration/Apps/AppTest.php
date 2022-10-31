@@ -3,7 +3,7 @@
 namespace Tests\Integration\Apps;
 
 use PHPUnit\Framework\TestCase;
-use Tests\Integration\TestsLoaderTrait;
+use Tests\Traits\TestsLoaderTrait;
 use Udacity\Apps\CLI\CLIApp;
 use Udacity\Apps\Web\WebApp;
 use Udacity\Exceptions\BadEnvException;

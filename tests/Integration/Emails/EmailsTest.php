@@ -6,14 +6,14 @@ use Udacity\Csvs\CsvExtractor;
 use Udacity\Emails\Emails;
 use Udacity\Models\OnlineResourceModel;
 use PHPUnit\Framework\TestCase;
-use Tests\Integration\Apps\Web\AuthenticateTrait;
-use Tests\Integration\TestsLoaderTrait;
+use Tests\Traits\TestsAuthenticateTrait;
+use Tests\Traits\TestsLoaderTrait;
 use Udacity\Exceptions\UserNotAuthedException;
 
 final class EmailsTest extends TestCase
 {
 
-    use AuthenticateTrait;
+    use TestsAuthenticateTrait;
     use TestsLoaderTrait;
 
     protected function setUp(): void
