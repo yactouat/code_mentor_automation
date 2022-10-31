@@ -246,6 +246,11 @@ final class WebAppTest extends TestCase {
         $this->assertEquals($expected, $actual);
     }
 
+    /**
+     * this makes sure we can write sessions
+     *
+     * @return void
+     */
     public function testTmpIsWritable() {
         $this->assertTrue(is_writable('/tmp'));
     }

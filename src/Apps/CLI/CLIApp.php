@@ -28,7 +28,7 @@ final class CLIApp extends App {
      */
     public function __construct(string $rootDir)
     {
-        parent::__construct($rootDir);
+        parent::__construct($rootDir, 'cli');
         $this->app = new Application("Udacity Session Lead Automation");
         $this->_registerCommands();
     }
@@ -45,11 +45,11 @@ final class CLIApp extends App {
         // ! to get confirmation from the user, check out https://symfony.com/doc/current/components/console/helpers/questionhelper.html#asking-the-user-for-confirmation
         $this->app->add(
             (new SendEmailsToBehindStudentsCommand())
-            ->setNewLogger($this->rootDir . "/data/logs/php/cli.log")
+            ->setNewLogger($_ENV['ROOT_DIR'] . "/data/logs/php/cli.log")
         );
         $this->app->add(
             (new SendTrainingEndingEmailsCommand())
-            ->setNewLogger($this->rootDir . "/data/logs/php/cli.log")
+            ->setNewLogger($_ENV['ROOT_DIR'] . "/data/logs/php/cli.log")
         );
     }
 

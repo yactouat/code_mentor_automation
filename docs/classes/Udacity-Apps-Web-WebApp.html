@@ -173,7 +173,7 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Udacity-Apps-App.html#property_rootDir">$rootDir</a>
+    <a href="classes/Udacity-Apps-App.html#property_mode">$mode</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
@@ -215,7 +215,7 @@
 <dd>the HTTP status code that is set after parsing the client request</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Udacity-Apps-App.html#method___construct">__construct()</a>
+    <a href="classes/Udacity-Apps-Web-WebApp.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
@@ -384,9 +384,9 @@
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_rootDir">
-        $rootDir
-        <a href="classes/Udacity-Apps-App.html#property_rootDir" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_mode">
+        $mode
+        <a href="classes/Udacity-Apps-App.html#property_mode" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -401,8 +401,8 @@
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$rootDir</span>
-     = <span class="phpdocumentor-signature__default-value">&#039;/var/www&#039;</span></code>
+    <span class="phpdocumentor-signature__name">$mode</span>
+    </code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -591,12 +591,12 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/Udacity-Apps-App.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Udacity-Apps-Web-WebApp.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/App.php"><a href="files/src-apps-app.html"><abbr title="src/Apps/App.php">App.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/WebApp.php"><a href="files/src-apps-web-webapp.html"><abbr title="src/Apps/Web/WebApp.php">WebApp.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 
     </aside>
 
@@ -604,7 +604,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rootDir</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;/var/www&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rootDir</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -612,7 +612,7 @@
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$rootDir</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">&#039;/var/www&#039;</span>            </dt>
+                            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><ul>
 <li>where to find the <code class="prettyprint">.env</code> file</li>
@@ -623,20 +623,6 @@
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Udacity-Exceptions-BadEnvException.html"><abbr title="\Udacity\Exceptions\BadEnvException">BadEnvException</abbr></a></span>
-                                                            
-                                             
-                                    </dd>
-                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
@@ -700,7 +686,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/WebApp.php"><a href="files/src-apps-web-webapp.html"><abbr title="src/Apps/Web/WebApp.php">WebApp.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">68</span>
+    <span class="phpdocumentor-element-found-in__line">77</span>
 
     </aside>
 
@@ -782,7 +768,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/WebApp.php"><a href="files/src-apps-web-webapp.html"><abbr title="src/Apps/Web/WebApp.php">WebApp.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">86</span>
 
     </aside>
 
@@ -815,7 +801,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/WebApp.php"><a href="files/src-apps-web-webapp.html"><abbr title="src/Apps/Web/WebApp.php">WebApp.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">95</span>
 
     </aside>
 
@@ -848,7 +834,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/WebApp.php"><a href="files/src-apps-web-webapp.html"><abbr title="src/Apps/Web/WebApp.php">WebApp.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">99</span>
+    <span class="phpdocumentor-element-found-in__line">108</span>
 
     </aside>
 
@@ -896,7 +882,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/WebApp.php"><a href="files/src-apps-web-webapp.html"><abbr title="src/Apps/Web/WebApp.php">WebApp.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">112</span>
+    <span class="phpdocumentor-element-found-in__line">121</span>
 
     </aside>
 
@@ -1062,7 +1048,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/WebApp.php"><a href="files/src-apps-web-webapp.html"><abbr title="src/Apps/Web/WebApp.php">WebApp.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">50</span>
+    <span class="phpdocumentor-element-found-in__line">59</span>
 
     </aside>
 

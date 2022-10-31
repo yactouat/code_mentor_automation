@@ -19,17 +19,24 @@ abstract class App {
      * 
      * @throws BadEnvException
      */
-    public function __construct(protected string $rootDir = '/var/www')
+    public function __construct(string $rootDir, protected string $mode)
     {
         if (empty($_ENV['IS_TESTING'])) {
-            $dotenv = Dotenv::createImmutable($this->rootDir, '.env');
+            $dotenv = Dotenv::createImmutable($rootDir, '.env');
             $dotenv->safeLoad();
         }
+        switch ($mode) {
+            case 'cli':
+            case 'web':
+                $_ENV['APP_MODE'] = $mode;
+        }
         foreach ([
+            'APP_MODE',
             'DB_HOST', 
             'DB_PASSWORD', 
             'DB_PORT',  
-            'DB_USER' 
+            'DB_USER',
+            'ROOT_DIR'
         ] as $key) {
             if (!isset($_ENV[$key])) {
                 throw new BadEnvException();

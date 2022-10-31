@@ -1,11 +1,6 @@
 Search.appendIndex(
     [
                 {
-            "fqsen": "\\APP_MODE",
-            "name": "APP_MODE",
-            "summary": "",
-            "url": "namespaces/default.html#constant_APP_MODE"
-        },                {
             "fqsen": "\\Udacity\\Apps\\App",
             "name": "App",
             "summary": "parent\u0020class\u0020of\u0020all\u0020apps\u0020\u0028CLI,\u0020Web\u0029",
@@ -16,10 +11,10 @@ Search.appendIndex(
             "summary": "constructs\u0020an\u0020instance\u0020of\u0020the\u0020app\u0027\u0020with\u0020its\u0020environment",
             "url": "classes/Udacity-Apps-App.html#method___construct"
         },                {
-            "fqsen": "\\Udacity\\Apps\\App\u003A\u003A\u0024rootDir",
-            "name": "rootDir",
+            "fqsen": "\\Udacity\\Apps\\App\u003A\u003A\u0024mode",
+            "name": "mode",
             "summary": "",
-            "url": "classes/Udacity-Apps-App.html#property_rootDir"
+            "url": "classes/Udacity-Apps-App.html#property_mode"
         },                {
             "fqsen": "\\Udacity\\Apps\\CLI\\CLIApp",
             "name": "CLIApp",
@@ -255,6 +250,11 @@ Search.appendIndex(
             "name": "WebApp",
             "summary": "this\u0020class\u0020represents\u0020the\u0020main\u0020entry\u0020point\u0020of\u0020the\u0020web\u0020application",
             "url": "classes/Udacity-Apps-Web-WebApp.html"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\WebApp\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "constructs\u0020an\u0020instance\u0020of\u0020the\u0020app\u0027\u0020with\u0020its\u0020environment",
+            "url": "classes/Udacity-Apps-Web-WebApp.html#method___construct"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\WebApp\u003A\u003A_setResponseOutput\u0028\u0029",
             "name": "_setResponseOutput",

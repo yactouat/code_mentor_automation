@@ -15,7 +15,7 @@ trait AuthTrait {
      * @return boolean - if the user is authenticated
      */
     protected function isAuthed(): bool {
-        switch (APP_MODE) {
+        switch ($_ENV['APP_MODE']) {
             case 'web':
                 return isset($_SESSION['authed']) && $_SESSION['authed'] === true;
             case 'cli':
@@ -31,7 +31,7 @@ trait AuthTrait {
      * @return string - the authed user first name or an empty string
      */
     public static function getAuthedUserFirstName(): string {
-        switch (APP_MODE) {
+        switch ($_ENV['APP_MODE']) {
             case 'web':
                 return !empty($_SESSION['authed_first_name']) ? $_SESSION['authed_first_name'] : '';
             case 'cli':
