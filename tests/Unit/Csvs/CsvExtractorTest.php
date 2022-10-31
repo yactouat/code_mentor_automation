@@ -27,14 +27,14 @@ final class CsvExtractorTest extends TestCase {
         ]);
     }
 
-    // public function testStringToCsvFileWithBiDimensionalArrContainingListsThrows() {
-    //     $this->expectException(KeyValueArrayExpectedException::class);
-    //     $this->expectExceptionMessage('a key value array was expected');
-    //     $actual = (new CsvExtractor())->stringToCsvFile([
-    //         0 => [0,1,2,3],
-    //         1 => [0,1,2,3]
-    //     ]);
-    // }
+    public function testStringToCsvFileWithBiDimensionalArrContainingListsThrows() {
+        $this->expectException(KeyValueArrayExpectedException::class);
+        $this->expectExceptionMessage('a key value array was expected');
+        $actual = (new CsvExtractor())->stringToCsvFile([
+            0 => [0,1,2,3],
+            1 => [0,1,2,3]
+        ]);
+    }
 
     // public function testStringToCsvFileWithTopLevelListArrHavingGapsContainingListsThrows() {
     //     $this->expectException(KeyValueArrayExpectedException::class);
