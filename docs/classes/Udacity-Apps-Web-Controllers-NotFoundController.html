@@ -206,6 +206,20 @@
 </dt>
 <dd>the default HTTP status code (200)</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#property_twigData">$twigData</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd>the Twig context data to pass to the set template for the instance</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#property_twigTemplate">$twigTemplate</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+<dd>the template to output by the controller instance</dd>
+
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Udacity-Apps-Web-Controllers-NotFoundController.html#method___construct">__construct()</a>
     <span>
@@ -249,11 +263,39 @@
 <dd>logs a user in outside the context of a web controller</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#method_getAuthedTwigTemplate">getAuthedTwigTemplate()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>returns the login page Twig template path if the user is not authenticated, otherwise returns the intended template</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#method_getTwigData">getTwigData()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>gets the Twig context data to pass to the set template for the instance</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#method_getTwigTemplate">getTwigTemplate()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>returns the set Twig template for this instance</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Udacity-AuthTrait.html#method_isAuthed">isAuthed()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
 <dd>checks if the user is authenticated whether in web or cli mode</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#method_setAuthedStatusCode">setAuthedStatusCode()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>sets the relevant status code based on auth</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#method_setStatusCode">setStatusCode()</a>
@@ -263,11 +305,18 @@
 <dd>sets the HTTP status code of the instance</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#method_showLoginFormIfNotAuthed">showLoginFormIfNotAuthed()</a>
+    <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#method_setTwigData">setTwigData()</a>
     <span>
-                                &nbsp;: string    </span>
+                                &nbsp;: void    </span>
 </dt>
-<dd>returns the built login HTML page if user is not authenticated</dd>
+<dd>sets the Twig context data to pass to the set template for the instance</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#method_setTwigTemplate">setTwigTemplate()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>sets the Twig template for the controller instance</dd>
 
         </dl>
 
@@ -446,6 +495,72 @@
     
 
 </article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_twigData">
+        $twigData
+        <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#property_twigData" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Controller.php"><a href="files/src-apps-web-controllers-controller.html"><abbr title="src/Apps/Web/Controllers/Controller.php">Controller.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">57</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">the Twig context data to pass to the set template for the instance</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$twigData</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_twigTemplate">
+        $twigTemplate
+        <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#property_twigTemplate" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Controller.php"><a href="files/src-apps-web-controllers-controller.html"><abbr title="src/Apps/Web/Controllers/Controller.php">Controller.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">64</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">the template to output by the controller instance</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$twigTemplate</span>
+    </code>
+
+    
+    
+    
+
+</article>
             </section>
 
             <section class="phpdocumentor-methods">
@@ -538,7 +653,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Controller.php"><a href="files/src-apps-web-controllers-controller.html"><abbr title="src/Apps/Web/Controllers/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">75</span>
+    <span class="phpdocumentor-element-found-in__line">98</span>
 
     </aside>
 
@@ -571,7 +686,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Controller.php"><a href="files/src-apps-web-controllers-controller.html"><abbr title="src/Apps/Web/Controllers/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">82</span>
+    <span class="phpdocumentor-element-found-in__line">105</span>
 
     </aside>
 
@@ -684,6 +799,116 @@
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getAuthedTwigTemplate">
+        getAuthedTwigTemplate()
+        <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#method_getAuthedTwigTemplate" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Controller.php"><a href="files/src-apps-web-controllers-controller.html"><abbr title="src/Apps/Web/Controllers/Controller.php">Controller.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">89</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">returns the login page Twig template path if the user is not authenticated, otherwise returns the intended template</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">getAuthedTwigTemplate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$twigTemplate</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$twigTemplate</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getTwigData">
+        getTwigData()
+        <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#method_getTwigData" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Controller.php"><a href="files/src-apps-web-controllers-controller.html"><abbr title="src/Apps/Web/Controllers/Controller.php">Controller.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">114</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">gets the Twig context data to pass to the set template for the instance</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">getTwigData</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getTwigTemplate">
+        getTwigTemplate()
+        <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#method_getTwigTemplate" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Controller.php"><a href="files/src-apps-web-controllers-controller.html"><abbr title="src/Apps/Web/Controllers/Controller.php">Controller.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">123</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">returns the set Twig template for this instance</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">getTwigTemplate</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_isAuthed">
         isAuthed()
         <a href="classes/Udacity-AuthTrait.html#method_isAuthed" class="headerlink"><i class="fas fa-link"></i></a>
@@ -721,6 +946,53 @@
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_setAuthedStatusCode">
+        setAuthedStatusCode()
+        <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#method_setAuthedStatusCode" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Controller.php"><a href="files/src-apps-web-controllers-controller.html"><abbr title="src/Apps/Web/Controllers/Controller.php">Controller.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">133</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">sets the relevant status code based on auth</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">setAuthedStatusCode</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$statusCode</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$statusCode</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><ul>
+<li>the intended status code</li>
+</ul>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_setStatusCode">
         setStatusCode()
         <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#method_setStatusCode" class="headerlink"><i class="fas fa-link"></i></a>
@@ -728,7 +1000,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Controller.php"><a href="files/src-apps-web-controllers-controller.html"><abbr title="src/Apps/Web/Controllers/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">94</span>
+    <span class="phpdocumentor-element-found-in__line">145</span>
 
     </aside>
 
@@ -766,29 +1038,90 @@
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_showLoginFormIfNotAuthed">
-        showLoginFormIfNotAuthed()
-        <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#method_showLoginFormIfNotAuthed" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_setTwigData">
+        setTwigData()
+        <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#method_setTwigData" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Controller.php"><a href="files/src-apps-web-controllers-controller.html"><abbr title="src/Apps/Web/Controllers/Controller.php">Controller.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">103</span>
+    <span class="phpdocumentor-element-found-in__line">155</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">returns the built login HTML page if user is not authenticated</p>
+        <p class="phpdocumentor-summary">sets the Twig context data to pass to the set template for the instance</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">showLoginFormIfNotAuthed</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">setTwigData</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$twigData</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     
-    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$twigData</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><ul>
+<li>the Twig context data</li>
+</ul>
+</section>
+
+            </dd>
+            </dl>
+
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setTwigTemplate">
+        setTwigTemplate()
+        <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#method_setTwigTemplate" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Controller.php"><a href="files/src-apps-web-controllers-controller.html"><abbr title="src/Apps/Web/Controllers/Controller.php">Controller.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">167</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">sets the Twig template for the controller instance</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">setTwigTemplate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$twigTemplate</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$twigTemplate</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><ul>
+<li>relative path to the Twig template</li>
+</ul>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
         
     

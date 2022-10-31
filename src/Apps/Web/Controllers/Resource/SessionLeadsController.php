@@ -40,8 +40,8 @@ final class SessionLeadsController extends Controller implements ResourceControl
      */    
     public function index(): string
     {
-        $showLoginForm = $this->showLoginFormIfNotAuthed();
-        return empty($showLoginForm) ? $this->getRenderer()->render(self::$homeTemplatePath) : $showLoginForm;
+        $this->setAuthedStatusCode(200);
+        return $this->getRenderer()->render($this->getAuthedTwigTemplate(self::$homeTemplatePath));
     }
 
     /**
@@ -103,7 +103,8 @@ final class SessionLeadsController extends Controller implements ResourceControl
         }
         if (count($errors) > 0) {
             $this->setStatusCode(400);
-            return $this->getRenderer()->render(self::$createTemplatePath, [
+            $this->setTwigTemplate(self::$createTemplatePath);
+            $this->setTwigData([
                 'errors' => $errors,
                 'userInput' => $_POST
             ]);
@@ -123,8 +124,9 @@ final class SessionLeadsController extends Controller implements ResourceControl
             $_SESSION['authed'] = true;
             $_SESSION['authed_first_name'] = $data['first_name'];
             $this->setStatusCode(201);
-            return $this->index();
+            $this->setTwigTemplate(self::$homeTemplatePath);
         }
+        return $this->getRenderer()->render($this->getTwigTemplate(), $this->getTwigData());
     }
 
 }

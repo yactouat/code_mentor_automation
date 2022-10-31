@@ -25,7 +25,7 @@ final class EmailsModel extends Model {
      * 
      * ! not implemented
      */
-    public function __construct(private string $sessreportcsv = '')
+    public function __construct()
     {
         parent::__construct();
     }
@@ -39,13 +39,8 @@ final class EmailsModel extends Model {
         return [];
     }
 
-    /**
-     * gets the Udacity session report CSV file name attached from which the batch of emails must be constructed
-     *
-     * @return string
-     */
-    public function getSessReportCsv() : string {
-        return $this->sessreportcsv;
+    public static function getUnallowedEmailTypeErrorMess(): string {
+        return '📧 Unallowed email type, allowed types are ' . implode(' ', self::getValidEmailsTypes());
     }
 
     public static function getValidEmailsTypes(): array {
@@ -75,17 +70,14 @@ final class EmailsModel extends Model {
     public static function validateInputFields(array $fields): array
     {
         $errors = [];
-        if (empty($fields['type'])) {
-            $errors[] = '📧 The email type is missing';
+        if (empty($fields['type']) || !self::validateEmailType($fields['type'])) {
+            $errors[] = self::getUnallowedEmailTypeErrorMess();
         }
-        if (!empty($fields['type']) && !self::validateEmailType($fields['type'])) {
-            $errors[] = '📧 Wrong email type, allowed types are ' . implode(' ', self::getValidEmailsTypes());
-        }
-        if (empty($fields['sessreportcsv'])) {
+        if (empty($fields['sessreportcsv']['name'])) {
             $errors[] = '📄 You must upload a Udacity session report CSV';
         }
-        if(!empty($fields['sessreportcsv']) && !in_array(
-            strtolower(pathinfo($fields['sessreportcsv'], PATHINFO_EXTENSION)),
+        if(!empty($fields['sessreportcsv']['name']) && !in_array(
+            strtolower(pathinfo($fields['sessreportcsv']['name'], PATHINFO_EXTENSION)),
             ['csv']
         )) {
             $errors[] = '📄 The uploaded file must be a CSV';

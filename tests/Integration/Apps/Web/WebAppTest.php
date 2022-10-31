@@ -209,7 +209,7 @@ final class WebAppTest extends TestCase {
         $this->assertEquals($expected, str_replace([' ', "\n"], ['', ''], $actual));
     }
 
-    public function testOutputWithEmailsRouteAuthedButNonExistingEmailTypeGets404Code() {
+    public function testOutputWithEmailsGetRouteAuthedButNonExistingEmailTypeGets404Code() {
         $this->authenticate();
         $expected = 404;
         $app = new WebApp('/var/www/tests/fixtures');

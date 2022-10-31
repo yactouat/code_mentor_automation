@@ -116,6 +116,11 @@ Search.appendIndex(
             "summary": "parent\u0020controller\u0020constructor",
             "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#method___construct"
         },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003AgetAuthedTwigTemplate\u0028\u0029",
+            "name": "getAuthedTwigTemplate",
+            "summary": "returns\u0020the\u0020login\u0020page\u0020Twig\u0020template\u0020path\u0020if\u0020the\u0020user\u0020is\u0020not\u0020authenticated,\u0020otherwise\u0020returns\u0020the\u0020intended\u0020template",
+            "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#method_getAuthedTwigTemplate"
+        },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003AgetRenderer\u0028\u0029",
             "name": "getRenderer",
             "summary": "gets\u0020the\u0020Twig\u0020instance\u0020of\u0020the\u0020controller",
@@ -126,15 +131,35 @@ Search.appendIndex(
             "summary": "\u007B\u0040inheritDoc\u007D",
             "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#method_getStatusCode"
         },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003AgetTwigData\u0028\u0029",
+            "name": "getTwigData",
+            "summary": "gets\u0020the\u0020Twig\u0020context\u0020data\u0020to\u0020pass\u0020to\u0020the\u0020set\u0020template\u0020for\u0020the\u0020instance",
+            "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#method_getTwigData"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003AgetTwigTemplate\u0028\u0029",
+            "name": "getTwigTemplate",
+            "summary": "returns\u0020the\u0020set\u0020Twig\u0020template\u0020for\u0020this\u0020instance",
+            "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#method_getTwigTemplate"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003AsetAuthedStatusCode\u0028\u0029",
+            "name": "setAuthedStatusCode",
+            "summary": "sets\u0020the\u0020relevant\u0020status\u0020code\u0020based\u0020on\u0020auth",
+            "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#method_setAuthedStatusCode"
+        },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003AsetStatusCode\u0028\u0029",
             "name": "setStatusCode",
             "summary": "sets\u0020the\u0020HTTP\u0020status\u0020code\u0020of\u0020the\u0020instance",
             "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#method_setStatusCode"
         },                {
-            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003AshowLoginFormIfNotAuthed\u0028\u0029",
-            "name": "showLoginFormIfNotAuthed",
-            "summary": "returns\u0020the\u0020built\u0020login\u0020HTML\u0020page\u0020if\u0020user\u0020is\u0020not\u0020authenticated",
-            "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#method_showLoginFormIfNotAuthed"
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003AsetTwigData\u0028\u0029",
+            "name": "setTwigData",
+            "summary": "sets\u0020the\u0020Twig\u0020context\u0020data\u0020to\u0020pass\u0020to\u0020the\u0020set\u0020template\u0020for\u0020the\u0020instance",
+            "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#method_setTwigData"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003AsetTwigTemplate\u0028\u0029",
+            "name": "setTwigTemplate",
+            "summary": "sets\u0020the\u0020Twig\u0020template\u0020for\u0020the\u0020controller\u0020instance",
+            "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#method_setTwigTemplate"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003A\u0024homeTemplatePath",
             "name": "homeTemplatePath",
@@ -160,6 +185,16 @@ Search.appendIndex(
             "name": "statusCode",
             "summary": "the\u0020default\u0020HTTP\u0020status\u0020code\u0020\u0028200\u0029",
             "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#property_statusCode"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003A\u0024twigData",
+            "name": "twigData",
+            "summary": "the\u0020Twig\u0020context\u0020data\u0020to\u0020pass\u0020to\u0020the\u0020set\u0020template\u0020for\u0020the\u0020instance",
+            "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#property_twigData"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Controller\u003A\u003A\u0024twigTemplate",
+            "name": "twigTemplate",
+            "summary": "the\u0020template\u0020to\u0020output\u0020by\u0020the\u0020controller\u0020instance",
+            "url": "classes/Udacity-Apps-Web-Controllers-Controller.html#property_twigTemplate"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\ControllerInterface",
             "name": "ControllerInterface",
@@ -856,6 +891,11 @@ Search.appendIndex(
             "summary": "parent\u0020controller\u0020constructor",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method___construct"
         },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\EmailsController\u003A\u003A_processBatchEmailsInput\u0028\u0029",
+            "name": "_processBatchEmailsInput",
+            "summary": "takes\u0020in\u0020the\u0020input\u0020session\u0020report\u0020CSV\u0020and\u0020runs\u0020the\u0020automation\u0020to\u0020send\u0020the\u0020emails\u0020if\u0020validated\u0020or\u0020sets\u0020an\u0020errors\u0020array\u0020to\u0020be\u0020displayed\u0020to\u0020the\u0020user",
+            "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method__processBatchEmailsInput"
+        },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\EmailsController\u003A\u003Acreate\u0028\u0029",
             "name": "create",
             "summary": "shows\u0020the\u0020web\u0020form\u0020to\u0020create\u0020an\u0020instance\u0020of\u0020the\u0020related\u0020resource",
@@ -886,10 +926,10 @@ Search.appendIndex(
             "summary": "getting\u0020Udacity\u0020CSV\u0020fields\u0020for\u0020the\u0020given\u0020model",
             "url": "classes/Udacity-Models-EmailsModel.html#method_getCsvFields"
         },                {
-            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AgetSessReportCsv\u0028\u0029",
-            "name": "getSessReportCsv",
-            "summary": "gets\u0020the\u0020Udacity\u0020session\u0020report\u0020CSV\u0020file\u0020name\u0020attached\u0020from\u0020which\u0020the\u0020batch\u0020of\u0020emails\u0020must\u0020be\u0020constructed",
-            "url": "classes/Udacity-Models-EmailsModel.html#method_getSessReportCsv"
+            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AgetUnallowedEmailTypeErrorMess\u0028\u0029",
+            "name": "getUnallowedEmailTypeErrorMess",
+            "summary": "",
+            "url": "classes/Udacity-Models-EmailsModel.html#method_getUnallowedEmailTypeErrorMess"
         },                {
             "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AgetValidEmailsTypes\u0028\u0029",
             "name": "getValidEmailsTypes",
@@ -921,11 +961,6 @@ Search.appendIndex(
             "summary": "the\u0020SQL\u0020table\u0020name\u0020of\u0020the\u0020current\u0020instance",
             "url": "classes/Udacity-Models-EmailsModel.html#property_tableName"
         },                {
-            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003A\u0024sessreportcsv",
-            "name": "sessreportcsv",
-            "summary": "",
-            "url": "classes/Udacity-Models-EmailsModel.html#property_sessreportcsv"
-        },                {
             "fqsen": "\\Udacity\\Exceptions\\WritePermissionException",
             "name": "WritePermissionException",
             "summary": "Exception\u0020thrown\u0020when\u0020the\u0020\u0060msmtprc\u0060\u0020file\u0020is\u0020not\u0020set\u0020in\u0020the\u0020system",
@@ -935,6 +970,21 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
             "url": "classes/Udacity-Exceptions-WritePermissionException.html#method___construct"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\FilesUploadsTrait",
+            "name": "FilesUploadsTrait",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-Controllers-Resource-FilesUploadsTrait.html"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\FilesUploadsTrait\u003A\u003AgetUploadedFile\u0028\u0029",
+            "name": "getUploadedFile",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-Controllers-Resource-FilesUploadsTrait.html#method_getUploadedFile"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\FilesUploadsTrait\u003A\u003AuploadFile\u0028\u0029",
+            "name": "uploadFile",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-Controllers-Resource-FilesUploadsTrait.html#method_uploadFile"
         },                {
             "fqsen": "\\",
             "name": "\\",

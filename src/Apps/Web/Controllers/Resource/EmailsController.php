@@ -3,7 +3,6 @@
 namespace Udacity\Apps\Web\Controllers\Resource;
 
 use Udacity\Apps\Web\Controllers\Controller;
-use Udacity\Automations\BehindStudentsEmailAutomation;
 use Udacity\LoggerTrait;
 use Udacity\Models\EmailsModel;
 
@@ -12,6 +11,7 @@ use Udacity\Models\EmailsModel;
  */
 final class EmailsController extends Controller implements ResourceControllerInterface {
 
+    use FilesUploadsTrait;
     use LoggerTrait;
 
     /**
@@ -25,6 +25,34 @@ final class EmailsController extends Controller implements ResourceControllerInt
     }
 
     /**
+     * takes in the input session report CSV and runs the automation to send the emails if validated or sets an errors array to be displayed to the user
+     *
+     * @return void
+     */
+    private function _processBatchEmailsInput(string $automation): void {
+        $fileKey = 'sessreportcsv';
+        $errors = EmailsModel::validateInputFields(array_merge(
+            $_POST,
+            $this->getUploadedFile($fileKey)
+        ));
+        if (!isset($_POST['submit'])) {
+            $errors[] = '⚠️ Please send a valid form using the `submit` button';
+        }
+        if (count($errors) > 0) {
+            $this->setStatusCode(400);
+            $invalidEmailType = in_array(EmailsModel::getUnallowedEmailTypeErrorMess(), $errors);
+            $this->setTwigData($invalidEmailType ? [] :['errors' => $errors, 'userInput' => $_POST]);
+            $this->setTwigTemplate($invalidEmailType ? self::$homeTemplatePath : 'emails/' . $_POST['type'] . '.create.html.twig');
+        } else {
+            $fileDest = EmailsModel::$dataFolder . $_FILES[$fileKey]['name'];
+            $this->uploadFile($fileKey, $fileDest);
+            (new ('Udacity\Automations\\' . $automation)())
+                ->setNewLogger($this->getLogsDir() . 'web_app.log')
+                ->run($fileDest, $_POST['language']);
+        }
+    }
+
+    /**
      * {@inheritDoc}
      * 
      * - is auth protected
@@ -32,19 +60,18 @@ final class EmailsController extends Controller implements ResourceControllerInt
      */    
     public function create(): string
     {
-        $showLoginForm = $this->showLoginFormIfNotAuthed();
-        $template = empty($showLoginForm) ? self::$notFoundTemplatePath : self::$loginTemplatePath;
-        $statusCode = empty($showLoginForm) ? 404 : 401;
         if (
-            empty($showLoginForm) 
+            $this->isAuthed()
             && !empty($_GET['type']) 
             && EmailsModel::validateEmailType($_GET['type'])
         ) {
-            $template = 'emails/' . $_GET['type'] . '.create.html.twig';
-            $statusCode = 200;
+            $this->setTwigTemplate('emails/' . $_GET['type'] . '.create.html.twig');
+            $this->setAuthedStatusCode(200);
+        } else {
+            $this->setTwigTemplate($this->getAuthedTwigTemplate(self::$notFoundTemplatePath));
+            $this->setAuthedStatusCode(404);
         }
-        $this->setStatusCode($statusCode);
-        return $this->getRenderer()->render($template);
+        return $this->getRenderer()->render($this->getTwigTemplate());
     }
  
     /**
@@ -63,46 +90,14 @@ final class EmailsController extends Controller implements ResourceControllerInt
      */
     public function persist(): string
     {
-        $showLoginForm = $this->showLoginFormIfNotAuthed();
-        $template = empty($showLoginForm) ? self::$notFoundTemplatePath : self::$loginTemplatePath;
-        $statusCode = empty($showLoginForm) ? 404 : 401;
-        if ($statusCode !== 401) {
-            $errors = [];
-            $filesArr = [];
-            $filesArr['sessreportcsv'] = '';
-            if (!empty($_FILES['sessreportcsv']['name'])) {
-                $filesArr['sessreportcsv'] = $_FILES['sessreportcsv']['name'];
-            }
-            $errors = EmailsModel::validateInputFields(array_merge(
-                $_POST,
-                $filesArr
-            ));
-            if (!isset($_POST['submit'])) {
-                $errors[] = '⚠️ Please send a valid form using the `submit` button';
-            }
-            if (count($errors) > 0) {
-                $this->setStatusCode(400);
-                $invalidEmailType = empty($_POST['type']) || !EmailsModel::validateEmailType($_POST['type']);
-                return $this->getRenderer()->render(
-                    $invalidEmailType ? self::$homeTemplatePath : 'emails/' . $_POST['type'] . '.create.html.twig', 
-                    $invalidEmailType ? [] :['errors' => $errors, 'userInput' => $_POST]
-                );
-            } else {
-                $emails = new EmailsModel($_FILES['sessreportcsv']['name']);
-                $csvDestFile = EmailsModel::$dataFolder . $emails->getSessReportCsv();
-                move_uploaded_file(
-                    $_FILES['sessreportcsv']['tmp_name'],
-                    EmailsModel::$dataFolder . $emails->getSessReportCsv()
-                );
-                (new BehindStudentsEmailAutomation())
-                    ->setNewLogger($this->getLogsDir() . 'web_app.log')
-                    ->run($csvDestFile, $_POST['language']);
-                $statusCode = 200;
-                $template = 'home.html.twig';
-            }
+        // running the emails automation leads back to the homepage so we set that already, or we 401 if not authed
+        $this->setTwigTemplate($this->getAuthedTwigTemplate('home.html.twig'));
+        $this->setAuthedStatusCode(200);
+        // running the automation
+        if ($this->isAuthed()) {
+            $this->_processBatchEmailsInput('BehindStudentsEmailAutomation');
         }
-        $this->setStatusCode($statusCode);
-        return $this->getRenderer()->render($template);
+        return $this->getRenderer()->render($this->getTwigTemplate(), $this->getTwigData());
     }
 
 }
