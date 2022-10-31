@@ -911,6 +911,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Models-EmailsModel.html#property_sessreportcsv"
         },                {
+            "fqsen": "\\Udacity\\Exceptions\\FileWritePermissionException",
+            "name": "FileWritePermissionException",
+            "summary": "Exception\u0020thrown\u0020when\u0020the\u0020\u0060msmtprc\u0060\u0020file\u0020is\u0020not\u0020set\u0020in\u0020the\u0020system",
+            "url": "classes/Udacity-Exceptions-FileWritePermissionException.html"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\FileWritePermissionException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
+            "url": "classes/Udacity-Exceptions-FileWritePermissionException.html#method___construct"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
