@@ -52,20 +52,20 @@ final class CsvExtractorTest extends TestCase {
         ]);
     }
 
-    // public function testStringToCsvFileWithValidInputReturnsString() {
-    //     $actual = (new CsvExtractor())->stringToCsvFile([
-    //         0 => [
-    //             "sub" => "val" 
-    //         ],
-    //         1 => [
-    //             "sub" => "val2" 
-    //         ],
-    //         2 => [
-    //             "sub" => "val3" 
-    //         ]
-    //     ]);
-    //     $this->assertIsString($actual);
-    // }
+    public function testStringToCsvFileWithValidInputReturnsString() {
+        $actual = (new CsvExtractor())->stringToCsvFile([
+            0 => [
+                "sub" => "val" 
+            ],
+            1 => [
+                "sub" => "val2" 
+            ],
+            2 => [
+                "sub" => "val3" 
+            ]
+        ]);
+        $this->assertIsString($actual);
+    }
 
 }
 
