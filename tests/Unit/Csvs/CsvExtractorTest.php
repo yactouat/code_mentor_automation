@@ -36,21 +36,21 @@ final class CsvExtractorTest extends TestCase {
         ]);
     }
 
-    // public function testStringToCsvFileWithTopLevelListArrHavingGapsContainingListsThrows() {
-    //     $this->expectException(KeyValueArrayExpectedException::class);
-    //     $this->expectExceptionMessage('a key value array was expected');
-    //     $actual = (new CsvExtractor())->stringToCsvFile([
-    //         0 => [
-    //             "sub" => "val" 
-    //         ],
-    //         1 => [
-    //             "sub2" => "val" 
-    //         ],
-    //         3 => [
-    //             "sub3" => "val" 
-    //         ]
-    //     ]);
-    // }
+    public function testStringToCsvFileWithTopLevelListArrHavingGapsContainingListsThrows() {
+        $this->expectException(KeyValueArrayExpectedException::class);
+        $this->expectExceptionMessage('a key value array was expected');
+        $actual = (new CsvExtractor())->stringToCsvFile([
+            0 => [
+                "sub" => "val" 
+            ],
+            1 => [
+                "sub2" => "val" 
+            ],
+            3 => [
+                "sub3" => "val" 
+            ]
+        ]);
+    }
 
     // public function testStringToCsvFileWithValidInputReturnsString() {
     //     $actual = (new CsvExtractor())->stringToCsvFile([
