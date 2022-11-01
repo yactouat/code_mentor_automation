@@ -1048,8 +1048,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Udacity\\Services\\DatabaseService\u003A\u003A\u0024loggerName",
             "name": "loggerName",
-            "summary": "the\u0020logger\u0020reference\u0020for\u0020this\u0020service",
+            "summary": "the\u0020logger\u0020name\u0020for\u0020this\u0020service",
             "url": "classes/Udacity-Services-DatabaseService.html#property_loggerName"
+        },                {
+            "fqsen": "\\Udacity\\Services\\DatabaseService\u003A\u003A\u0024loggerService",
+            "name": "loggerService",
+            "summary": "the\u0020logger\u0020for\u0020this\u0020service",
+            "url": "classes/Udacity-Services-DatabaseService.html#property_loggerService"
         },                {
             "fqsen": "\\Udacity\\Services\\LoggerService",
             "name": "LoggerService",

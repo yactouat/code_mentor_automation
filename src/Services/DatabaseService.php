@@ -31,12 +31,19 @@ final class DatabaseService extends ServicesContainer {
     public static $dbName = "udacity_sl_automation";
 
     /**
-     * the logger reference for this service
+     * the logger name for this service
      *
      * @var string
      */
     private string $loggerName;
 
+    /**
+     * the logger for this service
+     *
+     * @var LoggerService
+     */
+    private LoggerService $loggerService;
+    
     /**
      * the database connection constructor
      * 
@@ -44,12 +51,12 @@ final class DatabaseService extends ServicesContainer {
      * 
      * @throws NoDBConnException
      * 
-     * TODO test db logger
-     *
      */
     private function __construct()
     {
         $this->loggerName = $_ENV['IS_TESTING'] ? 'test_db_logger' : 'db_logger';
+        $this->loggerService = LoggerService::getService($this->loggerName);
+        $this->loggerService->{'setNewLogger'}($this->loggerService->{'getLogsDir'}() . 'db.log');
         if ($_ENV['DB_HOST'] !== 'unexistinghost') {
             $this->_initConn();
         }
@@ -89,7 +96,6 @@ final class DatabaseService extends ServicesContainer {
      * @return void
      */
     private function _initConn(): void {
-        $logger = LoggerService::getService($this->loggerName);
         try {
             $this->databaseConn = new PDO(
                 dsn: 'mysql:host=' . $_ENV['DB_HOST'] . ';port=' . $_ENV['DB_PORT'] . ';dbname=' . self::$dbName,
@@ -98,7 +104,7 @@ final class DatabaseService extends ServicesContainer {
                 options: [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]
             );
         } catch (PDOException $pdoe) {
-            $logger->{'critical'}($pdoe->getMessage());
+            $this->loggerService->{'critical'}($pdoe->getMessage());
         }
     }
 
