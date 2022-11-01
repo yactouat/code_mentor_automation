@@ -69,9 +69,24 @@ final class LoggerService extends ServicesContainer {
         return $logsDir;
     }
 
-    public static function getLoggerWithMode(): self {
-        return self::getService(AppModeService::getService('app_mode')->{'getMode'}() . '_logger');
+    /**
+     * gets logger service associated to the current app' instance
+     *
+     * @return self
+     */
+    public static function getAppInstanceLogger(): self {
+        return self::getService(self::getAppInstanceLoggerName());
     }
+
+    /**
+     * gets logger service associated to the current app' instance name
+     *
+     * @return string
+     */
+    public static function getAppInstanceLoggerName(): string {
+        return AppModeService::getService('app_mode')->{'getMode'}() . '_logger';
+    }
+
 
     /**
     * @inheritDoc

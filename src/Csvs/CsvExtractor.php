@@ -67,26 +67,4 @@ class CsvExtractor
         return $csv;
     }
 
-    /**
-     * takes a data array as an input and stores it as a CSV in a file
-     *
-     * @param array $data
-     * 
-     * @throws KeyValueArrayExpectedException
-     * 
-     * @return string the path to the CSV
-     */
-    public function stringToCsvFile(array $data): string {
-        if (!$this->arrayIsZeroIndexedOrderedList($data) || !$this->allArrayElementsAreKeyValueArrs($data)) {
-            throw new KeyValueArrayExpectedException();
-        }
-
-        // TODO test that all sub arrays have a depth of one
-        // TODO test all that sub arrays have the same keys
-        // TODO test that all sub arrays have string or null values
-        // TODO test that CSVs dest folder is writable
-        // TODO test that the returned path corresponds to an existing file
-        return '';
-    }
-
 }

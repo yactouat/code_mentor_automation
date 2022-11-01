@@ -83,7 +83,7 @@ final class Mailer
         );
         if (!$delivered) {
             throw new EmailNotDeliveredException();
-            LoggerService::getLoggerWithMode()->{'critical'}("email not sent to $recipientEmail");
+            LoggerService::getAppInstanceLogger()->{'critical'}("email not sent to $recipientEmail");
         }
     }
 }

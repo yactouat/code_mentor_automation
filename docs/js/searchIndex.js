@@ -421,11 +421,6 @@ Search.appendIndex(
             "summary": "gets\u0020an\u0020array\u002Dlike\u0020representation\u0020of\u0020a\u0020CSV\u0020file\u0020data",
             "url": "classes/Udacity-Csvs-CsvExtractor.html#method_getCSVData"
         },                {
-            "fqsen": "\\Udacity\\Csvs\\CsvExtractor\u003A\u003AstringToCsvFile\u0028\u0029",
-            "name": "stringToCsvFile",
-            "summary": "takes\u0020a\u0020data\u0020array\u0020as\u0020an\u0020input\u0020and\u0020stores\u0020it\u0020as\u0020a\u0020CSV\u0020in\u0020a\u0020file",
-            "url": "classes/Udacity-Csvs-CsvExtractor.html#method_stringToCsvFile"
-        },                {
             "fqsen": "\\Udacity\\Csvs\\StudentsCsvExtractor",
             "name": "StudentsCsvExtractor",
             "summary": "class\u0020responsible\u0020for\u0020extracting\u0020data\u0020from\u0020session\u0020reports\u0020CSVs",
@@ -1076,10 +1071,15 @@ Search.appendIndex(
             "summary": "returns\u0020the\u0020location\u0020of\u0020the\u0020PHP\u0020logs\u0020directory",
             "url": "classes/Udacity-Services-LoggerService.html#method_getLogsDir"
         },                {
-            "fqsen": "\\Udacity\\Services\\LoggerService\u003A\u003AgetLoggerWithMode\u0028\u0029",
-            "name": "getLoggerWithMode",
-            "summary": "",
-            "url": "classes/Udacity-Services-LoggerService.html#method_getLoggerWithMode"
+            "fqsen": "\\Udacity\\Services\\LoggerService\u003A\u003AgetAppInstanceLogger\u0028\u0029",
+            "name": "getAppInstanceLogger",
+            "summary": "gets\u0020logger\u0020service\u0020associated\u0020to\u0020the\u0020current\u0020app\u0027\u0020instance",
+            "url": "classes/Udacity-Services-LoggerService.html#method_getAppInstanceLogger"
+        },                {
+            "fqsen": "\\Udacity\\Services\\LoggerService\u003A\u003AgetAppInstanceLoggerName\u0028\u0029",
+            "name": "getAppInstanceLoggerName",
+            "summary": "gets\u0020logger\u0020service\u0020associated\u0020to\u0020the\u0020current\u0020app\u0027\u0020instance\u0020name",
+            "url": "classes/Udacity-Services-LoggerService.html#method_getAppInstanceLoggerName"
         },                {
             "fqsen": "\\Udacity\\Services\\LoggerService\u003A\u003AgetService\u0028\u0029",
             "name": "getService",

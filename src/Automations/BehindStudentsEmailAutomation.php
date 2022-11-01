@@ -27,7 +27,7 @@ final class BehindStudentsEmailAutomation extends Automation {
         $subject = $language == "fr" ? "Session Connect Udacity": "Udacity Connect session";
         // sending emails loop
         $count = 1;
-        $logger = LoggerService::getLoggerWithMode();
+        $logger = LoggerService::getAppInstanceLogger();
         $logger->{'startTimer'}();
         foreach ($behindStudentsCoordinates as $student) {
             try {

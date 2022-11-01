@@ -55,7 +55,7 @@ final class WebApp extends App {
         try {
             $this->setDbServices();
         } catch (NoDBConnException $ndce) {
-            LoggerService::getLoggerWithMode()->critical($ndce->getMessage());
+            LoggerService::getAppInstanceLogger()->critical($ndce->getMessage());
             self::resetSession();
             $this->serverErrors[] = $ndce->getMessage();
         }
@@ -135,10 +135,10 @@ final class WebApp extends App {
      * @return void
      */
     public function handleRequest(string $inputRoute): void {
-        LoggerService::getLoggerWithMode()->{'startTimer'}();
+        LoggerService::getAppInstanceLogger()->{'startTimer'}();
         $this->inputRoute = self::parseRequestRoute($inputRoute);
         $this->_setResponseOutput();
-        LoggerService::getLoggerWithMode()->{'endTimer'}("web request processing took : ");
+        LoggerService::getAppInstanceLogger()->{'endTimer'}("web request processing took : ");
     }
 
     /**

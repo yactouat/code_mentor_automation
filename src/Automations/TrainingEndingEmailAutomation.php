@@ -42,7 +42,7 @@ final class TrainingEndingEmailAutomation extends Automation {
             : "The end of our Udacity training session is near !";
         // sending emails loop
         $count = 1;
-        $logger = LoggerService::getLoggerWithMode();
+        $logger = LoggerService::getAppInstanceLogger();
         $logger->{'startTimer'}();
         foreach ($studentsCoordinates as $student) {
             Mailer::sendEmail(

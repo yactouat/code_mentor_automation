@@ -66,7 +66,7 @@ abstract class App {
      *
      * @return void
      * 
-     * TODO test that logger instance a set after instanciated both types of apps
+     * TODO test that logger instance is set after instanciated both types of apps
      * TODO test that this logger writes at the right places
      */
     private function _setLoggerService(string $mode): void {
