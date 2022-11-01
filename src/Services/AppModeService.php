@@ -17,7 +17,11 @@ final class AppModeService extends ServicesContainer {
     /**
      * gets the app' mode (CLI, web, etc.)
      * 
+     * the app's mode is set on app' startup
+     * 
      * @return string
+     * 
+     * TODO test when app' mode is not set
      */
     public function getMode(): string {
         return $this->mode;

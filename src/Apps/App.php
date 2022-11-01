@@ -69,7 +69,11 @@ abstract class App {
      */
     private function _setLoggerService(string $mode): void {
         $logger = LoggerService::getService(LoggerService::getAppInstanceLoggerName());
-        $logger->{'setNewLogger'}($logger->{'getLogsDir'}() . "$mode.log");
+        $logger->{'setNewLogger'}(
+            $logger->{'getLogsDir'}() 
+                . (empty($_ENV['IS_TESTING']) ? '' : 'test_') 
+                . "$mode.log"
+        );
     }
 
     /**

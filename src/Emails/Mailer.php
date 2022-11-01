@@ -67,6 +67,7 @@ final class Mailer
      * @return void actually sends the email
      * 
      * TODO test that log message is written case failure
+     * TODO validate input email
      */
     public static function sendEmail(
         string $recipientEmail, 
@@ -82,8 +83,8 @@ final class Mailer
             "MIME-Version: 1.0" . "\r\n". "Content-type: text/html; charset=utf8" . "\r\n"
         );
         if (!$delivered) {
-            throw new EmailNotDeliveredException();
             LoggerService::getAppInstanceLogger()->{'critical'}("email not sent to $recipientEmail");
+            throw new EmailNotDeliveredException();
         }
     }
 }

@@ -4,7 +4,7 @@ namespace Tests\Integration\Services;
 
 use Udacity\Services\DatabaseService;
 use PHPUnit\Framework\TestCase;
-use Tests\Traits\TestsLoaderTrait;
+use Tests\TestsHelperTrait;
 use Udacity\Exceptions\NoDBConnException;
 use Udacity\Services\AppModeService;
 use Udacity\Services\LoggerService;
@@ -12,7 +12,7 @@ use Udacity\Services\ServicesContainer;
 
 final class DatabaseServiceTest extends TestCase {
 
-    use TestsLoaderTrait;
+    use TestsHelperTrait;
 
     public function testDbNameIsAsExpected() {
         $expected = 'udacity_sl_automation';

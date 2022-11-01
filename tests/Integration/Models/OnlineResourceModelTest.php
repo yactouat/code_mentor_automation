@@ -4,12 +4,12 @@ namespace Tests\Integration\Models;
 
 use Udacity\Models\OnlineResourceModel;
 use PHPUnit\Framework\TestCase;
-use Tests\Traits\TestsLoaderTrait;
+use Tests\TestsHelperTrait;
 use Udacity\Services\DatabaseService;
 
 final class OnlineResourceModelTest extends TestCase {
 
-    use TestsLoaderTrait;
+    use TestsHelperTrait;
 
     protected function setUp(): void
     {

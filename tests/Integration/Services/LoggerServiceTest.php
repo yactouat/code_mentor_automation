@@ -3,8 +3,7 @@
 namespace Tests\Integration\Services;
 
 use PHPUnit\Framework\TestCase;
-use Tests\Traits\TestsLoaderTrait;
-use Tests\Traits\TestsStringsTrait;
+use Tests\TestsHelperTrait;
 use Udacity\Apps\CLI\CLIApp;
 use Udacity\Apps\Web\WebApp;
 use Udacity\Services\DatabaseService;
@@ -13,22 +12,11 @@ use Udacity\Services\ServicesContainer;
 
 final class LoggerServiceTest extends TestCase {
 
-    use TestsLoaderTrait;
-    use TestsStringsTrait;
+    use TestsHelperTrait;
 
     protected function setUp(): void
     {
-        $this->loadEnv();
-        foreach ([
-            '/var/www/tests/fixtures/logs/php/web.log',
-            '/var/www/tests/fixtures/logs/php/cli.log',
-            '/var/www/tests/fixtures/logs/php/db.log'
-        ] as $file) {
-            if (file_exists($file)) {
-                unlink($file);
-            }
-        }
-
+        $this->resetLogsFiles();
     }
 
     public function testgetLogsDirWithoutTestingEnvReturnsDefaultLogsDir() {
@@ -39,36 +27,38 @@ final class LoggerServiceTest extends TestCase {
     }
 
     public function testgetLogsDirWithTestingEnvReturnsCorrectLogsDir() {
+        $this->loadEnv();
         $expected = '/var/www/tests/fixtures/logs/php/';
         $actual = LoggerService::getAppInstanceLogger()->{'getLogsDir'}();
         $this->assertEquals($expected, $actual);
     }
 
     public function testLoggerServiceWithWebAppWritesLogsAtTheRightPlace() {
+        $this->loadEnv();
         $expected = "testLoggerServiceWithWebAppWritesLogsAtTheRightPlace";
         $app = new WebApp('/var/www/tests/fixtures');
         LoggerService::getAppInstanceLogger()->debug('testLoggerServiceWithWebAppWritesLogsAtTheRightPlace');
-        $actual = file_get_contents('/var/www/tests/fixtures/logs/php/web.log');
+        $actual = file_get_contents('/var/www/tests/fixtures/logs/php/test_web.log');
         $this->assertTrue($this->stringIsContainedInAnother($expected, $actual));
     }
 
     public function testLoggerServiceWithCliAppWritesLogsAtTheRightPlace() {
+        $this->loadEnv('cli');
         $expected = "testLoggerServiceWithCliAppWritesLogsAtTheRightPlace";
-        $_SERVER['PHP_SELF'] = '/var/www/bin/index.php';
         $app = new CLIApp('/var/www/tests/fixtures');
         LoggerService::getAppInstanceLogger()->debug('testLoggerServiceWithCliAppWritesLogsAtTheRightPlace');
-        $actual = file_get_contents('/var/www/tests/fixtures/logs/php/cli.log');
+        var_dump(LoggerService::getAppInstanceLogger());
+        $actual = file_get_contents('/var/www/tests/fixtures/logs/php/test_cli.log');
         $this->assertTrue($this->stringIsContainedInAnother($expected, $actual));
     }
 
     public function testLoggerServiceWithDbWritesLogsAtTheRightPlace() {
         $expected = "testLoggerServiceWithDbWritesLogsAtTheRightPlace";
-        $this->resetSuperGlobals();
-        $this->setTestingEnv();
+        $this->loadEnv();
         ServicesContainer::resetServices();
         $db = DatabaseService::getService('test_read_db');
         LoggerService::getService('test_db_logger')->debug('testLoggerServiceWithDbWritesLogsAtTheRightPlace');
-        $actual = file_get_contents('/var/www/tests/fixtures/logs/php/db.log');
+        $actual = file_get_contents('/var/www/tests/fixtures/logs/php/test_db.log');
         $this->assertTrue($this->stringIsContainedInAnother($expected, $actual));
     }
 

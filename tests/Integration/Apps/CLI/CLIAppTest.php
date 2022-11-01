@@ -3,19 +3,18 @@
 namespace Tests\Integration\Apps\Web;
 
 use PHPUnit\Framework\TestCase;
-use Tests\Traits\TestsLoaderTrait;
+use Tests\TestsHelperTrait;
 use Udacity\Apps\CLI\CLIApp;
 use Udacity\Exceptions\NoDBConnException;
 use Udacity\Services\LoggerService;
 
 final class CLIAppTest extends TestCase {
 
-    use TestsLoaderTrait;
+    use TestsHelperTrait;
 
     protected function setUp(): void
     {
-        $this->loadEnv();
-        $_SERVER['PHP_SELF'] = '/var/www/bin/index.php';
+        $this->loadEnv('cli');
     }
 
     public function testConstructWithNoDbConnThrows() {

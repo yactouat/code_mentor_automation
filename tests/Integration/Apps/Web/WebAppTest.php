@@ -3,9 +3,7 @@
 namespace Tests\Integration\Apps\Web;
 
 use PHPUnit\Framework\TestCase;
-use Tests\Traits\TestsLoaderTrait;
-use Tests\Traits\TestsAuthenticateTrait;
-use Tests\Traits\TestsStringsTrait;
+use Tests\TestsHelperTrait;
 use Udacity\Apps\Web\WebApp;
 use Udacity\Apps\Web\Controllers\NotFoundController;
 use Udacity\Apps\Web\Controllers\Resource\SessionLeadsController;
@@ -13,9 +11,7 @@ use Udacity\Services\LoggerService;
 
 final class WebAppTest extends TestCase {
 
-    use TestsAuthenticateTrait;
-    use TestsLoaderTrait;
-    use TestsStringsTrait;
+    use TestsHelperTrait;
 
     protected function setUp(): void
     {

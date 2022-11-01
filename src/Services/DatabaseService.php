@@ -54,9 +54,13 @@ final class DatabaseService extends ServicesContainer {
      */
     private function __construct()
     {
-        $this->loggerName = $_ENV['IS_TESTING'] ? 'test_db_logger' : 'db_logger';
+        $this->loggerName = !empty($_ENV['IS_TESTING']) ? 'test_db_logger' : 'db_logger';
         $this->loggerService = LoggerService::getService($this->loggerName);
-        $this->loggerService->{'setNewLogger'}($this->loggerService->{'getLogsDir'}() . 'db.log');
+        $this->loggerService->{'setNewLogger'}(
+            $this->loggerService->{'getLogsDir'}()
+            . (!empty($_ENV['IS_TESTING']) ? 'test_' : '') 
+            . 'db.log'
+        );
         if ($_ENV['DB_HOST'] !== 'unexistinghost') {
             $this->_initConn();
         }
@@ -159,8 +163,6 @@ final class DatabaseService extends ServicesContainer {
      *
      * @param string $sql
      * @param array|null $values
-     * 
-     * TODO test that log message is written
      * 
      * @return array
      */

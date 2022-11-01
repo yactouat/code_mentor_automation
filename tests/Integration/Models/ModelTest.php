@@ -9,12 +9,12 @@ use Udacity\Services\DatabaseService;
 use DummyModel;
 use ModelWithNoTable;
 use PHPUnit\Framework\TestCase;
-use Tests\Traits\TestsLoaderTrait;
+use Tests\TestsHelperTrait;
 use Udacity\Exceptions\SQLTableNotSetException;
 
 final class ModelTest extends TestCase {
 
-    use TestsLoaderTrait;
+    use TestsHelperTrait;
 
     protected function setUp(): void
     {
