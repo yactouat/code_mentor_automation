@@ -80,11 +80,14 @@ final class LoggerService extends ServicesContainer {
 
     /**
      * gets logger service associated to the current app' instance name
+     * 
+     * prefixes the app's logger instance name with `test_` if we're in a testing environment
      *
      * @return string
      */
     public static function getAppInstanceLoggerName(): string {
-        return AppModeService::getService('app_mode')->{'getMode'}() . '_logger';
+        return (empty($_ENV['IS_TESTING']) ? '' : 'test_') 
+            . AppModeService::getService('app_mode')->{'getMode'}() . '_logger';
     }
 
 

@@ -70,7 +70,7 @@ abstract class App {
      * TODO test that this logger writes at the right places
      */
     private function _setLoggerService(string $mode): void {
-        $logger = LoggerService::getService($mode . '_logger');
+        $logger = LoggerService::getService(LoggerService::getAppInstanceLoggerName());
         $logger->{'setNewLogger'}($logger->{'getLogsDir'}() . "$mode.log");
     }
 
