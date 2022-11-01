@@ -13,6 +13,9 @@ sudo rm data/logs/php/db.log
 sudo rm tests/fixtures/logs/php/cli.log
 sudo rm tests/fixtures/logs/php/web.log
 sudo rm tests/fixtures/logs/php/db.log
+sudo rm tests/fixtures/logs/php/test_cli.log
+sudo rm tests/fixtures/logs/php/test_web.log
+sudo rm tests/fixtures/logs/php/test_db.log
 
 # removing uploaded csvs
 sudo rm data/csv/*.csv
