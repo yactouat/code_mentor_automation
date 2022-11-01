@@ -50,7 +50,9 @@ final class DatabaseService extends ServicesContainer {
     private function __construct()
     {
         $this->loggerName = $_ENV['IS_TESTING'] ? 'test_db_logger' : 'db_logger';
-        $this->_initConn();
+        if ($_ENV['DB_HOST'] !== 'unexistinghost') {
+            $this->_initConn();
+        }
         // throw app' specific exception if PDO instance is not set
         if (is_null($this->databaseConn)) {
             throw new NoDBConnException();
