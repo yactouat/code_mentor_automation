@@ -2,7 +2,7 @@
 
 namespace Udacity\Models;
 
-use Udacity\Database;
+use Udacity\Services\DatabaseService;
 
 /**
  * this model represents a Udacity student in our business logic
@@ -75,11 +75,11 @@ final class StudentModel extends Model {
         $first_name = $this->first_name;
         $last_name = $this->last_name;
         $on_track_status = $this->on_track_status;
-        $dbName = Database::$dbName;
+        $dbName = DatabaseService::$dbName;
         $tableName = $this->tableName;
         $query = "INSERT INTO $dbName.$tableName (email, first_name, last_name, on_track_status) VALUES 
             ('$email', '$first_name', '$last_name', '$on_track_status')";
-        $this->database->writeQuery($query);
+        DatabaseService::getService('write_db')->{'writeQuery'}($query);
     }
 
     /**

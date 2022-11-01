@@ -6,14 +6,12 @@ use Udacity\Csvs\StudentsCsvExtractor as CsvExtractor;
 use Udacity\Emails\Emails;
 use Udacity\Emails\Mailer;
 use Udacity\Exceptions\EmailNotDeliveredException;
-use Udacity\LoggerTrait;
+use Udacity\Services\LoggerService;
 
 /**
  * this class represents the business logic behind sending students behind emails
  */
 final class BehindStudentsEmailAutomation extends Automation {
-
-    use LoggerTrait;
 
     /**
      * implements `BehindStudentsEmailAutomation` business logic
@@ -29,7 +27,8 @@ final class BehindStudentsEmailAutomation extends Automation {
         $subject = $language == "fr" ? "Session Connect Udacity": "Udacity Connect session";
         // sending emails loop
         $count = 1;
-        $this->startTimer();
+        $logger = LoggerService::getLoggerWithMode();
+        $logger->{'startTimer'}();
         foreach ($behindStudentsCoordinates as $student) {
             try {
                 Mailer::sendEmail(
@@ -37,14 +36,14 @@ final class BehindStudentsEmailAutomation extends Automation {
                     $subject,
                     Emails::getBehindStudentEmailFormatted($language, $student["First Name"], $student["Last Name"])
                 );
-                $this->logger->info("sent behind student email ".$count." out of ".count($behindStudentsCoordinates));
+                $logger->{'info'}("sent behind student email ".$count." out of ".count($behindStudentsCoordinates));
             } catch (EmailNotDeliveredException $ende) {
                 $this->errors[] = "email not sent to " . $student["Email"];
             } finally {
                 $count++;
             }
         }
-        $this->endTimer("sending emails took : ");
+        $logger->{'endTimer'}("sending emails took : ");
     }
 
 }

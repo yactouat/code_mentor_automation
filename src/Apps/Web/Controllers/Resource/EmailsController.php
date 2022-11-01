@@ -3,7 +3,7 @@
 namespace Udacity\Apps\Web\Controllers\Resource;
 
 use Udacity\Apps\Web\Controllers\Controller;
-use Udacity\LoggerTrait;
+use Udacity\Services\LoggerService;
 use Udacity\Models\EmailsModel;
 
 /**
@@ -12,7 +12,6 @@ use Udacity\Models\EmailsModel;
 final class EmailsController extends Controller implements ResourceControllerInterface {
 
     use FilesUploadsTrait;
-    use LoggerTrait;
 
     /**
      * {@inheritDoc}

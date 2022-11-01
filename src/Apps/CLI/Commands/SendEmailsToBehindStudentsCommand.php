@@ -10,7 +10,7 @@ use Symfony\Component\Console\Output\ConsoleOutputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Symfony\Component\Console\Question\Question;
-use Udacity\AuthTrait;
+use Udacity\Traits\AuthTrait;
 use Udacity\Automations\BehindStudentsEmailAutomation;
 use Udacity\Csvs\CsvExtractor;
 use Udacity\Emails\Mailer;
@@ -18,7 +18,6 @@ use Udacity\Exceptions\AllowedLanguageException;
 use Udacity\Exceptions\MsmtprcNotSetException;
 use Udacity\Exceptions\NonExistingFileException;
 use Udacity\Intl;
-use Udacity\LoggerTrait;
 use Udacity\Models\SessionLeadModel;
 
 /**
@@ -30,7 +29,6 @@ final class SendEmailsToBehindStudentsCommand extends Command
 {
 
     use AuthTrait;
-    use LoggerTrait;
 
     const COMMAND_HELP = 'This command allows you to send emails in bulk to students that are behind in their Nanodegree program using a Udacity session report CSV file.';
     const CSV_ARG = 'csv';
@@ -191,7 +189,7 @@ final class SendEmailsToBehindStudentsCommand extends Command
             '====================================',
             ''
         ]);
-        $process = ((new BehindStudentsEmailAutomation())->setLogger($this->logger));
+        $process = new BehindStudentsEmailAutomation();
         $process->run($csv, $language);
 
         if (count($process->getErrors()) > 0) {

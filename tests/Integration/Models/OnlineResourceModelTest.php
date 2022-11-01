@@ -5,6 +5,7 @@ namespace Tests\Integration\Models;
 use Udacity\Models\OnlineResourceModel;
 use PHPUnit\Framework\TestCase;
 use Tests\Traits\TestsLoaderTrait;
+use Udacity\Services\DatabaseService;
 
 final class OnlineResourceModelTest extends TestCase {
 
@@ -13,7 +14,7 @@ final class OnlineResourceModelTest extends TestCase {
     protected function setUp(): void
     {
         $this->loadEnv();
-        $this->database->writeQuery('TRUNCATE udacity_sl_automation.onlineresource');
+        DatabaseService::getService('test_write_db')->{'writeQuery'}('TRUNCATE udacity_sl_automation.onlineresource');
     }
 
     public function testPersistPersistsInstanceInDb() {

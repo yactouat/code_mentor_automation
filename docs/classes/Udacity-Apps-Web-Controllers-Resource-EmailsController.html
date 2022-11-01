@@ -83,6 +83,14 @@
                 <a href="namespaces/udacity-models.html" class="">Models</a>
                 
             </li>
+                    <li>
+                <a href="namespaces/udacity-services.html" class="">Services</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/udacity-traits.html" class="">Traits</a>
+                
+            </li>
             </ul>
 
                         </section>
@@ -137,7 +145,7 @@
     
             <span class="phpdocumentor-element__extends">
             Uses
-                            <a href="classes/Udacity-Apps-Web-Controllers-Resource-FilesUploadsTrait.html"><abbr title="\Udacity\Apps\Web\Controllers\Resource\FilesUploadsTrait">FilesUploadsTrait</abbr></a>,                             <a href="classes/Udacity-LoggerTrait.html"><abbr title="\Udacity\LoggerTrait">LoggerTrait</abbr></a>                    </span>
+                            <a href="classes/Udacity-Apps-Web-Controllers-Resource-FilesUploadsTrait.html"><abbr title="\Udacity\Apps\Web\Controllers\Resource\FilesUploadsTrait">FilesUploadsTrait</abbr></a>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
@@ -176,25 +184,11 @@
 
 <dl class="phpdocumentor-table-of-contents">
                     <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Udacity-LoggerTrait.html#property_endTime">$endTime</a>
-    <span>
-                        &nbsp;: float            </span>
-</dt>
-<dd>the end time of a logging time span</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#property_homeTemplatePath">$homeTemplatePath</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
 <dd>the path to the homepage template</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Udacity-LoggerTrait.html#property_logger">$logger</a>
-    <span>
-                        &nbsp;: <abbr title="\Monolog\Logger">Logger</abbr>            </span>
-</dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#property_loginTemplatePath">$loginTemplatePath</a>
@@ -209,13 +203,6 @@
                         &nbsp;: string            </span>
 </dt>
 <dd>the path to the not found page template</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Udacity-LoggerTrait.html#property_startTime">$startTime</a>
-    <span>
-                        &nbsp;: float            </span>
-</dt>
-<dd>the start time of a logging time span</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#property_renderer">$renderer</a>
@@ -260,14 +247,7 @@
 <dd>shows the web form to create an instance of the related resource</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Udacity-LoggerTrait.html#method_endTimer">endTimer()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>ends a logging time span and writes the result in the logs</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Udacity-AuthTrait.html#method_getAuthedUserFirstName">getAuthedUserFirstName()</a>
+    <a href="classes/Udacity-Traits-AuthTrait.html#method_getAuthedUserFirstName">getAuthedUserFirstName()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
@@ -279,13 +259,6 @@
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
 <dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Udacity-LoggerTrait.html#method_getLogsDir">getLogsDir()</a>
-    <span>
-                                &nbsp;: string    </span>
-</dt>
-<dd>returns the location of the PHP logs directory</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#method_getRenderer">getRenderer()</a>
@@ -309,7 +282,7 @@
 <dd>! not implemented</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Udacity-AuthTrait.html#method_logUserIn">logUserIn()</a>
+    <a href="classes/Udacity-Traits-AuthTrait.html#method_logUserIn">logUserIn()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
@@ -321,27 +294,6 @@
                                 &nbsp;: string    </span>
 </dt>
 <dd>saves data related to the linked resource</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Udacity-LoggerTrait.html#method_setLogger">setLogger()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>sets the instance logger with an already configured logger</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Udacity-LoggerTrait.html#method_setNewLogger">setNewLogger()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>sets the instance logger from scratch</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Udacity-LoggerTrait.html#method_startTimer">startTimer()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>starts a logging time span</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#method_getAuthedTwigTemplate">getAuthedTwigTemplate()</a>
@@ -372,7 +324,7 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/Udacity-AuthTrait.html#method_isAuthed">isAuthed()</a>
+    <a href="classes/Udacity-Traits-AuthTrait.html#method_isAuthed">isAuthed()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
@@ -437,39 +389,6 @@
             phpdocumentor-element
             -property
             -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_endTime">
-        $endTime
-        <a href="classes/Udacity-LoggerTrait.html#property_endTime" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/LoggerTrait.php"><a href="files/src-loggertrait.html"><abbr title="src/LoggerTrait.php">LoggerTrait.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">21</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">the end time of a logging time span</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">float</span>
-    <span class="phpdocumentor-signature__name">$endTime</span>
-    </code>
-
-    
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
             -static                                            "
 >
     <h4 class="phpdocumentor-element__name" id="property_homeTemplatePath">
@@ -495,40 +414,6 @@
 
     
     
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_logger">
-        $logger
-        <a href="classes/Udacity-LoggerTrait.html#property_logger" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/LoggerTrait.php"><a href="files/src-loggertrait.html"><abbr title="src/LoggerTrait.php">LoggerTrait.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">14</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type"><abbr title="\Monolog\Logger">Logger</abbr></span>
-    <span class="phpdocumentor-signature__name">$logger</span>
-    </code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
 
 </article>
@@ -592,39 +477,6 @@
     <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$notFoundTemplatePath</span>
      = <span class="phpdocumentor-signature__default-value">&#039;not-found.html.twig&#039;</span></code>
-
-    
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_startTime">
-        $startTime
-        <a href="classes/Udacity-LoggerTrait.html#property_startTime" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/LoggerTrait.php"><a href="files/src-loggertrait.html"><abbr title="src/LoggerTrait.php">LoggerTrait.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">28</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">the start time of a logging time span</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">float</span>
-    <span class="phpdocumentor-signature__name">$startTime</span>
-    </code>
 
     
     
@@ -783,7 +635,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/EmailsController.php"><a href="files/src-apps-web-controllers-resource-emailscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/EmailsController.php">EmailsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
@@ -818,7 +670,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/EmailsController.php"><a href="files/src-apps-web-controllers-resource-emailscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/EmailsController.php">EmailsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
@@ -847,57 +699,14 @@
         class="phpdocumentor-element
             -method
             -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_endTimer">
-        endTimer()
-        <a href="classes/Udacity-LoggerTrait.html#method_endTimer" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/LoggerTrait.php"><a href="files/src-loggertrait.html"><abbr title="src/LoggerTrait.php">LoggerTrait.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">36</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">ends a logging time span and writes the result in the logs</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">endTimer</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$logText</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$logText</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
                                     -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_getAuthedUserFirstName">
         getAuthedUserFirstName()
-        <a href="classes/Udacity-AuthTrait.html#method_getAuthedUserFirstName" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Udacity-Traits-AuthTrait.html#method_getAuthedUserFirstName" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/AuthTrait.php"><a href="files/src-authtrait.html"><abbr title="src/AuthTrait.php">AuthTrait.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/AuthTrait.php"><a href="files/src-traits-authtrait.html"><abbr title="src/Traits/AuthTrait.php">AuthTrait.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">33</span>
 
@@ -934,7 +743,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/EmailsController.php"><a href="files/src-apps-web-controllers-resource-emailscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/EmailsController.php">EmailsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">73</span>
 
     </aside>
 
@@ -961,55 +770,6 @@
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getLogsDir">
-        getLogsDir()
-        <a href="classes/Udacity-LoggerTrait.html#method_getLogsDir" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/LoggerTrait.php"><a href="files/src-loggertrait.html"><abbr title="src/LoggerTrait.php">LoggerTrait.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">52</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">returns the location of the PHP logs directory</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getLogsDir</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
-
-    
-    
-    
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Udacity-Exceptions-WritePermissionException.html"><abbr title="\Udacity\Exceptions\WritePermissionException">WritePermissionException</abbr></a></span>
-                                                            
-                                                 <section class="phpdocumentor-description"><p>if the logs directory is not writable</p>
-</section>
-
-                                    </dd>
-                        </dl>
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
         
     
@@ -1093,7 +853,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/EmailsController.php"><a href="files/src-apps-web-controllers-resource-emailscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/EmailsController.php">EmailsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">85</span>
 
     </aside>
 
@@ -1121,10 +881,10 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_logUserIn">
         logUserIn()
-        <a href="classes/Udacity-AuthTrait.html#method_logUserIn" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Udacity-Traits-AuthTrait.html#method_logUserIn" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/AuthTrait.php"><a href="files/src-authtrait.html"><abbr title="src/AuthTrait.php">AuthTrait.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/AuthTrait.php"><a href="files/src-traits-authtrait.html"><abbr title="src/Traits/AuthTrait.php">AuthTrait.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">52</span>
 
@@ -1180,7 +940,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/EmailsController.php"><a href="files/src-apps-web-controllers-resource-emailscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/EmailsController.php">EmailsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">95</span>
+    <span class="phpdocumentor-element-found-in__line">94</span>
 
     </aside>
 
@@ -1196,129 +956,6 @@
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_setLogger">
-        setLogger()
-        <a href="classes/Udacity-LoggerTrait.html#method_setLogger" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/LoggerTrait.php"><a href="files/src-loggertrait.html"><abbr title="src/LoggerTrait.php">LoggerTrait.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">66</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">sets the instance logger with an already configured logger</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">setLogger</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Monolog\Logger">Logger</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$logger</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$logger</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Monolog\Logger">Logger</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_setNewLogger">
-        setNewLogger()
-        <a href="classes/Udacity-LoggerTrait.html#method_setNewLogger" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/LoggerTrait.php"><a href="files/src-loggertrait.html"><abbr title="src/LoggerTrait.php">LoggerTrait.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">77</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">sets the instance logger from scratch</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">setNewLogger</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$logsPath</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$logsPath</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the filename to write logs to</li>
-</ul>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_startTimer">
-        startTimer()
-        <a href="classes/Udacity-LoggerTrait.html#method_startTimer" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/LoggerTrait.php"><a href="files/src-loggertrait.html"><abbr title="src/LoggerTrait.php">LoggerTrait.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">89</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">starts a logging time span</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">startTimer</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
         
     
@@ -1485,10 +1122,10 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_isAuthed">
         isAuthed()
-        <a href="classes/Udacity-AuthTrait.html#method_isAuthed" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Udacity-Traits-AuthTrait.html#method_isAuthed" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/AuthTrait.php"><a href="files/src-authtrait.html"><abbr title="src/AuthTrait.php">AuthTrait.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/AuthTrait.php"><a href="files/src-traits-authtrait.html"><abbr title="src/Traits/AuthTrait.php">AuthTrait.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">17</span>
 
@@ -1765,7 +1402,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/EmailsController.php"><a href="files/src-apps-web-controllers-resource-emailscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/EmailsController.php">EmailsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">32</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 
     </aside>
 

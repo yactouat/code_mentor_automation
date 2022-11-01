@@ -1,6 +1,6 @@
 <?php
 
-namespace Udacity;
+namespace Udacity\Services;
 
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
@@ -8,10 +8,11 @@ use Udacity\Exceptions\WritePermissionException;
 
 /**
  * this trait shares the logic of logging stuff throughout the app'
+ * 
  */
-trait LoggerTrait {
+final class LoggerService extends ServicesContainer {
 
-    protected Logger $logger;
+    protected ?Logger $logger = null;
 
     /**
      * the end time of a logging time span
@@ -26,6 +27,17 @@ trait LoggerTrait {
      * @var float
      */
     protected float $startTime;
+
+    /**
+     * logs statistical data about undesired stateful events happening in the app'
+     *
+     * TODO test when logger is not set
+     * 
+     * @return void
+     */
+    public function critical(string $message): void {
+        $this->logger->critical($message);
+    }
 
     /**
      * ends a logging time span and writes the result in the logs
@@ -57,6 +69,42 @@ trait LoggerTrait {
         return $logsDir;
     }
 
+    public static function getLoggerWithMode(): self {
+        return self::getService(AppModeService::getService('app_mode')->{'getMode'}() . '_logger');
+    }
+
+    /**
+    * @inheritDoc
+    */
+    public static function getService(string $id): self {
+        if(empty(self::$_instances[$id])) {
+            self::$_instances[$id] = new self();  
+        }
+        return self::$_instances[$id];
+    }
+
+    /**
+     * logs statistical data about the app'
+     *
+     * TODO test when logger is not set
+     * 
+     * @return void
+     */
+    public function info(string $message): void {
+        $this->logger->info($message);
+    }
+
+    /**
+     * logs statistical data about noticeable events happening in the app'
+     *
+     * TODO test when logger is not set
+     * 
+     * @return void
+     */
+    public function notice(string $message): void {
+        $this->logger->notice($message);
+    }
+
     /**
      * sets the instance logger with an already configured logger
      *
@@ -64,6 +112,7 @@ trait LoggerTrait {
      * @return void
      */
     public function setLogger(Logger $logger) {
+        $this->logger = null;
         $this->logger = $logger;
         return $this;
     }
@@ -75,6 +124,7 @@ trait LoggerTrait {
      * @return void
      */
     public function setNewLogger(string $logsPath) {
+        $this->logger = null;
         $logger = new Logger($logsPath);
         $logger->pushHandler(new StreamHandler($logsPath));
         $this->logger = $logger;

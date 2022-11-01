@@ -2,7 +2,7 @@
 
 namespace Udacity\Models;
 
-use Udacity\Database;
+use Udacity\Services\DatabaseService;
 use Udacity\Emails\Mailer;
 
 /**
@@ -73,11 +73,11 @@ final class SessionLeadModel extends Model {
         ])) > 0) {
             return;
         }
-        $dbName = Database::$dbName;
+        $dbName = DatabaseService::$dbName;
         $tableName = $this->tableName;
         $sql = "INSERT INTO $dbName.$tableName (email, first_name, google_app_password, user_passphrase) 
             VALUES(?,?,?,?)";
-        $this->database->writeQuery(
+        DatabaseService::getService('write_db')->{'writeQuery'}(
             $sql, 
             [
                 $this->email, 
@@ -101,7 +101,7 @@ final class SessionLeadModel extends Model {
             return [];
         }
         $sql ='SELECT * FROM ' . $this->tableName . " WHERE email=?";
-        $res = $this->database->readQuery($sql, [$email]);
+        $res = DatabaseService::getService('read_db')->{'readQuery'}($sql, [$email]);
         return $res[0] ?? [];
     }
 

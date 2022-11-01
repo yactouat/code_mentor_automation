@@ -5,7 +5,7 @@ namespace Udacity\Apps\Web\Controllers;
 use Twig\Environment;
 use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
-use Udacity\AuthTrait;
+use Udacity\Traits\AuthTrait;
 
 /**
  * parent class of all the web app' controllers

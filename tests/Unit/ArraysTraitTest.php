@@ -3,7 +3,7 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Udacity\ArraysTrait;
+use Udacity\Traits\ArraysTrait;
 
 final class ArraysTraitTest extends TestCase {
 

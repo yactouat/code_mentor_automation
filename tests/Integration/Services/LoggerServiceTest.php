@@ -1,33 +1,27 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Integration;
+namespace Tests\Integration\Services;
 
 use PHPUnit\Framework\TestCase;
-use Udacity\LoggerTrait;
+use Udacity\Services\LoggerService;
 
-final class LoggerTraitTest extends TestCase {
+final class LoggerServiceTest extends TestCase {
 
     protected function setUp(): void
     {
         $_ENV = [];
     }
 
-    public function testgetLogsDirWithoutTestingEnvReturnsCorrectLogsDir() {
+    public function testgetLogsDirWithoutTestingEnvReturnsDefaultLogsDir() {
         $expected = '/var/www/data/logs/php/';
-        $instance = new class {
-            use LoggerTrait;
-        };
-        $actual = $instance->getLogsDir();
+        $actual = LoggerService::getService('test_logger')->{'getLogsDir'}();
         $this->assertEquals($expected, $actual);
     }
 
     public function testgetLogsDirWithTestingEnvReturnsCorrectLogsDir() {
         $_ENV['IS_TESTING'] = true;
         $expected = '/var/www/tests/fixtures/logs/php/';
-        $instance = new class {
-            use LoggerTrait;
-        };
-        $actual = $instance->getLogsDir();
+        $actual = LoggerService::getService('test_logger')->{'getLogsDir'}();
         $this->assertEquals($expected, $actual);
     }
 

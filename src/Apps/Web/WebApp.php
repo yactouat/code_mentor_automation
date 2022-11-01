@@ -5,14 +5,14 @@ namespace Udacity\Apps\Web;
 use Udacity\Apps\App;
 use Udacity\Apps\Web\Controllers\ControllerInterface;
 use Udacity\Apps\Web\Controllers\NotFoundController;
-use Udacity\LoggerTrait;
+use Udacity\Apps\Web\Controllers\ServerErrorController;
+use Udacity\Exceptions\NoDBConnException;
+use Udacity\Services\LoggerService;
 
 /**
  * this class represents the main entry point of the web application
  */
 final class WebApp extends App {
-
-    use LoggerTrait;
 
     /**
      * the controller that is set after parsing the client request
@@ -36,6 +36,13 @@ final class WebApp extends App {
     private string $inputRoute;
 
     /**
+     * array holding server-side errors
+     *
+     * @var array
+     */
+    private array $serverErrors = [];
+
+    /**
      * the response that is set after parsing the client request
      *
      * @var string
@@ -45,11 +52,17 @@ final class WebApp extends App {
     public function __construct(string $rootDir)
     {
         parent::__construct($rootDir, 'web');
+        try {
+            $this->setDbServices();
+        } catch (NoDBConnException $ndce) {
+            LoggerService::getLoggerWithMode()->critical($ndce->getMessage());
+            self::resetSession();
+            $this->serverErrors[] = $ndce->getMessage();
+        }
         if (empty($_ENV['IS_TESTING'])) {
             session_save_path('/var/www/data/sessions');
             session_start();
         }
-        $this->setNewLogger($this->getLogsDir() . 'web_app.log');
     }
 
     /**
@@ -62,12 +75,27 @@ final class WebApp extends App {
         if (!$parsedRoute) {
             $this->controller = new NotFoundController();
             $this->responseOutput = $this->controller->index();
+        } else if (in_array(NoDBConnException::MESSAGE, $this->serverErrors)) {
+            $this->controller = new ServerErrorController();
+            $this->responseOutput = $this->controller->index();
         } else {
             $controllerClass = 'Udacity\Apps\Web\Controllers\\' . $parsedRoute[0];
             $this->controller = new $controllerClass();
             $this->responseOutput = $this->controller->{$parsedRoute[1]}();
         }
         $this->statusCode = $this->controller->getStatusCode();
+    }
+
+    /**
+     * resets session data
+     *
+     * @return void
+     */
+    public static function resetSession(): void {
+        $_SESSION = [];
+        if (\session_status() === PHP_SESSION_ACTIVE) {
+            session_destroy();
+        }
     }
 
     /**
@@ -107,10 +135,10 @@ final class WebApp extends App {
      * @return void
      */
     public function handleRequest(string $inputRoute): void {
-        $this->startTimer();
+        LoggerService::getLoggerWithMode()->{'startTimer'}();
         $this->inputRoute = self::parseRequestRoute($inputRoute);
         $this->_setResponseOutput();
-        $this->endTimer("web request processing took : ");
+        LoggerService::getLoggerWithMode()->{'endTimer'}("web request processing took : ");
     }
 
     /**

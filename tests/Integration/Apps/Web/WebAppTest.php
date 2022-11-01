@@ -166,7 +166,7 @@ final class WebAppTest extends TestCase {
         $this->assertTrue($this->stringsHaveSameContent($expected, $actual));
     } 
 
-    public function testGetResponseOutputWithSessionLeadsLogoutRouteGetsLoginPage() {
+    public function testGetResponseOutputWithSessionLeadsLogoutRouteUnauthedGetsLoginPage() {
         $expected = file_get_contents('/var/www/tests/fixtures/views/session-leads.login.html');
         $app = new WebApp('/var/www/tests/fixtures');
         $app->handleRequest('/logout');
@@ -256,6 +256,44 @@ final class WebAppTest extends TestCase {
      */
     public function testTmpIsWritable() {
         $this->assertTrue(is_writable('/var/www/data/sessions'));
+    }
+
+    public function testGetResponseOutputWithHomeRouteButNoDbConnReturnsExpectedResponse() {
+        $this->resetWithBadDbHost();
+        $expectedPage = file_get_contents('/var/www/tests/fixtures/views/server-error.html');
+        $expectedStatusCode = 500;
+        $app = new WebApp('/var/www/tests/fixtures');
+        $app->handleRequest('/');
+        $actualPage = $app->getResponseOutput();
+        $actualStatusCode = $app->getStatusCode();
+        $this->assertTrue($this->stringsHaveSameContent($expectedPage, $actualPage));
+        $this->assertEquals($expectedStatusCode, $actualStatusCode);
+    }
+
+    public function testGetResponseOutputWithLoginRouteButNoDbConnReturnsExpectedResponse() {
+        $this->resetWithBadDbHost();
+        $expectedPage = file_get_contents('/var/www/tests/fixtures/views/server-error.html');
+        $expectedStatusCode = 500;
+        $app = new WebApp('/var/www/tests/fixtures');
+        $app->handleRequest('/login');
+        $actualPage = $app->getResponseOutput();
+        $actualStatusCode = $app->getStatusCode();
+        $this->assertTrue($this->stringsHaveSameContent($expectedPage, $actualPage));
+        $this->assertEquals($expectedStatusCode, $actualStatusCode);
+    }
+
+    public function testGetResponseOutputAuthedWithHomeRouteButNoDbConnReturnsExpectedResponseAndResetsTheSession() {
+        $this->authenticate();
+        $this->resetWithBadDbHost();
+        $expectedPage = file_get_contents('/var/www/tests/fixtures/views/server-error.html');
+        $expectedStatusCode = 500;
+        $app = new WebApp('/var/www/tests/fixtures');
+        $app->handleRequest('/');
+        $actualPage = $app->getResponseOutput();
+        $actualStatusCode = $app->getStatusCode();
+        $this->assertTrue($this->stringsHaveSameContent($expectedPage, $actualPage));
+        $this->assertEquals($expectedStatusCode, $actualStatusCode);
+        $this->assertEquals([], $_SESSION);
     }
 
 }

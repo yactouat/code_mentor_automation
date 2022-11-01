@@ -2,7 +2,7 @@
 
 namespace Udacity\Csvs;
 
-use Udacity\ArraysTrait;
+use Udacity\Traits\ArraysTrait;
 use Udacity\Exceptions\InvalidCsvDataException;
 use Udacity\Exceptions\KeyValueArrayExpectedException;
 use Udacity\Exceptions\NonExistingFileException;
@@ -77,17 +77,7 @@ class CsvExtractor
      * @return string the path to the CSV
      */
     public function stringToCsvFile(array $data): string {
-        // TODO test that input is an array of key/value arrays
-        $depth0Validated = $this->arrayIsZeroIndexedOrderedList($data);
-        $depth1Validated = (function() use($data) {
-            foreach (array_values($data) as $val) {
-                if (!is_array($val) || $this->arrayIsZeroIndexedOrderedList($val)) {
-                    return false;
-                }
-            }
-            return true;
-        })();
-        if (!$depth0Validated || !$depth1Validated) {
+        if (!$this->arrayIsZeroIndexedOrderedList($data) || !$this->allArrayElementsAreKeyValueArrs($data)) {
             throw new KeyValueArrayExpectedException();
         }
 

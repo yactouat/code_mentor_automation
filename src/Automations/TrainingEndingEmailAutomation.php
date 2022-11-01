@@ -5,15 +5,13 @@ namespace Udacity\Automations;
 use Udacity\Csvs\StudentsCsvExtractor as CsvExtractor;
 use Udacity\Emails\Emails;
 use Udacity\Emails\Mailer;
-use Udacity\LoggerTrait;
 use Udacity\Models\OnlineResourceModel;
+use Udacity\Services\LoggerService;
 
 /**
  * this class represents the business logic behind sending all students a cheering up email before the end of the training
  */
 final class TrainingEndingEmailAutomation extends Automation {
-
-    use LoggerTrait;
 
     /**
      * implements `TrainingEndingEmailAutomation` business logic
@@ -44,17 +42,18 @@ final class TrainingEndingEmailAutomation extends Automation {
             : "The end of our Udacity training session is near !";
         // sending emails loop
         $count = 1;
-        $this->startTimer();
+        $logger = LoggerService::getLoggerWithMode();
+        $logger->{'startTimer'}();
         foreach ($studentsCoordinates as $student) {
             Mailer::sendEmail(
                 $student["Email"],
                 $subject,
                 Emails::getTrainingEndingEmailFormatted($language, $student["First Name"], $student["Last Name"], $onlineResources)
             );
-            $this->logger->info("sent training ending email ".$count." out of ".count($studentsCoordinates));
+            $logger->{'info'}("sent training ending email ".$count." out of ".count($studentsCoordinates));
             $count++;
         }
-        $this->endTimer("sending emails took : ");
+        $logger->{'endTimer'}("sending emails took : ");
     }
 
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Udacity;
+namespace Udacity\Traits;
 
 /**
  * this trait holds common logic for manipulating arrays
@@ -20,6 +20,21 @@ trait ArraysTrait {
                 return false;
             }
             $count++;
+        }
+        return true;
+    }
+
+    /**
+     * checks if all elements of an array are key value arrays
+     * 
+     * @param array $inputArr
+     * @return boolean
+     */
+    public function allArrayElementsAreKeyValueArrs(array $inputArr): bool {
+        foreach (array_values($inputArr) as $val) {
+            if (!is_array($val) || $this->arrayIsZeroIndexedOrderedList($val)) {
+                return false;
+            }
         }
         return true;
     }

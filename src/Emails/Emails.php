@@ -2,7 +2,7 @@
 
 namespace Udacity\Emails;
 
-use Udacity\AuthTrait;
+use Udacity\Traits\AuthTrait;
 use Udacity\Exceptions\UserNotAuthedException;
 
 /**

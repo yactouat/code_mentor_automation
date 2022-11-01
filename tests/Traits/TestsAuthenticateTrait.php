@@ -4,10 +4,12 @@ namespace Tests\Traits;
 
 use Udacity\Apps\Web\Controllers\Resource\SessionLeadsController;
 use Udacity\Models\SessionLeadModel;
+use Udacity\Services\DatabaseService;
 
 trait TestsAuthenticateTrait {
 
     protected function authenticate(string $email = 'test@gmail.com', string $firstName = 'Yacine'): void {
+        DatabaseService::getService('write_db')->writeQuery('TRUNCATE udacity_sl_automation.sessionlead');
         $sessionLead = new SessionLeadModel($email, $firstName, 'test g app password', 'test user password');
         $sessionLead->persist();
         $ctlr = new SessionLeadsController();

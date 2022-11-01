@@ -2,10 +2,10 @@
 
 namespace Udacity\Emails;
 
-use Monolog\Logger;
 use Udacity\Exceptions\EmailNotDeliveredException;
 use Udacity\Exceptions\WritePermissionException;
 use Udacity\Exceptions\MsmtprcNotSetException;
+use Udacity\Services\LoggerService;
 
 /**
  * class responsible for sending emails
@@ -61,18 +61,18 @@ final class Mailer
      * @param string $subject
      * @param string $htmlEmail better rendering if you pass HTML formatted text in there
      * @param string $msmtprcPath the path to your `msmtp`config
-     * @param ?Logger $logger optional logger
      * 
      * @throws EmailNotDeliveredException if email is not delivered
      * 
      * @return void actually sends the email
+     * 
+     * TODO test that log message is written case failure
      */
     public static function sendEmail(
         string $recipientEmail, 
         string $subject, 
         string $htmlEmail,
-        string $msmtprcPath = '/etc/msmtprc',
-        ?Logger $logger = null
+        string $msmtprcPath = '/etc/msmtprc'
     ): void {
         self::checkMsmtprc($msmtprcPath);
         $delivered = mail(
@@ -83,9 +83,7 @@ final class Mailer
         );
         if (!$delivered) {
             throw new EmailNotDeliveredException();
-            if (!is_null($logger)) {
-                $logger->alert("email not sent to $recipientEmail");
-            }
+            LoggerService::getLoggerWithMode()->{'critical'}("email not sent to $recipientEmail");
         }
     }
 }

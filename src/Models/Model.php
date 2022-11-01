@@ -2,20 +2,13 @@
 
 namespace Udacity\Models;
 
-use Udacity\Database;
+use Udacity\Services\DatabaseService;
 use Udacity\Exceptions\SQLTableNotSetException;
 
 /**
  * the parent class of all app's MVC models
  */
 abstract class Model {
-
-    /**
-     * the database connection class to use
-     *
-     * @var Database
-     */
-    protected Database $database;
 
     /**
      * the SQL table name of the current instance
@@ -59,17 +52,14 @@ abstract class Model {
      * 
      * checks if a SQL table exists for the given model and sets a db connection
      *
-     * @param Database|null $database
-     * 
      * @throws SQLTableNotSetException
      * 
      */
-    protected function __construct(?Database $database = null)
+    protected function __construct()
     {
         if (!isset($this->tableName)) {
             throw new SQLTableNotSetException();
         }
-        $this->database = is_null($database) ? new Database() : $database;
     }
 
     /**
@@ -87,7 +77,8 @@ abstract class Model {
      * @return array
      */
     public function selectAll(): array {
-        return $this->database->readQuery("SELECT * FROM ".$this->tableName);
+        return DatabaseService::getService('read_db')
+            ->{'readQuery'}("SELECT * FROM ".$this->tableName);
     }
 
 }

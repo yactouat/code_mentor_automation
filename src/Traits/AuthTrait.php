@@ -1,6 +1,6 @@
 <?php
 
-namespace Udacity;
+namespace Udacity\Traits;
 
 use Udacity\Models\SessionLeadModel;
 
