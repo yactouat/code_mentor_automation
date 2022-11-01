@@ -21,7 +21,6 @@ final class AppModeService extends ServicesContainer {
      * 
      * @return string
      * 
-     * TODO test when app' mode is not set
      */
     public function getMode(): string {
         return $this->mode;

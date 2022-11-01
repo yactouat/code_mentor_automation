@@ -31,8 +31,6 @@ final class LoggerService extends ServicesContainer {
     /**
      * logs statistical data about undesired stateful events happening in the app'
      *
-     * TODO test when logger is not set
-     * 
      * @return void
      */
     public function critical(string $message): void {
@@ -42,8 +40,6 @@ final class LoggerService extends ServicesContainer {
     /**
      * logs debug data during app's development and tests phase
      *
-     * TODO test when logger is not set
-     * 
      * @return void
      */
     public function debug(string $message): void {
@@ -115,8 +111,6 @@ final class LoggerService extends ServicesContainer {
     /**
      * logs statistical data about the app'
      *
-     * TODO test when logger is not set
-     * 
      * @return void
      */
     public function info(string $message): void {
@@ -126,8 +120,6 @@ final class LoggerService extends ServicesContainer {
     /**
      * logs statistical data about noticeable events happening in the app'
      *
-     * TODO test when logger is not set
-     * 
      * @return void
      */
     public function notice(string $message): void {
