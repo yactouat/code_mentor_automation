@@ -38,8 +38,6 @@ final class CLIAppTest extends TestCase {
         $actual = LoggerService::getAppInstanceLoggerName();
         $this->assertEquals($expected, $actual);
     }
-    // TODO test that logger service has correct name on construct
-    // TODO same tests with no db conn
 
 }
 

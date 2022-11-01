@@ -9,6 +9,7 @@ use Tests\Traits\TestsStringsTrait;
 use Udacity\Apps\Web\WebApp;
 use Udacity\Apps\Web\Controllers\NotFoundController;
 use Udacity\Apps\Web\Controllers\Resource\SessionLeadsController;
+use Udacity\Services\LoggerService;
 
 final class WebAppTest extends TestCase {
 
@@ -294,6 +295,20 @@ final class WebAppTest extends TestCase {
         $this->assertTrue($this->stringsHaveSameContent($expectedPage, $actualPage));
         $this->assertEquals($expectedStatusCode, $actualStatusCode);
         $this->assertEquals([], $_SESSION);
+    }
+
+    public function testConstructSetsLoggerService() {
+        $expected = LoggerService::class;
+        $app = new WebApp('/var/www');
+        $actual = LoggerService::getAppInstanceLogger();
+        $this->assertInstanceOf($expected, $actual);
+    }
+
+    public function testConstructSetsCorrrectLoggerServiceName() {
+        $expected = 'test_web_logger';
+        $app = new WebApp('/var/www');
+        $actual = LoggerService::getAppInstanceLoggerName();
+        $this->assertEquals($expected, $actual);
     }
 
 }
