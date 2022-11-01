@@ -66,7 +66,6 @@ abstract class App {
      *
      * @return void
      * 
-     * TODO test that this logger writes at the right places
      */
     private function _setLoggerService(string $mode): void {
         $logger = LoggerService::getService(LoggerService::getAppInstanceLoggerName());

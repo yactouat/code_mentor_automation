@@ -391,20 +391,20 @@ Search.appendIndex(
             "summary": "this\u0020class\u0020represents\u0020the\u0020business\u0020logic\u0020behind\u0020sending\u0020students\u0020behind\u0020emails",
             "url": "classes/Udacity-Automations-BehindStudentsEmailAutomation.html"
         },                {
-            "fqsen": "\\Udacity\\Automations\\BehindStudentsEmailAutomation\u003A\u003Arun\u0028\u0029",
-            "name": "run",
+            "fqsen": "\\Udacity\\Automations\\BehindStudentsEmailAutomation\u003A\u003ArunCsv\u0028\u0029",
+            "name": "runCsv",
             "summary": "implements\u0020\u0060BehindStudentsEmailAutomation\u0060\u0020business\u0020logic",
-            "url": "classes/Udacity-Automations-BehindStudentsEmailAutomation.html#method_run"
+            "url": "classes/Udacity-Automations-BehindStudentsEmailAutomation.html#method_runCsv"
         },                {
             "fqsen": "\\Udacity\\Automations\\TrainingEndingEmailAutomation",
             "name": "TrainingEndingEmailAutomation",
             "summary": "this\u0020class\u0020represents\u0020the\u0020business\u0020logic\u0020behind\u0020sending\u0020all\u0020students\u0020a\u0020cheering\u0020up\u0020email\u0020before\u0020the\u0020end\u0020of\u0020the\u0020training",
             "url": "classes/Udacity-Automations-TrainingEndingEmailAutomation.html"
         },                {
-            "fqsen": "\\Udacity\\Automations\\TrainingEndingEmailAutomation\u003A\u003Arun\u0028\u0029",
-            "name": "run",
+            "fqsen": "\\Udacity\\Automations\\TrainingEndingEmailAutomation\u003A\u003ArunCsv\u0028\u0029",
+            "name": "runCsv",
             "summary": "implements\u0020\u0060TrainingEndingEmailAutomation\u0060\u0020business\u0020logic",
-            "url": "classes/Udacity-Automations-TrainingEndingEmailAutomation.html#method_run"
+            "url": "classes/Udacity-Automations-TrainingEndingEmailAutomation.html#method_runCsv"
         },                {
             "fqsen": "\\Udacity\\Csvs\\CsvExtractor",
             "name": "CsvExtractor",
@@ -1060,6 +1060,11 @@ Search.appendIndex(
             "name": "critical",
             "summary": "logs\u0020statistical\u0020data\u0020about\u0020undesired\u0020stateful\u0020events\u0020happening\u0020in\u0020the\u0020app\u0027",
             "url": "classes/Udacity-Services-LoggerService.html#method_critical"
+        },                {
+            "fqsen": "\\Udacity\\Services\\LoggerService\u003A\u003Adebug\u0028\u0029",
+            "name": "debug",
+            "summary": "logs\u0020debug\u0020data\u0020during\u0020app\u0027s\u0020development\u0020and\u0020tests\u0020phase",
+            "url": "classes/Udacity-Services-LoggerService.html#method_debug"
         },                {
             "fqsen": "\\Udacity\\Services\\LoggerService\u003A\u003AendTimer\u0028\u0029",
             "name": "endTimer",

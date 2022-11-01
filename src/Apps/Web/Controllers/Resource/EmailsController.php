@@ -43,8 +43,7 @@ final class EmailsController extends Controller implements ResourceControllerInt
             $fileDest = EmailsModel::$dataFolder . $_FILES[$fileKey]['name'];
             $this->uploadFile($fileKey, $fileDest);
             (new ('Udacity\Automations\\' . $automation)())
-                ->setNewLogger($this->getLogsDir() . 'web_app.log')
-                ->run($fileDest, $_POST['language']);
+                ->runCsv($fileDest, $_POST['language']);
         }
     }
 

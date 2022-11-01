@@ -40,6 +40,17 @@ final class LoggerService extends ServicesContainer {
     }
 
     /**
+     * logs debug data during app's development and tests phase
+     *
+     * TODO test when logger is not set
+     * 
+     * @return void
+     */
+    public function debug(string $message): void {
+        $this->logger->debug($message);
+    }
+
+    /**
      * ends a logging time span and writes the result in the logs
      *
      * @param string|null $logText

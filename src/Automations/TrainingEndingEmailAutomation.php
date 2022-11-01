@@ -20,7 +20,7 @@ final class TrainingEndingEmailAutomation extends Automation {
      * @param string $language
      * @return void
      */
-    public function run(
+    public function runCsv(
         string $csv, 
         string $language, 
         ?string $onlineResources = null

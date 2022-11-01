@@ -190,7 +190,7 @@ final class SendEmailsToBehindStudentsCommand extends Command
             ''
         ]);
         $process = new BehindStudentsEmailAutomation();
-        $process->run($csv, $language);
+        $process->runCsv($csv, $language);
 
         if (count($process->getErrors()) > 0) {
             $output->writeln([
