@@ -5,6 +5,7 @@ namespace Udacity\Emails;
 use Udacity\Exceptions\EmailNotDeliveredException;
 use Udacity\Exceptions\WritePermissionException;
 use Udacity\Exceptions\MsmtprcNotSetException;
+use Udacity\Exceptions\WrongEmailFormatException;
 use Udacity\Services\LoggerService;
 
 /**
@@ -66,8 +67,6 @@ final class Mailer
      * 
      * @return void actually sends the email
      * 
-     * TODO test that log message is written case failure
-     * TODO validate input email
      */
     public static function sendEmail(
         string $recipientEmail, 
@@ -75,6 +74,10 @@ final class Mailer
         string $htmlEmail,
         string $msmtprcPath = '/etc/msmtprc'
     ): void {
+        if (!filter_var($recipientEmail, FILTER_VALIDATE_EMAIL)) {
+            LoggerService::getAppInstanceLogger()->{'critical'}("wrong email: $recipientEmail");
+            throw new WrongEmailFormatException();
+        }
         self::checkMsmtprc($msmtprcPath);
         $delivered = mail(
             $recipientEmail,

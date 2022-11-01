@@ -1196,6 +1196,16 @@ Search.appendIndex(
             "summary": "logs\u0020a\u0020user\u0020in\u0020outside\u0020the\u0020context\u0020of\u0020a\u0020web\u0020controller",
             "url": "classes/Udacity-Traits-AuthTrait.html#method_logUserIn"
         },                {
+            "fqsen": "\\Udacity\\Exceptions\\WrongEmailFormatException",
+            "name": "WrongEmailFormatException",
+            "summary": "Exception\u0020thrown\u0020when\u0020the\u0020input\u0020email\u0020has\u0020a\u0020wrong\u0020format",
+            "url": "classes/Udacity-Exceptions-WrongEmailFormatException.html"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\WrongEmailFormatException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
+            "url": "classes/Udacity-Exceptions-WrongEmailFormatException.html#method___construct"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",

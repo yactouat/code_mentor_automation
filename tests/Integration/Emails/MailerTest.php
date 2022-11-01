@@ -6,6 +6,8 @@ use PHPUnit\Framework\TestCase;
 use Tests\TestsHelperTrait;
 use Udacity\Emails\Mailer;
 use Udacity\Exceptions\EmailNotDeliveredException;
+use Udacity\Exceptions\MsmtprcNotSetException;
+use Udacity\Exceptions\WrongEmailFormatException;
 
 final class MailerTest extends TestCase
 {
@@ -23,5 +25,30 @@ final class MailerTest extends TestCase
         }
         $actual = file_get_contents('/var/www/tests/fixtures/logs/php/web.log');
         $this->assertTrue($this->stringIsContainedInAnother($expected, $actual));
+    }
+
+    public function testEmailWithNonExistingMsmtprcThrows() {
+        $this->setLoggersWithMode();
+        $this->expectException(MsmtprcNotSetException::class);
+        $this->expectExceptionMessage("`msmptrc` file not configured");
+        $this->expectExceptionCode(1);
+        Mailer::sendEmail(
+            'johndoe@gmail.com',
+            'some_subjet',
+            'some_email',
+            '/etc/nonexistingrc'
+        );
+    }
+
+    public function testEmailWithInvalidEmailThrowsCorrectException() {
+        $this->setLoggersWithMode();
+        $this->expectException(WrongEmailFormatException::class);
+        $this->expectExceptionMessage('wrong email format');
+        $this->expectExceptionCode(1);
+        Mailer::sendEmail(
+            'johndoe@.com',
+            'some_subjet',
+            'some_email'
+        );
     }
 }
