@@ -47,7 +47,6 @@ final class LoggerServiceTest extends TestCase {
         $expected = "testLoggerServiceWithCliAppWritesLogsAtTheRightPlace";
         $app = new CLIApp('/var/www/tests/fixtures');
         LoggerService::getAppInstanceLogger()->debug('testLoggerServiceWithCliAppWritesLogsAtTheRightPlace');
-        var_dump(LoggerService::getAppInstanceLogger());
         $actual = file_get_contents('/var/www/tests/fixtures/logs/php/test_cli.log');
         $this->assertTrue($this->stringIsContainedInAnother($expected, $actual));
     }

@@ -64,7 +64,8 @@ final class EmailsModel extends Model {
      */
     public static function getValidEmailsTypes(): array {
         return [
-            'behind-students'
+            'behind-students',
+            'training-ending'
         ];
     }
 

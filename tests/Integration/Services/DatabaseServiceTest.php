@@ -34,7 +34,6 @@ final class DatabaseServiceTest extends TestCase {
         $this->expectException(NoDBConnException::class);
         $this->expectExceptionMessage('no database connectivity');
         $database = DatabaseService::getService('test_read_db');
-        var_dump($database);
     }
 
 }

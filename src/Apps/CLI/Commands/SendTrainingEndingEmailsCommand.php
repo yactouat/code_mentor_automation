@@ -203,7 +203,7 @@ final class SendTrainingEndingEmailsCommand extends Command
             '=============================================',
             ''
         ]);
-        (new TrainingEndingEmailAutomation())->runCsv($csv, $language, $onlineResources);
+        (new TrainingEndingEmailAutomation())->runFromCsv($csv, $language, $onlineResources);
 
         // feedback to user
         $output->writeln([

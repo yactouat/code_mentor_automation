@@ -307,5 +307,16 @@ final class WebAppTest extends TestCase {
         $this->assertEquals($expected, $actual);
     }
 
+    public function testGetResponseOutputWithEmailTrainingEndingRouteAuthedGetsRelevantForm() {
+        $this->authenticate();
+        $expected = file_get_contents('/var/www/tests/fixtures/views/emails.training-ending.create.html');
+        $_GET['type'] = "training-ending";
+        $app = new WebApp('/var/www/tests/fixtures');
+        $_GET['type'] = 'training-ending';
+        $app->handleRequest('/emails?type=training-ending');
+        $actual = $app->getResponseOutput();
+        $this->assertTrue($this->stringsHaveSameContent($expected, $actual));
+    }
+
 }
 

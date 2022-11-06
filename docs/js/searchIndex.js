@@ -391,20 +391,20 @@ Search.appendIndex(
             "summary": "this\u0020class\u0020represents\u0020the\u0020business\u0020logic\u0020behind\u0020sending\u0020students\u0020behind\u0020emails",
             "url": "classes/Udacity-Automations-BehindStudentsEmailAutomation.html"
         },                {
-            "fqsen": "\\Udacity\\Automations\\BehindStudentsEmailAutomation\u003A\u003ArunCsv\u0028\u0029",
-            "name": "runCsv",
+            "fqsen": "\\Udacity\\Automations\\BehindStudentsEmailAutomation\u003A\u003ArunFromCsv\u0028\u0029",
+            "name": "runFromCsv",
             "summary": "implements\u0020\u0060BehindStudentsEmailAutomation\u0060\u0020business\u0020logic",
-            "url": "classes/Udacity-Automations-BehindStudentsEmailAutomation.html#method_runCsv"
+            "url": "classes/Udacity-Automations-BehindStudentsEmailAutomation.html#method_runFromCsv"
         },                {
             "fqsen": "\\Udacity\\Automations\\TrainingEndingEmailAutomation",
             "name": "TrainingEndingEmailAutomation",
             "summary": "this\u0020class\u0020represents\u0020the\u0020business\u0020logic\u0020behind\u0020sending\u0020all\u0020students\u0020a\u0020cheering\u0020up\u0020email\u0020before\u0020the\u0020end\u0020of\u0020the\u0020training",
             "url": "classes/Udacity-Automations-TrainingEndingEmailAutomation.html"
         },                {
-            "fqsen": "\\Udacity\\Automations\\TrainingEndingEmailAutomation\u003A\u003ArunCsv\u0028\u0029",
-            "name": "runCsv",
+            "fqsen": "\\Udacity\\Automations\\TrainingEndingEmailAutomation\u003A\u003ArunFromCsv\u0028\u0029",
+            "name": "runFromCsv",
             "summary": "implements\u0020\u0060TrainingEndingEmailAutomation\u0060\u0020business\u0020logic",
-            "url": "classes/Udacity-Automations-TrainingEndingEmailAutomation.html#method_runCsv"
+            "url": "classes/Udacity-Automations-TrainingEndingEmailAutomation.html#method_runFromCsv"
         },                {
             "fqsen": "\\Udacity\\Csvs\\CsvExtractor",
             "name": "CsvExtractor",

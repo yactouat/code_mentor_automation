@@ -10,4 +10,4 @@ use Udacity\Apps\CLI\CLIApp;
 
 $application = new CLIApp(dirname(__DIR__));
 
-$application->runCsv();
+$application->run();

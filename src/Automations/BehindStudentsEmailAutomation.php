@@ -21,7 +21,7 @@ final class BehindStudentsEmailAutomation extends Automation {
      * @return void
      * 
      */
-    public function runCsv(string $csv, string $language): void {
+    public function runFromCsv(string $csv, string $language): void {
         // get students who are behind coordinates (first and last name, email)
         $behindStudentsCoordinates = CsvExtractor::getBehindStudentsCoordinates($csv);
         $subject = $language == "fr" ? "Session Connect Udacity": "Udacity Connect session";

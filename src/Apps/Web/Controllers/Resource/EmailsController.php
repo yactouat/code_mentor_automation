@@ -3,7 +3,6 @@
 namespace Udacity\Apps\Web\Controllers\Resource;
 
 use Udacity\Apps\Web\Controllers\Controller;
-use Udacity\Services\LoggerService;
 use Udacity\Models\EmailsModel;
 
 /**
@@ -43,7 +42,7 @@ final class EmailsController extends Controller implements ResourceControllerInt
             $fileDest = EmailsModel::$dataFolder . $_FILES[$fileKey]['name'];
             $this->uploadFile($fileKey, $fileDest);
             (new ('Udacity\Automations\\' . $automation)())
-                ->runCsv($fileDest, $_POST['language']);
+                ->runFromCsv($fileDest, $_POST['language']);
         }
     }
 
