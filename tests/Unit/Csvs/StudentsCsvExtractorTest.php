@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Csv;
+namespace Tests\Unit\Csvs;
 
 use Udacity\Csvs\StudentsCsvExtractor as CsvExtractor;
 use Udacity\Models\StudentModel;

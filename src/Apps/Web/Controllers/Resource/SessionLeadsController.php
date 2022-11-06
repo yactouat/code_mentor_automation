@@ -3,6 +3,7 @@
 namespace Udacity\Apps\Web\Controllers\Resource;
 
 use Udacity\Apps\Web\Controllers\Controller;
+use Udacity\Apps\Web\WebApp;
 use Udacity\Models\SessionLeadModel;
 
 /**
@@ -36,7 +37,7 @@ final class SessionLeadsController extends Controller implements ResourceControl
     /**
      * shows the relevant page for the session lead based on his/hers auth status
      * 
-     * @return string - the built login or session lead home page
+     * @return string the built login or session lead home page
      */    
     public function index(): string
     {
@@ -79,10 +80,7 @@ final class SessionLeadsController extends Controller implements ResourceControl
      * @return string
      */
     public function logout(): string {
-        $_SESSION = [];
-        if (\session_status() === PHP_SESSION_ACTIVE) {
-            session_destroy();
-        }
+        WebApp::resetSession();
         return $this->login();
     }
 

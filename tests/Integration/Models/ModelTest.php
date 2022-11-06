@@ -5,16 +5,16 @@ namespace Tests\Integration\Models;
 require_once "/var/www/tests/fixtures/classes/ModelWithNoTable.php";
 require_once "/var/www/tests/fixtures/classes/DummyModel.php";
 
-use Udacity\Database;
+use Udacity\Services\DatabaseService;
 use DummyModel;
 use ModelWithNoTable;
 use PHPUnit\Framework\TestCase;
-use Tests\Traits\TestsLoaderTrait;
+use Tests\TestsHelperTrait;
 use Udacity\Exceptions\SQLTableNotSetException;
 
 final class ModelTest extends TestCase {
 
-    use TestsLoaderTrait;
+    use TestsHelperTrait;
 
     protected function setUp(): void
     {
@@ -23,7 +23,7 @@ final class ModelTest extends TestCase {
 
     protected function tearDown(): void
     {
-        $this->database->writeQuery('TRUNCATE udacity_sl_automation.dummy');
+        DatabaseService::getService('test_write_db')->{'writeQuery'}('TRUNCATE udacity_sl_automation.dummy');
     }
 
     public function testConstructWithNoTableNameSetThrows() {
@@ -53,8 +53,8 @@ final class ModelTest extends TestCase {
             ]
         ];
         $dummy = new DummyModel();
-        $dbName = Database::$dbName;
-        $this->database->writeQuery("INSERT INTO $dbName.dummy (some_field) VALUES 
+        $dbName = DatabaseService::$dbName;
+        DatabaseService::getService('test_write_db')->{'writeQuery'}("INSERT INTO $dbName.dummy (some_field) VALUES 
             ('test'),
             ('test2'),
             ('test3'),

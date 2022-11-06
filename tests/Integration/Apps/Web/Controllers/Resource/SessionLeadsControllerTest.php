@@ -3,16 +3,13 @@
 namespace Tests\Integration\Apps\Web\Controllers\Resource;
 
 use PHPUnit\Framework\TestCase;
-use Tests\Traits\TestsAuthenticateTrait;
-use Tests\Traits\TestsLoaderTrait;
-use Tests\Traits\TestsStringsTrait;
+use Tests\TestsHelperTrait;
 use Udacity\Apps\Web\Controllers\Resource\SessionLeadsController;
+use Udacity\Services\DatabaseService;
 
 final class SessionLeadsControllerTest extends TestCase {
 
-    use TestsAuthenticateTrait;
-    use TestsLoaderTrait;
-    use TestsStringsTrait;
+    use TestsHelperTrait;
 
     protected function setUp(): void
     {
@@ -98,7 +95,7 @@ final class SessionLeadsControllerTest extends TestCase {
             'user_passphrase' => 'test user password',
         ];
         $ctlr->persist();
-        $actual = $this->database->readQuery('SELECT * FROM sessionlead')[0];
+        $actual = DatabaseService::getService('test_read_db')->{'readQuery'}('SELECT * FROM sessionlead')[0];
         $this->assertEquals($expected['email'], $actual['email']);
         $this->assertEquals($expected['first_name'], $actual['first_name']);
         $this->assertTrue(password_verify($expected['google_app_password'], $actual['google_app_password']));

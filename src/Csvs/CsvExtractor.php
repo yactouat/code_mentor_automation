@@ -2,7 +2,9 @@
 
 namespace Udacity\Csvs;
 
+use Udacity\Traits\ArraysTrait;
 use Udacity\Exceptions\InvalidCsvDataException;
+use Udacity\Exceptions\KeyValueArrayExpectedException;
 use Udacity\Exceptions\NonExistingFileException;
 
 /**
@@ -11,6 +13,8 @@ use Udacity\Exceptions\NonExistingFileException;
  */
 class CsvExtractor
 {
+
+    use ArraysTrait;
 
     /**
      * checks if an input CSV exists, throws Exception if not

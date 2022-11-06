@@ -4,11 +4,11 @@ namespace Tests\Integration\Models;
 
 use Udacity\Models\SessionLeadModel;
 use PHPUnit\Framework\TestCase;
-use Tests\Traits\TestsLoaderTrait;
+use Tests\TestsHelperTrait;
 
 final class SessionLeadModelTest extends TestCase {
 
-    use TestsLoaderTrait;
+    use TestsHelperTrait;
 
     protected function setUp(): void
     {

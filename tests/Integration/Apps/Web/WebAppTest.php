@@ -3,18 +3,15 @@
 namespace Tests\Integration\Apps\Web;
 
 use PHPUnit\Framework\TestCase;
-use Tests\Traits\TestsLoaderTrait;
-use Tests\Traits\TestsAuthenticateTrait;
-use Tests\Traits\TestsStringsTrait;
+use Tests\TestsHelperTrait;
 use Udacity\Apps\Web\WebApp;
 use Udacity\Apps\Web\Controllers\NotFoundController;
 use Udacity\Apps\Web\Controllers\Resource\SessionLeadsController;
+use Udacity\Services\LoggerService;
 
 final class WebAppTest extends TestCase {
 
-    use TestsAuthenticateTrait;
-    use TestsLoaderTrait;
-    use TestsStringsTrait;
+    use TestsHelperTrait;
 
     protected function setUp(): void
     {
@@ -166,7 +163,7 @@ final class WebAppTest extends TestCase {
         $this->assertTrue($this->stringsHaveSameContent($expected, $actual));
     } 
 
-    public function testGetResponseOutputWithSessionLeadsLogoutRouteGetsLoginPage() {
+    public function testGetResponseOutputWithSessionLeadsLogoutRouteUnauthedGetsLoginPage() {
         $expected = file_get_contents('/var/www/tests/fixtures/views/session-leads.login.html');
         $app = new WebApp('/var/www/tests/fixtures');
         $app->handleRequest('/logout');
@@ -256,6 +253,69 @@ final class WebAppTest extends TestCase {
      */
     public function testTmpIsWritable() {
         $this->assertTrue(is_writable('/var/www/data/sessions'));
+    }
+
+    public function testGetResponseOutputWithHomeRouteButNoDbConnReturnsExpectedResponse() {
+        $this->resetWithBadDbHost();
+        $expectedPage = file_get_contents('/var/www/tests/fixtures/views/server-error.html');
+        $expectedStatusCode = 500;
+        $app = new WebApp('/var/www/tests/fixtures');
+        $app->handleRequest('/');
+        $actualPage = $app->getResponseOutput();
+        $actualStatusCode = $app->getStatusCode();
+        $this->assertTrue($this->stringsHaveSameContent($expectedPage, $actualPage));
+        $this->assertEquals($expectedStatusCode, $actualStatusCode);
+    }
+
+    public function testGetResponseOutputWithLoginRouteButNoDbConnReturnsExpectedResponse() {
+        $this->resetWithBadDbHost();
+        $expectedPage = file_get_contents('/var/www/tests/fixtures/views/server-error.html');
+        $expectedStatusCode = 500;
+        $app = new WebApp('/var/www/tests/fixtures');
+        $app->handleRequest('/login');
+        $actualPage = $app->getResponseOutput();
+        $actualStatusCode = $app->getStatusCode();
+        $this->assertTrue($this->stringsHaveSameContent($expectedPage, $actualPage));
+        $this->assertEquals($expectedStatusCode, $actualStatusCode);
+    }
+
+    public function testGetResponseOutputAuthedWithHomeRouteButNoDbConnReturnsExpectedResponseAndResetsTheSession() {
+        $this->authenticate();
+        $this->resetWithBadDbHost();
+        $expectedPage = file_get_contents('/var/www/tests/fixtures/views/server-error.html');
+        $expectedStatusCode = 500;
+        $app = new WebApp('/var/www/tests/fixtures');
+        $app->handleRequest('/');
+        $actualPage = $app->getResponseOutput();
+        $actualStatusCode = $app->getStatusCode();
+        $this->assertTrue($this->stringsHaveSameContent($expectedPage, $actualPage));
+        $this->assertEquals($expectedStatusCode, $actualStatusCode);
+        $this->assertEquals([], $_SESSION);
+    }
+
+    public function testConstructSetsLoggerService() {
+        $expected = LoggerService::class;
+        $app = new WebApp('/var/www');
+        $actual = LoggerService::getAppInstanceLogger();
+        $this->assertInstanceOf($expected, $actual);
+    }
+
+    public function testConstructSetsCorrrectLoggerServiceName() {
+        $expected = 'test_web_logger';
+        $app = new WebApp('/var/www');
+        $actual = LoggerService::getAppInstanceLoggerName();
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testGetResponseOutputWithEmailTrainingEndingRouteAuthedGetsRelevantForm() {
+        $this->authenticate();
+        $expected = file_get_contents('/var/www/tests/fixtures/views/emails.training-ending.create.html');
+        $_GET['type'] = "training-ending";
+        $app = new WebApp('/var/www/tests/fixtures');
+        $_GET['type'] = 'training-ending';
+        $app->handleRequest('/emails?type=training-ending');
+        $actual = $app->getResponseOutput();
+        $this->assertTrue($this->stringsHaveSameContent($expected, $actual));
     }
 
 }

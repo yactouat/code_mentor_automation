@@ -1,6 +1,6 @@
 <?php
 
-namespace Udacity;
+namespace Udacity\Traits;
 
 use Udacity\Models\SessionLeadModel;
 
@@ -14,7 +14,8 @@ trait AuthTrait {
      *
      * @return boolean - if the user is authenticated
      */
-    protected function isAuthed(): bool {
+    public function isAuthed(): bool {
+        $_ENV['APP_MODE'] = empty($_ENV['APP_MODE']) ? 'web' : $_ENV['APP_MODE'];
         switch ($_ENV['APP_MODE']) {
             case 'web':
                 return isset($_SESSION['authed']) && $_SESSION['authed'] === true;
@@ -28,7 +29,7 @@ trait AuthTrait {
     /**
      * gets the authenticated user first name, whether in web or cli mode
      *
-     * @return string - the authed user first name or an empty string
+     * @return string the authed user first name or an empty string
      */
     public static function getAuthedUserFirstName(): string {
         switch ($_ENV['APP_MODE']) {

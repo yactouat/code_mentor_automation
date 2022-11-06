@@ -3,14 +3,14 @@
 namespace Tests\Integration\Apps;
 
 use PHPUnit\Framework\TestCase;
-use Tests\Traits\TestsLoaderTrait;
+use Tests\TestsHelperTrait;
 use Udacity\Apps\CLI\CLIApp;
 use Udacity\Apps\Web\WebApp;
 use Udacity\Exceptions\BadEnvException;
 
 final class AppTest extends TestCase {
 
-    use TestsLoaderTrait;
+    use TestsHelperTrait;
 
     protected function setUp(): void
     {

@@ -5,7 +5,6 @@ namespace Udacity\Apps\CLI\Commands;
 use Udacity\Csvs\CsvExtractor;
 use Udacity\Emails\Mailer;
 use Udacity\Intl;
-use Udacity\LoggerTrait;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
@@ -15,7 +14,7 @@ use Symfony\Component\Console\Output\ConsoleOutputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Symfony\Component\Console\Question\Question;
-use Udacity\AuthTrait;
+use Udacity\Traits\AuthTrait;
 use Udacity\Automations\TrainingEndingEmailAutomation;
 use Udacity\Exceptions\AllowedLanguageException;
 use Udacity\Exceptions\MsmtprcNotSetException;
@@ -31,7 +30,6 @@ final class SendTrainingEndingEmailsCommand extends Command
 {
 
     use AuthTrait;
-    use LoggerTrait;
 
     const COMMAND_HELP = 'This command allows you to send emails in bulk to students to cheer them up as the end of the nanodegree program approaches.';
     const CSV_ARG = 'csv';
@@ -205,7 +203,7 @@ final class SendTrainingEndingEmailsCommand extends Command
             '=============================================',
             ''
         ]);
-        ((new TrainingEndingEmailAutomation())->setLogger($this->logger))->run($csv, $language, $onlineResources);
+        (new TrainingEndingEmailAutomation())->runFromCsv($csv, $language, $onlineResources);
 
         // feedback to user
         $output->writeln([

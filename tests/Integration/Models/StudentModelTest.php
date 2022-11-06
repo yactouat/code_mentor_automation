@@ -4,16 +4,17 @@ namespace Tests\Integration\Models;
 
 use Udacity\Models\StudentModel;
 use PHPUnit\Framework\TestCase;
-use Tests\Traits\TestsLoaderTrait;
+use Tests\TestsHelperTrait;
+use Udacity\Services\DatabaseService;
 
 final class StudentModelTest extends TestCase {
 
-    use TestsLoaderTrait;
+    use TestsHelperTrait;
 
     protected function setUp(): void
     {
         $this->loadEnv();
-        $this->database->writeQuery('TRUNCATE udacity_sl_automation.student');
+        DatabaseService::getService('test_write_db')->{'writeQuery'}('TRUNCATE udacity_sl_automation.student');
     }
 
     public function testPersistPersistsInstanceInDb() {

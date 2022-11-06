@@ -3,8 +3,8 @@
 namespace Udacity\Apps\Web\Controllers\Resource;
 
 use Udacity\Apps\Web\Controllers\Controller;
-use Udacity\LoggerTrait;
 use Udacity\Models\EmailsModel;
+use Udacity\Models\OnlineResourceModel;
 
 /**
  * this controller is responsible for handling requests related to sending emails from the web
@@ -12,7 +12,6 @@ use Udacity\Models\EmailsModel;
 final class EmailsController extends Controller implements ResourceControllerInterface {
 
     use FilesUploadsTrait;
-    use LoggerTrait;
 
     /**
      * {@inheritDoc}
@@ -29,9 +28,13 @@ final class EmailsController extends Controller implements ResourceControllerInt
      *
      * @return void
      */
-    private function _processBatchEmailsInput(string $automation): void {
-        $fileKey = 'sessreportcsv';
-        $errors = EmailsModel::validateInputFields($this->getEmailsPayloadToValidate($fileKey));
+    private function _processBatchEmailsInput(): void {
+        $sessReportFileKey = 'sessreportcsv';
+        $onlineResourcesFileKey = 'onlineresourcescsv';
+        $errors = array_merge(
+            EmailsModel::validateInputFields($this->getEmailsPayloadToValidate($sessReportFileKey)),
+            OnlineResourceModel::validateInputFields($this->getEmailsPayloadToValidate($onlineResourcesFileKey))
+        );
         if (!isset($_POST['submit'])) {
             $errors[] = '⚠️ Please send a valid form using the `submit` button';
         }
@@ -41,11 +44,16 @@ final class EmailsController extends Controller implements ResourceControllerInt
             $this->setTwigData($invalidEmailType ? [] :['errors' => $errors, 'userInput' => $_POST]);
             $this->setTwigTemplate($invalidEmailType ? self::$homeTemplatePath : 'emails/' . $_POST['type'] . '.create.html.twig');
         } else {
-            $fileDest = EmailsModel::$dataFolder . $_FILES[$fileKey]['name'];
-            $this->uploadFile($fileKey, $fileDest);
+            $automation = EmailsModel::getAutomationToRunFromEmailType($_POST['type']);
+            $sessReportFileDest = EmailsModel::$dataFolder . $_FILES[$sessReportFileKey]['name'];
+            $onlineResourcesFileDest = null;
+            if (!empty($_FILES[$onlineResourcesFileKey]['name'])) {
+                $onlineResourcesFileDest = EmailsModel::$dataFolder . $_FILES[$onlineResourcesFileKey]['name'];
+                $this->uploadFile($onlineResourcesFileKey, $onlineResourcesFileDest);
+            }
+            $this->uploadFile($sessReportFileKey, $sessReportFileDest);
             (new ('Udacity\Automations\\' . $automation)())
-                ->setNewLogger($this->getLogsDir() . 'web_app.log')
-                ->run($fileDest, $_POST['language']);
+                ->runFromCsv($sessReportFileDest, $_POST['language'], $onlineResourcesFileDest);
         }
     }
 
@@ -99,7 +107,7 @@ final class EmailsController extends Controller implements ResourceControllerInt
         $this->setAuthedStatusCode(200);
         // running the automation
         if ($this->isAuthed()) {
-            $this->_processBatchEmailsInput('BehindStudentsEmailAutomation');
+            $this->_processBatchEmailsInput();
         }
         return $this->getRenderer()->render($this->getTwigTemplate(), $this->getTwigData());
     }

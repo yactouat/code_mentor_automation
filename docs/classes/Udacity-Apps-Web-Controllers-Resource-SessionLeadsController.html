@@ -83,6 +83,14 @@
                 <a href="namespaces/udacity-models.html" class="">Models</a>
                 
             </li>
+                    <li>
+                <a href="namespaces/udacity-services.html" class="">Services</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/udacity-traits.html" class="">Traits</a>
+                
+            </li>
             </ul>
 
                         </section>
@@ -140,7 +148,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">12</span>
 
     </aside>
 
@@ -243,7 +251,7 @@
 <dd>shows the web form to create an instance of the related resource</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Udacity-AuthTrait.html#method_getAuthedUserFirstName">getAuthedUserFirstName()</a>
+    <a href="classes/Udacity-Traits-AuthTrait.html#method_getAuthedUserFirstName">getAuthedUserFirstName()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
@@ -271,6 +279,13 @@
 <dd>shows the relevant page for the session lead based on his/hers auth status</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Udacity-Traits-AuthTrait.html#method_isAuthed">isAuthed()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>checks if the user is authenticated whether in web or cli mode</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#method_login">login()</a>
     <span>
                                 &nbsp;: string    </span>
@@ -285,7 +300,7 @@
 <dd>logs a session lead out then renders the login page</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Udacity-AuthTrait.html#method_logUserIn">logUserIn()</a>
+    <a href="classes/Udacity-Traits-AuthTrait.html#method_logUserIn">logUserIn()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
@@ -318,13 +333,6 @@
                                 &nbsp;: string    </span>
 </dt>
 <dd>returns the set Twig template for this instance</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/Udacity-AuthTrait.html#method_isAuthed">isAuthed()</a>
-    <span>
-                                &nbsp;: bool    </span>
-</dt>
-<dd>checks if the user is authenticated whether in web or cli mode</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Udacity-Apps-Web-Controllers-Controller.html#method_setAuthedStatusCode">setAuthedStatusCode()</a>
@@ -481,7 +489,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 
     </aside>
 
@@ -650,7 +658,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 
     </aside>
 
@@ -683,7 +691,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 
     </aside>
 
@@ -711,12 +719,12 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_getAuthedUserFirstName">
         getAuthedUserFirstName()
-        <a href="classes/Udacity-AuthTrait.html#method_getAuthedUserFirstName" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Udacity-Traits-AuthTrait.html#method_getAuthedUserFirstName" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/AuthTrait.php"><a href="files/src-authtrait.html"><abbr title="src/AuthTrait.php">AuthTrait.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/AuthTrait.php"><a href="files/src-traits-authtrait.html"><abbr title="src/Traits/AuthTrait.php">AuthTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 
     </aside>
 
@@ -733,9 +741,7 @@
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-            <section class="phpdocumentor-description"><ul>
-<li>the authed user first name or an empty string</li>
-</ul>
+            <section class="phpdocumentor-description"><p>the authed user first name or an empty string</p>
 </section>
 
     
@@ -819,7 +825,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">42</span>
 
     </aside>
 
@@ -836,8 +842,43 @@
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
+            <section class="phpdocumentor-description"><p>the built login or session lead home page</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_isAuthed">
+        isAuthed()
+        <a href="classes/Udacity-Traits-AuthTrait.html#method_isAuthed" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/AuthTrait.php"><a href="files/src-traits-authtrait.html"><abbr title="src/Traits/AuthTrait.php">AuthTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">17</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">checks if the user is authenticated whether in web or cli mode</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">isAuthed</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
             <section class="phpdocumentor-description"><ul>
-<li>the built login or session lead home page</li>
+<li>if the user is authenticated</li>
 </ul>
 </section>
 
@@ -856,7 +897,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 
     </aside>
 
@@ -891,7 +932,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">81</span>
+    <span class="phpdocumentor-element-found-in__line">82</span>
 
     </aside>
 
@@ -919,12 +960,12 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_logUserIn">
         logUserIn()
-        <a href="classes/Udacity-AuthTrait.html#method_logUserIn" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Udacity-Traits-AuthTrait.html#method_logUserIn" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/AuthTrait.php"><a href="files/src-authtrait.html"><abbr title="src/AuthTrait.php">AuthTrait.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/AuthTrait.php"><a href="files/src-traits-authtrait.html"><abbr title="src/Traits/AuthTrait.php">AuthTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">53</span>
 
     </aside>
 
@@ -978,7 +1019,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php"><a href="files/src-apps-web-controllers-resource-sessionleadscontroller.html"><abbr title="src/Apps/Web/Controllers/Resource/SessionLeadsController.php">SessionLeadsController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">92</span>
+    <span class="phpdocumentor-element-found-in__line">90</span>
 
     </aside>
 
@@ -1106,43 +1147,6 @@
     <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
         
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_isAuthed">
-        isAuthed()
-        <a href="classes/Udacity-AuthTrait.html#method_isAuthed" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/AuthTrait.php"><a href="files/src-authtrait.html"><abbr title="src/AuthTrait.php">AuthTrait.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">17</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">checks if the user is authenticated whether in web or cli mode</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">isAuthed</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-            <section class="phpdocumentor-description"><ul>
-<li>if the user is authenticated</li>
-</ul>
-</section>
-
     
 </article>
                     <article

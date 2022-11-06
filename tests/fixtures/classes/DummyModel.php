@@ -1,6 +1,6 @@
 <?php
 
-use Udacity\Database;
+use Udacity\Services\DatabaseService;
 use Udacity\Models\Model;
 
 final class DummyModel extends Model {
