@@ -841,6 +841,11 @@ Search.appendIndex(
             "summary": "finishes\u0020the\u0020construction\u0020of\u0020the\u0020instance\u0020model",
             "url": "classes/Udacity-Models-EmailsModel.html#method___construct"
         },                {
+            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AgetAutomationToRunFromEmailType\u0028\u0029",
+            "name": "getAutomationToRunFromEmailType",
+            "summary": "gets\u0020the\u0020name\u0020of\u0020the\u0020automation\u0020to\u0020run\u0020based\u0020on\u0020the\u0020email\u0020type",
+            "url": "classes/Udacity-Models-EmailsModel.html#method_getAutomationToRunFromEmailType"
+        },                {
             "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AgetCsvFields\u0028\u0029",
             "name": "getCsvFields",
             "summary": "getting\u0020Udacity\u0020CSV\u0020fields\u0020for\u0020the\u0020given\u0020model",

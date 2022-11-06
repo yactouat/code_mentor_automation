@@ -60,10 +60,18 @@ final class OnlineResourceModel extends Model {
 
     /**
      * {@inheritDoc}
+     * 
      */
     public static function validateInputFields(array $fields): array
     {
-        return [];
+        $errors = [];
+        if(!empty($fields['onlineresourcescsv']['name']) && !in_array(
+            strtolower(pathinfo($fields['onlineresourcescsv']['name'], PATHINFO_EXTENSION)),
+            ['csv']
+        )) {
+            $errors[] = '📄 The uploaded file must be a CSV';
+        }
+        return $errors;
     }
 
 }

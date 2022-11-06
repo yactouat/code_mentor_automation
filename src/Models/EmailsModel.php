@@ -31,6 +31,21 @@ final class EmailsModel extends Model {
     }
 
     /**
+     * gets the name of the automation to run based on the email type
+     *
+     * @param string $type
+     * @return string
+     */
+    public static function getAutomationToRunFromEmailType(string $type): string {
+        switch ($type) {
+            case 'behind-students':
+                return 'BehindStudentsEmailAutomation';
+            case 'training-ending';
+                return 'TrainingEndingEmailAutomation';
+        }
+    }
+
+    /**
      * {@inheritDoc}
      * 
      * ! not implemented

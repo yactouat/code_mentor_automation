@@ -21,7 +21,7 @@
 	    enctype="multipart/form-data"
         class="app-form m-auto"
     >
-        <input type="hidden" name="type" value="behind-students"/>
+        <input type="hidden" name="type" value="training-ending"/>
         <h1 class="h3 mb-3 fw-normal">Emails to Students as Training Ends</h1>
         <div class="mb-3 with-tooltip">
           <label for="formFile" class="form-label">Udacity session report CSV</label>
@@ -40,9 +40,12 @@
             <img src="fr_language.png" alt="french language flag" class="form-flag"/>
         </div>
         <div class="mb-3 with-tooltip">
-            <label for="formFile" class="form-label">Online resources CSV</label>
-            <input class="form-control" id="formFile" type="file" name="onlineresourcescsv" accept=".csv">
+            <label for="formFile" class="form-label">Online resources CSV *</label>
+            <input class="form-control" id="formFile" type="file" name="onlineresourcescsv" accept=".csv" aria-describedby="onlineResourcesCsvHelpBlock">
             <i class="bi bi-question-square" data-bs-toggle="modal" data-bs-target="#onlineResourcesCsvHelpModal"></i>
+            <div id="onlineResourcesCsvHelpBlock" class="form-text">
+                This input is optional.
+            </div>
         </div>
         <input class="w-100 btn btn-lg btn-primary" type="submit" name="submit" value="Send Emails">
         <p class="mt-5 mb-3 text-muted"><a href="/">go back</a></p>
