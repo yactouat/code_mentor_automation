@@ -33,7 +33,7 @@ I felt the need to automate a few tasks to gain more efficiency and focus more o
 There are always 2 ways of running the automations:
 
 - the CLI, accessible from the `bin` directory
-- the web application UI, accessible from the `public` directory (WIP)
+- the web application UI, accessible from the `public` directory
 
 Currently enabled automations are:
 
