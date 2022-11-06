@@ -14,7 +14,8 @@ trait AuthTrait {
      *
      * @return boolean - if the user is authenticated
      */
-    protected function isAuthed(): bool {
+    public function isAuthed(): bool {
+        $_ENV['APP_MODE'] = empty($_ENV['APP_MODE']) ? 'web' : $_ENV['APP_MODE'];
         switch ($_ENV['APP_MODE']) {
             case 'web':
                 return isset($_SESSION['authed']) && $_SESSION['authed'] === true;

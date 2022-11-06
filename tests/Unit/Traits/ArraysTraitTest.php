@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\Unit\Traits;
 
 use PHPUnit\Framework\TestCase;
 use Udacity\Traits\ArraysTrait;
