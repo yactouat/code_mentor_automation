@@ -231,6 +231,56 @@ Search.appendIndex(
             "summary": "builds\u0020the\u0020not\u0020found\u0020HTML\u0020page",
             "url": "classes/Udacity-Apps-Web-Controllers-NotFoundController.html#method_index"
         },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\EmailsController",
+            "name": "EmailsController",
+            "summary": "this\u0020controller\u0020is\u0020responsible\u0020for\u0020handling\u0020requests\u0020related\u0020to\u0020sending\u0020emails\u0020from\u0020the\u0020web",
+            "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\EmailsController\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "parent\u0020controller\u0020constructor",
+            "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method___construct"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\EmailsController\u003A\u003A_processBatchEmailsInput\u0028\u0029",
+            "name": "_processBatchEmailsInput",
+            "summary": "takes\u0020in\u0020the\u0020input\u0020session\u0020report\u0020CSV\u0020and\u0020runs\u0020the\u0020automation\u0020to\u0020send\u0020the\u0020emails\u0020if\u0020validated\u0020or\u0020sets\u0020an\u0020errors\u0020array\u0020to\u0020be\u0020displayed\u0020to\u0020the\u0020user",
+            "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method__processBatchEmailsInput"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\EmailsController\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "shows\u0020the\u0020web\u0020form\u0020to\u0020create\u0020an\u0020instance\u0020of\u0020the\u0020related\u0020resource",
+            "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method_create"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\EmailsController\u003A\u003AgetEmailsPayloadToValidate\u0028\u0029",
+            "name": "getEmailsPayloadToValidate",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method_getEmailsPayloadToValidate"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\EmailsController\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "\u0021\u0020not\u0020implemented",
+            "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method_index"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\EmailsController\u003A\u003Apersist\u0028\u0029",
+            "name": "persist",
+            "summary": "saves\u0020data\u0020related\u0020to\u0020the\u0020linked\u0020resource",
+            "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method_persist"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\FilesUploadsTrait",
+            "name": "FilesUploadsTrait",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-Controllers-Resource-FilesUploadsTrait.html"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\FilesUploadsTrait\u003A\u003AgetUploadedFile\u0028\u0029",
+            "name": "getUploadedFile",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-Controllers-Resource-FilesUploadsTrait.html#method_getUploadedFile"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\FilesUploadsTrait\u003A\u003AuploadFile\u0028\u0029",
+            "name": "uploadFile",
+            "summary": "",
+            "url": "classes/Udacity-Apps-Web-Controllers-Resource-FilesUploadsTrait.html#method_uploadFile"
+        },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\ResourceControllerInterface",
             "name": "ResourceControllerInterface",
             "summary": "this\u0020inteface\u0020defines\u0020what\u0020a\u0020resource\u0020controller\u0020should\u0020do",
@@ -290,6 +340,21 @@ Search.appendIndex(
             "name": "createTemplatePath",
             "summary": "path\u0020to\u0020the\u0020Twig\u0020template\u0020of\u0020the\u0020signup\u0020form",
             "url": "classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html#property_createTemplatePath"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\ServerErrorController",
+            "name": "ServerErrorController",
+            "summary": "controller\u0020responsible\u0020for\u0020showing\u0020an\u0020output\u0020when\u0020a\u0020server\u0020error\u0020happens\u0020on\u0020a\u0020client\u0020request",
+            "url": "classes/Udacity-Apps-Web-Controllers-ServerErrorController.html"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\ServerErrorController\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "constructor",
+            "url": "classes/Udacity-Apps-Web-Controllers-ServerErrorController.html#method___construct"
+        },                {
+            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\ServerErrorController\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "builds\u0020the\u0020server\u0020error\u0020HTML\u0020page",
+            "url": "classes/Udacity-Apps-Web-Controllers-ServerErrorController.html#method_index"
         },                {
             "fqsen": "\\Udacity\\Apps\\Web\\Routes",
             "name": "Routes",
@@ -536,6 +601,16 @@ Search.appendIndex(
             "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
             "url": "classes/Udacity-Exceptions-InvalidCsvDataException.html#method___construct"
         },                {
+            "fqsen": "\\Udacity\\Exceptions\\KeyValueArrayExpectedException",
+            "name": "KeyValueArrayExpectedException",
+            "summary": "Exception\u0020thrown\u0020when\u0020an\u0020input\u0020CSV\u0020does\u0020not\u0020contain\u0020valid\u0020data",
+            "url": "classes/Udacity-Exceptions-KeyValueArrayExpectedException.html"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\KeyValueArrayExpectedException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
+            "url": "classes/Udacity-Exceptions-KeyValueArrayExpectedException.html#method___construct"
+        },                {
             "fqsen": "\\Udacity\\Exceptions\\MsmtprcNotSetException",
             "name": "MsmtprcNotSetException",
             "summary": "Exception\u0020thrown\u0020when\u0020the\u0020\u0060msmtprc\u0060\u0020file\u0020is\u0020not\u0020set\u0020in\u0020the\u0020system",
@@ -545,6 +620,21 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
             "url": "classes/Udacity-Exceptions-MsmtprcNotSetException.html#method___construct"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\NoDBConnException",
+            "name": "NoDBConnException",
+            "summary": "Exception\u0020thrown\u0020when\u0020there\u0020is\u0020no\u0020connectivity\u0020to\u0020a\u0020database",
+            "url": "classes/Udacity-Exceptions-NoDBConnException.html"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\NoDBConnException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
+            "url": "classes/Udacity-Exceptions-NoDBConnException.html#method___construct"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\NoDBConnException\u003A\u003AMESSAGE",
+            "name": "MESSAGE",
+            "summary": "",
+            "url": "classes/Udacity-Exceptions-NoDBConnException.html#constant_MESSAGE"
         },                {
             "fqsen": "\\Udacity\\Exceptions\\NonExistingFileException",
             "name": "NonExistingFileException",
@@ -576,6 +666,26 @@ Search.appendIndex(
             "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
             "url": "classes/Udacity-Exceptions-UserNotAuthedException.html#method___construct"
         },                {
+            "fqsen": "\\Udacity\\Exceptions\\WritePermissionException",
+            "name": "WritePermissionException",
+            "summary": "Exception\u0020thrown\u0020when\u0020the\u0020\u0060msmtprc\u0060\u0020file\u0020is\u0020not\u0020set\u0020in\u0020the\u0020system",
+            "url": "classes/Udacity-Exceptions-WritePermissionException.html"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\WritePermissionException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
+            "url": "classes/Udacity-Exceptions-WritePermissionException.html#method___construct"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\WrongEmailFormatException",
+            "name": "WrongEmailFormatException",
+            "summary": "Exception\u0020thrown\u0020when\u0020the\u0020input\u0020email\u0020has\u0020a\u0020wrong\u0020format",
+            "url": "classes/Udacity-Exceptions-WrongEmailFormatException.html"
+        },                {
+            "fqsen": "\\Udacity\\Exceptions\\WrongEmailFormatException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
+            "url": "classes/Udacity-Exceptions-WrongEmailFormatException.html#method___construct"
+        },                {
             "fqsen": "\\Udacity\\Intl",
             "name": "Intl",
             "summary": "this\u0020class\u0020is\u0020responsible\u0020for\u0020managing\u0020the\u0020internationalization\u0020of\u0020the\u0020app\u0027",
@@ -585,6 +695,66 @@ Search.appendIndex(
             "name": "languageIsAllowed",
             "summary": "checks\u0020if\u0020input\u0020language\u0020is\u0020allowed\u0020in\u0020the\u0020app\u0027",
             "url": "classes/Udacity-Intl.html#method_languageIsAllowed"
+        },                {
+            "fqsen": "\\Udacity\\Models\\EmailsModel",
+            "name": "EmailsModel",
+            "summary": "this\u0020class\u0020represents\u0020a\u0020batch\u0020of\u0020emails\u0020to\u0020send\u0020to\u0020the\u0020students",
+            "url": "classes/Udacity-Models-EmailsModel.html"
+        },                {
+            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "finishes\u0020the\u0020construction\u0020of\u0020the\u0020instance\u0020model",
+            "url": "classes/Udacity-Models-EmailsModel.html#method___construct"
+        },                {
+            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AgetAutomationToRunFromEmailType\u0028\u0029",
+            "name": "getAutomationToRunFromEmailType",
+            "summary": "gets\u0020the\u0020name\u0020of\u0020the\u0020automation\u0020to\u0020run\u0020based\u0020on\u0020the\u0020email\u0020type",
+            "url": "classes/Udacity-Models-EmailsModel.html#method_getAutomationToRunFromEmailType"
+        },                {
+            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AgetCsvFields\u0028\u0029",
+            "name": "getCsvFields",
+            "summary": "getting\u0020Udacity\u0020CSV\u0020fields\u0020for\u0020the\u0020given\u0020model",
+            "url": "classes/Udacity-Models-EmailsModel.html#method_getCsvFields"
+        },                {
+            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AgetEmptyInstance\u0028\u0029",
+            "name": "getEmptyInstance",
+            "summary": "gets\u0020an\u0020empty\u0020instance\u0020of\u0020the\u0020current\u0020model,\u0020useful\u0020to\u0020select\u0020records\u0020for\u0020instance",
+            "url": "classes/Udacity-Models-EmailsModel.html#method_getEmptyInstance"
+        },                {
+            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AgetUnallowedEmailTypeErrorMess\u0028\u0029",
+            "name": "getUnallowedEmailTypeErrorMess",
+            "summary": "gets\u0020the\u0020error\u0020message\u0020when\u0020the\u0020required\u0020email\u0020type\u0020is\u0020missing\u0020or\u0020wrong",
+            "url": "classes/Udacity-Models-EmailsModel.html#method_getUnallowedEmailTypeErrorMess"
+        },                {
+            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AgetValidEmailsTypes\u0028\u0029",
+            "name": "getValidEmailsTypes",
+            "summary": "gets\u0020the\u0020array\u0020of\u0020valid\u0020emails\u0020types\u0020supported\u0020by\u0020the\u0020app\u0027",
+            "url": "classes/Udacity-Models-EmailsModel.html#method_getValidEmailsTypes"
+        },                {
+            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003Apersist\u0028\u0029",
+            "name": "persist",
+            "summary": "saves\u0020a\u0020record\u0020of\u0020the\u0020model\u0020in\u0020db",
+            "url": "classes/Udacity-Models-EmailsModel.html#method_persist"
+        },                {
+            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AvalidateEmailType\u0028\u0029",
+            "name": "validateEmailType",
+            "summary": "validates\u0020an\u0020email\u0020type\u0020against\u0020the\u0020supported\u0020emails\u0020types\u0020of\u0020the\u0020app\u0027",
+            "url": "classes/Udacity-Models-EmailsModel.html#method_validateEmailType"
+        },                {
+            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AvalidateInputFields\u0028\u0029",
+            "name": "validateInputFields",
+            "summary": "this\u0020function\u0020is\u0020responsible\u0020for\u0020the\u0020business\u0020logic\u0020validation\u0020of\u0020the\u0020instance\u0020model",
+            "url": "classes/Udacity-Models-EmailsModel.html#method_validateInputFields"
+        },                {
+            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003A\u0024dataFolder",
+            "name": "dataFolder",
+            "summary": "where\u0020the\u0020Udacity\u0020session\u0020reports\u0020CSV\u0020files\u0020will\u0020be\u0020stored",
+            "url": "classes/Udacity-Models-EmailsModel.html#property_dataFolder"
+        },                {
+            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003A\u0024tableName",
+            "name": "tableName",
+            "summary": "the\u0020SQL\u0020table\u0020name\u0020of\u0020the\u0020current\u0020instance",
+            "url": "classes/Udacity-Models-EmailsModel.html#property_tableName"
         },                {
             "fqsen": "\\Udacity\\Models\\Model",
             "name": "Model",
@@ -796,126 +966,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Udacity-Models-StudentModel.html#property_on_track_status"
         },                {
-            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\EmailsController",
-            "name": "EmailsController",
-            "summary": "this\u0020controller\u0020is\u0020responsible\u0020for\u0020handling\u0020requests\u0020related\u0020to\u0020sending\u0020emails\u0020from\u0020the\u0020web",
-            "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\EmailsController\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "parent\u0020controller\u0020constructor",
-            "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method___construct"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\EmailsController\u003A\u003A_processBatchEmailsInput\u0028\u0029",
-            "name": "_processBatchEmailsInput",
-            "summary": "takes\u0020in\u0020the\u0020input\u0020session\u0020report\u0020CSV\u0020and\u0020runs\u0020the\u0020automation\u0020to\u0020send\u0020the\u0020emails\u0020if\u0020validated\u0020or\u0020sets\u0020an\u0020errors\u0020array\u0020to\u0020be\u0020displayed\u0020to\u0020the\u0020user",
-            "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method__processBatchEmailsInput"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\EmailsController\u003A\u003Acreate\u0028\u0029",
-            "name": "create",
-            "summary": "shows\u0020the\u0020web\u0020form\u0020to\u0020create\u0020an\u0020instance\u0020of\u0020the\u0020related\u0020resource",
-            "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method_create"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\EmailsController\u003A\u003AgetEmailsPayloadToValidate\u0028\u0029",
-            "name": "getEmailsPayloadToValidate",
-            "summary": "",
-            "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method_getEmailsPayloadToValidate"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\EmailsController\u003A\u003Aindex\u0028\u0029",
-            "name": "index",
-            "summary": "\u0021\u0020not\u0020implemented",
-            "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method_index"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\EmailsController\u003A\u003Apersist\u0028\u0029",
-            "name": "persist",
-            "summary": "saves\u0020data\u0020related\u0020to\u0020the\u0020linked\u0020resource",
-            "url": "classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html#method_persist"
-        },                {
-            "fqsen": "\\Udacity\\Models\\EmailsModel",
-            "name": "EmailsModel",
-            "summary": "this\u0020class\u0020represents\u0020a\u0020batch\u0020of\u0020emails\u0020to\u0020send\u0020to\u0020the\u0020students",
-            "url": "classes/Udacity-Models-EmailsModel.html"
-        },                {
-            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "finishes\u0020the\u0020construction\u0020of\u0020the\u0020instance\u0020model",
-            "url": "classes/Udacity-Models-EmailsModel.html#method___construct"
-        },                {
-            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AgetAutomationToRunFromEmailType\u0028\u0029",
-            "name": "getAutomationToRunFromEmailType",
-            "summary": "gets\u0020the\u0020name\u0020of\u0020the\u0020automation\u0020to\u0020run\u0020based\u0020on\u0020the\u0020email\u0020type",
-            "url": "classes/Udacity-Models-EmailsModel.html#method_getAutomationToRunFromEmailType"
-        },                {
-            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AgetCsvFields\u0028\u0029",
-            "name": "getCsvFields",
-            "summary": "getting\u0020Udacity\u0020CSV\u0020fields\u0020for\u0020the\u0020given\u0020model",
-            "url": "classes/Udacity-Models-EmailsModel.html#method_getCsvFields"
-        },                {
-            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AgetEmptyInstance\u0028\u0029",
-            "name": "getEmptyInstance",
-            "summary": "gets\u0020an\u0020empty\u0020instance\u0020of\u0020the\u0020current\u0020model,\u0020useful\u0020to\u0020select\u0020records\u0020for\u0020instance",
-            "url": "classes/Udacity-Models-EmailsModel.html#method_getEmptyInstance"
-        },                {
-            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AgetUnallowedEmailTypeErrorMess\u0028\u0029",
-            "name": "getUnallowedEmailTypeErrorMess",
-            "summary": "gets\u0020the\u0020error\u0020message\u0020when\u0020the\u0020required\u0020email\u0020type\u0020is\u0020missing\u0020or\u0020wrong",
-            "url": "classes/Udacity-Models-EmailsModel.html#method_getUnallowedEmailTypeErrorMess"
-        },                {
-            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AgetValidEmailsTypes\u0028\u0029",
-            "name": "getValidEmailsTypes",
-            "summary": "gets\u0020the\u0020array\u0020of\u0020valid\u0020emails\u0020types\u0020supported\u0020by\u0020the\u0020app\u0027",
-            "url": "classes/Udacity-Models-EmailsModel.html#method_getValidEmailsTypes"
-        },                {
-            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003Apersist\u0028\u0029",
-            "name": "persist",
-            "summary": "saves\u0020a\u0020record\u0020of\u0020the\u0020model\u0020in\u0020db",
-            "url": "classes/Udacity-Models-EmailsModel.html#method_persist"
-        },                {
-            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AvalidateEmailType\u0028\u0029",
-            "name": "validateEmailType",
-            "summary": "validates\u0020an\u0020email\u0020type\u0020against\u0020the\u0020supported\u0020emails\u0020types\u0020of\u0020the\u0020app\u0027",
-            "url": "classes/Udacity-Models-EmailsModel.html#method_validateEmailType"
-        },                {
-            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003AvalidateInputFields\u0028\u0029",
-            "name": "validateInputFields",
-            "summary": "this\u0020function\u0020is\u0020responsible\u0020for\u0020the\u0020business\u0020logic\u0020validation\u0020of\u0020the\u0020instance\u0020model",
-            "url": "classes/Udacity-Models-EmailsModel.html#method_validateInputFields"
-        },                {
-            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003A\u0024dataFolder",
-            "name": "dataFolder",
-            "summary": "where\u0020the\u0020Udacity\u0020session\u0020reports\u0020CSV\u0020files\u0020will\u0020be\u0020stored",
-            "url": "classes/Udacity-Models-EmailsModel.html#property_dataFolder"
-        },                {
-            "fqsen": "\\Udacity\\Models\\EmailsModel\u003A\u003A\u0024tableName",
-            "name": "tableName",
-            "summary": "the\u0020SQL\u0020table\u0020name\u0020of\u0020the\u0020current\u0020instance",
-            "url": "classes/Udacity-Models-EmailsModel.html#property_tableName"
-        },                {
-            "fqsen": "\\Udacity\\Exceptions\\WritePermissionException",
-            "name": "WritePermissionException",
-            "summary": "Exception\u0020thrown\u0020when\u0020the\u0020\u0060msmtprc\u0060\u0020file\u0020is\u0020not\u0020set\u0020in\u0020the\u0020system",
-            "url": "classes/Udacity-Exceptions-WritePermissionException.html"
-        },                {
-            "fqsen": "\\Udacity\\Exceptions\\WritePermissionException\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
-            "url": "classes/Udacity-Exceptions-WritePermissionException.html#method___construct"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\FilesUploadsTrait",
-            "name": "FilesUploadsTrait",
-            "summary": "",
-            "url": "classes/Udacity-Apps-Web-Controllers-Resource-FilesUploadsTrait.html"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\FilesUploadsTrait\u003A\u003AgetUploadedFile\u0028\u0029",
-            "name": "getUploadedFile",
-            "summary": "",
-            "url": "classes/Udacity-Apps-Web-Controllers-Resource-FilesUploadsTrait.html#method_getUploadedFile"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\Resource\\FilesUploadsTrait\u003A\u003AuploadFile\u0028\u0029",
-            "name": "uploadFile",
-            "summary": "",
-            "url": "classes/Udacity-Apps-Web-Controllers-Resource-FilesUploadsTrait.html#method_uploadFile"
-        },                {
             "fqsen": "\\Udacity\\Models\\ValidationTrait",
             "name": "ValidationTrait",
             "summary": "this\u0020trait\u0020holds\u0020common\u0020validation\u0020logic\u0020across\u0020models",
@@ -925,46 +975,6 @@ Search.appendIndex(
             "name": "validateEmail",
             "summary": "",
             "url": "classes/Udacity-Models-ValidationTrait.html#method_validateEmail"
-        },                {
-            "fqsen": "\\Udacity\\Exceptions\\KeyValueArrayExpectedException",
-            "name": "KeyValueArrayExpectedException",
-            "summary": "Exception\u0020thrown\u0020when\u0020an\u0020input\u0020CSV\u0020does\u0020not\u0020contain\u0020valid\u0020data",
-            "url": "classes/Udacity-Exceptions-KeyValueArrayExpectedException.html"
-        },                {
-            "fqsen": "\\Udacity\\Exceptions\\KeyValueArrayExpectedException\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
-            "url": "classes/Udacity-Exceptions-KeyValueArrayExpectedException.html#method___construct"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\ServerErrorController",
-            "name": "ServerErrorController",
-            "summary": "controller\u0020responsible\u0020for\u0020showing\u0020an\u0020output\u0020when\u0020a\u0020server\u0020error\u0020happens\u0020on\u0020a\u0020client\u0020request",
-            "url": "classes/Udacity-Apps-Web-Controllers-ServerErrorController.html"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\ServerErrorController\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "constructor",
-            "url": "classes/Udacity-Apps-Web-Controllers-ServerErrorController.html#method___construct"
-        },                {
-            "fqsen": "\\Udacity\\Apps\\Web\\Controllers\\ServerErrorController\u003A\u003Aindex\u0028\u0029",
-            "name": "index",
-            "summary": "builds\u0020the\u0020server\u0020error\u0020HTML\u0020page",
-            "url": "classes/Udacity-Apps-Web-Controllers-ServerErrorController.html#method_index"
-        },                {
-            "fqsen": "\\Udacity\\Exceptions\\NoDBConnException",
-            "name": "NoDBConnException",
-            "summary": "Exception\u0020thrown\u0020when\u0020there\u0020is\u0020no\u0020connectivity\u0020to\u0020a\u0020database",
-            "url": "classes/Udacity-Exceptions-NoDBConnException.html"
-        },                {
-            "fqsen": "\\Udacity\\Exceptions\\NoDBConnException\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
-            "url": "classes/Udacity-Exceptions-NoDBConnException.html#method___construct"
-        },                {
-            "fqsen": "\\Udacity\\Exceptions\\NoDBConnException\u003A\u003AMESSAGE",
-            "name": "MESSAGE",
-            "summary": "",
-            "url": "classes/Udacity-Exceptions-NoDBConnException.html#constant_MESSAGE"
         },                {
             "fqsen": "\\Udacity\\Services\\AppModeService",
             "name": "AppModeService",
@@ -1200,16 +1210,6 @@ Search.appendIndex(
             "name": "logUserIn",
             "summary": "logs\u0020a\u0020user\u0020in\u0020outside\u0020the\u0020context\u0020of\u0020a\u0020web\u0020controller",
             "url": "classes/Udacity-Traits-AuthTrait.html#method_logUserIn"
-        },                {
-            "fqsen": "\\Udacity\\Exceptions\\WrongEmailFormatException",
-            "name": "WrongEmailFormatException",
-            "summary": "Exception\u0020thrown\u0020when\u0020the\u0020input\u0020email\u0020has\u0020a\u0020wrong\u0020format",
-            "url": "classes/Udacity-Exceptions-WrongEmailFormatException.html"
-        },                {
-            "fqsen": "\\Udacity\\Exceptions\\WrongEmailFormatException\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "constructor\u0020of\u0020all\u0020app\u0027s\u0020exceptions",
-            "url": "classes/Udacity-Exceptions-WrongEmailFormatException.html#method___construct"
         },                {
             "fqsen": "\\",
             "name": "\\",

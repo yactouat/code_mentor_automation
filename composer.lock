@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fcb2124dc3848a47a97c9460c2444808",
+    "content-hash": "eb03f7ecc8b628a91164d96aea125025",
     "packages": [
         {
             "name": "graham-campbell/result-type",
@@ -3269,6 +3269,46 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.11.0"
             },
             "time": "2022-06-03T18:03:27+00:00"
+        },
+        {
+            "name": "yactouat/dev",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yactouat/dev.git",
+                "reference": "d60e1257849a1ca329d09fefe53a7f315cb43824"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yactouat/dev/zipball/d60e1257849a1ca329d09fefe53a7f315cb43824",
+                "reference": "d60e1257849a1ca329d09fefe53a7f315cb43824",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Yactouat\\Dev\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "yactouat",
+                    "email": "yacine.touati.pro@gmail.com"
+                }
+            ],
+            "description": "package that contains a set of helper classes to use while in development phase",
+            "support": {
+                "issues": "https://github.com/yactouat/dev/issues",
+                "source": "https://github.com/yactouat/dev/tree/v2.1.0"
+            },
+            "time": "2022-11-26T14:10:18+00:00"
         }
     ],
     "aliases": [],

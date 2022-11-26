@@ -147,8 +147,12 @@
         <dd>parent class of all the web app&#039; controllers</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Apps-Web-Controllers-NotFoundController.html"><abbr title="\Udacity\Apps\Web\Controllers\NotFoundController">NotFoundController</abbr></a></dt>
         <dd>controller responsible for showing an output when a route is not found in the app&#039;</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html"><abbr title="\Udacity\Apps\Web\Controllers\Resource\EmailsController">EmailsController</abbr></a></dt>
+        <dd>this controller is responsible for handling requests related to sending emails from the web</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Apps-Web-Controllers-Resource-SessionLeadsController.html"><abbr title="\Udacity\Apps\Web\Controllers\Resource\SessionLeadsController">SessionLeadsController</abbr></a></dt>
         <dd>this controller is responsible for handling requests related to the main user of this app: the session lead</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Apps-Web-Controllers-ServerErrorController.html"><abbr title="\Udacity\Apps\Web\Controllers\ServerErrorController">ServerErrorController</abbr></a></dt>
+        <dd>controller responsible for showing an output when a server error happens on a client request</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Apps-Web-Routes.html"><abbr title="\Udacity\Apps\Web\Routes">Routes</abbr></a></dt>
         <dd>this class is responsible for storing web routing information</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Apps-Web-WebApp.html"><abbr title="\Udacity\Apps\Web\WebApp">WebApp</abbr></a></dt>
@@ -177,16 +181,26 @@
         <dd>parent class of all app&#039;s exceptions</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Exceptions-InvalidCsvDataException.html"><abbr title="\Udacity\Exceptions\InvalidCsvDataException">InvalidCsvDataException</abbr></a></dt>
         <dd>Exception thrown when an input CSV does not contain valid data</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Exceptions-KeyValueArrayExpectedException.html"><abbr title="\Udacity\Exceptions\KeyValueArrayExpectedException">KeyValueArrayExpectedException</abbr></a></dt>
+        <dd>Exception thrown when an input CSV does not contain valid data</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Exceptions-MsmtprcNotSetException.html"><abbr title="\Udacity\Exceptions\MsmtprcNotSetException">MsmtprcNotSetException</abbr></a></dt>
         <dd>Exception thrown when the `msmtprc` file is not set in the system</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Exceptions-NoDBConnException.html"><abbr title="\Udacity\Exceptions\NoDBConnException">NoDBConnException</abbr></a></dt>
+        <dd>Exception thrown when there is no connectivity to a database</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Exceptions-NonExistingFileException.html"><abbr title="\Udacity\Exceptions\NonExistingFileException">NonExistingFileException</abbr></a></dt>
         <dd>Exception thrown when a file does not exist</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Exceptions-SQLTableNotSetException.html"><abbr title="\Udacity\Exceptions\SQLTableNotSetException">SQLTableNotSetException</abbr></a></dt>
         <dd>Exception thrown when a SQL table that is supposed to exist does not exist</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Exceptions-UserNotAuthedException.html"><abbr title="\Udacity\Exceptions\UserNotAuthedException">UserNotAuthedException</abbr></a></dt>
         <dd>Exception thrown when a user is not authenticated</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Exceptions-WritePermissionException.html"><abbr title="\Udacity\Exceptions\WritePermissionException">WritePermissionException</abbr></a></dt>
+        <dd>Exception thrown when the `msmtprc` file is not set in the system</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Exceptions-WrongEmailFormatException.html"><abbr title="\Udacity\Exceptions\WrongEmailFormatException">WrongEmailFormatException</abbr></a></dt>
+        <dd>Exception thrown when the input email has a wrong format</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Intl.html"><abbr title="\Udacity\Intl">Intl</abbr></a></dt>
         <dd>this class is responsible for managing the internationalization of the app&#039;</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Models-EmailsModel.html"><abbr title="\Udacity\Models\EmailsModel">EmailsModel</abbr></a></dt>
+        <dd>this class represents a batch of emails to send to the students</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Models-Model.html"><abbr title="\Udacity\Models\Model">Model</abbr></a></dt>
         <dd>the parent class of all app&#039;s MVC models</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Models-OnlineResourceModel.html"><abbr title="\Udacity\Models\OnlineResourceModel">OnlineResourceModel</abbr></a></dt>
@@ -195,18 +209,6 @@
         <dd>this model represents a session lead, main actor of the app&#039;</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Models-StudentModel.html"><abbr title="\Udacity\Models\StudentModel">StudentModel</abbr></a></dt>
         <dd>this model represents a Udacity student in our business logic</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Apps-Web-Controllers-Resource-EmailsController.html"><abbr title="\Udacity\Apps\Web\Controllers\Resource\EmailsController">EmailsController</abbr></a></dt>
-        <dd>this controller is responsible for handling requests related to sending emails from the web</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Models-EmailsModel.html"><abbr title="\Udacity\Models\EmailsModel">EmailsModel</abbr></a></dt>
-        <dd>this class represents a batch of emails to send to the students</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Exceptions-WritePermissionException.html"><abbr title="\Udacity\Exceptions\WritePermissionException">WritePermissionException</abbr></a></dt>
-        <dd>Exception thrown when the `msmtprc` file is not set in the system</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Exceptions-KeyValueArrayExpectedException.html"><abbr title="\Udacity\Exceptions\KeyValueArrayExpectedException">KeyValueArrayExpectedException</abbr></a></dt>
-        <dd>Exception thrown when an input CSV does not contain valid data</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Apps-Web-Controllers-ServerErrorController.html"><abbr title="\Udacity\Apps\Web\Controllers\ServerErrorController">ServerErrorController</abbr></a></dt>
-        <dd>controller responsible for showing an output when a server error happens on a client request</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Exceptions-NoDBConnException.html"><abbr title="\Udacity\Exceptions\NoDBConnException">NoDBConnException</abbr></a></dt>
-        <dd>Exception thrown when there is no connectivity to a database</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Services-AppModeService.html"><abbr title="\Udacity\Services\AppModeService">AppModeService</abbr></a></dt>
         <dd>this service is responsible for informing its consumers about which mode the app&#039; runs on (CLI, web, etc.)</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Services-DatabaseService.html"><abbr title="\Udacity\Services\DatabaseService">DatabaseService</abbr></a></dt>
@@ -215,8 +217,6 @@
         <dd>this trait shares the logic of logging stuff throughout the app&#039;</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Services-ServicesContainer.html"><abbr title="\Udacity\Services\ServicesContainer">ServicesContainer</abbr></a></dt>
         <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Udacity-Exceptions-WrongEmailFormatException.html"><abbr title="\Udacity\Exceptions\WrongEmailFormatException">WrongEmailFormatException</abbr></a></dt>
-        <dd>Exception thrown when the input email has a wrong format</dd>
     
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/Udacity-Apps-Web-Controllers-Resource-FilesUploadsTrait.html"><abbr title="\Udacity\Apps\Web\Controllers\Resource\FilesUploadsTrait">FilesUploadsTrait</abbr></a></dt>
         <dd></dd>

@@ -8,8 +8,11 @@ use Udacity\Services\AppModeService;
 use Udacity\Services\DatabaseService;
 use Udacity\Services\LoggerService;
 use Udacity\Services\ServicesContainer;
+use Yactouat\Dev\StringsComparatorTrait;
 
 trait TestsHelperTrait {
+
+    use StringsComparatorTrait;
 
     protected function authenticate(string $email = 'test@gmail.com', string $firstName = 'Yacine'): void {
         DatabaseService::getService('write_db')->writeQuery('TRUNCATE udacity_sl_automation.sessionlead');
@@ -62,10 +65,6 @@ trait TestsHelperTrait {
         }
     }
 
-    protected function removeSpacesFromString(string $input): string {
-        return str_replace([' ', "\n", "\t"], ['', '', ''], $input);
-    }
-
     protected function resetSuperGlobals(): void {
         $_ENV = $_FILES = $_GET = $_POST = $_SESSION = $_SERVER = [];
     }
@@ -105,14 +104,6 @@ trait TestsHelperTrait {
         $_ENV['DB_PORT'] = 3306;
         $_ENV['DB_USER'] = 'root';
         $_ENV['ROOT_DIR'] = '/var/www';
-    }
-
-    protected function stringIsContainedInAnother(string $expected, string $actual): bool {
-        return str_contains($this->removeSpacesFromString($actual), $this->removeSpacesFromString($expected));
-    }
-
-    protected function stringsHaveSameContent(string $expected, string $actual): bool {
-        return $this->removeSpacesFromString($expected) === $this->removeSpacesFromString($actual);
     }
 
 }
